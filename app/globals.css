@@ -1192,53 +1192,74 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
   margin-right: auto;
 }
 
-/* Workshop Page */
-.workshop-hero-new {
+/* Workshop Page - Full Hero */
+.workshop-hero-full {
   min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   position: relative;
   overflow: hidden;
-}
-.workshop-hero-content-new {
   display: flex;
   align-items: center;
-  padding: 8rem 5rem 5rem;
-  background: var(--color-cream);
 }
-.workshop-hero-text {
-  max-width: 540px;
+.workshop-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  z-index: 0;
 }
-.workshop-hero-text .section-label {
+.workshop-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 70% center;
+}
+.workshop-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(244, 245, 247, 0.95) 0%,
+    rgba(244, 245, 247, 0.9) 25%,
+    rgba(244, 245, 247, 0.7) 45%,
+    rgba(244, 245, 247, 0.3) 65%,
+    rgba(244, 245, 247, 0) 100%
+  );
+  z-index: 1;
+}
+.workshop-hero-content-full {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 10rem 5rem 6rem 7rem;
+}
+.workshop-hero-text-full {
+  max-width: 580px;
+}
+.workshop-hero-text-full .section-label {
   color: var(--color-sage);
 }
-.workshop-hero-text h1 {
+.workshop-hero-text-full h1 {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-size: clamp(2.8rem, 5vw, 4rem);
   font-weight: 400;
   color: var(--color-earth);
-  line-height: 1.2;
-  margin: 1rem 0 1.5rem;
+  line-height: 1.15;
+  margin: 1rem 0 1.75rem;
 }
-.workshop-hero-text h1 em {
+.workshop-hero-text-full h1 em {
   font-style: italic;
   color: var(--color-copper);
 }
 .workshop-hero-desc {
   font-size: 1.1rem;
-  line-height: 1.8;
+  line-height: 1.85;
   color: var(--color-soft-brown);
   margin-bottom: 2.5rem;
-}
-.workshop-hero-image {
-  position: relative;
-  overflow: hidden;
-}
-.workshop-hero-image img {
-  width: 100%;
-  height: 120%;
-  object-fit: cover;
-  object-position: center center;
+  max-width: 480px;
 }
 
 /* Quote Banner */
@@ -1246,6 +1267,56 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
   padding: 2.5rem 5rem;
   background: var(--color-earth);
   text-align: center;
+}
+
+/* Workshop Intro Section */
+.workshop-intro-section {
+  padding: 6rem 5rem;
+  background: var(--color-cream-warm);
+  position: relative;
+}
+.workshop-intro-section::before {
+  content: '"';
+  position: absolute;
+  top: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-display);
+  font-size: 8rem;
+  color: var(--color-copper);
+  opacity: 0.12;
+  line-height: 1;
+}
+.workshop-intro-section .workshop-intro-content {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+.workshop-intro-section .workshop-intro-content p {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  line-height: 1.8;
+  color: var(--color-earth);
+  font-weight: 400;
+}
+.workshop-intro-highlight {
+  font-size: 1.6rem !important;
+  font-style: italic;
+  color: var(--color-copper) !important;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  position: relative;
+}
+.workshop-intro-highlight::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: var(--color-copper);
 }
 .workshop-quote-banner p {
   font-family: var(--font-display);
@@ -1482,112 +1553,278 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
   z-index: -1;
 }
 
-/* Workshop Signup */
-.workshop-signup {
-  display: flex;
+/* Workshop Dates Section */
+.workshop-dates-section {
+  padding: 6rem 5rem;
+  background: var(--color-earth);
 }
-.workshop-signup-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 100%;
+.workshop-dates-container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
 }
-.workshop-signup-info {
-  padding: 5rem;
-  background: var(--color-cream);
+.workshop-dates-header {
+  margin-bottom: 3.5rem;
 }
-.workshop-signup-info h2 {
-  font-family: var(--font-display);
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
-  font-weight: 400;
-  color: var(--color-earth);
-  margin: 0.75rem 0 1.25rem;
-}
-.workshop-signup-info > p {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: var(--color-soft-brown);
-  margin-bottom: 2.5rem;
-}
-.workshop-signup-info > p a {
+.workshop-dates-header .section-label {
   color: var(--color-copper);
-  text-decoration: underline;
 }
-.workshop-dates {
-  margin-bottom: 2.5rem;
+.workshop-dates-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 400;
+  color: var(--color-cream);
+  margin: 0.75rem 0 1rem;
 }
-.workshop-dates h4,
-.workshop-practical-info h4 {
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  color: var(--color-earth);
-  margin-bottom: 1rem;
+.workshop-dates-intro {
+  font-size: 1rem;
+  color: var(--color-warm-sand);
+  letter-spacing: 0.02em;
 }
-.workshop-date-boxes {
+.workshop-date-cards {
   display: flex;
-  gap: 1rem;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
 }
-.workshop-date-box {
+.workshop-date-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem 2rem;
+  background: rgba(244, 245, 247, 0.03);
+  border: 1px solid rgba(139, 120, 74, 0.25);
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+.workshop-date-card:hover {
+  background: rgba(244, 245, 247, 0.08);
+  border-color: var(--color-copper);
+  transform: translateY(-4px);
+}
+.date-card-date {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+.date-card-day {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: var(--color-cream);
+  line-height: 1;
+}
+.date-card-pending {
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-copper-light);
+  white-space: nowrap;
+}
+.date-card-month-year {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 1rem 1.5rem;
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid var(--color-stone);
+  align-items: flex-start;
 }
-.date-day {
+.date-card-month {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--color-cream);
+  line-height: 1.2;
+}
+.date-card-year {
+  font-size: 0.75rem;
+  color: var(--color-sage);
+  letter-spacing: 0.05em;
+}
+.date-card-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(139, 120, 74, 0.3);
+}
+.date-card-action {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-label);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-copper);
+  transition: color 0.3s ease;
+}
+.workshop-date-card:hover .date-card-action {
+  color: var(--color-copper-light);
+}
+.date-card-action svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+.workshop-date-card:hover .date-card-action svg {
+  transform: translateX(3px);
+}
+.workshop-dates-note {
+  font-size: 0.95rem;
+  color: var(--color-sage);
+  line-height: 1.7;
+}
+.workshop-dates-note a {
+  color: var(--color-copper);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+.workshop-dates-note a:hover {
+  border-color: var(--color-copper);
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(52, 64, 79, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 2rem;
+}
+.modal-content {
+  background: var(--color-cream);
+  padding: 3rem;
+  max-width: 560px;
+  width: 100%;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--color-stone);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+.modal-close:hover {
+  border-color: var(--color-earth);
+  background: var(--color-earth);
+}
+.modal-close svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--color-earth);
+  transition: stroke 0.3s ease;
+}
+.modal-close:hover svg {
+  stroke: var(--color-cream);
+}
+.modal-header {
+  margin-bottom: 2rem;
+}
+.modal-header .section-label {
+  margin-bottom: 0.5rem;
+}
+.modal-header h3 {
   font-family: var(--font-display);
   font-size: 1.75rem;
   font-weight: 400;
   color: var(--color-earth);
+  margin-bottom: 0.5rem;
 }
-.date-month {
-  font-size: 0.8rem;
+.modal-info {
+  font-size: 0.95rem;
   color: var(--color-sage);
-  text-transform: lowercase;
 }
-.workshop-practical-info {
-  display: flex;
-  flex-direction: column;
+.modal-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
-.workshop-info-item {
-  display: flex;
-  gap: 0.75rem;
-  align-items: flex-start;
+.modal-form-group {
+  margin-bottom: 1.25rem;
 }
-.workshop-info-item svg {
-  width: 20px;
-  height: 20px;
-  color: var(--color-copper);
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-.workshop-info-item strong {
+.modal-form-group label {
   display: block;
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--color-earth);
-  margin-bottom: 0.15rem;
+  margin-bottom: 0.6rem;
 }
-.workshop-info-item p {
-  font-size: 0.9rem;
+.modal-form-group input,
+.modal-form-group textarea {
+  width: 100%;
+  padding: 1rem 1.15rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-earth);
+  background: white;
+  border: 1.5px solid var(--color-stone);
+  outline: none;
+  transition: all 0.2s ease;
+}
+.modal-form-group input::placeholder,
+.modal-form-group textarea::placeholder {
   color: var(--color-sage);
-  line-height: 1.5;
+  opacity: 0.7;
 }
-
-/* Signup Form */
-.workshop-signup-form {
-  padding: 5rem;
+.modal-form-group input:focus,
+.modal-form-group textarea:focus {
+  border-color: var(--color-copper);
+  box-shadow: 0 0 0 3px rgba(139, 120, 74, 0.1);
+}
+.modal-form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+.modal-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  padding: 1rem 2rem;
+  font-family: var(--font-label);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-cream);
+  background: var(--color-copper);
+  border: none;
+  transition: background 0.3s ease;
+}
+.modal-submit:hover {
   background: var(--color-earth);
 }
-.workshop-signup-form h3 {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: var(--color-cream);
-  margin-bottom: 2rem;
+.modal-submit svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease;
+}
+.modal-submit:hover svg {
+  transform: translateX(3px);
+}
+.modal-disclaimer {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-stone);
+  font-size: 0.85rem;
+  color: var(--color-sage);
+  text-align: center;
 }
 .form-group {
   margin-bottom: 1.25rem;
@@ -1667,16 +1904,16 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
   .insights-section, .services-section, .why-section, .testimonials-section,
   .benefits-section, .about-section, .cta-section, .contact-section { padding: 6rem 3rem; }
   .audience-section { padding: 5rem 3rem; }
-  .workshop-hero-new { grid-template-columns: 1fr; min-height: auto; }
-  .workshop-hero-content-new { padding: 8rem 3rem 4rem; }
-  .workshop-hero-image { height: 50vh; }
-  .workshop-hero-image img { height: 100%; }
+  .workshop-hero-full { min-height: 100vh; }
+  .workshop-hero-content-full { padding: 8rem 3rem 4rem; }
+  .workshop-hero-bg img { object-position: 60% center; }
   .workshop-why-grid { grid-template-columns: 1fr; gap: 3rem; }
   .workshop-benefits-columns { grid-template-columns: 1fr; }
   .workshop-practical-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .workshop-intro-section { padding: 4rem 3rem; }
   .workshop-quote-banner, .workshop-why-new, .workshop-benefits-new, .workshop-practical { padding: 5rem 3rem; }
-  .workshop-signup-grid { grid-template-columns: 1fr; }
-  .workshop-signup-info, .workshop-signup-form { padding: 4rem 3rem; }
+  .workshop-dates-section { padding: 5rem 3rem; }
+  .workshop-date-cards { flex-wrap: wrap; }
 }
 
 @media (max-width: 768px) {
@@ -1705,13 +1942,28 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
     display: none;
   }
   .referencer-cta { padding: 4rem 1.5rem; }
-  .workshop-hero-content-new { padding: 7rem 1.5rem 3rem; }
-  .workshop-hero-image { height: 40vh; }
+  .workshop-hero-content-full { padding: 7rem 1.5rem 3rem; }
+  .workshop-hero-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(244, 245, 247, 0.95) 0%,
+      rgba(244, 245, 247, 0.85) 40%,
+      rgba(244, 245, 247, 0.5) 70%,
+      rgba(244, 245, 247, 0.2) 100%
+    );
+  }
+  .workshop-hero-text-full { max-width: 100%; }
+  .workshop-hero-bg img { object-position: center center; }
+  .workshop-intro-section { padding: 3rem 1.5rem; }
   .workshop-quote-banner { padding: 2rem 1.5rem; }
   .workshop-why-new, .workshop-benefits-new, .workshop-practical { padding: 4rem 1.5rem; }
   .workshop-practical-image::after { display: none; }
-  .workshop-signup-info, .workshop-signup-form { padding: 3rem 1.5rem; }
-  .workshop-date-boxes { flex-wrap: wrap; }
+  .workshop-dates-section { padding: 4rem 1.5rem; }
+  .workshop-date-cards { flex-direction: column; align-items: center; }
+  .workshop-date-card { width: 100%; max-width: 320px; justify-content: center; }
+  .modal-overlay { padding: 1rem; }
+  .modal-content { padding: 2rem 1.5rem; }
+  .modal-form-row { grid-template-columns: 1fr; }
   .hero-bg::after {
     background: linear-gradient(180deg, rgba(52, 64, 79, 0.88) 0%, rgba(52, 64, 79, 0.75) 50%, rgba(52, 64, 79, 0.5) 100%);
   }
