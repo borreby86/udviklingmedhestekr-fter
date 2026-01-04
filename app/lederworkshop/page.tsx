@@ -104,29 +104,38 @@ export default function LederworkshopPage() {
         </div>
       </section>
 
-      {/* Quote Banner */}
-      <section className="workshop-quote-banner">
-        <div className="workshop-container-wide">
-          <p>God ledelse begynder med selvindsigt</p>
-        </div>
-      </section>
+      {/* Animated Quote & Intro Section */}
+      <section className="workshop-quote-intro">
+        <div className="workshop-quote-intro-container">
+          <motion.h2
+            className="workshop-quote-text"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+          >
+            God ledelse begynder med <em>selvindsigt</em>
+          </motion.h2>
 
-      {/* Intro Section */}
-      <section className="workshop-intro-section">
-        <div className="workshop-container">
           <motion.div
             className="workshop-intro-content"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.8, delay: 0.3 }}
           >
             <p>
               Ægte lederskab begynder med dig – din evne til at forstå, hvordan du påvirker andre og skaber troværdighed, er nøglen til at inspirere, motivere og invitere til følgeskab. Men hvor ofte får du mulighed for at se dig selv som leder, helt uden filter – og med øjeblikkelig feedback?
             </p>
-            <p className="workshop-intro-highlight">
+            <motion.p
+              className="workshop-intro-highlight"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
               Mødet med hesten giver dig denne unikke mulighed.
-            </p>
+            </motion.p>
           </motion.div>
         </div>
       </section>

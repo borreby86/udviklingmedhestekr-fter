@@ -1262,73 +1262,73 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
   max-width: 480px;
 }
 
-/* Quote Banner */
-.workshop-quote-banner {
-  padding: 2.5rem 5rem;
+/* Quote & Intro Combined Section */
+.workshop-quote-intro {
+  padding: 8rem 5rem;
   background: var(--color-earth);
-  text-align: center;
-}
-
-/* Workshop Intro Section */
-.workshop-intro-section {
-  padding: 6rem 5rem;
-  background: var(--color-cream-warm);
   position: relative;
+  overflow: hidden;
 }
-.workshop-intro-section::before {
+.workshop-quote-intro::before {
   content: '"';
   position: absolute;
-  top: 3rem;
+  top: 2rem;
   left: 50%;
   transform: translateX(-50%);
   font-family: var(--font-display);
-  font-size: 8rem;
+  font-size: 20rem;
   color: var(--color-copper);
-  opacity: 0.12;
+  opacity: 0.06;
   line-height: 1;
+  pointer-events: none;
 }
-.workshop-intro-section .workshop-intro-content {
-  max-width: 720px;
+.workshop-quote-intro-container {
+  max-width: 800px;
   margin: 0 auto;
   text-align: center;
   position: relative;
 }
-.workshop-intro-section .workshop-intro-content p {
+.workshop-quote-text {
   font-family: var(--font-display);
-  font-size: 1.35rem;
-  line-height: 1.8;
-  color: var(--color-earth);
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
   font-weight: 400;
+  color: var(--color-cream);
+  line-height: 1.25;
+  margin-bottom: 4rem;
 }
-.workshop-intro-highlight {
-  font-size: 1.6rem !important;
+.workshop-quote-text em {
   font-style: italic;
-  color: var(--color-copper) !important;
-  margin-top: 2rem;
-  padding-top: 2rem;
+  color: var(--color-copper-light);
+}
+.workshop-quote-intro .workshop-intro-content {
+  max-width: 680px;
+  margin: 0 auto;
+}
+.workshop-quote-intro .workshop-intro-content p {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: var(--color-warm-sand);
+  font-weight: 300;
+}
+.workshop-quote-intro .workshop-intro-highlight {
+  font-family: var(--font-display);
+  font-size: 1.5rem !important;
+  font-style: italic;
+  color: var(--color-copper-light) !important;
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
   position: relative;
 }
-.workshop-intro-highlight::before {
+.workshop-quote-intro .workshop-intro-highlight::before {
   content: '';
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 60px;
-  height: 2px;
+  width: 50px;
+  height: 1px;
   background: var(--color-copper);
-}
-.workshop-quote-banner p {
-  font-family: var(--font-display);
-  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
-  font-weight: 400;
-  font-style: italic;
-  color: var(--color-cream);
-}
-.workshop-quote-banner p::before,
-.workshop-quote-banner p::after {
-  content: '"';
-  color: var(--color-copper);
+  opacity: 0.5;
 }
 .workshop-container {
   max-width: 900px;
@@ -1910,8 +1910,8 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
   .workshop-why-grid { grid-template-columns: 1fr; gap: 3rem; }
   .workshop-benefits-columns { grid-template-columns: 1fr; }
   .workshop-practical-grid { grid-template-columns: 1fr; gap: 3rem; }
-  .workshop-intro-section { padding: 4rem 3rem; }
-  .workshop-quote-banner, .workshop-why-new, .workshop-benefits-new, .workshop-practical { padding: 5rem 3rem; }
+  .workshop-quote-intro { padding: 6rem 3rem; }
+  .workshop-why-new, .workshop-benefits-new, .workshop-practical { padding: 5rem 3rem; }
   .workshop-dates-section { padding: 5rem 3rem; }
   .workshop-date-cards { flex-wrap: wrap; }
 }
@@ -1954,8 +1954,9 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
   }
   .workshop-hero-text-full { max-width: 100%; }
   .workshop-hero-bg img { object-position: center center; }
-  .workshop-intro-section { padding: 3rem 1.5rem; }
-  .workshop-quote-banner { padding: 2rem 1.5rem; }
+  .workshop-quote-intro { padding: 5rem 1.5rem; }
+  .workshop-quote-text { margin-bottom: 2.5rem; }
+  .workshop-quote-intro::before { font-size: 12rem; top: 1rem; }
   .workshop-why-new, .workshop-benefits-new, .workshop-practical { padding: 4rem 1.5rem; }
   .workshop-practical-image::after { display: none; }
   .workshop-dates-section { padding: 4rem 1.5rem; }
