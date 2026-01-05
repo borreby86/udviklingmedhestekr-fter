@@ -288,7 +288,7 @@ nav.scrolled .nav-cta:hover { background: var(--color-copper); }
   font-weight: 500;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--color-copper);
+  color: var(--color-copper) !important;
   margin-bottom: 1rem;
 }
 .section-title {
@@ -1240,7 +1240,7 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
   max-width: 580px;
 }
 .workshop-hero-text-full .section-label {
-  color: var(--color-sage);
+  color: var(--color-copper);
 }
 .workshop-hero-text-full h1 {
   font-family: var(--font-display);
@@ -1254,81 +1254,137 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
   font-style: italic;
   color: var(--color-copper);
 }
+.workshop-hero-tagline {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-style: italic;
+  color: var(--color-copper);
+  margin: 0.5rem 0 1.5rem;
+}
 .workshop-hero-desc {
   font-size: 1.1rem;
   line-height: 1.85;
   color: var(--color-soft-brown);
-  margin-bottom: 2.5rem;
-  max-width: 480px;
+  margin-bottom: 1.5rem;
+  max-width: 520px;
+}
+.workshop-hero-cta-text {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--color-copper);
+  margin-bottom: 2rem;
 }
 
-/* Quote & Intro Combined Section */
-.workshop-quote-intro {
-  padding: 8rem 5rem;
-  background: var(--color-earth);
+/* Sticky Text Scroll Section */
+.sticky-text-section {
+  height: 250vh;
   position: relative;
+  background: var(--color-earth);
+}
+.sticky-text-container {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
 }
-.workshop-quote-intro::before {
+.sticky-text-container::before {
   content: '"';
   position: absolute;
-  top: 2rem;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   font-family: var(--font-display);
   font-size: 20rem;
   color: var(--color-copper);
-  opacity: 0.06;
+  opacity: 0.04;
   line-height: 1;
   pointer-events: none;
 }
-.workshop-quote-intro-container {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
+.sticky-text-content {
   position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 3rem;
+  text-align: center;
+  height: 150px;
 }
-.workshop-quote-text {
+.sticky-text-slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.sticky-text-slide h2 {
   font-family: var(--font-display);
   font-size: clamp(2.2rem, 4.5vw, 3.2rem);
   font-weight: 400;
   color: var(--color-cream);
-  line-height: 1.25;
-  margin-bottom: 4rem;
+  line-height: 1.2;
 }
-.workshop-quote-text em {
+.sticky-text-slide h2 em {
   font-style: italic;
   color: var(--color-copper-light);
 }
-.workshop-quote-intro .workshop-intro-content {
-  max-width: 680px;
-  margin: 0 auto;
-}
-.workshop-quote-intro .workshop-intro-content p {
-  font-size: 1.1rem;
-  line-height: 1.9;
+.sticky-text-slide p {
+  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+  line-height: 1.8;
   color: var(--color-warm-sand);
   font-weight: 300;
+  max-width: 620px;
 }
-.workshop-quote-intro .workshop-intro-highlight {
+.sticky-text-slide p.sticky-text-gold {
   font-family: var(--font-display);
-  font-size: 1.5rem !important;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 400;
   font-style: italic;
-  color: var(--color-copper-light) !important;
-  margin-top: 2.5rem;
-  padding-top: 2.5rem;
-  position: relative;
+  color: var(--color-copper);
+  line-height: 1.4;
+  max-width: 700px;
 }
-.workshop-quote-intro .workshop-intro-highlight::before {
-  content: '';
+.sticky-text-slide .sticky-text-sub {
+  margin-top: 1.25rem;
+  font-style: italic;
+  color: var(--color-cream);
+}
+.sticky-text-slide h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--color-copper-light);
+  line-height: 1.3;
+}
+.scroll-indicator {
   position: absolute;
-  top: 0;
   left: 50%;
+  bottom: -80px;
   transform: translateX(-50%);
-  width: 50px;
-  height: 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.scroll-indicator::before {
+  content: 'Scroll';
+  font-family: var(--font-label);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+}
+.scroll-line {
+  width: 1px;
+  height: 50px;
   background: var(--color-copper);
-  opacity: 0.5;
+  transform-origin: top;
 }
 .workshop-container {
   max-width: 900px;
@@ -1363,17 +1419,42 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
 /* Workshop Why New */
 .workshop-why-new {
   padding: 6rem 5rem;
-  background: var(--color-cream);
+  position: relative;
+  overflow: hidden;
 }
-.workshop-why-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: start;
+.workshop-why-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.workshop-why-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+.workshop-why-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(244, 245, 247, 0.95) 0%,
+    rgba(244, 245, 247, 0.88) 50%,
+    rgba(244, 245, 247, 0.75) 100%
+  );
+  z-index: 1;
+}
+.workshop-why-new .workshop-container {
+  position: relative;
+  z-index: 2;
+}
+.workshop-why-text {
+  max-width: 700px;
+  margin-bottom: 3rem;
 }
 .workshop-why-text h2 {
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-size: clamp(2rem, 3vw, 2.5rem);
   font-weight: 400;
   color: var(--color-earth);
   margin: 0.75rem 0 1.5rem;
@@ -1384,9 +1465,14 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
   color: var(--color-soft-brown);
   margin-bottom: 1rem;
 }
+.workshop-why-text .section-label {
+  font-size: 0.7rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
 .workshop-why-points {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 }
 .workshop-point {
@@ -1436,7 +1522,7 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
 }
 .workshop-benefits-header h2 {
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-size: clamp(2rem, 3vw, 2.5rem);
   font-weight: 400;
   color: var(--color-earth);
   margin-top: 0.75rem;
@@ -1553,15 +1639,220 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
   z-index: -1;
 }
 
+/* Workshop Timeline Section */
+.workshop-timeline {
+  padding: 6rem 5rem;
+  background: var(--color-cream);
+}
+.workshop-timeline-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.workshop-timeline-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-weight: 400;
+  color: var(--color-earth);
+  margin: 0.75rem 0 1.25rem;
+}
+.workshop-timeline-intro {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--color-soft-brown);
+  max-width: 600px;
+  margin: 0 auto;
+}
+.workshop-timeline-track {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+.workshop-timeline-step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+.timeline-step-marker {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+.timeline-step-dot {
+  width: 16px;
+  height: 16px;
+  background: var(--color-copper);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.timeline-step-line {
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 8px);
+  right: calc(-50% + 8px);
+  height: 2px;
+  background: var(--color-stone);
+  transform: translateY(-50%);
+}
+.timeline-step-content {
+  max-width: 180px;
+}
+.timeline-step-time {
+  font-family: var(--font-label);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--color-copper);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+.timeline-step-content h4 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--color-earth);
+  margin-bottom: 0.5rem;
+}
+.timeline-step-content p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-sage);
+}
+.workshop-practical-badges {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem 2.5rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--color-stone);
+}
+.practical-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+  color: var(--color-soft-brown);
+}
+.practical-badge svg {
+  width: 20px;
+  height: 20px;
+  color: var(--color-copper);
+  flex-shrink: 0;
+}
+
+/* Workshop Instructor Section */
+.workshop-instructor {
+  padding: 6rem 5rem;
+  position: relative;
+  overflow: hidden;
+}
+.workshop-instructor-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 75%;
+  z-index: 0;
+}
+.workshop-instructor-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+.workshop-instructor-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(244, 245, 247, 1) 0%,
+    rgba(244, 245, 247, 1) 25%,
+    rgba(244, 245, 247, 0.95) 35%,
+    rgba(244, 245, 247, 0.7) 55%,
+    rgba(244, 245, 247, 0.3) 100%
+  );
+  z-index: 1;
+}
+.workshop-instructor .workshop-container-wide {
+  position: relative;
+  z-index: 2;
+}
+.workshop-instructor-content {
+  max-width: 520px;
+}
+.workshop-instructor-content h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-weight: 400;
+  color: var(--color-earth);
+  margin: 0.75rem 0 1.5rem;
+}
+.workshop-instructor-content p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--color-soft-brown);
+  margin-bottom: 1rem;
+}
+.workshop-instructor-content .section-label {
+  font-size: 0.7rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+.workshop-instructor-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+.instructor-badge {
+  font-family: var(--font-label);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--color-copper);
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 1px solid var(--color-copper);
+}
+
 /* Workshop Dates Section */
 .workshop-dates-section {
   padding: 6rem 5rem;
   background: var(--color-earth);
+  position: relative;
+  overflow: hidden;
+}
+.workshop-dates-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.workshop-dates-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+.workshop-dates-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(52, 64, 79, 0.88);
+  z-index: 1;
 }
 .workshop-dates-container {
   max-width: 900px;
   margin: 0 auto;
   text-align: center;
+  position: relative;
+  z-index: 2;
 }
 .workshop-dates-header {
   margin-bottom: 3.5rem;
@@ -1571,7 +1862,7 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
 }
 .workshop-dates-header h2 {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-size: clamp(2rem, 3vw, 2.5rem);
   font-weight: 400;
   color: var(--color-cream);
   margin: 0.75rem 0 1rem;
@@ -1907,13 +2198,21 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
   .workshop-hero-full { min-height: 100vh; }
   .workshop-hero-content-full { padding: 8rem 3rem 4rem; }
   .workshop-hero-bg img { object-position: 60% center; }
-  .workshop-why-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .workshop-why-points { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
   .workshop-benefits-columns { grid-template-columns: 1fr; }
   .workshop-practical-grid { grid-template-columns: 1fr; gap: 3rem; }
-  .workshop-quote-intro { padding: 6rem 3rem; }
+  .sticky-text-section { height: 220vh; }
+  .sticky-text-container::before { font-size: 15rem; }
+  .sticky-text-content { height: 180px; }
   .workshop-why-new, .workshop-benefits-new, .workshop-practical { padding: 5rem 3rem; }
   .workshop-dates-section { padding: 5rem 3rem; }
   .workshop-date-cards { flex-wrap: wrap; }
+  .workshop-timeline { padding: 5rem 3rem; }
+  .workshop-timeline-track { gap: 0.5rem; }
+  .timeline-step-content { max-width: 150px; }
+  .timeline-step-content h4 { font-size: 1rem; }
+  .timeline-step-content p { font-size: 0.85rem; }
+  .workshop-instructor { padding: 5rem 3rem; }
 }
 
 @media (max-width: 768px) {
@@ -1954,10 +2253,11 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
   }
   .workshop-hero-text-full { max-width: 100%; }
   .workshop-hero-bg img { object-position: center center; }
-  .workshop-quote-intro { padding: 5rem 1.5rem; }
-  .workshop-quote-text { margin-bottom: 2.5rem; }
-  .workshop-quote-intro::before { font-size: 12rem; top: 1rem; }
+  .sticky-text-section { height: 200vh; }
+  .sticky-text-container::before { font-size: 10rem; opacity: 0.03; }
+  .sticky-text-content { height: 200px; padding: 0 1.5rem; }
   .workshop-why-new, .workshop-benefits-new, .workshop-practical { padding: 4rem 1.5rem; }
+  .workshop-why-points { grid-template-columns: 1fr; }
   .workshop-practical-image::after { display: none; }
   .workshop-dates-section { padding: 4rem 1.5rem; }
   .workshop-date-cards { flex-direction: column; align-items: center; }
@@ -1965,6 +2265,47 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
   .modal-overlay { padding: 1rem; }
   .modal-content { padding: 2rem 1.5rem; }
   .modal-form-row { grid-template-columns: 1fr; }
+  .workshop-timeline { padding: 4rem 1.5rem; }
+  .workshop-timeline-track {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .workshop-timeline-step {
+    flex-direction: row;
+    text-align: left;
+    gap: 1.5rem;
+  }
+  .timeline-step-marker {
+    width: auto;
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+  .timeline-step-dot {
+    margin: 0;
+  }
+  .timeline-step-line {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    right: auto;
+    width: 2px;
+    height: calc(2rem - 8px);
+    transform: translateX(-50%);
+  }
+  .workshop-timeline-step:last-child .timeline-step-line {
+    display: none;
+  }
+  .timeline-step-content {
+    max-width: none;
+    align-items: flex-start;
+  }
+  .workshop-practical-badges {
+    gap: 1rem 1.5rem;
+  }
+  .workshop-instructor { padding: 4rem 1.5rem; }
+  .workshop-instructor-overlay {
+    background: rgba(244, 245, 247, 0.92);
+  }
   .hero-bg::after {
     background: linear-gradient(180deg, rgba(52, 64, 79, 0.88) 0%, rgba(52, 64, 79, 0.75) 50%, rgba(52, 64, 79, 0.5) 100%);
   }
