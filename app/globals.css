@@ -66,8 +66,8 @@ nav {
   transition: all 0.4s ease;
 }
 nav.scrolled {
-  background: rgba(244, 245, 247, 0.97);
-  backdrop-filter: blur(16px);
+  background: rgba(244, 245, 247, 0.85);
+  backdrop-filter: blur(20px);
   padding: 1.1rem 5rem;
   box-shadow: 0 1px 0 rgba(52, 64, 79, 0.06);
 }
@@ -105,7 +105,7 @@ nav.scrolled .nav-links a { color: var(--color-earth); }
 }
 .nav-links a:hover::after { width: 100%; }
 .nav-cta {
-  padding: 0.75rem 1.75rem;
+  padding: 14px 36px 18px 36px;
   margin-left: 1.5rem;
   background: var(--color-copper);
   color: var(--color-cream) !important;
@@ -167,6 +167,7 @@ nav.scrolled .nav-cta:hover { background: var(--color-copper); }
   color: var(--color-copper-light);
   margin-bottom: 1.75rem;
   display: flex;
+  white-space: nowrap;
   align-items: center;
   gap: 1.25rem;
 }
@@ -811,7 +812,7 @@ nav.scrolled .nav-cta:hover { background: var(--color-copper); }
 }
 .contact-cards { display: flex; flex-direction: column; gap: 1.25rem; }
 .contact-card {
-  background: var(--color-cream-warm);
+  background: var(--color-earth);
   padding: 1.75rem 2rem;
   display: flex;
   align-items: center;
@@ -826,7 +827,7 @@ nav.scrolled .nav-cta:hover { background: var(--color-copper); }
 .contact-card-icon {
   width: 44px;
   height: 44px;
-  border: 1.5px solid var(--color-stone);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -849,10 +850,10 @@ nav.scrolled .nav-cta:hover { background: var(--color-copper); }
 .contact-card-label {
   font-size: 0.95rem;
   font-weight: 400;
-  color: var(--color-earth);
+  color: var(--color-cream);
   margin-bottom: 0.2rem;
 }
-.contact-card-sub { font-size: 0.8rem; color: var(--color-sage); }
+.contact-card-sub { font-size: 0.8rem; color: rgba(255, 255, 255, 0.6); }
 .contact-card-value {
   font-family: var(--font-display);
   font-size: 1.15rem;
@@ -860,15 +861,15 @@ nav.scrolled .nav-cta:hover { background: var(--color-copper); }
   text-decoration: none;
   transition: color 0.3s ease;
 }
-.contact-card-value:hover { color: var(--color-earth); }
-.contact-form { background: var(--color-cream-warm); padding: 2.5rem; }
+.contact-card-value:hover { color: var(--color-cream); }
+.contact-form { background: var(--color-earth); padding: 2.5rem; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
 .form-group { margin-bottom: 1.25rem; }
 .form-group label {
   display: block;
   font-size: 0.85rem;
   font-weight: 400;
-  color: var(--color-earth);
+  color: var(--color-cream);
   margin-bottom: 0.6rem;
 }
 .form-group input,
@@ -877,15 +878,20 @@ nav.scrolled .nav-cta:hover { background: var(--color-copper); }
   padding: 1rem 1.15rem;
   font-family: var(--font-body);
   font-size: 1rem;
-  border: 1px solid var(--color-stone);
-  background: var(--color-cream);
-  color: var(--color-earth);
-  transition: border-color 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-cream);
+  transition: all 0.3s ease;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
 }
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
   border-color: var(--color-copper);
+  background: rgba(255, 255, 255, 0.15);
 }
 .form-group textarea { resize: vertical; min-height: 80px; }
 .form-button { width: 100%; justify-content: center; margin-top: 0.75rem; }
@@ -2161,7 +2167,7 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-earth);
+  color: var(--color-cream);
   background: var(--color-copper);
   border: none;
   cursor: none;
@@ -2173,6 +2179,7 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
 .form-submit svg {
   width: 18px;
   height: 18px;
+  stroke: var(--color-cream);
 }
 
 /* Responsive */

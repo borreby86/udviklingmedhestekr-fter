@@ -7,7 +7,7 @@ export default function Hero() {
         <img src="/hero-eye.jpg" alt="Hestens øje" />
       </div>
       <div className="hero-content">
-        <p className="hero-tagline">Lederudvikling i Nordsjælland</p>
+        <p className="hero-tagline">Leder- og teamudvikling i Nordsjælland</p>
         <h1>Udvikling med <em>hestekræfter</em></h1>
         <p className="hero-intro">
           Hestene spejler din måde at lede, samarbejde og være til stede på. 
