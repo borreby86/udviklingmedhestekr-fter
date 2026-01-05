@@ -1,9 +1,19 @@
 'use client'
 
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { motion, useScroll, useTransform, AnimatePresence } from 'motion/react'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
+
+const scrollNavLinks = [
+  { label: 'Forside', href: '/' },
+  { label: 'Forløbet', href: '#forloeb' },
+  { label: 'Metoden', href: '#metoden' },
+  { label: 'Facilitatorer', href: '#facilitatorer' },
+  { label: 'Udbytte', href: '#udbytte' },
+  { label: 'Tilmelding', href: '#tilmelding' },
+  { label: 'Kontakt', href: '/kontakt' }
+]
 
 const workshopDates = [
   { day: '30', month: 'Januar', year: '2026', time: 'kl. 13-16' },
@@ -186,6 +196,7 @@ export default function BlindeVinklerPage() {
   const heroRef = useRef(null)
   const [modalOpen, setModalOpen] = useState(false)
   const [selectedDate, setSelectedDate] = useState<typeof workshopDates[0] | null>(null)
+  const [showScrollNav, setShowScrollNav] = useState(false)
 
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -193,6 +204,14 @@ export default function BlindeVinklerPage() {
   })
 
   const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollNav(window.scrollY > 600)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const openModal = (date: typeof workshopDates[0]) => {
     setSelectedDate(date)
@@ -209,6 +228,27 @@ export default function BlindeVinklerPage() {
   return (
     <>
       <Navigation />
+
+      {/* Scroll Navigation */}
+      <AnimatePresence>
+        {showScrollNav && (
+          <motion.div
+            className="scroll-nav"
+            initial={{ y: -100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -100, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="scroll-nav-container">
+              {scrollNavLinks.map((link, index) => (
+                <a key={index} href={link.href} className="scroll-nav-link">
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Hero Section */}
       <section className="workshop-hero-full" ref={heroRef}>
@@ -244,7 +284,7 @@ export default function BlindeVinklerPage() {
       <StickyTextSection />
 
       {/* Forløbets tre dele */}
-      <section className="workshop-forloeb">
+      <section className="workshop-forloeb" id="forloeb">
         <div className="workshop-container-wide">
           <motion.div
             className="workshop-forloeb-header"
@@ -281,7 +321,7 @@ export default function BlindeVinklerPage() {
       </section>
 
       {/* Find din gyldne middelvej */}
-      <section className="workshop-middelvej">
+      <section className="workshop-middelvej" id="metoden">
         <div className="workshop-middelvej-bg">
           <img src="/gylden middelvej ledelse.jpeg" alt="Find din gyldne middelvej i ledelse" />
         </div>
@@ -373,7 +413,7 @@ export default function BlindeVinklerPage() {
       </section>
 
       {/* Instruktører */}
-      <section className="workshop-instructors">
+      <section className="workshop-instructors" id="facilitatorer">
         <div className="workshop-container-wide">
           <motion.div
             className="workshop-instructors-header"
@@ -614,7 +654,7 @@ export default function BlindeVinklerPage() {
       </section>
 
       {/* Benefits Section */}
-      <section className="workshop-benefits-new">
+      <section className="workshop-benefits-new" id="udbytte">
         <div className="workshop-container-wide">
           <div className="workshop-benefits-header">
             <p className="section-label">Udbytte</p>

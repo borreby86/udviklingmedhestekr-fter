@@ -13,8 +13,8 @@ export default function Hero() {
           Hestene spejler din måde at lede, samarbejde og være til stede på. 
           Et unikt rum til instant feedback og øget selvindsigt. Uden ridning, uden hesteerfaring.
         </p>
-        <a href="#kontakt" className="cta-button">
-          <span>Book en samtale</span>
+        <a href="/kontakt" className="cta-button">
+          <span>Kontakt og hør mere</span>
           <ArrowIcon />
         </a>
       </div>

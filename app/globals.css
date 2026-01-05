@@ -3451,6 +3451,63 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
   }
 }
 
+/* Scroll Navigation */
+.scroll-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(244, 245, 247, 0.95);
+  backdrop-filter: blur(20px);
+  z-index: 99;
+  box-shadow: 0 1px 0 rgba(52, 64, 79, 0.08);
+}
+.scroll-nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0.875rem 5rem;
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+}
+.scroll-nav-link {
+  font-family: var(--font-label);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-earth);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+.scroll-nav-link:hover {
+  color: var(--color-copper);
+}
+
+@media (max-width: 1024px) {
+  .scroll-nav-container {
+    padding: 0.75rem 2rem;
+    gap: 1.5rem;
+    overflow-x: auto;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+  }
+  .scroll-nav-container::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .scroll-nav-container {
+    padding: 0.75rem 1.5rem;
+    gap: 1.25rem;
+  }
+  .scroll-nav-link {
+    font-size: 0.7rem;
+  }
+}
+
 /* About Banner Section (front page) */
 .about-banner {
   padding: 6rem 5rem;
