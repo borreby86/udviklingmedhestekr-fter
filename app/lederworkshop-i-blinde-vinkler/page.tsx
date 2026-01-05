@@ -207,8 +207,9 @@ export default function BlindeVinklerPage() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setShowScrollNav(window.scrollY > 600)
+      setShowScrollNav(window.scrollY > 400)
     }
+    handleScroll() // Check initial state
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
