@@ -1845,7 +1845,7 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
 
 /* Workshop Dates Section */
 .workshop-dates-section {
-  padding: 6rem 5rem;
+  padding: 8rem 5rem;
   background: var(--color-earth);
   position: relative;
   overflow: hidden;
@@ -1859,12 +1859,18 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 30%;
+  object-position: center 20%;
+  filter: brightness(0.9);
 }
 .workshop-dates-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(52, 64, 79, 0.88);
+  background: linear-gradient(
+    180deg,
+    rgba(42, 52, 64, 0.92) 0%,
+    rgba(52, 64, 79, 0.85) 50%,
+    rgba(42, 52, 64, 0.9) 100%
+  );
   z-index: 1;
 }
 .workshop-dates-container {
@@ -1875,22 +1881,23 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
   z-index: 2;
 }
 .workshop-dates-header {
-  margin-bottom: 3.5rem;
+  margin-bottom: 4rem;
 }
 .workshop-dates-header .section-label {
-  color: var(--color-copper);
+  color: var(--color-copper-light);
 }
 .workshop-dates-header h2 {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-size: clamp(2.2rem, 3.5vw, 2.8rem);
   font-weight: 400;
   color: var(--color-cream);
-  margin: 0.75rem 0 1rem;
+  margin: 0.75rem 0 1.25rem;
 }
 .workshop-dates-intro {
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: var(--color-warm-sand);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
+  font-weight: 300;
 }
 .workshop-date-cards {
   display: flex;
@@ -2351,4 +2358,810 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
   footer { padding: 3.5rem 1.5rem; }
   .contact-card { padding: 1.5rem; }
   .form-row { grid-template-columns: 1fr; }
+}
+
+/* Blinde Vinkler Workshop Specific Styles */
+
+/* Forløb Cards Section */
+.workshop-forloeb {
+  padding: 6rem 5rem;
+  background: var(--color-cream);
+}
+.workshop-forloeb-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.workshop-forloeb-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-weight: 400;
+  color: var(--color-earth);
+  margin: 0.75rem 0 1rem;
+}
+.workshop-forloeb-intro {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--color-soft-brown);
+  max-width: 550px;
+  margin: 0 auto;
+}
+.workshop-forloeb-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.workshop-forloeb-card {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 2.5rem;
+  position: relative;
+  border-top: 3px solid var(--color-copper);
+  transition: all 0.4s ease;
+}
+.workshop-forloeb-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(52, 64, 79, 0.08);
+}
+.forloeb-card-number {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--color-copper);
+  line-height: 1;
+  display: block;
+  margin-bottom: 1.25rem;
+  opacity: 0.5;
+}
+.workshop-forloeb-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--color-earth);
+  margin-bottom: 0.35rem;
+}
+.forloeb-card-subtitle {
+  font-family: var(--font-label);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-copper);
+  display: block;
+  margin-bottom: 1rem;
+}
+.workshop-forloeb-card p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--color-soft-brown);
+}
+
+/* Middelvej / Methods Section */
+.workshop-middelvej {
+  padding: 6rem 5rem;
+  background: var(--color-cream-warm);
+  position: relative;
+  overflow: hidden;
+}
+.workshop-middelvej-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.workshop-middelvej-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.workshop-middelvej-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(238, 240, 243, 0.82) 0%,
+    rgba(238, 240, 243, 0.72) 50%,
+    rgba(238, 240, 243, 0.6) 100%
+  );
+  z-index: 1;
+}
+.workshop-middelvej .workshop-container {
+  position: relative;
+  z-index: 2;
+}
+.workshop-middelvej-content {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.workshop-middelvej-content h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-weight: 400;
+  color: var(--color-earth);
+  margin: 0.75rem 0 1.25rem;
+}
+.workshop-middelvej-intro {
+  font-size: 1.1rem;
+  line-height: 1.85;
+  color: var(--color-soft-brown);
+  max-width: 700px;
+  margin: 0 auto;
+}
+.workshop-methods-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+.workshop-method-card {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 2.5rem;
+  border-left: 3px solid var(--color-copper);
+}
+.method-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+.method-card-icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-earth);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.method-card-icon svg {
+  width: 24px;
+  height: 24px;
+  color: var(--color-copper);
+}
+.workshop-method-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--color-earth);
+}
+.method-card-desc {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--color-soft-brown);
+  margin-bottom: 1.5rem;
+}
+.method-card-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.method-card-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--color-earth);
+  line-height: 1.5;
+}
+.method-card-list li svg {
+  width: 18px;
+  height: 18px;
+  color: var(--color-copper);
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+.workshop-quote {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2rem 0;
+}
+.workshop-quote p {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-style: italic;
+  color: var(--color-copper);
+  line-height: 1.6;
+}
+
+/* Instructors Section */
+.workshop-instructors {
+  padding: 6rem 5rem;
+  background: var(--color-cream);
+}
+.workshop-instructors-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+.workshop-instructors-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-weight: 400;
+  color: var(--color-earth);
+  margin: 0.75rem 0;
+}
+.workshop-instructors-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+.workshop-instructor-card {
+  display: flex;
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 2rem;
+  align-items: flex-start;
+}
+.instructor-card-image {
+  width: 160px;
+  height: 160px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.instructor-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+.instructor-card-placeholder {
+  background: var(--color-earth);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.instructor-initials {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 400;
+  color: var(--color-copper);
+}
+.instructor-card-content h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--color-earth);
+  margin-bottom: 0.25rem;
+}
+.instructor-card-title {
+  font-family: var(--font-label);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-copper);
+  display: block;
+  margin-bottom: 1rem;
+}
+.instructor-card-content p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--color-soft-brown);
+  margin-bottom: 1.25rem;
+}
+.instructor-card-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.instructor-card-badges span {
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--color-sage);
+  padding: 0.4rem 0.75rem;
+  background: var(--color-cream-warm);
+}
+
+/* Detailed Process Section */
+.workshop-detailed {
+  padding: 6rem 5rem;
+  background: var(--color-earth-dark);
+}
+.workshop-detailed-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.workshop-detailed-header .section-label {
+  color: var(--color-copper);
+}
+.workshop-detailed-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-weight: 400;
+  color: var(--color-cream);
+  margin: 0.75rem 0;
+}
+.workshop-phase {
+  background: rgba(244, 245, 247, 0.03);
+  border: 1px solid rgba(139, 120, 74, 0.15);
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+}
+.workshop-phase:last-of-type {
+  margin-bottom: 0;
+}
+.workshop-phase-highlight {
+  background: rgba(139, 120, 74, 0.08);
+  border-color: rgba(139, 120, 74, 0.3);
+}
+.workshop-phase-header {
+  margin-bottom: 2rem;
+}
+.phase-label {
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-copper);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.workshop-phase-header h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--color-cream);
+}
+.workshop-phase-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.phase-step {
+  padding-left: 1.5rem;
+  border-left: 2px solid rgba(139, 120, 74, 0.3);
+}
+.phase-step-label {
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-copper);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.phase-step h4 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--color-cream);
+  margin-bottom: 0.75rem;
+}
+.phase-step ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.phase-step li {
+  font-size: 0.9rem;
+  color: var(--color-warm-sand);
+  line-height: 1.5;
+  padding-left: 1rem;
+  position: relative;
+}
+.phase-step li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--color-copper);
+}
+.workshop-during-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.during-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1rem 1.5rem;
+  background: rgba(244, 245, 247, 0.04);
+  border-left: 3px solid var(--color-copper);
+}
+.during-step-number {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--color-copper);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 2rem;
+}
+.during-step-content h4 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--color-cream);
+  margin-bottom: 0.25rem;
+}
+.during-step-content p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-warm-sand);
+}
+.workshop-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding: 1.25rem 1.5rem;
+  background: rgba(139, 120, 74, 0.12);
+  border-radius: 2px;
+}
+.workshop-note svg {
+  width: 22px;
+  height: 22px;
+  color: var(--color-copper);
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+.workshop-note p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-cream);
+}
+.workshop-note strong {
+  color: var(--color-copper-light);
+}
+.workshop-after-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.after-item {
+  padding: 1.5rem;
+  background: rgba(244, 245, 247, 0.04);
+  border-top: 2px solid var(--color-copper);
+}
+.after-item h4 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--color-cream);
+  margin-bottom: 1rem;
+}
+.after-item ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.after-item li {
+  font-size: 0.9rem;
+  color: var(--color-warm-sand);
+  line-height: 1.5;
+  padding-left: 1rem;
+  position: relative;
+}
+.after-item li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-copper);
+  font-size: 0.8rem;
+}
+
+/* Pricing Box */
+.workshop-pricing-box {
+  background: linear-gradient(
+    135deg,
+    rgba(139, 120, 74, 0.12) 0%,
+    rgba(244, 245, 247, 0.06) 50%,
+    rgba(139, 120, 74, 0.08) 100%
+  );
+  border: 1px solid rgba(139, 120, 74, 0.4);
+  padding: 3rem 3.5rem;
+  margin-bottom: 3.5rem;
+  text-align: center;
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+.workshop-pricing-box::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--color-copper), transparent);
+}
+.pricing-main {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+.pricing-label {
+  font-family: var(--font-label);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-copper-light);
+}
+.pricing-amount {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 400;
+  color: var(--color-cream);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.pricing-suffix {
+  font-size: 1rem;
+  color: var(--color-sage);
+  font-weight: 300;
+}
+.pricing-original {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(139, 120, 74, 0.25);
+}
+.pricing-original span {
+  font-size: 1rem;
+  color: var(--color-sage);
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+.pricing-includes p {
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-copper);
+  margin-bottom: 1.25rem;
+}
+.pricing-includes ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.pricing-includes li {
+  font-size: 0.95rem;
+  color: var(--color-warm-sand);
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.pricing-includes li::before {
+  content: '✓';
+  color: var(--color-copper);
+  font-size: 0.85rem;
+}
+
+/* Available Date Cards */
+.workshop-date-card-available {
+  background: linear-gradient(
+    135deg,
+    rgba(139, 120, 74, 0.15) 0%,
+    rgba(139, 120, 74, 0.08) 100%
+  );
+  border: 1px solid var(--color-copper);
+  padding: 2rem 2.5rem;
+  backdrop-filter: blur(8px);
+}
+.workshop-date-card-available:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(139, 120, 74, 0.25) 0%,
+    rgba(139, 120, 74, 0.15) 100%
+  );
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+.date-card-day-month {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.date-card-time {
+  font-size: 0.9rem;
+  color: var(--color-warm-sand);
+  white-space: nowrap;
+  font-weight: 300;
+}
+
+/* Light Dates Section Variant */
+.workshop-dates-light {
+  background: var(--color-cream);
+}
+.workshop-dates-light .workshop-dates-overlay {
+  background: linear-gradient(
+    90deg,
+    rgba(244, 245, 247, 0.96) 0%,
+    rgba(244, 245, 247, 0.92) 30%,
+    rgba(244, 245, 247, 0.7) 50%,
+    rgba(244, 245, 247, 0.3) 70%,
+    rgba(244, 245, 247, 0) 100%
+  );
+}
+.workshop-dates-light .workshop-dates-header .section-label {
+  color: var(--color-copper);
+}
+.workshop-dates-light .workshop-dates-header h2 {
+  color: var(--color-earth);
+}
+.workshop-dates-light .workshop-dates-intro {
+  color: var(--color-soft-brown);
+}
+.workshop-dates-light .workshop-dates-note {
+  color: var(--color-soft-brown);
+}
+.workshop-dates-container-left {
+  max-width: 480px;
+  margin: 0;
+  margin-left: 7rem;
+  text-align: left;
+  position: relative;
+  z-index: 2;
+}
+.workshop-dates-container-left .workshop-dates-header {
+  text-align: left;
+  margin-bottom: 2.5rem;
+}
+.workshop-date-cards-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.workshop-date-card-light {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--color-stone);
+  backdrop-filter: blur(8px);
+  justify-content: flex-start;
+}
+.workshop-date-card-light:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: var(--color-copper);
+  box-shadow: 0 10px 30px rgba(52, 64, 79, 0.1);
+}
+.workshop-date-card-light .date-card-day {
+  color: var(--color-earth);
+}
+.workshop-date-card-light .date-card-month {
+  color: var(--color-earth);
+}
+.workshop-date-card-light .date-card-year {
+  color: var(--color-sage);
+}
+.workshop-date-card-light .date-card-time {
+  color: var(--color-soft-brown);
+}
+.workshop-date-card-light .date-card-divider {
+  background: var(--color-stone);
+}
+.workshop-date-card-light .date-card-action {
+  color: var(--color-copper);
+}
+.workshop-date-card-light:hover .date-card-action {
+  color: var(--color-earth);
+}
+
+/* Compact Pricing */
+.workshop-pricing-compact {
+  background: rgba(52, 64, 79, 0.04);
+  border-left: 3px solid var(--color-copper);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+}
+.pricing-compact-main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.pricing-compact-label {
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-copper);
+}
+.pricing-compact-amount {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: var(--color-earth);
+  line-height: 1;
+}
+.pricing-compact-suffix {
+  font-size: 0.85rem;
+  color: var(--color-sage);
+}
+.pricing-compact-original {
+  font-size: 0.85rem;
+  color: var(--color-sage);
+  text-decoration: line-through;
+  margin-left: 0.5rem;
+}
+.pricing-compact-includes {
+  margin-top: 0.5rem;
+}
+.pricing-compact-includes span {
+  font-size: 0.85rem;
+  color: var(--color-soft-brown);
+  line-height: 1.5;
+}
+
+/* Responsive for Blinde Vinkler */
+@media (max-width: 1024px) {
+  .workshop-forloeb, .workshop-middelvej, .workshop-instructors, .workshop-detailed {
+    padding: 5rem 3rem;
+  }
+  .workshop-forloeb-cards {
+    grid-template-columns: 1fr;
+  }
+  .workshop-methods-grid {
+    grid-template-columns: 1fr;
+  }
+  .workshop-instructors-grid {
+    grid-template-columns: 1fr;
+  }
+  .workshop-phase-steps {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .workshop-after-content {
+    grid-template-columns: 1fr;
+  }
+  .workshop-dates-container-left {
+    margin-left: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .workshop-forloeb, .workshop-middelvej, .workshop-instructors, .workshop-detailed {
+    padding: 4rem 1.5rem;
+  }
+  .workshop-instructor-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  .instructor-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .instructor-card-badges {
+    justify-content: center;
+  }
+  .during-step {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .during-step-number {
+    width: auto;
+  }
+  .workshop-pricing-box {
+    padding: 2rem 1.5rem;
+  }
+  .pricing-amount {
+    font-size: 2.5rem;
+  }
+  .workshop-dates-container-left {
+    margin-left: 1.5rem;
+    max-width: 100%;
+  }
+  .workshop-dates-light .workshop-dates-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(244, 245, 247, 0.96) 0%,
+      rgba(244, 245, 247, 0.9) 50%,
+      rgba(244, 245, 247, 0.7) 100%
+    );
+  }
 }
