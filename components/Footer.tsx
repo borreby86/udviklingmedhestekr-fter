@@ -5,12 +5,6 @@ export default function Footer() {
     <footer>
       <div className="footer-content">
         <div className="footer-logo">Christina Borreby</div>
-        <div className="footer-links">
-          <a href="#indsigter">Indsigter</a>
-          <a href="#ydelser">Ydelser</a>
-          <a href="#om">Om mig</a>
-          <a href="#kontakt">Kontakt</a>
-        </div>
         <div className="footer-social">
           <a href="https://www.linkedin.com/in/cborreby/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <LinkedInIcon />
