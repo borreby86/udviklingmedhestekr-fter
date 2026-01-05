@@ -38,6 +38,8 @@ body {
   line-height: 1.75;
   font-size: 18px;
   overflow-x: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 body::before {
@@ -1747,13 +1749,37 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
   margin: 0 auto;
 }
 
+/* Teams Hero - image position */
+.teams-hero .workshop-hero-bg img {
+  object-position: 85% center;
+}
+
+/* Teams Praktisk - image position to show both people */
+.teams-praktisk .workshop-instructor-bg img {
+  object-position: center center;
+}
+
 /* Workshop Why Neutral (no background image) */
 .workshop-why-neutral {
-  padding: 6rem 5rem;
+  padding: 6rem 5rem 6rem 7rem;
   background: var(--color-cream);
 }
 .workshop-why-neutral .workshop-container {
   position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+  max-width: 1400px;
+}
+.workshop-why-neutral .workshop-why-text {
+  max-width: none;
+  margin-bottom: 0;
+}
+.workshop-why-neutral .workshop-why-points {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
 /* Workshop Why New */
@@ -2546,6 +2572,8 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
   .workshop-hero-full { min-height: 100vh; }
   .workshop-hero-content-full { padding: 8rem 3rem 4rem; }
   .workshop-hero-bg img { object-position: 60% center; }
+  .teams-hero .workshop-hero-bg img { object-position: 75% center; }
+  .workshop-why-neutral .workshop-container { grid-template-columns: 1fr 1fr; gap: 3rem; }
   .workshop-why-points { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
   .workshop-benefits-columns { grid-template-columns: 1fr; }
   .workshop-practical-grid { grid-template-columns: 1fr; gap: 3rem; }
@@ -2633,6 +2661,10 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
   }
   .mobile-menu-btn { display: block; }
   .hero-content { padding: 8rem 1.5rem 5rem; }
+  .hero-tagline {
+    white-space: normal;
+    flex-wrap: wrap;
+  }
   .testimonials-grid { grid-template-columns: 1fr; }
   .referencer-testimonials { padding: 4rem 1.5rem; }
   .reference-card-large {
@@ -2667,17 +2699,19 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
   }
   .workshop-hero-text-full { max-width: 100%; }
   .workshop-hero-bg img { object-position: center center; }
+  .teams-hero .workshop-hero-bg img { object-position: center center; }
   .sticky-text-section { height: 200vh; }
   .sticky-text-container::before { font-size: 10rem; opacity: 0.03; }
   .sticky-text-content { height: 200px; padding: 0 1.5rem; }
   .workshop-why-new, .workshop-why-neutral, .workshop-benefits-new, .workshop-practical { padding: 4rem 1.5rem; }
+  .workshop-why-neutral .workshop-container { grid-template-columns: 1fr; gap: 2rem; }
   .workshop-why-points { grid-template-columns: 1fr; }
   .workshop-practical-image::after { display: none; }
   .workshop-dates-section { padding: 4rem 1.5rem; }
   .workshop-date-cards { flex-direction: column; align-items: center; }
   .workshop-date-card { width: 100%; max-width: 320px; justify-content: center; }
   .modal-overlay { padding: 1rem; }
-  .modal-content { padding: 2rem 1.5rem; }
+  .modal-content { padding: 2rem 1.5rem; max-width: calc(100vw - 2rem); }
   .modal-form-row { grid-template-columns: 1fr; }
   .workshop-timeline { padding: 4rem 1.5rem; }
   .workshop-timeline-track {

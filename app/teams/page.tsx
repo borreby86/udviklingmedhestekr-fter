@@ -75,7 +75,7 @@ export default function TeamsPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="workshop-hero-full" ref={heroRef}>
+      <section className="workshop-hero-full teams-hero" ref={heroRef}>
         <motion.div className="workshop-hero-bg" style={{ y: heroY }}>
           <img src="/team.jpg" alt="Teamudvikling med heste" />
         </motion.div>
@@ -173,6 +173,34 @@ export default function TeamsPage() {
         </div>
       </section>
 
+      {/* Testimonials Section - INGEN BILLEDE, bruger kort-design */}
+      <section className="testimonials-section">
+        <div className="testimonials-header">
+          <p className="section-label">Det siger de</p>
+          <h2 className="section-title">Oplevelser fra tidligere teams</h2>
+        </div>
+        <div className="testimonials-grid testimonials-grid-2">
+          {testimonials.map((testimonial, index) => (
+            <motion.div
+              key={index}
+              className="testimonial-card"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <p className="testimonial-quote">{testimonial.quote}</p>
+              <div className="testimonial-author">
+                <div className="author-info">
+                  <h4>{testimonial.name}</h4>
+                  <p>{testimonial.role}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
       {/* Process Section - INGEN BILLEDE */}
       <section className="workshop-timeline">
         <div className="workshop-container-wide">
@@ -212,6 +240,38 @@ export default function TeamsPage() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Practical Info - MED BILLEDE */}
+      <section className="workshop-instructor teams-praktisk">
+        <div className="workshop-instructor-bg">
+          <img src="/team sammen.jpg" alt="Hesteassisteret teamudvikling i Nordsjælland" />
+        </div>
+        <div className="workshop-instructor-overlay" />
+        <div className="workshop-container-wide">
+          <motion.div
+            className="workshop-instructor-content"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <p className="section-label">Praktisk</p>
+            <h2>Rammer og muligheder</h2>
+            <p>
+              <strong>Gruppestørrelse:</strong> For optimalt udbytte arbejder vi med max 15 deltagere. Ved større grupper tilknyttes en ekstra facilitator fra mit netværk af erfarne konsulenter.
+            </p>
+            <p>
+              <strong>Varighed:</strong> Fra en halv dag til flere sessioner over tid – afhængig af jeres mål og ønskede dybde.
+            </p>
+            <p>
+              <strong>Lokation:</strong> Sessioner afholdes ved hestene i Hørsholm, Nordsjælland.
+            </p>
+            <p>
+              <strong>Ingen hesteerfaring:</strong> Der er ingen ridning involveret. Alle øvelser foregår fra jorden.
+            </p>
+          </motion.div>
         </div>
       </section>
 
@@ -269,71 +329,11 @@ export default function TeamsPage() {
         </div>
       </section>
 
-      {/* Testimonials Section - INGEN BILLEDE, bruger kort-design */}
-      <section className="testimonials-section">
-        <div className="testimonials-header">
-          <p className="section-label">Det siger de</p>
-          <h2 className="section-title">Oplevelser fra tidligere teams</h2>
-        </div>
-        <div className="testimonials-grid testimonials-grid-2">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              className="testimonial-card"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <p className="testimonial-quote">{testimonial.quote}</p>
-              <div className="testimonial-author">
-                <div className="author-info">
-                  <h4>{testimonial.name}</h4>
-                  <p>{testimonial.role}</p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* Practical Info - MED BILLEDE */}
-      <section className="workshop-instructor">
-        <div className="workshop-instructor-bg">
-          <img src="/hestekursus-nordsjaelland.jpeg" alt="Hesteassisteret teamudvikling i Nordsjælland" />
-        </div>
-        <div className="workshop-instructor-overlay" />
-        <div className="workshop-container-wide">
-          <motion.div
-            className="workshop-instructor-content"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <p className="section-label">Praktisk</p>
-            <h2>Rammer og muligheder</h2>
-            <p>
-              <strong>Gruppestørrelse:</strong> For optimalt udbytte arbejder vi med max 15 deltagere. Ved større grupper tilknyttes en ekstra facilitator fra mit netværk af erfarne konsulenter.
-            </p>
-            <p>
-              <strong>Varighed:</strong> Fra en halv dag til flere sessioner over tid – afhængig af jeres mål og ønskede dybde.
-            </p>
-            <p>
-              <strong>Lokation:</strong> Sessioner afholdes ved hestene i Hørsholm, Nordsjælland.
-            </p>
-            <p>
-              <strong>Ingen hesteerfaring:</strong> Der er ingen ridning involveret. Alle øvelser foregår fra jorden.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
       {/* CTA Section - INGEN BILLEDE */}
       <section className="cta-section">
         <div className="cta-content">
           <p className="section-label">Næste skridt</p>
-          <h2 className="section-title">Klar til at tage jeres team dybere?</h2>
+          <h2 className="section-title">Klar til at styrke jeres team?</h2>
           <p className="section-text">
             Lad os tage en uforpligtende samtale om, hvordan hesteassisteret teamudvikling kan styrke netop jeres team.
           </p>
