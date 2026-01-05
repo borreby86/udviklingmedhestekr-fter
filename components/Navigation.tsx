@@ -29,7 +29,18 @@ export default function Navigation() {
         {isSubpage ? (
           <li><a href="/">Forside</a></li>
         ) : null}
-        <li><a href="/lederworkshop">Lederworkshop</a></li>
+        <li className="nav-dropdown">
+          <a href="#" className="nav-dropdown-trigger">
+            Workshops
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </a>
+          <ul className="nav-dropdown-menu">
+            <li><a href="/lederworkshop">Autentisk lederskab uden filter</a></li>
+            <li><a href="/lederworkshop-i-blinde-vinkler">Opdag dine blinde vinkler</a></li>
+          </ul>
+        </li>
         <li><a href="/referencer">Referencer</a></li>
         <li><a href="/#om">Om mig</a></li>
         <li><a href="/#kontakt" className="nav-cta">Kontakt</a></li>
