@@ -7,8 +7,24 @@ export function CustomCursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 })
   const [isHovering, setIsHovering] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
+  const [isTouchDevice, setIsTouchDevice] = useState(true) // Default to true to prevent flash
+
+  // Detect touch device
+  useEffect(() => {
+    const checkTouchDevice = () => {
+      const hasTouchScreen = (
+        'ontouchstart' in window ||
+        navigator.maxTouchPoints > 0 ||
+        window.matchMedia('(pointer: coarse)').matches
+      )
+      setIsTouchDevice(hasTouchScreen)
+    }
+    checkTouchDevice()
+  }, [])
 
   useEffect(() => {
+    if (isTouchDevice) return
+
     const handleMouseMove = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY })
       setIsVisible(true)
@@ -39,10 +55,12 @@ export function CustomCursor() {
         el.removeEventListener('mouseleave', handleHoverEnd)
       })
     }
-  }, [])
+  }, [isTouchDevice])
 
   // Re-attach listeners when DOM changes
   useEffect(() => {
+    if (isTouchDevice) return
+
     const observer = new MutationObserver(() => {
       const interactiveElements = document.querySelectorAll('a, button, [role="button"], input, textarea, .bento-card')
       interactiveElements.forEach((el) => {
@@ -53,9 +71,10 @@ export function CustomCursor() {
 
     observer.observe(document.body, { childList: true, subtree: true })
     return () => observer.disconnect()
-  }, [])
+  }, [isTouchDevice])
 
-  if (typeof window !== 'undefined' && 'ontouchstart' in window) {
+  // Don't render on touch devices
+  if (isTouchDevice) {
     return null
   }
 

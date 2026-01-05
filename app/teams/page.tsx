@@ -47,6 +47,19 @@ const processSteps = [
   }
 ]
 
+const testimonials = [
+  {
+    quote: '"Dagen gav os mulighed for en værdifuld refleksion i teamet om, hvad godt lederskab og teamwork egentlig kræver. Det var en god måde at være sammen på i andre rammer, og særdeles udbytterigt at opleve hinanden uden for vores normale comfort zone."',
+    name: 'Søren Truelsen',
+    role: 'CEO, Nordic Bloom'
+  },
+  {
+    quote: '"Spændende, tankevækkende og forfriskende anderledes teambuilding, kan stærkt anbefales!"',
+    name: 'Christian Stig Møller',
+    role: 'M&A Advisory/Transactions'
+  }
+]
+
 export default function TeamsPage() {
   const heroRef = useRef(null)
 
@@ -90,12 +103,8 @@ export default function TeamsPage() {
         </div>
       </section>
 
-      {/* Why Section - med baggrundsbillede */}
-      <section className="workshop-why-new">
-        <div className="workshop-why-bg">
-          <img src="/session.JPG" alt="Hesteassisteret teamudvikling session" />
-        </div>
-        <div className="workshop-why-overlay" />
+      {/* Why Section - NEUTRAL BAGGRUND */}
+      <section className="workshop-why-neutral">
         <div className="workshop-container">
           <motion.div
             className="workshop-why-text"
@@ -110,7 +119,7 @@ export default function TeamsPage() {
               Klassisk teambuilding efterlader sjældent varige spor. En dag med aktiviteter, lidt sjov, og så tilbage til hverdagen. Hesteassisteret teamudvikling er anderledes – fordi oplevelserne forankres i kroppen, ikke kun i hovedet.
             </p>
             <p>
-              Hestene fungerer som levende spejle der afslører teamets mønstre, styrker og udviklingsområder. De reagerer på energi, ikke på ord eller titler. Det skaber et unikt rum for ægte læring og forandring.
+              Hestene fungerer som levende spejle der afslører teamets mønstre, styrker og udviklingsområder. De reagerer på energi, ikke på ord eller titler.
             </p>
             <p>
               I vælger selv graden af dybde – fra fokus på samarbejde og kommunikation til personlig udvikling og lederskab.
@@ -164,7 +173,7 @@ export default function TeamsPage() {
         </div>
       </section>
 
-      {/* Process Section */}
+      {/* Process Section - INGEN BILLEDE */}
       <section className="workshop-timeline">
         <div className="workshop-container-wide">
           <motion.div
@@ -206,7 +215,7 @@ export default function TeamsPage() {
         </div>
       </section>
 
-      {/* Benefits Section */}
+      {/* Benefits Section - INGEN BILLEDE */}
       <section className="workshop-benefits-new">
         <div className="workshop-container-wide">
           <div className="workshop-benefits-header">
@@ -260,7 +269,35 @@ export default function TeamsPage() {
         </div>
       </section>
 
-      {/* Practical Info med baggrundsbillede */}
+      {/* Testimonials Section - INGEN BILLEDE, bruger kort-design */}
+      <section className="testimonials-section">
+        <div className="testimonials-header">
+          <p className="section-label">Det siger de</p>
+          <h2 className="section-title">Oplevelser fra tidligere teams</h2>
+        </div>
+        <div className="testimonials-grid testimonials-grid-2">
+          {testimonials.map((testimonial, index) => (
+            <motion.div
+              key={index}
+              className="testimonial-card"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <p className="testimonial-quote">{testimonial.quote}</p>
+              <div className="testimonial-author">
+                <div className="author-info">
+                  <h4>{testimonial.name}</h4>
+                  <p>{testimonial.role}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Practical Info - MED BILLEDE */}
       <section className="workshop-instructor">
         <div className="workshop-instructor-bg">
           <img src="/hestekursus-nordsjaelland.jpeg" alt="Hesteassisteret teamudvikling i Nordsjælland" />
@@ -280,10 +317,10 @@ export default function TeamsPage() {
               <strong>Gruppestørrelse:</strong> For optimalt udbytte arbejder vi med max 15 deltagere. Ved større grupper tilknyttes en ekstra facilitator fra mit netværk af erfarne konsulenter.
             </p>
             <p>
-              <strong>Varighed:</strong> Fra en halv dag til flere sessioner over tid – afhængig af jeres mål og ønskede dybde. De bedste resultater opnås ofte med opfølgende sessioner.
+              <strong>Varighed:</strong> Fra en halv dag til flere sessioner over tid – afhængig af jeres mål og ønskede dybde.
             </p>
             <p>
-              <strong>Lokation:</strong> Sessioner afholdes ved hestene i Hørsholm, Nordsjælland. Et roligt miljø der understøtter fordybelse og refleksion.
+              <strong>Lokation:</strong> Sessioner afholdes ved hestene i Hørsholm, Nordsjælland.
             </p>
             <p>
               <strong>Ingen hesteerfaring:</strong> Der er ingen ridning involveret. Alle øvelser foregår fra jorden.
@@ -292,36 +329,7 @@ export default function TeamsPage() {
         </div>
       </section>
 
-      {/* Quote Section */}
-      <section className="testimonial-highlight">
-        <div className="workshop-container-wide">
-          <div className="testimonial-grid">
-            <motion.blockquote
-              className="workshop-quote"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <p>"Dagen gav os også mulighed for en værdifuld refleksion i teamet om, hvad godt lederskab og teamwork egentlig kræver. Det var i det hele taget en god måde at være sammen på i andre rammer, og særdeles udbytterigt at opleve hinanden i en kontekst uden for vores normale comfort zone."</p>
-              <cite>— Søren Truelsen, CEO, Nordic Bloom</cite>
-            </motion.blockquote>
-
-            <motion.blockquote
-              className="workshop-quote"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.15 }}
-            >
-              <p>"Spændende, tankevækkende og forfriskende anderledes teambuilding, kan stærkt anbefales!"</p>
-              <cite>— Christian Stig Møller, M&A Advisory/Transactions</cite>
-            </motion.blockquote>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
+      {/* CTA Section - INGEN BILLEDE */}
       <section className="cta-section">
         <div className="cta-content">
           <p className="section-label">Næste skridt</p>

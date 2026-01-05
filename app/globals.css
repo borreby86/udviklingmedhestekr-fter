@@ -19,9 +19,11 @@
   --font-label: 'Inter', sans-serif;
 }
 
-/* Custom cursor - hide default */
-*, *::before, *::after {
-  cursor: none !important;
+/* Custom cursor - hide default (only on non-touch devices) */
+@media (pointer: fine) {
+  *, *::before, *::after {
+    cursor: none !important;
+  }
 }
 
 /* Base styles */
@@ -725,6 +727,15 @@ nav.scrolled .nav-cta:hover {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+}
+.testimonials-grid-2 {
+  grid-template-columns: 2fr 1fr;
+  max-width: 1000px;
+}
+@media (max-width: 768px) {
+  .testimonials-grid-2 {
+    grid-template-columns: 1fr;
+  }
 }
 .testimonials-cta {
   max-width: 1200px;
@@ -1736,6 +1747,15 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
   margin: 0 auto;
 }
 
+/* Workshop Why Neutral (no background image) */
+.workshop-why-neutral {
+  padding: 6rem 5rem;
+  background: var(--color-cream);
+}
+.workshop-why-neutral .workshop-container {
+  position: relative;
+}
+
 /* Workshop Why New */
 .workshop-why-new {
   padding: 6rem 5rem;
@@ -2532,7 +2552,7 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
   .sticky-text-section { height: 220vh; }
   .sticky-text-container::before { font-size: 15rem; }
   .sticky-text-content { height: 180px; }
-  .workshop-why-new, .workshop-benefits-new, .workshop-practical { padding: 5rem 3rem; }
+  .workshop-why-new, .workshop-why-neutral, .workshop-benefits-new, .workshop-practical { padding: 5rem 3rem; }
   .workshop-dates-section { padding: 5rem 3rem; }
   .workshop-date-cards { flex-wrap: wrap; }
   .workshop-timeline { padding: 5rem 3rem; }
@@ -2546,32 +2566,53 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
 @media (max-width: 768px) {
   nav { padding: 1rem 1.5rem; }
   nav.menu-open {
-    background: var(--color-cream);
+    background: var(--color-cream) !important;
   }
   .nav-links {
-    display: none;
+    display: none !important;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: var(--color-cream);
+    width: 100vw;
+    height: 100vh;
+    background: var(--color-cream) !important;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
     z-index: 1000;
+    padding: 2rem;
   }
   nav.menu-open .nav-links {
-    display: flex;
+    display: flex !important;
+  }
+  nav.menu-open .nav-links li {
+    list-style: none;
+    text-align: center;
   }
   nav.menu-open .nav-links a {
-    color: var(--color-earth);
-    font-size: 1.2rem;
+    color: var(--color-earth) !important;
+    font-size: 1.3rem;
+    font-weight: 400;
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem 1rem;
   }
   nav.menu-open .nav-links .nav-cta {
     margin-left: 0;
     margin-top: 1rem;
+    background: var(--color-copper);
+    color: var(--color-cream) !important;
+  }
+  nav.menu-open .nav-dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  nav.menu-open .nav-dropdown-trigger svg {
+    display: none;
   }
   nav.menu-open .nav-dropdown-menu {
     position: static;
@@ -2581,10 +2622,14 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
     background: transparent;
     box-shadow: none;
     padding: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
   nav.menu-open .nav-dropdown-menu li a {
     font-size: 1rem;
-    padding: 0.5rem 0;
+    padding: 0.25rem 0;
+    color: var(--color-sage) !important;
   }
   .mobile-menu-btn { display: block; }
   .hero-content { padding: 8rem 1.5rem 5rem; }
@@ -2625,7 +2670,7 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
   .sticky-text-section { height: 200vh; }
   .sticky-text-container::before { font-size: 10rem; opacity: 0.03; }
   .sticky-text-content { height: 200px; padding: 0 1.5rem; }
-  .workshop-why-new, .workshop-benefits-new, .workshop-practical { padding: 4rem 1.5rem; }
+  .workshop-why-new, .workshop-why-neutral, .workshop-benefits-new, .workshop-practical { padding: 4rem 1.5rem; }
   .workshop-why-points { grid-template-columns: 1fr; }
   .workshop-practical-image::after { display: none; }
   .workshop-dates-section { padding: 4rem 1.5rem; }
@@ -2917,6 +2962,25 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
 .testimonial-highlight {
   padding: 5rem 5rem;
   background: var(--color-cream-warm);
+}
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  align-items: start;
+}
+.testimonial-grid .workshop-quote {
+  max-width: 100%;
+}
+
+@media (max-width: 900px) {
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .testimonial-highlight {
+    padding: 4rem 1.5rem;
+  }
 }
 
 /* Instructors Section */
