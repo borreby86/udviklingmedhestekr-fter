@@ -1,45 +1,40 @@
 'use client'
 
-import { useRef } from 'react'
-import { motion, useScroll, useTransform } from 'motion/react'
+import { motion } from 'motion/react'
 
 export default function About() {
-  const sectionRef = useRef(null)
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"]
-  })
-
-  const imageY = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"])
-
   return (
-    <section className="about-section" id="om" ref={sectionRef}>
-      <div className="about-grid">
-        <div className="about-visual">
-          <div className="about-image-frame"></div>
-          <motion.div className="about-image" style={{ y: imageY }}>
-            <img src="/christina.jpg" alt="Christina Borreby" />
-          </motion.div>
-        </div>
-        <div className="about-content">
-          <p className="section-label">Om mig</p>
-          <h3>Christina Borreby</h3>
-          <p className="about-role">Cand.negot. i kommunikation · Certificeret psykoterapeut</p>
-          <div className="about-text">
-            <p>
-              Jeg arbejder med ledere og teams, der ønsker mere end værktøjer.
-              De vil styrke deres nærvær, emotionelle intelligens og evne til at skabe tillid.
-            </p>
-            <p>
-              Med en baggrund i kommunikation og psykoterapi har jeg kombineret mange års
-              erfaring med min passion for heste i et unikt udviklingskoncept.
-            </p>
-            <p>
-              Jeg brænder for at hjælpe mennesker med at opbygge et stærkt indre fundament,
-              der skaber ro, retning og autenticitet.
-            </p>
+    <section className="about-banner" id="om">
+      <div className="about-banner-bg">
+        <img src="/christina_borreby.jpeg" alt="Christina Borreby - specialist i hesteassisteret lederudvikling" />
+      </div>
+      <div className="about-banner-overlay" />
+      <div className="about-banner-container">
+        <motion.div
+          className="about-banner-content"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
+          <p className="section-label">Din facilitator</p>
+          <h2>Christina Borreby</h2>
+          <p>
+            Min passion er at hjælpe ledere med at opbygge et stærkt indre fundament, så de kan stå roligt, tydeligt og autentisk i deres lederskab.
+          </p>
+          <p>
+            Med en baggrund som cand.negot i kommunikation og HR, mange års erfaring som psykoterapeut og træning af galopheste, hvor mit eget autentiske lederskab dagligt kommer på prøve, har jeg skabt et koncept hvor teori og praksis smelter sammen. Denne kombination giver mig en unik evne til at forbinde forretningsforståelse, psykologisk indsigt og konkret erfaring med samarbejde under pres.
+          </p>
+          <p>
+            Hestene er mine vigtigste samarbejdspartnere. De spejler med det samme de mønstre og blind spots, som ellers kan være svære at opdage. De viser præcist, hvor vi mister kontakt, retning eller energi, og åbner en vej til forandring, der ikke blot handler om at løse problemer, men om at forløse potentiale.
+          </p>
+          <div className="about-banner-badges">
+            <span className="instructor-badge">Cand.negot i Kommunikation & HR</span>
+            <span className="instructor-badge">Certificeret psykoterapeut</span>
+            <span className="instructor-badge">30 års erfaring med heste</span>
+            <span className="instructor-badge">Specialist i hesteassisteret lederudvikling</span>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )

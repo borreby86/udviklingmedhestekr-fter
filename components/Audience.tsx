@@ -9,20 +9,17 @@ const tags = [
 
 export default function Audience() {
   return (
-    <section className="audience-section">
-      <div className="audience-bg">
-        <img src="/audience-bg.jpg" alt="Hesteassisteret coaching session" />
-      </div>
+    <section className="audience-section audience-solid">
       <div className="audience-content">
         <p className="audience-label">Hvem er det for?</p>
         <h2 className="audience-title">
-          Dig, der ønsker at lede dig selv eller dit team<br />
-          med autentisk indflydelse
+          Dig og dit team, der ønsker ledelse<br />
+          med nærvær og ægte følgeskab
         </h2>
         <div className="audience-tags">
           {tags.map((tag, index) => (
-            <span 
-              key={index} 
+            <span
+              key={index}
               className={`audience-tag ${tag.highlighted ? 'highlighted' : ''}`}
             >
               {tag.label}

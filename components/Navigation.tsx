@@ -43,7 +43,7 @@ export default function Navigation() {
         </li>
         <li><a href="/referencer">Referencer</a></li>
         <li><a href="/#om">Om mig</a></li>
-        <li><a href="/#kontakt" className="nav-cta">Kontakt</a></li>
+        <li><a href="/kontakt" className="nav-cta">Kontakt</a></li>
       </ul>
       <button className="mobile-menu-btn" aria-label="Menu">
         <span></span>

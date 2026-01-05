@@ -166,7 +166,7 @@ export default function ReferencerPage() {
           <p className="section-label">Næste skridt</p>
           <h2>Klar til at opleve det selv?</h2>
           <p>Book en uforpligtende samtale og hør, hvordan hesteassisteret udvikling kan gavne dig eller dit team.</p>
-          <a href="/#kontakt" className="cta-button">
+          <a href="/kontakt" className="cta-button">
             <span>Kontakt mig</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M5 12h14M12 5l7 7-7 7"/>

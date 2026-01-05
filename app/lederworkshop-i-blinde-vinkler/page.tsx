@@ -743,7 +743,7 @@ export default function BlindeVinklerPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            Ønsker du at booke dette forløb til jeres ledergruppe?<br /><a href="/#kontakt">Kontakt os</a> for et skræddersyet tilbud.
+            Ønsker du at booke dette forløb til jeres ledergruppe?<br /><a href="/kontakt">Kontakt os</a> for et skræddersyet tilbud.
           </motion.p>
         </div>
       </section>

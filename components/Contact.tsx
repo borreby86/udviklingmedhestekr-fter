@@ -9,7 +9,11 @@ export default function Contact() {
   }
 
   return (
-    <section className="contact-section" id="kontakt">
+    <section className="contact-section contact-with-bg" id="kontakt">
+      <div className="contact-bg">
+        <img src="/audience-bg.jpg" alt="Hesteassisteret coaching" />
+      </div>
+      <div className="contact-overlay" />
       <div className="contact-container">
         <div className="contact-header">
           <p className="section-label">Kontakt</p>
@@ -79,10 +83,10 @@ export default function Contact() {
               </div>
               <div className="form-group">
                 <label htmlFor="message">Besked</label>
-                <textarea 
-                  id="message" 
-                  name="message" 
-                  rows={3} 
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={2}
                   placeholder="Fortæl kort om din situation..."
                 />
               </div>

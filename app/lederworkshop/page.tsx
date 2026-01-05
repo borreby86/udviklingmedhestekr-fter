@@ -344,36 +344,41 @@ export default function LederworkshopPage() {
       </section>
 
       {/* Instructor Section */}
-      <section className="workshop-instructor">
-        <div className="workshop-instructor-bg">
-          <img src="/christina_borreby.jpeg" alt="Christina Borreby - specialist i hesteassisteret lederudvikling" />
-        </div>
-        <div className="workshop-instructor-overlay" />
-        <div className="workshop-container-wide">
+      <section className="workshop-about-section">
+        <div className="workshop-about-grid">
+          <div className="workshop-about-visual">
+            <div className="workshop-about-image-frame"></div>
+            <motion.div
+              className="workshop-about-image"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+            >
+              <img src="/christina.jpg" alt="Christina Borreby" />
+            </motion.div>
+          </div>
           <motion.div
-            className="workshop-instructor-content"
+            className="workshop-about-content"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-              <p className="section-label">Din facilitator</p>
-              <h2>Christina Borreby</h2>
+            <p className="section-label">Om mig</p>
+            <h3>Christina Borreby</h3>
+            <p className="workshop-about-role">Cand.negot. i kommunikation · Certificeret psykoterapeut</p>
+            <div className="workshop-about-text">
               <p>
-                Min passion er at hjælpe ledere med at opbygge et stærkt indre fundament, så de kan stå roligt, tydeligt og autentisk i deres lederskab.
+                Jeg arbejder med ledere og teams, der ønsker mere end værktøjer. De vil styrke deres nærvær, emotionelle intelligens og evne til at skabe tillid.
               </p>
               <p>
-                Med en baggrund som cand.negot i kommunikation og HR, mange års erfaring som psykoterapeut og træning af galopheste, hvor mit eget autentiske lederskab dagligt kommer på prøve, har jeg skabt et koncept hvor teori og praksis smelter sammen. Denne kombination giver mig en unik evne til at forbinde forretningsforståelse, psykologisk indsigt og konkret erfaring med samarbejde under pres.
+                Med en baggrund i kommunikation og psykoterapi har jeg kombineret mange års erfaring med min passion for heste i et unikt udviklingskoncept.
               </p>
               <p>
-                Hestene er mine vigtigste samarbejdspartnere. De spejler med det samme de mønstre og blind spots, som ellers kan være svære at opdage. De viser præcist, hvor vi mister kontakt, retning eller energi, og åbner en vej til forandring, der ikke blot handler om at løse problemer, men om at forløse potentiale.
+                Jeg brænder for at hjælpe mennesker med at opbygge et stærkt indre fundament, der skaber ro, retning og autenticitet.
               </p>
-              <div className="workshop-instructor-badges">
-                <span className="instructor-badge">Cand.negot i Kommunikation & HR</span>
-                <span className="instructor-badge">Certificeret psykoterapeut</span>
-                <span className="instructor-badge">30 års erfaring med heste</span>
-                <span className="instructor-badge">Specialist i hesteassisteret lederudvikling</span>
-              </div>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -489,7 +494,7 @@ export default function LederworkshopPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            Ønsker du at booke en workshop til jeres team eller organisation? <a href="/#kontakt">Kontakt mig</a> for et skræddersyet forløb.
+            Ønsker du at booke en workshop til jeres team eller organisation? <a href="/kontakt">Kontakt mig</a> for et skræddersyet forløb.
           </motion.p>
         </div>
       </section>
