@@ -1252,6 +1252,8 @@ footer { padding: 4.5rem 5rem; background: var(--color-earth); color: var(--colo
   border: none;
   cursor: pointer;
   padding: 0.5rem;
+  z-index: 1001;
+  position: relative;
 }
 .mobile-menu-btn span {
   display: block;
@@ -1262,6 +1264,19 @@ footer { padding: 4.5rem 5rem; background: var(--color-earth); color: var(--colo
   transition: all 0.3s ease;
 }
 nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
+
+/* Hamburger to X animation */
+.mobile-menu-btn.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+  background: var(--color-earth);
+}
+.mobile-menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+.mobile-menu-btn.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+  background: var(--color-earth);
+}
 
 /* Referencer Page */
 .referencer-hero {
@@ -2530,7 +2545,47 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
 
 @media (max-width: 768px) {
   nav { padding: 1rem 1.5rem; }
-  .nav-links { display: none; }
+  nav.menu-open {
+    background: var(--color-cream);
+  }
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--color-cream);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    z-index: 1000;
+  }
+  nav.menu-open .nav-links {
+    display: flex;
+  }
+  nav.menu-open .nav-links a {
+    color: var(--color-earth);
+    font-size: 1.2rem;
+  }
+  nav.menu-open .nav-links .nav-cta {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+  nav.menu-open .nav-dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    background: transparent;
+    box-shadow: none;
+    padding: 0.5rem 0;
+  }
+  nav.menu-open .nav-dropdown-menu li a {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+  }
   .mobile-menu-btn { display: block; }
   .hero-content { padding: 8rem 1.5rem 5rem; }
   .testimonials-grid { grid-template-columns: 1fr; }
@@ -2847,6 +2902,21 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
   font-style: italic;
   color: var(--color-copper);
   line-height: 1.6;
+}
+.workshop-quote cite {
+  display: block;
+  margin-top: 1.5rem;
+  font-family: var(--font-label);
+  font-size: 0.85rem;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--color-soft-brown);
+}
+
+.testimonial-highlight {
+  padding: 5rem 5rem;
+  background: var(--color-cream-warm);
 }
 
 /* Instructors Section */
@@ -3697,5 +3767,249 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
   }
   .workshop-about-visual {
     max-width: 280px;
+  }
+}
+
+/* Teams Page Styles */
+.teams-intro {
+  padding: 6rem 5rem;
+  background: var(--color-cream);
+}
+.teams-intro-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.teams-intro-content h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.2rem);
+  font-weight: 400;
+  color: var(--color-earth);
+  margin-bottom: 1.5rem;
+}
+.teams-intro-content p {
+  font-size: 1.1rem;
+  line-height: 1.85;
+  color: var(--color-soft-brown);
+  margin-bottom: 1.25rem;
+}
+
+.teams-different {
+  padding: 6rem 5rem;
+  background: var(--color-earth);
+}
+.teams-different-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+.teams-different-header .section-label {
+  color: var(--color-copper-light);
+}
+.teams-different-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.2rem);
+  font-weight: 400;
+  color: var(--color-cream);
+  margin-top: 0.75rem;
+}
+.teams-different-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.teams-different-card {
+  text-align: center;
+  padding: 2rem;
+}
+.teams-different-icon {
+  display: inline-flex;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1.25rem;
+}
+.teams-different-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: var(--color-copper-light);
+}
+.teams-different-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--color-cream);
+  margin-bottom: 0.75rem;
+}
+.teams-different-card p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--color-warm-sand);
+}
+
+.teams-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.teams-process {
+  padding: 6rem 5rem;
+  background: var(--color-cream-warm);
+}
+.teams-process-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+.teams-process-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.2rem);
+  font-weight: 400;
+  color: var(--color-earth);
+  margin: 0.75rem 0 1rem;
+}
+.teams-process-intro {
+  font-size: 1.05rem;
+  color: var(--color-soft-brown);
+  max-width: 600px;
+  margin: 0 auto;
+}
+.teams-process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.teams-process-step {
+  text-align: center;
+}
+.teams-step-number {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--color-copper);
+  display: block;
+  margin-bottom: 1rem;
+}
+.teams-step-content h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--color-earth);
+  margin-bottom: 0.75rem;
+}
+.teams-step-content p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--color-soft-brown);
+}
+
+.teams-practical {
+  padding: 6rem 5rem;
+  background: var(--color-cream);
+}
+.teams-practical-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.teams-practical-content h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.2rem);
+  font-weight: 400;
+  color: var(--color-earth);
+  margin: 0.75rem 0 2.5rem;
+  text-align: center;
+}
+.teams-practical-content > .section-label {
+  text-align: center;
+  display: block;
+}
+.teams-practical-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+}
+.teams-practical-item h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--color-earth);
+  margin-bottom: 0.5rem;
+}
+.teams-practical-item p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--color-soft-brown);
+}
+
+.teams-quote-section {
+  padding: 5rem 5rem;
+  background: var(--color-cream-warm);
+}
+.teams-quote {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.teams-quote p {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-earth);
+  line-height: 1.7;
+}
+
+.teams-cta {
+  padding: 6rem 5rem;
+  background: var(--color-earth);
+  text-align: center;
+}
+.teams-cta-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.teams-cta-content h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.2rem);
+  font-weight: 400;
+  color: var(--color-cream);
+  margin-bottom: 1rem;
+}
+.teams-cta-content p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--color-warm-sand);
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .teams-intro, .teams-different, .teams-process, .teams-practical, .teams-quote-section, .teams-cta {
+    padding: 5rem 3rem;
+  }
+  .teams-different-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .teams-process-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .teams-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .teams-intro, .teams-different, .teams-process, .teams-practical, .teams-quote-section, .teams-cta {
+    padding: 4rem 1.5rem;
+  }
+  .teams-process-steps {
+    grid-template-columns: 1fr;
+  }
+  .teams-practical-grid {
+    grid-template-columns: 1fr;
   }
 }

@@ -7,6 +7,7 @@ export default function Navigation() {
   const pathname = usePathname()
   const isSubpage = pathname !== '/'
   const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,11 +21,33 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Close menu when route changes
+  useEffect(() => {
+    setMenuOpen(false)
+  }, [pathname])
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [menuOpen])
+
   // On subpages, always show scrolled state for visibility
   const showScrolled = scrolled || isSubpage
 
+  const navClasses = [
+    showScrolled ? 'scrolled' : '',
+    menuOpen ? 'menu-open' : ''
+  ].filter(Boolean).join(' ')
+
   return (
-    <nav id="navbar" className={showScrolled ? 'scrolled' : ''}>
+    <nav id="navbar" className={navClasses}>
       <ul className="nav-links">
         {isSubpage ? (
           <li><a href="/">Forside</a></li>
@@ -41,11 +64,16 @@ export default function Navigation() {
             <li><a href="/lederworkshop-i-blinde-vinkler">Opdag dine blinde vinkler</a></li>
           </ul>
         </li>
+        <li><a href="/teams">Teams</a></li>
         <li><a href="/referencer">Referencer</a></li>
         <li><a href="/#om">Om mig</a></li>
         <li><a href="/kontakt" className="nav-cta">Kontakt</a></li>
       </ul>
-      <button className="mobile-menu-btn" aria-label="Menu">
+      <button
+        className={`mobile-menu-btn ${menuOpen ? 'active' : ''}`}
+        aria-label="Menu"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
         <span></span>
         <span></span>
         <span></span>
