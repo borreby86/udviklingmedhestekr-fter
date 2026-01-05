@@ -4111,3 +4111,38 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
     grid-template-columns: 1fr;
   }
 }
+
+/* Extra small phones (480px and below) */
+@media (max-width: 480px) {
+  .hero-content { padding: 7rem 1rem 4rem; }
+  .hero h1 { font-size: 2rem; }
+  .hero-intro { font-size: 1rem; }
+  .hero-tagline {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    gap: 0.75rem;
+  }
+  .hero-tagline::before { width: 30px; }
+  .cta-button { padding: 1rem 1.5rem; font-size: 0.85rem; }
+  .section-title { font-size: 1.75rem; }
+  .section-label { font-size: 0.6rem; }
+  .insights-section, .services-section, .why-section, .testimonials-section,
+  .benefits-section, .about-section, .cta-section, .contact-section { padding: 4rem 1rem; }
+  .testimonial-card { padding: 2rem 1.5rem; }
+  .testimonial-quote { font-size: 1.05rem; }
+  .contact-form { padding: 2rem 1rem; }
+  .contact-card { flex-direction: column; text-align: center; gap: 1rem; }
+  .workshop-hero-content-full { padding: 6rem 1rem 2.5rem; }
+  .workshop-hero-title { font-size: 1.75rem; }
+  .workshop-dates-container { margin: 0 -1rem; padding: 0 1rem; }
+  .workshop-date-card { max-width: 100%; padding: 1.5rem; }
+  .date-card-day { font-size: 2rem; }
+  .modal-content { padding: 1.5rem 1rem; }
+  .modal-close { top: 0.5rem; right: 0.5rem; }
+  .nav-cta { padding: 10px 24px 14px 24px; font-size: 0.75rem; }
+  .forbes-logo { font-size: 0.55rem; padding: 0.5rem 0.8rem; }
+  .forbes-text { font-size: 1rem; }
+  .proof-number { font-size: 2.25rem; }
+  .about-visual { max-width: 280px; }
+  .footer-links { gap: 1rem; }
+}
