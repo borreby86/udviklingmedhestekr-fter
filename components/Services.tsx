@@ -9,7 +9,7 @@ const services = [
   {
     tag: 'For teams',
     title: 'Teamudvikling',
-    text: 'Hestene giver et levende spejl af jeres samarbejde og teamdynamik. Ubevidste mønstre og kommunikationsvaner bliver synlige – og det tydeliggør hvad der styrker, og hvad der spænder ben.'
+    text: 'Hestene giver et levende spejl af jeres samarbejde og teamdynamik. Ubevidste mønstre og kommunikationsvaner bliver synlige, og det tydeliggør hvad der styrker, og hvad der spænder ben.'
   },
   {
     tag: '1:1',

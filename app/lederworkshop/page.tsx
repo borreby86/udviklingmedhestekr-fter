@@ -13,11 +13,11 @@ const workshopDates = [
 const personalBenefits = [
   {
     title: "Autentisk lederskab i kroppen",
-    description: "En kropslig oplevelse af, hvornår du står stærkt i dit lederskab – og hvornår du mister fodfæstet"
+    description: "En kropslig oplevelse af, hvornår du står stærkt i dit lederskab, og hvornår du mister fodfæstet"
   },
   {
     title: "Øjeblikkelig, ærlig feedback",
-    description: "Hesten reagerer på din kommunikation og tilstedeværelse her og nu – uden høflige hensyn"
+    description: "Hesten reagerer på din kommunikation og tilstedeværelse her og nu, uden høflige hensyn"
   },
   {
     title: "Nærvær og tillid",
@@ -25,7 +25,7 @@ const personalBenefits = [
   },
   {
     title: "Indsigt i mønstre",
-    description: "Forstå dine styrker og blinde vinkler som leder – både de synlige og de skjulte"
+    description: "Forstå dine styrker og blinde vinkler som leder, både de synlige og de skjulte"
   }
 ]
 
@@ -62,7 +62,7 @@ const timelineSteps = [
   {
     time: "10:00",
     title: "Første øvelse",
-    description: "Individuel interaktion med hesten. Her møder du dit lederskab – og dig selv – uden filter."
+    description: "Individuel interaktion med hesten. Her møder du dit lederskab og dig selv, uden filter."
   },
   {
     time: "10:45",
@@ -122,7 +122,7 @@ function StickyTextSection() {
             style={{ opacity: opacity3, y: y3 }}
           >
             <p className="sticky-text-gold">
-              Men hvor ofte får du mulighed for at se dig selv som leder, helt uden filter – og med øjeblikkelig feedback?
+              Men hvor ofte får du mulighed for at se dig selv som leder, helt uden filter, og med øjeblikkelig feedback?
             </p>
           </motion.div>
         </div>
@@ -174,9 +174,9 @@ export default function LederworkshopPage() {
           >
             <p className="section-label">Lederworkshop med hestekræfter</p>
             <h1>Autentisk lederskab <em>uden filter</em></h1>
-            <p className="workshop-hero-tagline">Følgeskab starter med relation – ikke retning.</p>
+            <p className="workshop-hero-tagline">Følgeskab starter med relation, ikke retning.</p>
             <p className="workshop-hero-desc">
-              Denne workshop giver dig klarhed over dine adfærdsmønstre, ressourcer og blind spots, så du kan lede fra dit autentiske selv. Gennem mødet med hesten får du øjeblikkelig, ærlig feedback på dit lederskab – uden filter.
+              Denne workshop giver dig klarhed over dine adfærdsmønstre, ressourcer og blind spots, så du kan lede fra dit autentiske selv. Gennem mødet med hesten får du øjeblikkelig, ærlig feedback på dit lederskab, uden filter.
             </p>
             <p className="workshop-hero-cta-text">Er du klar til at træne dit autentiske lederskab i praksis?</p>
             <a href="#tilmelding" className="cta-button">
@@ -209,10 +209,10 @@ export default function LederworkshopPage() {
             <p className="section-label">Metoden</p>
             <h2>Hvorfor træne lederskab med heste?</h2>
             <p>
-              Hestene spejler din autenticitet, dit nærvær og din energi i nuet. De viser præcist, hvor du står stærkt – og hvor du ubevidst mister kontakt eller gennemslagskraft.
+              Hestene spejler din autenticitet, dit nærvær og din energi i nuet. De viser præcist, hvor du står stærkt, og hvor du ubevidst mister kontakt eller gennemslagskraft.
             </p>
             <p>
-              Heste er byttedyr. De har overlevet i millioner af år ved at aflæse intention og energi hos dem omkring sig. De reagerer ikke på titler, ord eller charme – kun på det, du reelt udstråler.
+              Heste er byttedyr. De har overlevet i millioner af år ved at aflæse intention og energi hos dem omkring sig. De reagerer ikke på titler, ord eller charme, kun på det, du reelt udstråler.
             </p>
             <p>
               Det gør dem til brutalt ærlige spejle. Når hesten følger dig, ved du, at dit lederskab virker. Når den vender sig væk, får du værdifuld information om, hvad der mangler.
@@ -246,7 +246,7 @@ export default function LederworkshopPage() {
               </span>
               <div>
                 <h4>Ingen facade</h4>
-                <p>Heste læser dit kropssprog og nervesystem – ikke dine ord eller din titel</p>
+                <p>Heste læser dit kropssprog og nervesystem, ikke dine ord eller din titel</p>
               </div>
             </div>
             <div className="workshop-point">
@@ -277,7 +277,7 @@ export default function LederworkshopPage() {
             <p className="section-label">Dagens forløb</p>
             <h2>3 timer der ændrer dit perspektiv</h2>
             <p className="workshop-timeline-intro">
-              Workshoppen veksler mellem øvelser med hestene, faciliteret refleksion og samtale. Du behøver ingen hesteerfaring – kun nysgerrighed og viljen til at lære noget nyt om dig selv.
+              Workshoppen veksler mellem øvelser med hestene, faciliteret refleksion og samtale. Du behøver ingen hesteerfaring, kun nysgerrighed og viljen til at lære noget nyt om dig selv.
             </p>
           </motion.div>
 
@@ -366,7 +366,7 @@ export default function LederworkshopPage() {
                 Med en baggrund som cand.negot i kommunikation og HR, mange års erfaring som psykoterapeut og træning af galopheste, hvor mit eget autentiske lederskab dagligt kommer på prøve, har jeg skabt et koncept hvor teori og praksis smelter sammen. Denne kombination giver mig en unik evne til at forbinde forretningsforståelse, psykologisk indsigt og konkret erfaring med samarbejde under pres.
               </p>
               <p>
-                Hestene er mine vigtigste samarbejdspartnere. De spejler med det samme de mønstre og blind spots, som ellers kan være svære at opdage. De viser præcist, hvor vi mister kontakt, retning eller energi – og åbner en vej til forandring, der ikke blot handler om at løse problemer, men om at forløse potentiale.
+                Hestene er mine vigtigste samarbejdspartnere. De spejler med det samme de mønstre og blind spots, som ellers kan være svære at opdage. De viser præcist, hvor vi mister kontakt, retning eller energi, og åbner en vej til forandring, der ikke blot handler om at løse problemer, men om at forløse potentiale.
               </p>
               <div className="workshop-instructor-badges">
                 <span className="instructor-badge">Cand.negot i Kommunikation & HR</span>
@@ -449,7 +449,7 @@ export default function LederworkshopPage() {
             <p className="section-label">Kommende workshops</p>
             <h2>Vælg en dato</h2>
             <p className="workshop-dates-intro">
-              Kl. 9:00–12:00 · Hørsholm, Nordsjælland · Maks 6 deltagere
+              Kl. 9:00-12:00 · Hørsholm, Nordsjælland · Maks 6 deltagere
             </p>
           </motion.div>
 

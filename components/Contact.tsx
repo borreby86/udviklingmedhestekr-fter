@@ -15,7 +15,7 @@ export default function Contact() {
           <p className="section-label">Kontakt</p>
           <h2 className="section-title">Send en forespørgsel</h2>
           <p>
-            Book en gratis 20 minutters samtale, hvor vi taler om dine behov og 
+            Book en gratis 20 minutters samtale, hvor vi taler om dine behov og
             hvordan hesteassisteret læring kan støtte din udvikling.
           </p>
         </div>

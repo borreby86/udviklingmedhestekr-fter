@@ -10,7 +10,7 @@ const testimonials = [
     quote: "Når jeg holder op med at gøre mig umage for at være dygtig. Så opstår de magiske øjeblikke, hvor tiden står stille.",
     fullText: `Hvordan hænger personlig gennemslagskraft sammen med "bare at være"? Hvornår er jeg mig, og hvornår spiller jeg en rolle så godt, at jeg tror, den er mig? Hvad vil det sige at være autentisk? Det var nogle af de spørgsmål, jeg fik besvaret i mødet med hesten Calle.
 
-Det forunderlige begreb "Forandringens paradoks", udspillede sig i mit møde med Calle. Transformationen i os selv sker, når vi accepterer det, vi allerede er. Når vi nøgternt erkender den indre virkelighed, præcis SOM DEN ER – og møder den med accept. Jeg har momentvis oplevet noget lignende som skuespiller, når rollen tager over, og jeg på mystisk vis bliver karakteren i stedet for at spille den. Når jeg holder op med at gøre mig umage for at være dygtig. Så opstår de magiske øjeblikke, hvor tiden står stille.
+Det forunderlige begreb "Forandringens paradoks", udspillede sig i mit møde med Calle. Transformationen i os selv sker, når vi accepterer det, vi allerede er. Når vi nøgternt erkender den indre virkelighed, præcis SOM DEN ER, og møder den med accept. Jeg har momentvis oplevet noget lignende som skuespiller, når rollen tager over, og jeg på mystisk vis bliver karakteren i stedet for at spille den. Når jeg holder op med at gøre mig umage for at være dygtig. Så opstår de magiske øjeblikke, hvor tiden står stille.
 
 Det skete også i mødet med Calle, og har givet mig stof til eftertanke, som jeg allerede nu har brugt privat og professionelt.
 

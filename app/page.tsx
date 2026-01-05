@@ -21,11 +21,11 @@ export default function Home() {
       <Insights />
       <Services />
       <WhyHorses />
-      <Audience />
+      <CTA />
       <Testimonials />
       <Benefits />
       <About />
-      <CTA />
+      <Audience />
       <Contact />
       <Footer />
     </>

@@ -14,12 +14,12 @@ const insights = [
   {
     icon: SunIcon,
     title: 'Autenticitet',
-    text: 'Når dit indre og ydre matcher – og hvad der sker, når det ikke gør.'
+    text: 'Når dit indre og ydre matcher, og hvad der sker, når det ikke gør.'
   },
   {
     icon: ClockIcon,
     title: 'Nærvær',
-    text: 'At være 100% til stede – og mærke konsekvensen, når du ikke er.'
+    text: 'At være 100% til stede, og mærke konsekvensen, når du ikke er.'
   }
 ]
 

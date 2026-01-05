@@ -11,7 +11,7 @@ export default function Hero() {
         <h1>Udvikling med <em>hestekræfter</em></h1>
         <p className="hero-intro">
           Hestene spejler din måde at lede, samarbejde og være til stede på. 
-          Et unikt rum til instant feedback og øget selvindsigt – uden ridning, uden hesteerfaring.
+          Et unikt rum til instant feedback og øget selvindsigt. Uden ridning, uden hesteerfaring.
         </p>
         <a href="#kontakt" className="cta-button">
           <span>Book en samtale</span>
