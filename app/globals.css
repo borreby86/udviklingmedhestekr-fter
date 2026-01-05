@@ -3672,6 +3672,14 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
   .scroll-nav-container {
     padding: 0.75rem 1.5rem;
     gap: 1.25rem;
+    overflow-x: auto;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .scroll-nav-container::-webkit-scrollbar {
+    display: none;
   }
   .scroll-nav-link {
     font-size: 0.7rem;
@@ -4145,4 +4153,13 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
   .proof-number { font-size: 2.25rem; }
   .about-visual { max-width: 280px; }
   .footer-links { gap: 1rem; }
+  /* Scroll navigation for workshop pages */
+  .scroll-nav-container {
+    padding: 0.6rem 1rem;
+    gap: 1rem;
+  }
+  .scroll-nav-link {
+    font-size: 0.6rem;
+    letter-spacing: 0.05em;
+  }
 }
