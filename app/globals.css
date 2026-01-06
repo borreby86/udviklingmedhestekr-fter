@@ -381,6 +381,21 @@ nav.scrolled .nav-cta:hover {
 }
 .proof-text { font-size: 0.95rem; color: var(--color-warm-sand); line-height: 1.7; }
 .proof-text strong { color: var(--color-cream); font-weight: 400; }
+.proof-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-family: var(--font-label);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--color-copper);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.proof-link:hover {
+  color: var(--color-copper-light);
+  letter-spacing: 0.12em;
+}
 
 /* Section Labels & Titles */
 .section-label {

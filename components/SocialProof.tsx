@@ -10,10 +10,13 @@ export default function SocialProof() {
         </div>
         <div className="proof-stats">
           <div className="proof-number">100+</div>
-          <p className="proof-text">
-            <strong>Peer-reviewed studier</strong> dokumenterer effekten af hesteassisteret udvikling 
-            med signifikante forbedringer i emotionel intelligens og selvbevidsthed.
-          </p>
+          <div className="proof-content">
+            <p className="proof-text">
+              <strong>Peer-reviewed studier</strong> dokumenterer effekten af hesteassisteret udvikling
+              med signifikante forbedringer i emotionel intelligens og selvbevidsthed.
+            </p>
+            <a href="/forskning" className="proof-link">Se forskningsartikler →</a>
+          </div>
         </div>
       </div>
     </section>
