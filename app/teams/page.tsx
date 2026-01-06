@@ -12,7 +12,7 @@ const teamBenefits = [
   },
   {
     title: "Tydeligere kommunikation",
-    description: "Oplev hvordan jeres kommunikationsmønstre bliver synlige – og hvordan I kan forbedre dem"
+    description: "Oplev hvordan jeres kommunikationsmønstre bliver synlige - og hvordan I kan forbedre dem"
   },
   {
     title: "Bedre samarbejde under pres",
@@ -116,13 +116,13 @@ export default function TeamsPage() {
             <p className="section-label">Hvorfor heste?</p>
             <h2>Mere end almindelig teambuilding</h2>
             <p>
-              Klassisk teambuilding efterlader sjældent varige spor. En dag med aktiviteter, lidt sjov, og så tilbage til hverdagen. Hesteassisteret teamudvikling er anderledes – fordi oplevelserne forankres i kroppen, ikke kun i hovedet.
+              Klassisk teambuilding efterlader sjældent varige spor. En dag med aktiviteter, lidt sjov, og så tilbage til hverdagen. Hesteassisteret teamudvikling er anderledes - fordi oplevelserne forankres i kroppen, ikke kun i hovedet.
             </p>
             <p>
               Hestene fungerer som levende spejle der afslører teamets mønstre, styrker og udviklingsområder. De reagerer på energi, ikke på ord eller titler.
             </p>
             <p>
-              I vælger selv graden af dybde – fra fokus på samarbejde og kommunikation til personlig udvikling og lederskab.
+              I vælger selv graden af dybde - fra fokus på samarbejde og kommunikation til personlig udvikling og lederskab.
             </p>
           </motion.div>
 
@@ -263,7 +263,7 @@ export default function TeamsPage() {
               <strong>Gruppestørrelse:</strong> For optimalt udbytte arbejder vi med max 15 deltagere. Ved større grupper tilknyttes en ekstra facilitator fra mit netværk af erfarne konsulenter.
             </p>
             <p>
-              <strong>Varighed:</strong> Fra en halv dag til flere sessioner over tid – afhængig af jeres mål og ønskede dybde.
+              <strong>Varighed:</strong> Fra en halv dag til flere sessioner over tid - afhængig af jeres mål og ønskede dybde.
             </p>
             <p>
               <strong>Lokation:</strong> Sessioner afholdes ved hestene i Hørsholm, Nordsjælland.

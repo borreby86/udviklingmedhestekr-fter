@@ -26,7 +26,7 @@ export default function KontaktPage() {
             <p className="section-label">Kontakt</p>
             <h1>Lad os tale sammen</h1>
             <p className="contact-hero-intro">
-              Ræk ud og hør hvordan hesteassisteret coaching kan hjælpe dig, dit team eller optimere dit lederskab – personligt såvel som professionelt.
+              Ræk ud og hør hvordan hesteassisteret coaching kan hjælpe dig, dit team eller optimere dit lederskab - personligt såvel som professionelt.
             </p>
           </div>
 

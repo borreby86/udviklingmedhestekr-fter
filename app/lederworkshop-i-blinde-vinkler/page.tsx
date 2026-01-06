@@ -121,7 +121,7 @@ const duringSteps = [
   },
   {
     title: 'Hesteassisteret session',
-    description: 'Ca. 20 minutter individuel tid med hesten. Du behøver ingen hesteerfaring – du skal ikke ride. Mød hesten fra jorden og få direkte feedback på din ledelsesenergi.'
+    description: 'Ca. 20 minutter individuel tid med hesten. Du behøver ingen hesteerfaring - du skal ikke ride. Mød hesten fra jorden og få direkte feedback på din ledelsesenergi.'
   },
   {
     title: 'Praktisk træning',
@@ -174,7 +174,7 @@ function StickyTextSection() {
             style={{ opacity: opacity2, y: y2 }}
           >
             <p>
-              Mange ledere navigerer ud fra vanemønstre uden at opdage deres blinde vinkler. Når presset stiger, reagerer vi ofte for meget – eller for lidt – uden at være bevidste om det.
+              Mange ledere navigerer ud fra vanemønstre uden at opdage deres blinde vinkler. Når presset stiger, reagerer vi ofte for meget - eller for lidt - uden at være bevidste om det.
             </p>
           </motion.div>
 
@@ -183,7 +183,7 @@ function StickyTextSection() {
             style={{ opacity: opacity3, y: y3 }}
           >
             <p className="sticky-text-gold">
-              På dette intensive mini-forløb får du indsigt i det, du normalt ikke ser – så du kan finde den gyldne middelvej i ledelse.
+              På dette intensive mini-forløb får du indsigt i det, du normalt ikke ser - så du kan finde den gyldne middelvej i ledelse.
             </p>
           </motion.div>
         </div>
@@ -268,7 +268,7 @@ export default function BlindeVinklerPage() {
             <h1>Opdag dine <em>blinde vinkler</em> og bliv en bedre leder</h1>
             <p className="workshop-hero-tagline">MBS® Relationsanalyse + Hesteassisteret lederskabstræning</p>
             <p className="workshop-hero-desc">
-              Hvordan reagerer du i relationer, når presset stiger? Hvor giver du for meget – eller for lidt – af dig selv? På dette forløb får du skarp selvindsigt, konkret handlingsplan og tydeligere retning for dit lederskab.
+              Hvordan reagerer du i relationer, når presset stiger? Hvor giver du for meget - eller for lidt - af dig selv? På dette forløb får du skarp selvindsigt, konkret handlingsplan og tydeligere retning for dit lederskab.
             </p>
             <p className="workshop-hero-cta-text">Er du klar til at se dig selv fra en ny vinkel?</p>
             <a href="#tilmelding" className="cta-button">
@@ -543,7 +543,7 @@ export default function BlindeVinklerPage() {
                 <circle cx="12" cy="12" r="10"/>
                 <path d="M12 16v-4M12 8h.01"/>
               </svg>
-              <p><strong>Ingen hesteerfaring nødvendig</strong> – du skal ikke ride. Du møder hesten fra jorden og arbejder med at føre den i tov.</p>
+              <p><strong>Ingen hesteerfaring nødvendig</strong> - du skal ikke ride. Du møder hesten fra jorden og arbejder med at føre den i tov.</p>
             </div>
           </motion.div>
 
@@ -604,7 +604,7 @@ export default function BlindeVinklerPage() {
               Når du fører hesten i et tov, ser du hvordan den responderer på din energi: Er du tilbageholdt? Tager du for meget kontrol? Står du tydeligt i dit autentiske selv?
             </p>
             <p>
-              Du får en følt oplevelse af, hvornår du rammer den gyldne middelvej i din udstrålede energi – en kropslig læring der forankres langt dybere end ord.
+              Du får en følt oplevelse af, hvornår du rammer den gyldne middelvej i din udstrålede energi - en kropslig læring der forankres langt dybere end ord.
             </p>
           </motion.div>
 

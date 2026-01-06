@@ -146,7 +146,7 @@ export default function ResearchSection() {
           <p className="section-label">Evidensbaseret praksis</p>
           <h1>Forskningen bag <em>metoden</em></h1>
           <p className="research-hero-intro">
-            Hesteassisteret udvikling er ikke bare en oplevelse – det er en metode med
+            Hesteassisteret udvikling er ikke bare en oplevelse - det er en metode med
             dokumenteret effekt. Her er et udvalg af de mest relevante peer-reviewed studier.
           </p>
         </motion.div>
@@ -254,7 +254,7 @@ export default function ResearchSection() {
               <strong>En ærlig bemærkning:</strong> Forskningen i hesteassisteret udvikling er
               et voksende felt med lovende resultater. De fleste studier er stadig af mindre skala,
               og flere randomiserede kontrollerede studier er nødvendige. Det vigtigste er, at
-              hestene giver øjeblikkelig, ærlig feedback på din autenticitet – noget ingen lærebog kan.
+              hestene giver øjeblikkelig, ærlig feedback på din autenticitet - noget ingen lærebog kan.
             </p>
           </div>
         </div>

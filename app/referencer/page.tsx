@@ -10,7 +10,7 @@ const testimonials = [
     quote: "Jeg kunne tydeligt mærke, hvordan mit eget indre nærvær og ro påvirkede hestens tillid til mig. Det var en vigtig påmindelse om, hvordan vores energi og autenticitet skaber følgeskab.",
     fullText: `I sidste uge deltog Nordic Bloom teamet i inspirerende workshop hos Christina Borreby, hvor vi fik trænet autentisk tillid og lederskab - gennem hestes umiddelbare og ærlige feedback.
 
-For mit vedkommende - som sidst havde nærkontakt med en hest, da jeg for mange år siden blev smidt af min hustrus hest - var det en indsigtsfuld og stor oplevelse. Selvom jeg blot gik sammen med hesten, kunne jeg tydeligt mærke, hvordan mit eget indre nærvær og ro - da jeg først fik vænnet mig til situationen - påvirkede hestens tillid til mig. Det var en vigtig påmindelse om, hvordan vores energi og autenticitet skaber følgeskab – både blandt heste og mennesker.
+For mit vedkommende - som sidst havde nærkontakt med en hest, da jeg for mange år siden blev smidt af min hustrus hest - var det en indsigtsfuld og stor oplevelse. Selvom jeg blot gik sammen med hesten, kunne jeg tydeligt mærke, hvordan mit eget indre nærvær og ro - da jeg først fik vænnet mig til situationen - påvirkede hestens tillid til mig. Det var en vigtig påmindelse om, hvordan vores energi og autenticitet skaber følgeskab - både blandt heste og mennesker.
 
 Dagen gav os også mulighed for en værdifuld refleksion i teamet om, hvad godt lederskab og teamwork egentlig kræver. Det var i det hele taget en god måde at være sammen på i andre rammer, og særdeles udbytterigt at opleve hinanden i en kontekst uden for vores normale comfort zone.
 
