@@ -2739,6 +2739,19 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
     );
   }
   .workshop-hero-text-full { max-width: 100%; }
+  .workshop-hero-text-full h1 { font-size: 2rem; }
+  .workshop-hero-tagline { font-size: 1.1rem; }
+  .workshop-hero-desc { font-size: 1rem; }
+  .workshop-forloeb { padding: 4rem 1.5rem; }
+  .workshop-forloeb-cards { grid-template-columns: 1fr; gap: 1.5rem; }
+  .workshop-middelvej { padding: 4rem 1.5rem; }
+  .workshop-methods-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .workshop-instructors { padding: 4rem 1.5rem; }
+  .workshop-instructors-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .workshop-detailed { padding: 4rem 1.5rem; }
+  .workshop-phase-steps { grid-template-columns: 1fr; gap: 1.5rem; }
+  .workshop-benefits-columns { grid-template-columns: 1fr; gap: 2rem; }
+  .workshop-dates-container-left { max-width: 100%; margin-left: 0; }
   .workshop-hero-bg img { object-position: center center; }
   .teams-hero .workshop-hero-bg img { object-position: center center; }
   .sticky-text-section { height: 200vh; }
@@ -4223,6 +4236,10 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
   .contact-form { padding: 2rem 1rem; }
   .contact-card { flex-direction: column; text-align: center; gap: 1rem; }
   .workshop-hero-content-full { padding: 6rem 1rem 2.5rem; }
+  .workshop-hero-text-full h1 { font-size: 1.75rem; line-height: 1.25; margin: 0.75rem 0 1.25rem; }
+  .workshop-hero-tagline { font-size: 1rem; margin: 0.25rem 0 1rem; }
+  .workshop-hero-desc { font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem; }
+  .workshop-hero-cta-text { font-size: 0.9rem; margin-bottom: 1.25rem; }
   .workshop-hero-title { font-size: 1.75rem; }
   .workshop-dates-container { margin: 0 -1rem; padding: 0 1rem; }
   .workshop-date-card {
@@ -4260,6 +4277,28 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
     font-size: 0.6rem;
     letter-spacing: 0.05em;
   }
+  /* Blinde Vinkler Workshop mobile */
+  .workshop-forloeb { padding: 3rem 1rem; }
+  .workshop-forloeb-header { margin-bottom: 2rem; }
+  .workshop-forloeb-cards { grid-template-columns: 1fr; gap: 1.5rem; }
+  .workshop-forloeb-card { padding: 1.5rem; }
+  .forloeb-card-number { font-size: 2rem; margin-bottom: 0.75rem; }
+  .workshop-forloeb-card h3 { font-size: 1.25rem; }
+  .workshop-middelvej { padding: 3rem 1rem; }
+  .workshop-methods-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .workshop-method-card { padding: 1.5rem; }
+  .workshop-quote { padding: 1.5rem; margin-top: 2rem; font-size: 1rem; }
+  .workshop-instructors { padding: 3rem 1rem; }
+  .workshop-instructors-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .workshop-instructor-card { flex-direction: column; }
+  .instructor-card-image { max-width: 200px; margin: 0 auto; }
+  .workshop-detailed { padding: 3rem 1rem; }
+  .workshop-phase { padding: 1.5rem; margin-bottom: 1.5rem; }
+  .workshop-phase-steps { grid-template-columns: 1fr; gap: 1.5rem; }
+  .workshop-during-steps { gap: 1rem; }
+  .workshop-benefits-columns { grid-template-columns: 1fr; gap: 2rem; }
+  .workshop-benefit-column { padding: 1.5rem; }
+  .workshop-dates-container-left { max-width: 100%; margin-left: 0; padding: 0 1rem; }
 }
 
 /* Research Page */
