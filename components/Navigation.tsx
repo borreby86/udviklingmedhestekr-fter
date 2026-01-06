@@ -54,17 +54,18 @@ export default function Navigation() {
         ) : null}
         <li className="nav-dropdown">
           <a href="#" className="nav-dropdown-trigger">
-            Workshops
+            For ledere
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M6 9l6 6 6-6"/>
             </svg>
           </a>
           <ul className="nav-dropdown-menu">
-            <li><a href="/lederworkshop">Autentisk lederskab uden filter</a></li>
-            <li><a href="/lederworkshop-i-blinde-vinkler">Opdag dine blinde vinkler</a></li>
+            <li><a href="/lederworkshop">Autentisk ledelse</a></li>
+            <li className="nav-dropdown-label">Aktuelle workshops</li>
+            <li><a href="/lederworkshop-i-blinde-vinkler" className="nav-dropdown-subitem">Opdag dine blinde vinkler i ledelse</a></li>
           </ul>
         </li>
-        <li><a href="/teams">Teams</a></li>
+        <li><a href="/teams">For teams</a></li>
         <li><a href="/referencer">Referencer</a></li>
         <li><a href="/#om">Om mig</a></li>
         <li><a href="/kontakt" className="nav-cta">Kontakt</a></li>
