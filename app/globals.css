@@ -949,6 +949,72 @@ nav.scrolled .nav-cta:hover {
   margin-bottom: 2.75rem;
 }
 
+/* CTA Quote */
+.cta-quote {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--color-warm-sand);
+  line-height: 1.7;
+  margin-bottom: 2.75rem;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Recalibrate - For hvem sektion (mørk) */
+.workshop-for-hvem-dark {
+  padding: 6rem 5rem;
+  background: var(--color-earth);
+}
+.workshop-for-hvem-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+.workshop-for-hvem-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+  font-weight: 400;
+  color: var(--color-cream);
+  margin-bottom: 1rem;
+}
+.workshop-for-hvem-intro {
+  color: var(--color-warm-sand);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 540px;
+  margin: 0 auto;
+}
+.workshop-for-hvem-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem 4rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.workshop-for-hvem-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.workshop-for-hvem-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--color-copper-light);
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+.workshop-for-hvem-item p {
+  color: var(--color-warm-sand);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .workshop-for-hvem-dark { padding: 4rem 1.5rem; }
+  .workshop-for-hvem-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+
 /* Contact */
 .contact-section { padding: 8rem 5rem; background: var(--color-cream); position: relative; overflow: hidden; }
 

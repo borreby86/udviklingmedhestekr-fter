@@ -1,0 +1,418 @@
+'use client'
+
+import { useRef } from 'react'
+import { motion, useScroll, useTransform } from 'motion/react'
+import Link from 'next/link'
+import Navigation from '@/components/Navigation'
+import Footer from '@/components/Footer'
+
+// Data
+const metoder = [
+  {
+    title: "Walk & talk i naturen",
+    description: "Nogle samtaler flyder bedre, når kroppen er i bevægelse. Under en walk & talk går vi side om side gennem naturen, hvor tankerne får plads til at lande, og ordene kommer i deres eget tempo."
+  },
+  {
+    title: "Øget selvindsigt",
+    description: "Selvindsigt handler om at blive opmærksom på dine mønstre – hvordan du reagerer under pres, hvad der dræner dig, og hvad der giver energi. Med den indsigt kan du træffe valg, der passer til dig."
+  },
+  {
+    title: "Hesteassisterede øvelser",
+    description: "I samværet med hestene arbejder vi med nærvær, grænser og autentisk kommunikation. Du behøver ingen hesteerfaring – det handler ikke om at ride, men om at være."
+  },
+  {
+    title: "Nervesystemsregulering",
+    description: "Du lærer at genkende, når dit nervesystem er i alarmberedskab – og hvad du konkret kan gøre for at bringe det tilbage i balance."
+  }
+]
+
+const oplevelser = [
+  "En dybere forståelse af dine egne mønstre og reaktioner",
+  "Konkrete redskaber til at regulere dit nervesystem i hverdagen",
+  "Kropslig erfaring med, hvordan ro og balance faktisk føles",
+  "Klarhed over, hvad du har brug for – og mod til at handle på det",
+  "En fornyet kontakt til dig selv og dine egne ressourcer"
+]
+
+const forHvem = [
+  "Du føler dig konstant \"på\" og har svært ved at koble af",
+  "Du har mistet fornemmelsen for, hvad du egentlig har brug for",
+  "Du mærker, at kroppen sender signaler, du har ignoreret for længe",
+  "Du søger et rum uden præstation, hvor du bare kan være",
+  "Du vil gerne forstå dig selv bedre og træffe mere bevidste valg",
+  "Du er nysgerrig på, hvad heste kan lære dig om dig selv"
+]
+
+const formater = [
+  {
+    title: "Enkelt session",
+    description: "1,5-3 timer med walk & talk, hestesamvær og refleksion. Et godt sted at starte."
+  },
+  {
+    title: "Forløb",
+    description: "Flere sessioner over tid, hvor vi går i dybden med dine mønstre og opbygger nye."
+  }
+]
+
+export default function RecalibratePage(): React.JSX.Element {
+  const heroRef = useRef(null)
+
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"]
+  })
+
+  const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"])
+
+  return (
+    <>
+      <Navigation />
+
+      {/* Hero Section */}
+      <section className="workshop-hero-full" ref={heroRef}>
+        <motion.div className="workshop-hero-bg" style={{ y: heroY }}>
+          <img src="/recalibrate_stress_fri.jpeg" alt="Recalibrate - find tilbage til dig selv" />
+        </motion.div>
+        <div className="workshop-hero-overlay" />
+        <div className="workshop-hero-content-full">
+          <motion.div
+            className="workshop-hero-text-full"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <p className="section-label">Back to basics</p>
+            <h1>Recalibrate</h1>
+            <p className="workshop-hero-tagline">Find tilbage til dig selv – i dit eget tempo</p>
+            <p className="workshop-hero-desc">
+              Nogle gange kører livet bare lidt for stærkt. Recalibrate er for dig, der mærker, at noget skal ændres – og som vil genfinde kontakten til dig selv, din krop og din egen rytme.
+            </p>
+            <a href="#format" className="cta-button">
+              <span>Se formater</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Intro Section */}
+      <section className="workshop-why-neutral">
+        <div className="workshop-container">
+          <motion.div
+            className="workshop-why-text"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <p className="section-label">Hvad er Recalibrate?</p>
+            <h2>Når tempoet tager over</h2>
+            <p>
+              Kalenderen er fuld, tankerne summer, og kroppen forsøger at følge med – men signalerne om at sætte tempoet ned bliver overhørt.
+            </p>
+            <p>
+              Recalibrate handler om at vende tilbage til udgangspunktet. Ikke for at starte forfra, men for at genfinde det fundament, du kan stå stabilt på – uanset hvad livet bringer.
+            </p>
+            <p>
+              Her er ingen hurtige løsninger eller fem-trins-programmer. Bare rum til at trække vejret, mærke efter og finde tilbage til det grundlæggende.
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="workshop-why-points"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
+            <div className="workshop-point">
+              <span className="workshop-point-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 6v6l4 2"/>
+                </svg>
+              </span>
+              <div>
+                <h4>Dit eget tempo</h4>
+                <p>Ingen hurtige løsninger – bare rum til at mærke efter</p>
+              </div>
+            </div>
+            <div className="workshop-point">
+              <span className="workshop-point-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+              </span>
+              <div>
+                <h4>Nervesystemet i fokus</h4>
+                <p>Lær at genkende signaler og finde tilbage til balance</p>
+              </div>
+            </div>
+            <div className="workshop-point">
+              <span className="workshop-point-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+              </span>
+              <div>
+                <h4>Kropslig forankring</h4>
+                <p>Oplevelser der mærkes i kroppen, ikke kun i hovedet</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Hestene Section - med billede */}
+      <section className="workshop-instructor">
+        <div className="workshop-instructor-bg">
+          <img src="/horse-course-stress-fri.jpeg" alt="Hest i naturen" />
+        </div>
+        <div className="workshop-instructor-overlay" />
+        <div className="workshop-container-wide">
+          <motion.div
+            className="workshop-instructor-content"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <p className="section-label">Metoden</p>
+            <h2>Hestene som spejl og co-regulering</h2>
+            <p>
+              Heste lever i nuet. De reagerer ikke på det, du siger eller tænker – men på det, du udstråler. Din energi, dit nervesystem, din indre tilstand. Det gør dem til ærlige spejle, der viser dig noget, ord sjældent kan.
+            </p>
+            <p>
+              Men hestene gør mere end at spejle. Som flokdyr har de en naturlig evne til at <strong>co-regulere</strong> – at hjælpe med at berolige et overstimuleret nervesystem gennem deres egen rolige tilstedeværelse.
+            </p>
+            <p>
+              Når du står ved siden af en hest og mærker dens langsomme vejrtrækning, sker der noget i din egen krop. Pulsen falder. Skuldrene sænker sig. Du begynder at mærke dig selv igen.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Redskaberne Section */}
+      <section className="workshop-benefits-new">
+        <div className="workshop-container-wide">
+          <div className="workshop-benefits-header">
+            <p className="section-label">Redskaberne</p>
+            <h2>Hvordan vi arbejder</h2>
+          </div>
+
+          <div className="workshop-benefits-columns">
+            <motion.div
+              className="workshop-benefit-column"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="workshop-benefit-list">
+                {metoder.slice(0, 2).map((metode, index) => (
+                  <div key={index} className="workshop-benefit-item">
+                    <span className="benefit-number">0{index + 1}</span>
+                    <div>
+                      <h4>{metode.title}</h4>
+                      <p>{metode.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="workshop-benefit-column"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+            >
+              <div className="workshop-benefit-list">
+                {metoder.slice(2, 4).map((metode, index) => (
+                  <div key={index} className="workshop-benefit-item">
+                    <span className="benefit-number">0{index + 3}</span>
+                    <div>
+                      <h4>{metode.title}</h4>
+                      <p>{metode.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Det kan du tage med dig */}
+      <section className="workshop-timeline">
+        <div className="workshop-container-wide">
+          <motion.div
+            className="workshop-timeline-header"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <p className="section-label">Udbytte</p>
+            <h2>Det kan du tage med dig</h2>
+          </motion.div>
+
+          <div className="workshop-timeline-track">
+            {oplevelser.map((oplevelse, index) => (
+              <motion.div
+                key={index}
+                className="workshop-timeline-step"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <div className="timeline-step-marker">
+                  <span className="timeline-step-dot" />
+                  {index < oplevelser.length - 1 && <span className="timeline-step-line" />}
+                </div>
+                <div className="timeline-step-content">
+                  <p style={{ marginTop: '0.25rem' }}>{oplevelse}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Er Recalibrate noget for dig? - Mørk sektion */}
+      <section className="workshop-for-hvem-dark">
+        <div className="workshop-container-wide">
+          <motion.div
+            className="workshop-for-hvem-header"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <p className="section-label">Er det noget for dig?</p>
+            <h2>Recalibrate er for dig, der...</h2>
+            <p className="workshop-for-hvem-intro">
+              ...mærker, at tempoet har taget overhånd – uanset om du vil stoppe op eller finde en sundere måde at fortsætte på.
+            </p>
+          </motion.div>
+
+          <div className="workshop-for-hvem-grid">
+            {forHvem.map((punkt, index) => (
+              <motion.div
+                key={index}
+                className="workshop-for-hvem-item"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+              >
+                <svg className="workshop-for-hvem-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M5 13l4 4L19 7"/>
+                </svg>
+                <p>{punkt}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Format Section */}
+      <section className="workshop-investment" id="format">
+        <div className="workshop-container-wide">
+          <motion.div
+            className="workshop-investment-header"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <p className="section-label">Format</p>
+            <h2>Vælg det der passer dig</h2>
+          </motion.div>
+
+          <div className="workshop-investment-grid">
+            {formater.map((format, index) => (
+              <motion.div
+                key={index}
+                className={`investment-card ${index === 1 ? 'investment-card-featured' : ''}`}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <h3>{format.title}</h3>
+                <p className="investment-unit" style={{ marginTop: '0.5rem' }}>{format.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Praktisk info */}
+      <section className="workshop-timeline">
+        <div className="workshop-container-wide">
+          <motion.div
+            className="workshop-practical-badges"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="practical-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span>Hørsholm, Nordsjælland</span>
+            </div>
+            <div className="practical-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 6v6l4 2"/>
+              </svg>
+              <span>Fra 1,5 time</span>
+            </div>
+            <div className="practical-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+              </svg>
+              <span>1–6 personer</span>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="cta-section">
+        <div className="cta-content">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <p className="section-label">Næste skridt</p>
+            <h2 className="section-title">Klar til at finde tilbage til dig selv?</h2>
+            <p className="cta-quote">
+              Du behøver ikke have alle svarene på forhånd. Du behøver ikke engang vide præcis, hvad du leder efter. Bare en fornemmelse af, at der må være en anden måde.
+            </p>
+            <Link href="/kontakt" className="cta-button">
+              <span>Lad os tage en samtale</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      <Footer />
+    </>
+  )
+}
