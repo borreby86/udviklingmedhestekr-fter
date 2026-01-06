@@ -389,20 +389,25 @@ export default function RecalibratePage(): React.JSX.Element {
       </section>
 
       {/* CTA Section */}
-      <section className="cta-section">
-        <div className="cta-content">
+      <section className="workshop-instructor recalibrate-cta">
+        <div className="workshop-instructor-bg">
+          <img src="/borreby_terapi_stress.jpg" alt="Stressfri natur" />
+        </div>
+        <div className="workshop-instructor-overlay" />
+        <div className="workshop-container-wide">
           <motion.div
+            className="workshop-instructor-content"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
             <p className="section-label">Næste skridt</p>
-            <h2 className="section-title">Klar til at finde tilbage til dig selv?</h2>
-            <p className="cta-quote">
+            <h2>Klar til at finde tilbage til dig selv?</h2>
+            <p>
               Du behøver ikke have alle svarene på forhånd. Du behøver ikke engang vide præcis, hvad du leder efter. Bare en fornemmelse af, at der må være en anden måde.
             </p>
-            <Link href="/kontakt" className="cta-button">
+            <Link href="/kontakt" className="cta-button" style={{ marginTop: '2rem' }}>
               <span>Lad os tage en samtale</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M5 12h14M12 5l7 7-7 7"/>
