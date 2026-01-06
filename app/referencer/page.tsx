@@ -7,18 +7,30 @@ import Footer from '@/components/Footer'
 
 const testimonials = [
   {
-    quote: "Når jeg holder op med at gøre mig umage for at være dygtig. Så opstår de magiske øjeblikke, hvor tiden står stille.",
-    fullText: `Hvordan hænger personlig gennemslagskraft sammen med "bare at være"? Hvornår er jeg mig, og hvornår spiller jeg en rolle så godt, at jeg tror, den er mig? Hvad vil det sige at være autentisk? Det var nogle af de spørgsmål, jeg fik besvaret i mødet med hesten Calle.
+    quote: "Jeg kunne tydeligt mærke, hvordan mit eget indre nærvær og ro påvirkede hestens tillid til mig. Det var en vigtig påmindelse om, hvordan vores energi og autenticitet skaber følgeskab.",
+    fullText: `I sidste uge deltog Nordic Bloom teamet i inspirerende workshop hos Christina Borreby, hvor vi fik trænet autentisk tillid og lederskab - gennem hestes umiddelbare og ærlige feedback.
 
-Det forunderlige begreb "Forandringens paradoks", udspillede sig i mit møde med Calle. Transformationen i os selv sker, når vi accepterer det, vi allerede er. Når vi nøgternt erkender den indre virkelighed, præcis SOM DEN ER, og møder den med accept. Jeg har momentvis oplevet noget lignende som skuespiller, når rollen tager over, og jeg på mystisk vis bliver karakteren i stedet for at spille den. Når jeg holder op med at gøre mig umage for at være dygtig. Så opstår de magiske øjeblikke, hvor tiden står stille.
+For mit vedkommende - som sidst havde nærkontakt med en hest, da jeg for mange år siden blev smidt af min hustrus hest - var det en indsigtsfuld og stor oplevelse. Selvom jeg blot gik sammen med hesten, kunne jeg tydeligt mærke, hvordan mit eget indre nærvær og ro - da jeg først fik vænnet mig til situationen - påvirkede hestens tillid til mig. Det var en vigtig påmindelse om, hvordan vores energi og autenticitet skaber følgeskab – både blandt heste og mennesker.
 
-Det skete også i mødet med Calle, og har givet mig stof til eftertanke, som jeg allerede nu har brugt privat og professionelt.
+Dagen gav os også mulighed for en værdifuld refleksion i teamet om, hvad godt lederskab og teamwork egentlig kræver. Det var i det hele taget en god måde at være sammen på i andre rammer, og særdeles udbytterigt at opleve hinanden i en kontekst uden for vores normale comfort zone.
 
-Oplevelsen satte efterfølgende gang i en refleksion om, hvornår vi er helt ærlige overfor os selv, om vi opdager det og om vi altid handler på det eller skal handle på det. Hvilke muligheder har du? Hvad kan du? Hvad vil du? Hvad tør du? Og hvad gør du?`,
-    author: "Philip Antonakakis",
-    role: "Erhvervsskuespiller & kommunikationstræner",
-    initials: "PA",
-    image: "/Philip.jpg"
+Hvis du leder efter en effektiv og praksisnær måde at styrke dit lederskab på, kan vi kun give vores varmeste anbefalinger til Christina og hendes fuldblodsheste, Major og Maestro.`,
+    author: "Søren Truelsen",
+    role: "CEO, Nordic Bloom",
+    initials: "ST",
+    image: "/søren truelsen ceo.jpg"
+  },
+  {
+    quote: "Det befriende ved denne metode er, at man kan øve sig på at være 100% autentisk uden at der går 'rollespil' i den.",
+    fullText: `At arbejde med min egen kontakt til både mig selv og mine omgivelser via en hest var en fantastisk mulighed for at reflektere over min egen kommunikation; ikke mindst den nonverbale/mit kropssprog.
+
+Det befriende ved denne metode er, at man kan øve sig på at være 100% autentisk uden at der går "rollespil" i den. Det betød også, at det var nemmere for mig selv at kommunikere med hesten uden at tolke på "den andens" forventninger og derved reelt mærke, hvordan det er at være helt tilstede i mig selv. En følelse som jeg har kunne trække frem mange gange efter.
+
+Det var en både sjov og lærerig oplevelse og jeg vil klart anbefale denne workshop til mine kunder i de situationer, hvor det passer ind i kundens forløb og læringsmål.`,
+    author: "Mads Elk",
+    role: "CEO, Mind Balance System ApS",
+    initials: "ME",
+    image: "/Mads.jpeg"
   },
   {
     quote: "Hestens adfærd hjalp mig til at fokusere på og forstå min adfærd. På godt og ondt. Og det var det hele værd.",
@@ -33,6 +45,20 @@ De afgørende følelser og spørgsmål arbejdede jeg med. OG fandt svaret på mi
     image: "/kim.jpeg"
   },
   {
+    quote: "Når jeg holder op med at gøre mig umage for at være dygtig. Så opstår de magiske øjeblikke, hvor tiden står stille.",
+    fullText: `Hvordan hænger personlig gennemslagskraft sammen med "bare at være"? Hvornår er jeg mig, og hvornår spiller jeg en rolle så godt, at jeg tror, den er mig? Hvad vil det sige at være autentisk? Det var nogle af de spørgsmål, jeg fik besvaret i mødet med hesten Calle.
+
+Det forunderlige begreb "Forandringens paradoks", udspillede sig i mit møde med Calle. Transformationen i os selv sker, når vi accepterer det, vi allerede er. Når vi nøgternt erkender den indre virkelighed, præcis SOM DEN ER, og møder den med accept. Jeg har momentvis oplevet noget lignende som skuespiller, når rollen tager over, og jeg på mystisk vis bliver karakteren i stedet for at spille den. Når jeg holder op med at gøre mig umage for at være dygtig. Så opstår de magiske øjeblikke, hvor tiden står stille.
+
+Det skete også i mødet med Calle, og har givet mig stof til eftertanke, som jeg allerede nu har brugt privat og professionelt.
+
+Oplevelsen satte efterfølgende gang i en refleksion om, hvornår vi er helt ærlige overfor os selv, om vi opdager det og om vi altid handler på det eller skal handle på det. Hvilke muligheder har du? Hvad kan du? Hvad vil du? Hvad tør du? Og hvad gør du?`,
+    author: "Philip Antonakakis",
+    role: "Erhvervsskuespiller & kommunikationstræner",
+    initials: "PA",
+    image: "/Philip.jpg"
+  },
+  {
     quote: "Noget af min ubevidste adfærd blev bevidst og det passer perfekt ind i mit arbejde med mig selv.",
     fullText: `At mærke sig selv og sine grænser ift. det store og spejlende dyr, som en hest er, var en berigelse.
 
@@ -45,18 +71,6 @@ Tak for en fantastisk session som jeg vil anbefale ALLE at investere i, hvis de 
     role: "Indehaver, Icebreaker Academy & Intojob",
     initials: "AV",
     image: "/annemarie.jpg"
-  },
-  {
-    quote: "Det befriende ved denne metode er, at man kan øve sig på at være 100% autentisk uden at der går 'rollespil' i den.",
-    fullText: `At arbejde med min egen kontakt til både mig selv og mine omgivelser via en hest var en fantastisk mulighed for at reflektere over min egen kommunikation; ikke mindst den nonverbale/mit kropssprog.
-
-Det befriende ved denne metode er, at man kan øve sig på at være 100% autentisk uden at der går "rollespil" i den. Det betød også, at det var nemmere for mig selv at kommunikere med hesten uden at tolke på "den andens" forventninger og derved reelt mærke, hvordan det er at være helt tilstede i mig selv. En følelse som jeg har kunne trække frem mange gange efter.
-
-Det var en både sjov og lærerig oplevelse og jeg vil klart anbefale denne workshop til mine kunder i de situationer, hvor det passer ind i kundens forløb og læringsmål.`,
-    author: "Mads Elk",
-    role: "CEO, Mind Balance System ApS",
-    initials: "ME",
-    image: "/Mads.jpeg"
   },
   {
     quote: "Fantastisk at blive spejlet i og få respons fra Calle - stor øjenåbner for mig.",
