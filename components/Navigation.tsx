@@ -66,7 +66,7 @@ export default function Navigation() {
           </ul>
         </li>
         <li><a href="/teams">For teams</a></li>
-        <li><a href="/referencer">Referencer</a></li>
+        <li><a href="/referencer">Det siger andre</a></li>
         <li><a href="/#om">Om mig</a></li>
         <li><a href="/kontakt" className="nav-cta">Kontakt</a></li>
       </ul>
