@@ -1161,6 +1161,11 @@ nav.scrolled .nav-cta:hover {
   justify-content: center;
 }
 
+/* Mobile Hero - hidden on desktop */
+.contact-mobile-hero {
+  display: none;
+}
+
 /* Contact Methods */
 .contact-methods {
   padding: 5rem;
@@ -1302,10 +1307,55 @@ nav.scrolled .nav-cta:hover {
   .contact-form-section { padding: 5rem 3rem; }
 }
 @media (max-width: 768px) {
-  .contact-hero-stacked { padding: 7rem 1.5rem 3rem; }
-  .contact-hero-stacked-content { gap: 2rem; }
+  .contact-mobile-hero {
+    display: block;
+    position: relative;
+    height: 60vh;
+    margin-top: 60px;
+  }
+  .contact-mobile-hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .contact-mobile-hero-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 75% 30%;
+  }
+  .contact-mobile-hero-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(
+      180deg,
+      rgba(244, 245, 247, 0) 0%,
+      rgba(244, 245, 247, 0.8) 70%,
+      rgba(244, 245, 247, 1) 100%
+    );
+  }
+  .contact-hero-stacked {
+    padding: 2rem 1.5rem 3rem;
+    min-height: auto;
+    background: var(--color-cream);
+  }
+  .contact-hero-stacked-bg,
+  .contact-hero-stacked-overlay {
+    display: none;
+  }
+  .contact-hero-stacked-content {
+    gap: 2rem;
+  }
   .contact-hero-text h1 { font-size: 2.25rem; }
-  .contact-hero-form { padding: 1.5rem; }
+  .contact-hero-form {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.7);
+  }
   .contact-hero-form .form-row { grid-template-columns: 1fr; }
   .contact-methods { padding: 3rem 1.5rem; }
   .contact-methods-container { grid-template-columns: 1fr; gap: 1rem; }
@@ -2198,6 +2248,87 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
   line-height: 1.5;
 }
 
+/* Workshop Investment Section */
+.workshop-investment {
+  padding: 6rem 5rem;
+  background: var(--color-cream);
+}
+.workshop-investment-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.workshop-investment-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-weight: 400;
+  color: var(--color-earth);
+  margin-top: 0.75rem;
+}
+.workshop-investment-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.workshop-investment-single {
+  grid-template-columns: 1fr;
+  max-width: 400px;
+}
+.investment-card {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 2.5rem;
+  text-align: center;
+  border: 1px solid var(--color-stone);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.investment-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+.investment-card-featured {
+  border-color: var(--color-copper);
+  background: rgba(255, 255, 255, 0.95);
+}
+.investment-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--color-earth);
+  margin-bottom: 1rem;
+}
+.investment-price {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: var(--color-copper);
+  line-height: 1.2;
+}
+.investment-unit {
+  font-size: 0.95rem;
+  color: var(--color-sage);
+  margin-bottom: 1.5rem;
+}
+.investment-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid var(--color-stone);
+  padding-top: 1.5rem;
+}
+.investment-details li {
+  font-size: 0.95rem;
+  color: var(--color-soft-brown);
+  padding: 0.4rem 0;
+  line-height: 1.5;
+}
+.investment-note {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--color-sage);
+  margin-top: 2rem;
+}
+
 /* Workshop Practical */
 .workshop-practical {
   padding: 6rem 5rem;
@@ -2836,6 +2967,7 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
   .sticky-text-container::before { font-size: 15rem; }
   .sticky-text-content { height: 180px; }
   .workshop-why-new, .workshop-why-neutral, .workshop-benefits-new, .workshop-practical { padding: 5rem 3rem; }
+  .workshop-investment { padding: 5rem 3rem; }
   .workshop-dates-section { padding: 5rem 3rem; }
   .workshop-date-cards { flex-wrap: wrap; }
   .workshop-timeline { padding: 5rem 3rem; }
@@ -2986,6 +3118,9 @@ nav.scrolled .mobile-menu-btn span { background: var(--color-earth); }
   .workshop-why-neutral .workshop-container { grid-template-columns: 1fr; gap: 2rem; }
   .workshop-why-points { grid-template-columns: 1fr; }
   .workshop-practical-image::after { display: none; }
+  .workshop-investment { padding: 4rem 1.5rem; }
+  .workshop-investment-grid { grid-template-columns: 1fr; }
+  .investment-price { font-size: 2rem; }
   .workshop-dates-section { padding: 4rem 1.5rem; }
   .workshop-date-cards { flex-direction: column; align-items: center; }
   .workshop-date-card { width: 100%; max-width: 320px; justify-content: center; }

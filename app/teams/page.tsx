@@ -329,6 +329,50 @@ export default function TeamsPage() {
         </div>
       </section>
 
+      {/* Investment Section */}
+      <section className="workshop-investment">
+        <div className="workshop-container-wide">
+          <motion.div
+            className="workshop-investment-header"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <p className="section-label">Investering</p>
+            <h2>Pris</h2>
+          </motion.div>
+
+          <div className="workshop-investment-grid workshop-investment-single">
+            <motion.div
+              className="investment-card investment-card-featured"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <h3>Teamworkshop</h3>
+              <div className="investment-price">Fra 14.000 kr.</div>
+              <p className="investment-unit">skræddersyet til jeres team</p>
+              <ul className="investment-details">
+                <li>3-4 timer</li>
+                <li>6-15 deltagere</li>
+              </ul>
+            </motion.div>
+          </div>
+
+          <motion.p
+            className="investment-note"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            Priser ekskl. moms
+          </motion.p>
+        </div>
+      </section>
+
       {/* CTA Section - INGEN BILLEDE */}
       <section className="cta-section">
         <div className="cta-content">
