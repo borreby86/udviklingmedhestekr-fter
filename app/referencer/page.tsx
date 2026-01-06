@@ -57,6 +57,16 @@ Det var en både sjov og lærerig oplevelse og jeg vil klart anbefale denne work
     role: "CEO, Mind Balance System ApS",
     initials: "ME",
     image: "/Mads.jpeg"
+  },
+  {
+    quote: "Fantastisk at blive spejlet i og få respons fra Calle - stor øjenåbner for mig.",
+    fullText: `Tak for en interessant og anderledes workshop. Lige den slags nicheworkshop, jeg har manglet.
+
+Fantastisk at blive spejlet i og få respons fra Calle - stor øjenåbner for mig. På trods af mange års coaching fik jeg nyt syn og perspektiv på et længerevarende issue.`,
+    author: "Camilla Guldmann",
+    role: "Teamleder",
+    initials: "CG",
+    image: "/hero-eye.jpg"
   }
 ]
 
