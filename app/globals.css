@@ -208,9 +208,8 @@ nav.scrolled .nav-cta:hover {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--color-copper);
-  padding: 0.75rem 1.5rem 0.35rem;
-  margin-top: 0.5rem;
-  border-top: 1px solid var(--color-stone);
+  padding: 1.25rem 1.5rem 0.5rem;
+  margin-top: 0.25rem;
 }
 .nav-dropdown-subitem {
   padding-left: 1.5rem !important;
