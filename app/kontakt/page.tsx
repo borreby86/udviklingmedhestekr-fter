@@ -14,18 +14,61 @@ export default function KontaktPage() {
     <>
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="contact-hero-new">
-        <div className="contact-hero-new-bg">
+      {/* Hero Section with Form */}
+      <section className="contact-hero-stacked">
+        <div className="contact-hero-stacked-bg">
           <img src="/lederudvikling heste.jpg" alt="Hesteassisteret coaching" />
         </div>
-        <div className="contact-hero-new-overlay" />
-        <div className="contact-hero-new-content">
-          <p className="section-label">Kontakt</p>
-          <h1>Lad os tale <em>sammen</em></h1>
-          <p className="contact-hero-new-intro">
-            Har du spørgsmål om hesteassisteret udvikling? Ræk ud - jeg svarer inden for 24 timer.
-          </p>
+        <div className="contact-hero-stacked-overlay" />
+        <div className="contact-hero-stacked-content">
+          <div className="contact-hero-text">
+            <p className="section-label">Kontakt</p>
+            <h1>Lad os tale <em>sammen</em></h1>
+            <p className="contact-hero-intro">
+              Overvejer du hesteassisteret lederudvikling for dig selv eller dit team?<br />
+              Eller har du spørgsmål om, hvordan forløbene kan tilpasses jeres behov?
+            </p>
+            <p className="contact-hero-intro">
+              Ræk ud - jeg svarer inden for 24 timer og tager gerne en uforpligtende samtale om mulighederne.
+            </p>
+          </div>
+          <div className="contact-hero-form">
+            <form onSubmit={handleSubmit}>
+              <div className="form-row">
+                <div className="form-group">
+                  <label htmlFor="name">Navn *</label>
+                  <input type="text" id="name" name="name" required />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="email">E-mail *</label>
+                  <input type="email" id="email" name="email" required />
+                </div>
+              </div>
+              <div className="form-row">
+                <div className="form-group">
+                  <label htmlFor="phone">Telefon</label>
+                  <input type="tel" id="phone" name="phone" />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="company">Virksomhed</label>
+                  <input type="text" id="company" name="company" />
+                </div>
+              </div>
+              <div className="form-group">
+                <label htmlFor="message">Besked</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={3}
+                  placeholder="Fortæl kort om din situation..."
+                />
+              </div>
+              <button type="submit" className="cta-button">
+                <span>Send besked</span>
+                <ArrowIcon />
+              </button>
+            </form>
+          </div>
         </div>
       </section>
 
@@ -58,51 +101,6 @@ export default function KontaktPage() {
             <p>Sessions afholdes her</p>
             <span>Hørsholm, Nordsjælland</span>
           </div>
-        </div>
-      </section>
-
-      {/* Form Section */}
-      <section className="contact-form-new">
-        <div className="contact-form-new-container">
-          <div className="contact-form-new-header">
-            <h2>Send en besked</h2>
-            <p>Eller udfyld formularen, så vender jeg tilbage hurtigst muligt.</p>
-          </div>
-          <form onSubmit={handleSubmit}>
-            <div className="form-row">
-              <div className="form-group">
-                <label htmlFor="name">Navn *</label>
-                <input type="text" id="name" name="name" required />
-              </div>
-              <div className="form-group">
-                <label htmlFor="email">E-mail *</label>
-                <input type="email" id="email" name="email" required />
-              </div>
-            </div>
-            <div className="form-row">
-              <div className="form-group">
-                <label htmlFor="phone">Telefon</label>
-                <input type="tel" id="phone" name="phone" />
-              </div>
-              <div className="form-group">
-                <label htmlFor="company">Virksomhed</label>
-                <input type="text" id="company" name="company" />
-              </div>
-            </div>
-            <div className="form-group">
-              <label htmlFor="message">Besked</label>
-              <textarea
-                id="message"
-                name="message"
-                rows={2}
-                placeholder="Fortæl kort om din situation..."
-              />
-            </div>
-            <button type="submit" className="cta-button">
-              <span>Send besked</span>
-              <ArrowIcon />
-            </button>
-          </form>
         </div>
       </section>
 
