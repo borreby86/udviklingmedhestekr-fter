@@ -345,7 +345,8 @@ nav.scrolled .nav-cta:hover {
   gap: 4rem;
   align-items: center;
 }
-.forbes-quote { display: flex; align-items: flex-start; gap: 1.5rem; }
+.forbes-quote { display: flex; align-items: flex-start; gap: 1.5rem; text-decoration: none; transition: opacity 0.3s ease; }
+.forbes-quote:hover { opacity: 0.85; }
 .forbes-logo {
   font-family: var(--font-label);
   font-size: 0.65rem;
