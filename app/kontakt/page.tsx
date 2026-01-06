@@ -14,6 +14,14 @@ export default function KontaktPage() {
     <>
       <Navigation />
 
+      {/* Mobile Hero Image */}
+      <section className="contact-mobile-hero">
+        <div className="contact-mobile-hero-img">
+          <img src="/lederudvikling heste.jpg" alt="Christina Borreby med hest" />
+        </div>
+        <div className="contact-mobile-hero-gradient" />
+      </section>
+
       {/* Hero Section with Form */}
       <section className="contact-hero-stacked">
         <div className="contact-hero-stacked-bg">
