@@ -25,7 +25,7 @@ export default function Testimonials() {
   return (
     <section className="testimonials-section" id="resultater">
       <div className="testimonials-header">
-        <p className="section-label">Referencer</p>
+        <p className="section-label">Det siger andre</p>
         <h2 className="section-title">Hvad har tidligere deltagere oplevet</h2>
       </div>
       <div className="testimonials-grid">
@@ -46,7 +46,7 @@ export default function Testimonials() {
       </div>
       <div className="testimonials-cta">
         <a href="/referencer" className="cta-button cta-button-outline">
-          <span>Se flere referencer</span>
+          <span>Læs flere udtalelser</span>
           <ArrowIcon />
         </a>
       </div>

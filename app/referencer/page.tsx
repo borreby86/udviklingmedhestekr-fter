@@ -146,7 +146,7 @@ export default function ReferencerPage() {
           <img src="/autentisk-lederudvikling.jpg" alt="Referencer" />
         </motion.div>
         <div className="referencer-hero-content">
-          <p className="section-label">Referencer</p>
+          <p className="section-label">Det siger andre</p>
           <h1>Hvad siger <em>deltagerne</em>?</h1>
         </div>
       </section>
