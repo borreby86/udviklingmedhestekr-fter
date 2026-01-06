@@ -59,6 +59,14 @@ Oplevelsen satte efterfølgende gang i en refleksion om, hvornår vi er helt ær
     image: "/Philip.jpg"
   },
   {
+    quote: "Jeg var rigtig glad for oplevelsen, og at der gennem hesten blev koblet en fysisk øvelse på et tema, som man ofte bruger tid på 'kun' at tale om.",
+    fullText: `Jeg var rigtig glad for oplevelsen, og at der gennem hesten blev koblet en fysisk øvelse på et tema, som man ofte bruger tid på "kun" at tale om.`,
+    author: "Henrik Koch",
+    role: "HR Manager, 3",
+    initials: "HK",
+    image: "/playboy.jpeg"
+  },
+  {
     quote: "Noget af min ubevidste adfærd blev bevidst og det passer perfekt ind i mit arbejde med mig selv.",
     fullText: `At mærke sig selv og sine grænser ift. det store og spejlende dyr, som en hest er, var en berigelse.
 
