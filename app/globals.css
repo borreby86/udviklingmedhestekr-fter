@@ -1061,10 +1061,174 @@ nav.scrolled .nav-cta:hover {
   color: var(--color-earth);
 }
 
-/* Contact Form Section */
+/* Contact Page - New Structure */
+.contact-hero-new {
+  min-height: 50vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10rem 5rem 5rem;
+}
+.contact-hero-new-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.contact-hero-new-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.contact-hero-new-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(52, 64, 79, 0.85) 0%,
+    rgba(52, 64, 79, 0.7) 100%
+  );
+  z-index: 1;
+}
+.contact-hero-new-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+.contact-hero-new-content .section-label {
+  color: var(--color-copper);
+}
+.contact-hero-new-content h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  color: var(--color-cream);
+  line-height: 1.15;
+  margin: 1rem 0 1.5rem;
+}
+.contact-hero-new-content h1 em {
+  font-style: italic;
+  color: var(--color-copper);
+}
+.contact-hero-new-intro {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--color-warm-sand);
+}
+
+/* Contact Methods */
+.contact-methods {
+  padding: 5rem;
+  background: var(--color-cream);
+}
+.contact-methods-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.contact-method {
+  text-align: center;
+  padding: 2rem;
+}
+.contact-method-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-earth);
+  border-radius: 50%;
+}
+.contact-method-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--color-copper);
+}
+.contact-method h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--color-earth);
+  margin-bottom: 0.5rem;
+}
+.contact-method p {
+  font-size: 0.9rem;
+  color: var(--color-sage);
+  margin-bottom: 0.75rem;
+}
+.contact-method a,
+.contact-method span {
+  font-size: 1rem;
+  color: var(--color-copper);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.contact-method a:hover {
+  color: var(--color-earth);
+}
+
+/* Contact Form New */
+.contact-form-new {
+  padding: 5rem;
+  background: var(--color-earth);
+}
+.contact-form-new-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.contact-form-new-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.contact-form-new-header h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--color-cream);
+  margin-bottom: 0.75rem;
+}
+.contact-form-new-header p {
+  font-size: 1rem;
+  color: var(--color-warm-sand);
+}
+.contact-form-new .form-group label {
+  color: var(--color-copper);
+}
+.contact-form-new .form-group input,
+.contact-form-new .form-group textarea {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(139, 120, 74, 0.3);
+  color: var(--color-cream);
+}
+.contact-form-new .form-group input::placeholder,
+.contact-form-new .form-group textarea::placeholder {
+  color: var(--color-sage);
+}
+.contact-form-new .form-group input:focus,
+.contact-form-new .form-group textarea:focus {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--color-copper);
+}
+.contact-form-new .cta-button {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Contact Form Section (legacy) */
 .contact-form-section {
   padding: 6rem 5rem;
-  background: var(--color-earth);
+  background: var(--color-warm-sand);
 }
 .contact-form-container {
   max-width: 700px;
@@ -1078,25 +1242,35 @@ nav.scrolled .nav-cta:hover {
   font-family: var(--font-display);
   font-size: clamp(1.75rem, 2.5vw, 2.25rem);
   font-weight: 400;
-  color: var(--color-cream);
+  color: var(--color-earth);
   margin-bottom: 0.75rem;
 }
 .contact-form-header p {
   font-size: 1rem;
-  color: var(--color-warm-sand);
+  color: var(--color-soft-brown);
 }
 .contact-form-wrapper {
-  background: rgba(244, 245, 247, 0.05);
+  background: rgba(255, 255, 255, 0.5);
   padding: 2.5rem;
-  border: 1px solid rgba(139, 120, 74, 0.2);
+  border: 1px solid rgba(52, 64, 79, 0.1);
 }
 
 @media (max-width: 1024px) {
+  .contact-hero-new { padding: 8rem 3rem 4rem; }
+  .contact-methods { padding: 4rem 3rem; }
+  .contact-form-new { padding: 4rem 3rem; }
   .contact-hero { padding: 8rem 3rem 4rem; }
   .contact-hero-container { margin-left: 2rem; }
   .contact-form-section { padding: 5rem 3rem; }
 }
 @media (max-width: 768px) {
+  .contact-hero-new { padding: 7rem 1.5rem 3rem; min-height: 40vh; }
+  .contact-hero-new-content h1 { font-size: 2.25rem; }
+  .contact-methods { padding: 3rem 1.5rem; }
+  .contact-methods-container { grid-template-columns: 1fr; gap: 1rem; }
+  .contact-method { padding: 1.5rem; }
+  .contact-form-new { padding: 3rem 1.5rem; }
+  .contact-form-new .form-row { grid-template-columns: 1fr; }
   .contact-hero { padding: 7rem 1.5rem 3rem; min-height: auto; }
   .contact-hero-container { margin-left: 0; max-width: 100%; }
   .contact-hero-content h1 { font-size: 2rem; }
@@ -1239,7 +1413,7 @@ nav.scrolled .nav-cta:hover {
 .form-button { width: 100%; justify-content: center; margin-top: 0.75rem; }
 
 /* Footer */
-footer { padding: 4.5rem 5rem; background: var(--color-earth); color: var(--color-warm-sand); }
+footer { padding: 2.5rem 5rem; background: var(--color-earth); color: var(--color-warm-sand); border-top: 1px solid var(--color-copper); }
 .footer-content {
   max-width: 1200px;
   margin: 0 auto;
@@ -1289,8 +1463,8 @@ footer { padding: 4.5rem 5rem; background: var(--color-earth); color: var(--colo
 }
 .footer-bottom {
   max-width: 1200px;
-  margin: 2.5rem auto 0;
-  padding-top: 2.5rem;
+  margin: 1.5rem auto 0;
+  padding-top: 1.5rem;
   border-top: 1px solid rgba(224, 228, 232, 0.08);
   text-align: center;
   font-size: 0.8rem;

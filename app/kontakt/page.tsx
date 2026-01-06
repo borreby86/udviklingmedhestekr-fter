@@ -7,7 +7,7 @@ import { ArrowIcon, EmailIcon, LinkedInIcon, LocationIcon } from '@/components/I
 export default function KontaktPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    alert('Tak for din henvendelse! Vi vender tilbage hurtigst muligt.')
+    alert('Tak for din henvendelse! Jeg vender tilbage hurtigst muligt.')
   }
 
   return (
@@ -15,99 +15,94 @@ export default function KontaktPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="contact-hero">
-        <div className="contact-hero-bg">
-          <img src="/audience-bg.jpg" alt="Hesteassisteret coaching" />
+      <section className="contact-hero-new">
+        <div className="contact-hero-new-bg">
+          <img src="/lederudvikling heste.jpg" alt="Hesteassisteret coaching" />
         </div>
-        <div className="contact-hero-overlay" />
+        <div className="contact-hero-new-overlay" />
+        <div className="contact-hero-new-content">
+          <p className="section-label">Kontakt</p>
+          <h1>Lad os tale <em>sammen</em></h1>
+          <p className="contact-hero-new-intro">
+            Har du spørgsmål om hesteassisteret udvikling? Ræk ud - jeg svarer inden for 24 timer.
+          </p>
+        </div>
+      </section>
 
-        <div className="contact-hero-container">
-          <div className="contact-hero-content">
-            <p className="section-label">Kontakt</p>
-            <h1>Lad os tale sammen</h1>
-            <p className="contact-hero-intro">
-              Ræk ud og hør hvordan hesteassisteret coaching kan hjælpe dig, dit team eller optimere dit lederskab - personligt såvel som professionelt.
-            </p>
+      {/* Contact Methods */}
+      <section className="contact-methods">
+        <div className="contact-methods-container">
+          <div className="contact-method">
+            <div className="contact-method-icon">
+              <EmailIcon />
+            </div>
+            <h3>Email</h3>
+            <p>Skriv når som helst</p>
+            <a href="mailto:info@christinaborreby.dk">info@christinaborreby.dk</a>
           </div>
 
-          <div className="contact-hero-info">
-            <div className="contact-info-card">
-              <div className="contact-info-icon">
-                <EmailIcon />
-              </div>
-              <div className="contact-info-content">
-                <h3>Email</h3>
-                <p>Svar inden for 24 timer</p>
-                <a href="mailto:info@christinaborreby.dk">info@christinaborreby.dk</a>
-              </div>
+          <div className="contact-method">
+            <div className="contact-method-icon">
+              <LinkedInIcon />
             </div>
+            <h3>LinkedIn</h3>
+            <p>Forbind med Christina</p>
+            <a href="https://www.linkedin.com/in/cborreby/" target="_blank" rel="noopener noreferrer">Christina Borreby</a>
+          </div>
 
-            <div className="contact-info-card">
-              <div className="contact-info-icon">
-                <LinkedInIcon />
-              </div>
-              <div className="contact-info-content">
-                <h3>LinkedIn</h3>
-                <p>Forbind med Christina</p>
-                <a href="https://www.linkedin.com/in/cborreby/" target="_blank" rel="noopener noreferrer">
-                  Christina Borreby
-                </a>
-              </div>
+          <div className="contact-method">
+            <div className="contact-method-icon">
+              <LocationIcon />
             </div>
-
-            <div className="contact-info-card">
-              <div className="contact-info-icon">
-                <LocationIcon />
-              </div>
-              <div className="contact-info-content">
-                <h3>Lokation</h3>
-                <p>Sessions afholdes her</p>
-                <span>Hørsholm, Nordsjælland</span>
-              </div>
-            </div>
+            <h3>Lokation</h3>
+            <p>Sessions afholdes her</p>
+            <span>Hørsholm, Nordsjælland</span>
           </div>
         </div>
       </section>
 
       {/* Form Section */}
-      <section className="contact-form-section">
-        <div className="contact-form-container">
-          <div className="contact-form-header">
-            <h2>Send en forespørgsel</h2>
-            <p>Udfyld formularen, så vender jeg tilbage hurtigst muligt.</p>
+      <section className="contact-form-new">
+        <div className="contact-form-new-container">
+          <div className="contact-form-new-header">
+            <h2>Send en besked</h2>
+            <p>Eller udfyld formularen, så vender jeg tilbage hurtigst muligt.</p>
           </div>
-
-          <div className="contact-form-wrapper">
-            <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit}>
+            <div className="form-row">
               <div className="form-group">
                 <label htmlFor="name">Navn *</label>
                 <input type="text" id="name" name="name" required />
               </div>
-              <div className="form-row">
-                <div className="form-group">
-                  <label htmlFor="email">E-mail *</label>
-                  <input type="email" id="email" name="email" required />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="phone">Telefon</label>
-                  <input type="tel" id="phone" name="phone" />
-                </div>
+              <div className="form-group">
+                <label htmlFor="email">E-mail *</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+            </div>
+            <div className="form-row">
+              <div className="form-group">
+                <label htmlFor="phone">Telefon</label>
+                <input type="tel" id="phone" name="phone" />
               </div>
               <div className="form-group">
-                <label htmlFor="message">Besked</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={3}
-                  placeholder="Fortæl kort om din situation..."
-                />
+                <label htmlFor="company">Virksomhed</label>
+                <input type="text" id="company" name="company" />
               </div>
-              <button type="submit" className="cta-button form-button">
-                <span>Send forespørgsel</span>
-                <ArrowIcon />
-              </button>
-            </form>
-          </div>
+            </div>
+            <div className="form-group">
+              <label htmlFor="message">Besked</label>
+              <textarea
+                id="message"
+                name="message"
+                rows={2}
+                placeholder="Fortæl kort om din situation..."
+              />
+            </div>
+            <button type="submit" className="cta-button">
+              <span>Send besked</span>
+              <ArrowIcon />
+            </button>
+          </form>
         </div>
       </section>
 
