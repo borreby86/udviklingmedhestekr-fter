@@ -9,9 +9,9 @@ export default function Footer() {
           <p className="footer-tagline">Udvikling med hestekræfter i Nordsjælland</p>
         </div>
         <div className="footer-contact">
-          <a href="mailto:cb@christinaborreby.dk" className="footer-link">
+          <a href="mailto:info@christinaborreby.dk" className="footer-link">
             <EmailIcon />
-            <span>cb@christinaborreby.dk</span>
+            <span>info@christinaborreby.dk</span>
           </a>
           <a href="https://www.linkedin.com/in/cborreby/" target="_blank" rel="noopener noreferrer" className="footer-link">
             <LinkedInIcon />
