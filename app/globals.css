@@ -159,7 +159,7 @@ nav.scrolled .nav-cta:hover {
   min-width: 280px;
   background: white;
   box-shadow: 0 8px 30px rgba(52, 64, 79, 0.15);
-  padding: 0.5rem 0;
+  padding: 0.75rem 0.5rem;
   opacity: 0;
   visibility: hidden;
   transition: all 0.25s ease;
