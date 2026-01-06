@@ -2,12 +2,15 @@ export default function SocialProof() {
   return (
     <section className="social-proof">
       <div className="social-proof-content">
-        <a href="https://www.forbes.com/sites/nelldebevoise/2025/09/23/what-horses-teach-us-about-leadership-that-no-offsite-ever-could/" target="_blank" rel="noopener noreferrer" className="forbes-quote">
+        <div className="forbes-quote">
           <span className="forbes-logo">FORBES</span>
-          <p className="forbes-text">
-            "Equine-assisted learning has become one of the most powerful tools used for executives and teams."
-          </p>
-        </a>
+          <div className="forbes-content">
+            <p className="forbes-text">
+              "Equine-assisted learning has become one of the most powerful tools used for executives and teams."
+            </p>
+            <a href="https://www.forbes.com/sites/nelldebevoise/2025/09/23/what-horses-teach-us-about-leadership-that-no-offsite-ever-could/" target="_blank" rel="noopener noreferrer" className="proof-link">Læs artiklen →</a>
+          </div>
+        </div>
         <div className="proof-stats">
           <div className="proof-number">106</div>
           <div className="proof-content">
