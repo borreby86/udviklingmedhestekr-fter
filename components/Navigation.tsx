@@ -74,8 +74,8 @@ export default function Navigation() {
             </svg>
           </a>
           <ul className="nav-dropdown-menu">
-            <li><a href="/recalibrate">Recalibrate</a></li>
             <li className="nav-dropdown-label">Hold tempoet uden at betale med helbredet</li>
+            <li><a href="/recalibrate">Recalibrate</a></li>
           </ul>
         </li>
         <li><a href="/referencer">Det siger andre</a></li>
