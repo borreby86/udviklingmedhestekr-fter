@@ -525,7 +525,7 @@ export default function LederworkshopPage() {
               <motion.button
                 key={index}
                 onClick={() => openModal(date.month)}
-                className="workshop-date-card"
+                className="workshop-date-card workshop-date-card-light"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

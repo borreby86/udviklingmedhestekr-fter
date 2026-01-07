@@ -4267,6 +4267,9 @@ nav.scrolled .mobile-menu-btn {
 .workshop-date-card-light:hover .date-card-action {
   color: var(--color-earth);
 }
+.workshop-date-card-light .date-card-pending {
+  color: var(--color-copper);
+}
 
 /* Compact Pricing */
 .workshop-pricing-compact {
