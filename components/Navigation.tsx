@@ -75,6 +75,7 @@ export default function Navigation() {
           </a>
           <ul className="nav-dropdown-menu">
             <li><a href="/recalibrate">Recalibrate</a></li>
+            <li className="nav-dropdown-label">Regulér nervesystemet med heste og natur</li>
           </ul>
         </li>
         <li><a href="/referencer">Det siger andre</a></li>
