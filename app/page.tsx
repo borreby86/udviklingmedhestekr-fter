@@ -3,7 +3,7 @@ import Hero from '@/components/Hero'
 import SocialProof from '@/components/SocialProof'
 import Insights from '@/components/Insights'
 import Services from '@/components/Services'
-import WhyHorses from '@/components/WhyHorses'
+import WhyHorsesVideo from '@/components/WhyHorsesVideo'
 import Audience from '@/components/Audience'
 import Testimonials from '@/components/Testimonials'
 import Benefits from '@/components/Benefits'
@@ -19,7 +19,7 @@ export default function Home() {
       <SocialProof />
       <Insights />
       <Services />
-      <WhyHorses />
+      <WhyHorsesVideo />
       <Testimonials />
       <Benefits />
       <About />

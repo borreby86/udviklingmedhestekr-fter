@@ -688,6 +688,77 @@ nav.scrolled .nav-cta:hover {
 .why-image:hover img {
   transform: scale(1.05);
 }
+.why-image video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Why Horses Video Section */
+.why-video-section {
+  padding: 6rem 5rem;
+  position: relative;
+  overflow: hidden;
+}
+.why-video-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 75%;
+  z-index: 0;
+}
+.why-video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.why-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    var(--color-cream) 0%,
+    var(--color-cream) 30%,
+    rgba(244, 245, 247, 0.4) 100%
+  );
+  z-index: 1;
+}
+.why-video-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+.why-video-content {
+  max-width: 520px;
+}
+.why-video-content h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-weight: 400;
+  color: var(--color-earth);
+  margin: 0.75rem 0 1.5rem;
+}
+.why-video-content p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--color-soft-brown);
+  margin-bottom: 1rem;
+}
+.why-video-content .section-label {
+  font-size: 0.7rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+.why-video-highlight {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-earth);
+  margin: 1.5rem 0;
+}
 
 /* Audience Section */
 .audience-section { position: relative; padding: 7rem 5rem; overflow: hidden; }
@@ -4678,6 +4749,48 @@ nav.scrolled .mobile-menu-btn {
   }
   .about-banner-badges {
     justify-content: center;
+  }
+  /* Why Video Section Mobile */
+  .why-video-section {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .why-video-bg {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    min-height: 350px;
+  }
+  .why-video-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(244, 245, 247, 0.1) 0%,
+      rgba(244, 245, 247, 0) 25%,
+      rgba(244, 245, 247, 0) 50%,
+      rgba(244, 245, 247, 0.5) 85%,
+      rgba(244, 245, 247, 1) 100%
+    );
+    pointer-events: none;
+  }
+  .why-video-overlay {
+    display: none;
+  }
+  .why-video-container {
+    position: relative;
+    background: var(--color-cream);
+    padding: 2.5rem 1.5rem 4rem;
+    margin-top: -3rem;
+  }
+  .why-video-content {
+    max-width: 100%;
+    text-align: center;
+  }
+  .why-video-content h2 {
+    margin: 0.5rem 0 1.25rem;
   }
   .workshop-about-section {
     padding: 5rem 1.5rem;

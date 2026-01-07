@@ -36,7 +36,16 @@ export default function WhyHorses() {
         <div className="why-visual">
           <div className="why-image-frame"></div>
           <motion.div className="why-image" style={{ y: imageY }}>
-            <img src="/hestekursus-nordsjaelland.jpeg" alt="Nærvær og forbindelse med hest" />
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              poster="/hestekursus-nordsjaelland.jpeg"
+            >
+              <source src="/hestevideo.mp4" type="video/mp4" />
+              <img src="/hestekursus-nordsjaelland.jpeg" alt="Nærvær og forbindelse med hest" />
+            </video>
           </motion.div>
         </div>
       </div>
