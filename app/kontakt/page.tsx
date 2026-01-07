@@ -66,7 +66,7 @@ export default function KontaktPage() {
             <p className="section-label">Kontakt</p>
             <h1>Lad os tale <em>sammen</em></h1>
             <p className="contact-hero-intro">
-              Overvejer du hesteassisteret lederudvikling for dig selv eller dit team?<br />
+              Overvejer du hesteassisteret udvikling til dig som leder eller til dit team?<br />
               Eller har du spørgsmål om, hvordan forløbene kan tilpasses jeres behov?
             </p>
             <p className="contact-hero-intro">
