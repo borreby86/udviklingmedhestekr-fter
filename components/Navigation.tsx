@@ -66,7 +66,17 @@ export default function Navigation() {
           </ul>
         </li>
         <li><a href="/teams">For teams</a></li>
-        <li><a href="/recalibrate">Recalibrate</a></li>
+        <li className="nav-dropdown">
+          <a href="#" className="nav-dropdown-trigger">
+            For alle
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </a>
+          <ul className="nav-dropdown-menu">
+            <li><a href="/recalibrate">Recalibrate</a></li>
+          </ul>
+        </li>
         <li><a href="/referencer">Det siger andre</a></li>
         <li><a href="/#om">Om mig</a></li>
         <li><a href="/kontakt" className="nav-cta">Kontakt</a></li>
