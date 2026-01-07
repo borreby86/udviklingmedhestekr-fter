@@ -1,13 +1,46 @@
 'use client'
 
+import { useState } from 'react'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import { ArrowIcon, EmailIcon, LinkedInIcon, LocationIcon } from '@/components/Icons'
 
 export default function KontaktPage() {
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    alert('Tak for din henvendelse! Jeg vender tilbage hurtigst muligt.')
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+
+    const formData = new FormData(e.currentTarget)
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      phone: formData.get('phone'),
+      company: formData.get('company'),
+      message: formData.get('message'),
+    }
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
+
+      if (response.ok) {
+        setSubmitStatus('success')
+        e.currentTarget.reset()
+      } else {
+        setSubmitStatus('error')
+      }
+    } catch {
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -71,10 +104,16 @@ export default function KontaktPage() {
                   placeholder="Fortæl kort om din situation..."
                 />
               </div>
-              <button type="submit" className="cta-button">
-                <span>Send besked</span>
+              <button type="submit" className="cta-button" disabled={isSubmitting}>
+                <span>{isSubmitting ? 'Sender...' : 'Send besked'}</span>
                 <ArrowIcon />
               </button>
+              {submitStatus === 'success' && (
+                <p className="form-success">Tak for din henvendelse! Jeg vender tilbage inden for 24 timer.</p>
+              )}
+              {submitStatus === 'error' && (
+                <p className="form-error">Der opstod en fejl. Prøv igen eller skriv direkte til info@christinaborreby.dk</p>
+              )}
             </form>
           </div>
         </div>

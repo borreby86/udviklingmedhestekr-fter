@@ -76,23 +76,51 @@
 
 @media (max-width: 1024px) {
   .about {
-    padding: 6rem 3rem;
+    padding: 5rem 2rem;
   }
   .grid {
     grid-template-columns: 1fr;
-    gap: 3.5rem;
+    gap: 3rem;
   }
 }
 
 @media (max-width: 768px) {
   .about {
-    padding: 5rem 1.5rem;
+    padding: 4rem 1.25rem;
+  }
+  .grid {
+    gap: 2.5rem;
   }
   .image {
-    max-width: 320px;
+    max-width: 280px;
     margin: 0 auto;
+    aspect-ratio: 4/5;
   }
   .image::before {
     display: none;
+  }
+  .label {
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-align: center;
+  }
+  .content {
+    text-align: center;
+  }
+  .content h3 {
+    font-size: 1.75rem;
+    margin-bottom: 0.25rem;
+  }
+  .role {
+    font-size: 0.7rem;
+    margin-bottom: 1.5rem;
+  }
+  .text {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    text-align: left;
+  }
+  .text p + p {
+    margin-top: 1rem;
   }
 }

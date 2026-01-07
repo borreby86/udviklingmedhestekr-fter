@@ -145,11 +145,31 @@
   transform: translateX(4px);
 }
 
+@media (max-width: 1024px) {
+  .heroContent {
+    padding: 9rem 3rem 5rem;
+    max-width: 520px;
+  }
+}
+
 @media (max-width: 768px) {
+  .hero {
+    min-height: 100svh;
+  }
   .heroContent {
     padding: 8rem 1.5rem 5rem;
+    max-width: 100%;
   }
   .heroBg::after {
     background: linear-gradient(180deg, rgba(52, 64, 79, 0.88) 0%, rgba(52, 64, 79, 0.75) 50%, rgba(52, 64, 79, 0.5) 100%);
+  }
+  .heroTagline {
+    font-size: 0.65rem;
+    margin-bottom: 1.25rem;
+  }
+  .ctaButton {
+    width: 100%;
+    justify-content: center;
+    min-height: 52px;
   }
 }
