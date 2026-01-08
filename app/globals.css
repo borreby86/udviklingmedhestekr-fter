@@ -435,7 +435,7 @@ nav.scrolled .nav-cta:hover {
   font-family: var(--font-display);
   font-size: clamp(2rem, 3.5vw, 2.6rem);
   font-weight: 400;
-  line-height: 1.25;
+  line-height: 1.15;
   color: var(--color-earth);
 }
 
@@ -3265,8 +3265,8 @@ nav.scrolled .mobile-menu-btn {
     text-transform: none;
     text-decoration: none;
     display: block;
-    padding: 0.875rem 1.5rem;
-    min-height: 52px;
+    padding: 0.5rem 1.5rem;
+    min-height: 44px;
     transition: color 0.3s ease;
   }
   nav.menu-open .nav-links a:hover {
@@ -5058,7 +5058,7 @@ nav.scrolled .mobile-menu-btn {
   }
   .hero-tagline::before { width: 25px; }
   .cta-button { padding: 0.875rem 1.5rem; font-size: 0.75rem; }
-  .section-title { font-size: 1.65rem; }
+  .section-title { font-size: 1.65rem; line-height: 1.15; }
   .section-label { font-size: 0.6rem; }
   .insights-section, .services-section, .why-section, .testimonials-section,
   .benefits-section, .about-section, .cta-section, .contact-section { padding: 3.5rem 1rem; }
@@ -5377,4 +5377,140 @@ nav.scrolled .mobile-menu-btn {
   .research-studies { padding: 4rem 0; }
   .studies-grid { grid-template-columns: 1fr; }
   .research-container { padding: 0 1.5rem; }
+}
+
+/* ========================================
+   PRIVACY POLICY PAGE
+======================================== */
+.privacy-page {
+  min-height: 100vh;
+}
+
+.privacy-hero {
+  padding: 12rem 5rem 6rem;
+  background: linear-gradient(180deg, var(--color-cream-warm) 0%, var(--color-cream) 100%);
+  text-align: center;
+}
+
+.privacy-hero-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.privacy-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 400;
+  color: var(--color-earth);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.privacy-intro {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  color: var(--color-sage);
+  line-height: 1.8;
+}
+
+.privacy-content {
+  padding: 5rem 5rem 8rem;
+  background: var(--color-cream);
+}
+
+.privacy-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.privacy-section {
+  margin-bottom: 3.5rem;
+  padding-bottom: 3.5rem;
+  border-bottom: 1px solid var(--color-stone);
+}
+
+.privacy-section:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.privacy-section h2 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: var(--color-earth);
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.01em;
+}
+
+.privacy-section h3 {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--color-earth);
+  margin: 1.75rem 0 0.75rem;
+}
+
+.privacy-section p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-soft-brown);
+  line-height: 1.8;
+  margin-bottom: 0.75rem;
+}
+
+.privacy-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.privacy-section ul li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-soft-brown);
+  line-height: 1.7;
+}
+
+.privacy-section ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.65rem;
+  width: 6px;
+  height: 6px;
+  background: var(--color-copper);
+  border-radius: 50%;
+}
+
+.privacy-section ul li strong {
+  color: var(--color-earth);
+  font-weight: 500;
+}
+
+.privacy-updated {
+  font-style: italic;
+  color: var(--color-sage) !important;
+  font-size: 0.95rem !important;
+  margin-top: 1.5rem !important;
+}
+
+@media (max-width: 768px) {
+  .privacy-hero {
+    padding: 10rem 1.5rem 4rem;
+  }
+  .privacy-content {
+    padding: 3rem 1.5rem 5rem;
+  }
+  .privacy-section {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+  .privacy-section h2 {
+    font-size: 1.5rem;
+  }
 }
