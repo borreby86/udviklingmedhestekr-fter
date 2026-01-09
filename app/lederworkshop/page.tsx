@@ -160,10 +160,11 @@ export default function LederworkshopPage() {
 
   const handleModalSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    const form = e.currentTarget
     setIsSubmitting(true)
     setSubmitStatus('idle')
 
-    const formData = new FormData(e.currentTarget)
+    const formData = new FormData(form)
     const data = {
       name: formData.get('navn'),
       email: formData.get('email'),
@@ -180,7 +181,7 @@ export default function LederworkshopPage() {
 
       if (response.ok) {
         setSubmitStatus('success')
-        e.currentTarget.reset()
+        form.reset()
       } else {
         setSubmitStatus('error')
       }
