@@ -8,6 +8,7 @@ import { ArrowIcon, EmailIcon, LinkedInIcon, LocationIcon } from '@/components/I
 export default function KontaktPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -35,9 +36,12 @@ export default function KontaktPage() {
         setSubmitStatus('success')
         e.currentTarget.reset()
       } else {
+        const data = await response.json()
+        setErrorMessage(data.error || 'Ukendt fejl')
         setSubmitStatus('error')
       }
-    } catch {
+    } catch (err) {
+      setErrorMessage(err instanceof Error ? err.message : 'Netværksfejl')
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
@@ -113,7 +117,7 @@ export default function KontaktPage() {
                 <p className="form-success">Tak for din henvendelse! Jeg vender tilbage inden for 24 timer.</p>
               )}
               {submitStatus === 'error' && (
-                <p className="form-error">Der opstod en fejl. Prøv igen eller skriv direkte til info@christinaborreby.dk</p>
+                <p className="form-error">{errorMessage || 'Der opstod en fejl. Prøv igen eller skriv direkte til info@christinaborreby.dk'}</p>
               )}
             </form>
           </div>
