@@ -3346,6 +3346,8 @@ nav.scrolled .mobile-menu-btn {
     font-size: 1.5rem;
     color: var(--color-earth);
     padding: 0.4rem 1.5rem;
+    text-transform: none;
+    letter-spacing: 0.02em;
   }
   nav.menu-open .nav-dropdown-header .nav-chevron {
     display: block;
@@ -3379,14 +3381,17 @@ nav.scrolled .mobile-menu-btn {
     opacity: 1;
     padding: 0.3rem 0 0.5rem;
   }
+  nav.menu-open .nav-dropdown-menu li {
+    width: 100%;
+    text-align: center;
+  }
   nav.menu-open .nav-dropdown-menu li a {
     font-family: var(--font-body);
     font-size: 0.9rem;
     padding: 0.3rem 1rem;
     min-height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
+    text-align: center;
     color: var(--color-sage) !important;
   }
   nav.menu-open .nav-dropdown-menu li a:hover {
@@ -3400,6 +3405,8 @@ nav.scrolled .mobile-menu-btn {
     margin-top: 0.15rem;
     letter-spacing: 0.02em;
     text-transform: none;
+    text-align: center;
+    width: 100%;
   }
   nav.menu-open .nav-dropdown-subitem {
     padding-left: 0 !important;
