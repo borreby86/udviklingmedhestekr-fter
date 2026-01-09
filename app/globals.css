@@ -3370,6 +3370,9 @@ nav.scrolled .mobile-menu-btn {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
     gap: 0;
     max-height: 0;
     overflow: hidden;
