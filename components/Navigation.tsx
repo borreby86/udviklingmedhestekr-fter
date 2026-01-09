@@ -60,12 +60,12 @@ export default function Navigation() {
           <li><a href="/">Forside</a></li>
         ) : null}
         <li className={`nav-dropdown ${openDropdown === 'ledere' ? 'is-open' : ''}`}>
-          <a href="#" className="nav-dropdown-trigger" onClick={(e) => toggleDropdown('ledere', e)}>
-            For ledere
-            <svg className="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <div className="nav-dropdown-header" onClick={(e) => toggleDropdown('ledere', e)}>
+            <span className="nav-dropdown-text">For ledere</span>
+            <svg className="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <path d="M6 9l6 6 6-6"/>
             </svg>
-          </a>
+          </div>
           <ul className="nav-dropdown-menu">
             <li><a href="/lederworkshop">Autentisk ledelse</a></li>
             <li className="nav-dropdown-label">Aktuelle workshops</li>
@@ -74,12 +74,12 @@ export default function Navigation() {
         </li>
         <li><a href="/teams">For teams</a></li>
         <li className={`nav-dropdown ${openDropdown === 'alle' ? 'is-open' : ''}`}>
-          <a href="#" className="nav-dropdown-trigger" onClick={(e) => toggleDropdown('alle', e)}>
-            For alle
-            <svg className="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <div className="nav-dropdown-header" onClick={(e) => toggleDropdown('alle', e)}>
+            <span className="nav-dropdown-text">For alle</span>
+            <svg className="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <path d="M6 9l6 6 6-6"/>
             </svg>
-          </a>
+          </div>
           <ul className="nav-dropdown-menu">
             <li className="nav-dropdown-label">Hold tempoet uden at betale med helbredet</li>
             <li><a href="/recalibrate">Recalibrate</a></li>
