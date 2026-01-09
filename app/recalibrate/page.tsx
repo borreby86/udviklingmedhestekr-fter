@@ -132,7 +132,7 @@ export default function RecalibratePage(): React.JSX.Element {
             <div className="workshop-point">
               <span className="workshop-point-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                  <path d="M2 12h4l3-9 4 18 3-9h6"/>
                 </svg>
               </span>
               <div>
@@ -143,8 +143,9 @@ export default function RecalibratePage(): React.JSX.Element {
             <div className="workshop-point">
               <span className="workshop-point-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <circle cx="12" cy="12" r="10"/>
-                  <path d="M12 6v6l4 2"/>
+                  <path d="M16.5 6.5c-1.5-1.5-4-1.5-5.5 0l-.5.5-.5-.5c-1.5-1.5-4-1.5-5.5 0s-1.5 4 0 5.5l6 6 6-6c1.5-1.5 1.5-4 0-5.5z"/>
+                  <path d="M10.5 10.5c2 2 2 4 2 4" strokeLinecap="round"/>
+                  <path d="M13.5 10.5c-2 2-2 4-2 4" strokeLinecap="round"/>
                 </svg>
               </span>
               <div>
@@ -155,8 +156,9 @@ export default function RecalibratePage(): React.JSX.Element {
             <div className="workshop-point">
               <span className="workshop-point-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <circle cx="12" cy="12" r="10"/>
-                  <path d="M12 8v8M8 12h8"/>
+                  <circle cx="12" cy="5" r="2"/>
+                  <path d="M12 7v5m-3 2l3-2 3 2m-6 0v4m6-4v4"/>
+                  <path d="M7 10c0-1 1-2 2-2m8 2c0-1-1-2-2-2"/>
                 </svg>
               </span>
               <div>
