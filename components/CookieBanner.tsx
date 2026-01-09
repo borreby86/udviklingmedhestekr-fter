@@ -15,10 +15,10 @@ export function CookieBanner() {
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: 20, opacity: 0 }}
         transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-        className="fixed bottom-8 right-8 left-8 md:left-auto z-[9999]"
+        className="fixed bottom-8 right-8 left-8 md:left-auto z-[9999] pointer-events-none"
       >
         <div
-          className="backdrop-blur-xl md:w-[420px] border border-[rgba(139,120,74,0.2)]"
+          className="backdrop-blur-xl md:w-[420px] border border-[rgba(139,120,74,0.2)] pointer-events-auto"
           style={{
             background: 'rgba(255, 255, 255, 0.92)',
             padding: '2rem 2.5rem',
@@ -35,7 +35,7 @@ export function CookieBanner() {
           <div className="flex items-center gap-5 mt-6">
             <button
               onClick={acceptAll}
-              className="text-[13px] font-medium tracking-wider uppercase transition-all duration-300 hover:opacity-80"
+              className="text-[13px] font-medium tracking-wider uppercase transition-all duration-300 hover:opacity-80 cursor-pointer"
               style={{
                 background: '#34404F',
                 color: '#F4F5F7',
@@ -48,7 +48,7 @@ export function CookieBanner() {
             </button>
             <button
               onClick={acceptNecessary}
-              className="text-[13px] font-medium tracking-wider uppercase transition-all duration-300 hover:opacity-70"
+              className="text-[13px] font-medium tracking-wider uppercase transition-all duration-300 hover:opacity-70 cursor-pointer"
               style={{
                 background: 'transparent',
                 color: '#8B784A',
@@ -62,7 +62,7 @@ export function CookieBanner() {
             </button>
             <a
               href="/privatlivspolitik"
-              className="text-[12px] tracking-wide transition-colors duration-300 ml-auto"
+              className="text-[12px] tracking-wide transition-colors duration-300 ml-auto cursor-pointer hover:underline"
               style={{
                 color: '#8B784A',
                 fontFamily: 'var(--font-label)',
