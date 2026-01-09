@@ -1,14 +1,6 @@
 import nodemailer from 'nodemailer'
 import { NextResponse } from 'next/server'
 
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.GMAIL_USER,
-    pass: process.env.GMAIL_APP_PASSWORD,
-  },
-})
-
 export async function POST(request: Request) {
   try {
     const { name, email, phone, company, message, formType, workshopDate } = await request.json()
@@ -19,6 +11,26 @@ export async function POST(request: Request) {
         { status: 400 }
       )
     }
+
+    // Check for required environment variables
+    if (!process.env.GMAIL_USER || !process.env.GMAIL_APP_PASSWORD) {
+      console.error('Missing GMAIL_USER or GMAIL_APP_PASSWORD environment variables')
+      return NextResponse.json(
+        { error: 'Email konfiguration mangler' },
+        { status: 500 }
+      )
+    }
+
+    // Create transporter inside the handler to ensure env vars are available
+    const transporter = nodemailer.createTransport({
+      host: 'smtp.gmail.com',
+      port: 587,
+      secure: false,
+      auth: {
+        user: process.env.GMAIL_USER,
+        pass: process.env.GMAIL_APP_PASSWORD,
+      },
+    })
 
     let subject = 'Ny henvendelse'
     switch (formType) {
