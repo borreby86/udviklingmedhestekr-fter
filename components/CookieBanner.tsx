@@ -15,29 +15,59 @@ export function CookieBanner() {
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: 20, opacity: 0 }}
         transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-        className="fixed bottom-6 right-6 left-6 md:left-auto z-[9999]"
+        className="fixed bottom-8 right-8 left-8 md:left-auto z-[9999]"
       >
-        <div className="bg-earth backdrop-blur-md rounded-2xl px-6 py-5 shadow-xl md:w-[380px]">
-          <p className="text-white/85 text-[15px] leading-relaxed">
+        <div
+          className="backdrop-blur-xl md:w-[420px] border border-[rgba(139,120,74,0.2)]"
+          style={{
+            background: 'rgba(255, 255, 255, 0.92)',
+            padding: '2rem 2.5rem',
+            boxShadow: '0 8px 32px rgba(52, 64, 79, 0.12)',
+          }}
+        >
+          <p
+            className="text-[15px] leading-relaxed tracking-wide"
+            style={{ color: '#34404F', fontFamily: 'var(--font-body)' }}
+          >
             Vi bruger cookies til at forbedre din oplevelse.
           </p>
 
-          <div className="flex items-center gap-4 mt-4">
+          <div className="flex items-center gap-5 mt-6">
             <button
               onClick={acceptAll}
-              className="px-5 py-2.5 bg-white text-earth rounded-full text-sm font-medium hover:bg-cream transition-colors"
+              className="text-[13px] font-medium tracking-wider uppercase transition-all duration-300 hover:opacity-80"
+              style={{
+                background: '#34404F',
+                color: '#F4F5F7',
+                padding: '0.875rem 1.75rem',
+                fontFamily: 'var(--font-label)',
+                letterSpacing: '0.1em',
+              }}
             >
               Acceptér
             </button>
             <button
               onClick={acceptNecessary}
-              className="text-white/60 text-sm hover:text-white transition-colors"
+              className="text-[13px] font-medium tracking-wider uppercase transition-all duration-300 hover:opacity-70"
+              style={{
+                background: 'transparent',
+                color: '#8B784A',
+                padding: '0.875rem 1.5rem',
+                fontFamily: 'var(--font-label)',
+                letterSpacing: '0.1em',
+                border: '1px solid #8B784A',
+              }}
             >
               Afvis
             </button>
             <a
               href="/privatlivspolitik"
-              className="text-white/60 text-sm hover:text-white transition-colors ml-auto"
+              className="text-[12px] tracking-wide transition-colors duration-300 ml-auto"
+              style={{
+                color: '#8B784A',
+                fontFamily: 'var(--font-label)',
+                letterSpacing: '0.08em',
+              }}
             >
               Læs mere
             </a>
