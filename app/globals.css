@@ -3367,12 +3367,8 @@ nav.scrolled .mobile-menu-btn {
     background: transparent;
     box-shadow: none;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
+    display: block;
+    text-align: center;
     gap: 0;
     max-height: 0;
     overflow: hidden;
