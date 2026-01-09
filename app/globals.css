@@ -3226,9 +3226,9 @@ nav.scrolled .mobile-menu-btn {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 0;
+    gap: 0.25rem;
     z-index: 1000;
-    padding: 5rem 2rem 3rem;
+    padding: 4rem 2rem 2rem;
     overflow-y: auto;
   }
   nav.menu-open .nav-links {
@@ -3268,14 +3268,14 @@ nav.scrolled .mobile-menu-btn {
   nav.menu-open .nav-links a {
     color: var(--color-earth) !important;
     font-family: var(--font-display);
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-weight: 400;
     letter-spacing: 0.02em;
     text-transform: none;
     text-decoration: none;
     display: block;
-    padding: 0.5rem 1.5rem;
-    min-height: 44px;
+    padding: 0.4rem 1.5rem;
+    min-height: 40px;
     transition: color 0.3s ease;
   }
   nav.menu-open .nav-links a:hover {
@@ -3286,16 +3286,16 @@ nav.scrolled .mobile-menu-btn {
   }
   nav.menu-open .nav-links .nav-cta {
     margin-left: 0;
-    margin-top: 2rem;
+    margin-top: 1.25rem;
     background: var(--color-earth);
     color: var(--color-cream) !important;
     font-family: var(--font-label);
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    padding: 1rem 2.5rem;
+    padding: 0.9rem 2rem;
     border: none;
-    min-height: 52px;
+    min-height: 48px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -3321,16 +3321,16 @@ nav.scrolled .mobile-menu-btn {
     transform: none;
     background: transparent;
     box-shadow: none;
-    padding: 0.25rem 0 0.5rem;
+    padding: 0 0 0.25rem;
     display: flex;
     flex-direction: column;
     gap: 0;
   }
   nav.menu-open .nav-dropdown-menu li a {
     font-family: var(--font-body);
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    min-height: 44px;
+    font-size: 0.9rem;
+    padding: 0.3rem 1rem;
+    min-height: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3340,16 +3340,16 @@ nav.scrolled .mobile-menu-btn {
     color: var(--color-copper) !important;
   }
   nav.menu-open .nav-dropdown-label {
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     color: var(--color-copper);
-    padding: 0.5rem 0 0.25rem;
+    padding: 0.3rem 0 0.15rem;
     border-top: none;
-    margin-top: 0.25rem;
-    letter-spacing: 0.15em;
+    margin-top: 0.15rem;
+    letter-spacing: 0.12em;
   }
   nav.menu-open .nav-dropdown-subitem {
     padding-left: 0 !important;
-    font-size: 0.95rem !important;
+    font-size: 0.85rem !important;
   }
   .mobile-menu-btn { display: flex; align-items: center; justify-content: center; }
   /* Hero mobile optimization */
