@@ -737,6 +737,7 @@ nav.scrolled .nav-cta:hover {
   font-family: var(--font-display);
   font-size: clamp(2rem, 3vw, 2.5rem);
   font-weight: 400;
+  line-height: 1.05;
   color: var(--color-earth);
   margin: 0.75rem 0 1.5rem;
 }
