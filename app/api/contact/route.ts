@@ -83,10 +83,12 @@ export async function POST(request: Request) {
     })
 
     return NextResponse.json({ success: true })
-  } catch (error) {
-    console.error('Error sending email:', error)
+  } catch (error: unknown) {
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error'
+    const errorCode = (error as { code?: string })?.code || 'NO_CODE'
+    console.error('Email error:', { message: errorMessage, code: errorCode, full: error })
     return NextResponse.json(
-      { error: 'Der opstod en fejl ved afsendelse af email' },
+      { error: `Fejl: ${errorCode} - ${errorMessage}` },
       { status: 500 }
     )
   }
