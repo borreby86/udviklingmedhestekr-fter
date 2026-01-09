@@ -1067,6 +1067,7 @@ nav.scrolled .nav-cta:hover {
   font-family: var(--font-display);
   font-size: clamp(1.75rem, 3.5vw, 2.25rem);
   font-weight: 400;
+  line-height: 1.05;
   color: var(--color-cream);
   margin-bottom: 1rem;
 }
@@ -2340,6 +2341,7 @@ nav.scrolled .mobile-menu-btn {
   font-family: var(--font-display);
   font-size: clamp(2rem, 3vw, 2.5rem);
   font-weight: 400;
+  line-height: 1.05;
   color: var(--color-earth);
   margin: 0.75rem 0 1.5rem;
 }
@@ -2408,6 +2410,7 @@ nav.scrolled .mobile-menu-btn {
   font-family: var(--font-display);
   font-size: clamp(2rem, 3vw, 2.5rem);
   font-weight: 400;
+  line-height: 1.05;
   color: var(--color-earth);
   margin-top: 0.75rem;
 }
@@ -2474,6 +2477,7 @@ nav.scrolled .mobile-menu-btn {
   font-family: var(--font-display);
   font-size: clamp(2rem, 3vw, 2.5rem);
   font-weight: 400;
+  line-height: 1.05;
   color: var(--color-earth);
   margin-top: 0.75rem;
 }
@@ -2557,6 +2561,7 @@ nav.scrolled .mobile-menu-btn {
   font-family: var(--font-display);
   font-size: clamp(1.8rem, 3vw, 2.4rem);
   font-weight: 400;
+  line-height: 1.05;
   color: var(--color-earth);
   margin: 0.75rem 0 1.5rem;
 }
@@ -2617,6 +2622,7 @@ nav.scrolled .mobile-menu-btn {
   font-family: var(--font-display);
   font-size: clamp(2rem, 3vw, 2.5rem);
   font-weight: 400;
+  line-height: 1.05;
   color: var(--color-earth);
   margin: 0.75rem 0 1.25rem;
 }
@@ -2757,6 +2763,7 @@ nav.scrolled .mobile-menu-btn {
   font-family: var(--font-display);
   font-size: clamp(2rem, 3vw, 2.5rem);
   font-weight: 400;
+  line-height: 1.05;
   color: var(--color-earth);
   margin: 0.75rem 0 1.5rem;
 }
@@ -2835,6 +2842,7 @@ nav.scrolled .mobile-menu-btn {
   font-family: var(--font-display);
   font-size: clamp(2.2rem, 3.5vw, 2.8rem);
   font-weight: 400;
+  line-height: 1.05;
   color: var(--color-cream);
   margin: 0.75rem 0 1.25rem;
 }
@@ -3632,6 +3640,7 @@ nav.scrolled .mobile-menu-btn {
   font-family: var(--font-display);
   font-size: clamp(2rem, 3vw, 2.5rem);
   font-weight: 400;
+  line-height: 1.05;
   color: var(--color-earth);
   margin: 0.75rem 0 1rem;
 }
@@ -3732,6 +3741,7 @@ nav.scrolled .mobile-menu-btn {
   font-family: var(--font-display);
   font-size: clamp(2rem, 3vw, 2.5rem);
   font-weight: 400;
+  line-height: 1.05;
   color: var(--color-earth);
   margin: 0.75rem 0 1.25rem;
 }
@@ -3868,6 +3878,7 @@ nav.scrolled .mobile-menu-btn {
   font-family: var(--font-display);
   font-size: clamp(2rem, 3vw, 2.5rem);
   font-weight: 400;
+  line-height: 1.05;
   color: var(--color-earth);
   margin: 0.75rem 0;
 }
@@ -3961,6 +3972,7 @@ nav.scrolled .mobile-menu-btn {
   font-family: var(--font-display);
   font-size: clamp(2rem, 3vw, 2.5rem);
   font-weight: 400;
+  line-height: 1.05;
   color: var(--color-cream);
   margin: 0.75rem 0;
 }
