@@ -21,6 +21,7 @@ export default function KontaktPage() {
       phone: formData.get('phone'),
       company: formData.get('company'),
       message: formData.get('message'),
+      formType: 'kontakt',
     }
 
     try {

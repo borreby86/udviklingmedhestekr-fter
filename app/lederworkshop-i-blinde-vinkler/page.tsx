@@ -197,6 +197,8 @@ export default function BlindeVinklerPage() {
   const [modalOpen, setModalOpen] = useState(false)
   const [selectedDate, setSelectedDate] = useState<typeof workshopDates[0] | null>(null)
   const [showScrollNav, setShowScrollNav] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -223,7 +225,43 @@ export default function BlindeVinklerPage() {
   const closeModal = () => {
     setModalOpen(false)
     setSelectedDate(null)
+    setSubmitStatus('idle')
     document.body.style.overflow = ''
+  }
+
+  const handleModalSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+
+    const formData = new FormData(e.currentTarget)
+    const data = {
+      name: formData.get('navn'),
+      email: formData.get('email'),
+      phone: formData.get('telefon'),
+      company: formData.get('virksomhed'),
+      formType: 'tilmelding-blinde-vinkler',
+      workshopDate: selectedDate ? `${selectedDate.day}. ${selectedDate.month} ${selectedDate.year}` : '',
+    }
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
+
+      if (response.ok) {
+        setSubmitStatus('success')
+        e.currentTarget.reset()
+      } else {
+        setSubmitStatus('error')
+      }
+    } catch {
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -821,7 +859,7 @@ export default function BlindeVinklerPage() {
                 <p className="modal-info">{selectedDate.time} · Nordsjælland, 2970 Hørsholm</p>
               </div>
 
-              <form className="modal-form">
+              <form className="modal-form" onSubmit={handleModalSubmit}>
                 <div className="modal-form-group">
                   <label htmlFor="modal-navn">Navn *</label>
                   <input type="text" id="modal-navn" name="navn" required placeholder="Dit fulde navn" />
@@ -838,12 +876,18 @@ export default function BlindeVinklerPage() {
                   <label htmlFor="modal-virksomhed">Virksomhed</label>
                   <input type="text" id="modal-virksomhed" name="virksomhed" placeholder="Din virksomhed" />
                 </div>
-                <button type="submit" className="modal-submit">
-                  <span>Send tilmelding</span>
+                <button type="submit" className="modal-submit" disabled={isSubmitting}>
+                  <span>{isSubmitting ? 'Sender...' : 'Send tilmelding'}</span>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M5 12h14M12 5l7 7-7 7"/>
                   </svg>
                 </button>
+                {submitStatus === 'success' && (
+                  <p className="form-success">Tak for din tilmelding! Du modtager en bekræftelse inden for 24 timer.</p>
+                )}
+                {submitStatus === 'error' && (
+                  <p className="form-error">Der opstod en fejl. Prøv igen eller skriv til info@christinaborreby.dk</p>
+                )}
               </form>
 
               <p className="modal-disclaimer">

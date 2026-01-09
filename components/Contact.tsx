@@ -1,11 +1,44 @@
 'use client'
 
+import { useState } from 'react'
 import { ArrowIcon, EmailIcon, LinkedInIcon, LocationIcon } from './Icons'
 
 export default function Contact() {
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    alert('Tak for din henvendelse! Vi vender tilbage hurtigst muligt.')
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+
+    const formData = new FormData(e.currentTarget)
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      phone: formData.get('phone'),
+      message: formData.get('message'),
+      formType: 'forside',
+    }
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
+
+      if (response.ok) {
+        setSubmitStatus('success')
+        e.currentTarget.reset()
+      } else {
+        setSubmitStatus('error')
+      }
+    } catch {
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -45,9 +78,9 @@ export default function Contact() {
                 <div className="contact-card-label">LinkedIn</div>
                 <div className="contact-card-sub">Forbind med Christina</div>
               </div>
-              <a 
-                href="https://www.linkedin.com/in/cborreby/" 
-                target="_blank" 
+              <a
+                href="https://www.linkedin.com/in/cborreby/"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="contact-card-value"
               >
@@ -90,10 +123,16 @@ export default function Contact() {
                   placeholder="Fortæl kort om din situation..."
                 />
               </div>
-              <button type="submit" className="cta-button form-button">
-                <span>Send forespørgsel</span>
+              <button type="submit" className="cta-button form-button" disabled={isSubmitting}>
+                <span>{isSubmitting ? 'Sender...' : 'Send forespørgsel'}</span>
                 <ArrowIcon />
               </button>
+              {submitStatus === 'success' && (
+                <p className="form-success">Tak for din henvendelse! Jeg vender tilbage inden for 24 timer.</p>
+              )}
+              {submitStatus === 'error' && (
+                <p className="form-error">Der opstod en fejl. Prøv igen eller skriv direkte til info@christinaborreby.dk</p>
+              )}
             </form>
           </div>
         </div>

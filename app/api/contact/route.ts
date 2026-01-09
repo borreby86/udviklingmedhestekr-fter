@@ -1,13 +1,18 @@
-import { Resend } from 'resend'
+import nodemailer from 'nodemailer'
 import { NextResponse } from 'next/server'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.GMAIL_USER,
+    pass: process.env.GMAIL_APP_PASSWORD,
+  },
+})
 
 export async function POST(request: Request) {
   try {
-    const { name, email, phone, company, message } = await request.json()
+    const { name, email, phone, company, message, formType, workshopDate } = await request.json()
 
-    // Validate required fields
     if (!name || !email) {
       return NextResponse.json(
         { error: 'Navn og email er påkrævet' },
@@ -15,32 +20,54 @@ export async function POST(request: Request) {
       )
     }
 
-    // Send email to Christina
-    await resend.emails.send({
-      from: 'Kontaktformular <noreply@christinaborreby.dk>',
-      to: 'info@christinaborreby.dk',
-      subject: `Ny henvendelse fra ${name}`,
-      html: `
-        <h2>Ny henvendelse fra kontaktformularen</h2>
-        <p><strong>Navn:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        ${phone ? `<p><strong>Telefon:</strong> ${phone}</p>` : ''}
-        ${company ? `<p><strong>Virksomhed:</strong> ${company}</p>` : ''}
-        ${message ? `<p><strong>Besked:</strong></p><p>${message}</p>` : ''}
-      `,
-    })
+    let subject = 'Ny henvendelse'
+    switch (formType) {
+      case 'kontakt':
+        subject = `Ny kontakt fra /kontakt: ${name}`
+        break
+      case 'forside':
+        subject = `Ny kontakt fra forsiden: ${name}`
+        break
+      case 'venteliste-lederworkshop':
+        subject = `Venteliste: Lederworkshop ${workshopDate || ''} - ${name}`
+        break
+      case 'tilmelding-blinde-vinkler':
+        subject = `Tilmelding: Blinde Vinkler ${workshopDate || ''} - ${name}`
+        break
+      default:
+        subject = `Ny henvendelse: ${name}`
+    }
 
-    // Send confirmation email to the person who submitted
-    await resend.emails.send({
-      from: 'Christina Borreby <noreply@christinaborreby.dk>',
-      to: email,
-      subject: 'Tak for din henvendelse',
-      html: `
-        <h2>Tak for din henvendelse, ${name}</h2>
-        <p>Jeg har modtaget din besked og vender tilbage inden for 24 timer.</p>
-        <p>Med venlig hilsen,<br>Christina Borreby</p>
-        <p><a href="https://christinaborreby.dk">christinaborreby.dk</a></p>
-      `,
+    let htmlContent = `
+      <h2>${subject}</h2>
+      <p><strong>Navn:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+    `
+
+    if (phone) {
+      htmlContent += `<p><strong>Telefon:</strong> ${phone}</p>`
+    }
+    if (company) {
+      htmlContent += `<p><strong>Virksomhed:</strong> ${company}</p>`
+    }
+    if (workshopDate) {
+      htmlContent += `<p><strong>Dato:</strong> ${workshopDate}</p>`
+    }
+    if (message) {
+      htmlContent += `<p><strong>Besked:</strong></p><p>${message}</p>`
+    }
+
+    htmlContent += `
+      <hr>
+      <p style="color: #666; font-size: 12px;">Sendt fra christinaborreby.dk</p>
+    `
+
+    await transporter.sendMail({
+      from: `"Christina Borreby Website" <${process.env.GMAIL_USER}>`,
+      to: 'info@christinaborreby.dk',
+      subject,
+      html: htmlContent,
+      replyTo: email,
     })
 
     return NextResponse.json({ success: true })
