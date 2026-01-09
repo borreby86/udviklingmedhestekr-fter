@@ -3333,6 +3333,7 @@ nav.scrolled .mobile-menu-btn {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
   nav.menu-open .nav-dropdown-header {
     display: flex;
@@ -3369,7 +3370,7 @@ nav.scrolled .mobile-menu-btn {
     padding: 0;
     display: block;
     text-align: center;
-    gap: 0;
+    width: 100%;
     max-height: 0;
     overflow: hidden;
     opacity: 0;
