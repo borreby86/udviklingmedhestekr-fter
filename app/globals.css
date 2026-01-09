@@ -3311,14 +3311,16 @@ nav.scrolled .mobile-menu-btn {
   nav.menu-open .nav-dropdown-trigger {
     pointer-events: auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.25rem;
   }
   nav.menu-open .nav-dropdown-trigger .nav-chevron {
     display: block;
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
     stroke: var(--color-copper);
+    stroke-width: 2.5;
     transition: transform 0.3s ease;
   }
   nav.menu-open .nav-dropdown.is-open .nav-chevron {
@@ -3331,6 +3333,7 @@ nav.scrolled .mobile-menu-btn {
     padding: 0;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 0;
     max-height: 0;
     overflow: hidden;
@@ -3340,7 +3343,7 @@ nav.scrolled .mobile-menu-btn {
   nav.menu-open .nav-dropdown.is-open .nav-dropdown-menu {
     max-height: 300px;
     opacity: 1;
-    padding: 0.4rem 0 0.5rem;
+    padding: 0.3rem 0 0.5rem;
   }
   nav.menu-open .nav-dropdown-menu li a {
     font-family: var(--font-body);
