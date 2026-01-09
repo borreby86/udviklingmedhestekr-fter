@@ -9,11 +9,11 @@ import './globals.css'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://christinaborreby.dk'),
-  title: 'Christina Borreby | Lederudvikling med Hestekræfter',
-  description: 'Hesteassisteret lederudvikling i Nordsjælland. Unik læring gennem samspil med heste for ledere og teams.',
+  title: 'Christina Borreby | Leder- og teamudvikling med hestekræfter',
+  description: 'Leder- og teamudvikling i Nordsjælland med hestekræfter',
   openGraph: {
-    title: 'Christina Borreby | Lederudvikling med Hestekræfter',
-    description: 'Hesteassisteret lederudvikling i Nordsjælland. Unik læring gennem samspil med heste for ledere og teams.',
+    title: 'Christina Borreby | Leder- og teamudvikling med hestekræfter',
+    description: 'Leder- og teamudvikling i Nordsjælland med hestekræfter',
     url: 'https://christinaborreby.dk',
     siteName: 'Christina Borreby',
     locale: 'da_DK',
@@ -23,14 +23,14 @@ export const metadata: Metadata = {
         url: '/christina-hest.jpg',
         width: 1200,
         height: 630,
-        alt: 'Christina Borreby - Lederudvikling med heste'
+        alt: 'Christina Borreby - Leder- og teamudvikling med hestekræfter'
       }
     ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Christina Borreby | Lederudvikling med Hestekræfter',
-    description: 'Hesteassisteret lederudvikling i Nordsjælland. Unik læring gennem samspil med heste.',
+    title: 'Christina Borreby | Leder- og teamudvikling med hestekræfter',
+    description: 'Leder- og teamudvikling i Nordsjælland med hestekræfter',
     images: ['/christina-hest.jpg']
   }
 }
