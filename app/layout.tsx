@@ -8,8 +8,31 @@ import { GoogleAnalytics } from '@/components/GoogleAnalytics'
 import './globals.css'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://christinaborreby.dk'),
   title: 'Christina Borreby | Lederudvikling med Hestekræfter',
   description: 'Hesteassisteret lederudvikling i Nordsjælland. Unik læring gennem samspil med heste for ledere og teams.',
+  openGraph: {
+    title: 'Christina Borreby | Lederudvikling med Hestekræfter',
+    description: 'Hesteassisteret lederudvikling i Nordsjælland. Unik læring gennem samspil med heste for ledere og teams.',
+    url: 'https://christinaborreby.dk',
+    siteName: 'Christina Borreby',
+    locale: 'da_DK',
+    type: 'website',
+    images: [
+      {
+        url: '/christina-hest.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Christina Borreby - Lederudvikling med heste'
+      }
+    ]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Christina Borreby | Lederudvikling med Hestekræfter',
+    description: 'Hesteassisteret lederudvikling i Nordsjælland. Unik læring gennem samspil med heste.',
+    images: ['/christina-hest.jpg']
+  }
 }
 
 export default function RootLayout({
