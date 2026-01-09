@@ -3382,16 +3382,18 @@ nav.scrolled .mobile-menu-btn {
     padding: 0.3rem 0 0.5rem;
   }
   nav.menu-open .nav-dropdown-menu li {
-    width: 100%;
-    text-align: center;
+    width: 100% !important;
+    text-align: center !important;
+    display: block !important;
   }
   nav.menu-open .nav-dropdown-menu li a {
     font-family: var(--font-body);
     font-size: 0.9rem;
     padding: 0.3rem 1rem;
     min-height: 36px;
-    display: block;
-    text-align: center;
+    display: block !important;
+    text-align: center !important;
+    width: 100% !important;
     color: var(--color-sage) !important;
   }
   nav.menu-open .nav-dropdown-menu li a:hover {
