@@ -155,12 +155,13 @@ export default function RecalibratePage(): React.JSX.Element {
             <div className="workshop-point">
               <span className="workshop-point-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 8v8M8 12h8"/>
                 </svg>
               </span>
               <div>
-                <h4>Bæredygtig præstation</h4>
-                <p>Hold tempoet uden at kroppen betaler prisen</p>
+                <h4>Qigong</h4>
+                <p>Blide bevægelser der bringer krop og sind i balance, som du kan bruge i din hverdag</p>
               </div>
             </div>
           </motion.div>
