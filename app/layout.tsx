@@ -10,10 +10,10 @@ import './globals.css'
 export const metadata: Metadata = {
   metadataBase: new URL('https://christinaborreby.dk'),
   title: 'Christina Borreby | Leder- og teamudvikling med hestekræfter',
-  description: 'Leder- og teamudvikling i Nordsjælland med hestekræfter',
+  description: 'Unik læring gennem samspil med heste.',
   openGraph: {
     title: 'Christina Borreby | Leder- og teamudvikling med hestekræfter',
-    description: 'Leder- og teamudvikling i Nordsjælland med hestekræfter',
+    description: 'Unik læring gennem samspil med heste.',
     url: 'https://christinaborreby.dk',
     siteName: 'Christina Borreby',
     locale: 'da_DK',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Christina Borreby | Leder- og teamudvikling med hestekræfter',
-    description: 'Leder- og teamudvikling i Nordsjælland med hestekræfter',
+    description: 'Unik læring gennem samspil med heste.',
     images: ['/christina-hest.jpg']
   }
 }
