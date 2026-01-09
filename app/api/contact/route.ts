@@ -1,9 +1,12 @@
-import nodemailer from 'nodemailer'
 import { NextResponse } from 'next/server'
 
 export async function POST(request: Request) {
   try {
-    const { name, email, phone, company, message, formType, workshopDate } = await request.json()
+    // Dynamic import to handle potential issues
+    const nodemailer = await import('nodemailer')
+
+    const body = await request.json()
+    const { name, email, phone, company, message, formType, workshopDate } = body
 
     if (!name || !email) {
       return NextResponse.json(
@@ -12,23 +15,23 @@ export async function POST(request: Request) {
       )
     }
 
-    // Check for required environment variables
-    if (!process.env.GMAIL_USER || !process.env.GMAIL_APP_PASSWORD) {
-      console.error('Missing GMAIL_USER or GMAIL_APP_PASSWORD environment variables')
+    const gmailUser = process.env.GMAIL_USER
+    const gmailPass = process.env.GMAIL_APP_PASSWORD
+
+    if (!gmailUser || !gmailPass) {
       return NextResponse.json(
-        { error: 'Email konfiguration mangler' },
+        { error: 'Email config mangler - tjek GMAIL_USER og GMAIL_APP_PASSWORD' },
         { status: 500 }
       )
     }
 
-    // Create transporter inside the handler to ensure env vars are available
-    const transporter = nodemailer.createTransport({
+    const transporter = nodemailer.default.createTransport({
       host: 'smtp.gmail.com',
       port: 587,
       secure: false,
       auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_APP_PASSWORD,
+        user: gmailUser,
+        pass: gmailPass,
       },
     })
 
@@ -56,26 +59,15 @@ export async function POST(request: Request) {
       <p><strong>Email:</strong> ${email}</p>
     `
 
-    if (phone) {
-      htmlContent += `<p><strong>Telefon:</strong> ${phone}</p>`
-    }
-    if (company) {
-      htmlContent += `<p><strong>Virksomhed:</strong> ${company}</p>`
-    }
-    if (workshopDate) {
-      htmlContent += `<p><strong>Dato:</strong> ${workshopDate}</p>`
-    }
-    if (message) {
-      htmlContent += `<p><strong>Besked:</strong></p><p>${message}</p>`
-    }
+    if (phone) htmlContent += `<p><strong>Telefon:</strong> ${phone}</p>`
+    if (company) htmlContent += `<p><strong>Virksomhed:</strong> ${company}</p>`
+    if (workshopDate) htmlContent += `<p><strong>Dato:</strong> ${workshopDate}</p>`
+    if (message) htmlContent += `<p><strong>Besked:</strong></p><p>${message}</p>`
 
-    htmlContent += `
-      <hr>
-      <p style="color: #666; font-size: 12px;">Sendt fra christinaborreby.dk</p>
-    `
+    htmlContent += `<hr><p style="color: #666; font-size: 12px;">Sendt fra christinaborreby.dk</p>`
 
     await transporter.sendMail({
-      from: `"Christina Borreby Website" <${process.env.GMAIL_USER}>`,
+      from: `"Christina Borreby Website" <${gmailUser}>`,
       to: 'info@christinaborreby.dk',
       subject,
       html: htmlContent,
@@ -84,11 +76,11 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ success: true })
   } catch (error: unknown) {
+    console.error('Contact API error:', error)
     const errorMessage = error instanceof Error ? error.message : 'Unknown error'
     const errorCode = (error as { code?: string })?.code || 'NO_CODE'
-    console.error('Email error:', { message: errorMessage, code: errorCode, full: error })
     return NextResponse.json(
-      { error: `Fejl: ${errorCode} - ${errorMessage}` },
+      { error: `${errorCode}: ${errorMessage}` },
       { status: 500 }
     )
   }
