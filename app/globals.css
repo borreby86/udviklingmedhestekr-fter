@@ -3382,13 +3382,14 @@ nav.scrolled .mobile-menu-btn {
   }
   nav.menu-open .nav-dropdown-menu li {
     text-align: center;
+    width: 100%;
   }
   nav.menu-open .nav-dropdown-menu li a {
     font-family: var(--font-body);
     font-size: 0.9rem;
     padding: 0.3rem 1rem;
     min-height: 36px;
-    display: block;
+    display: inline-block;
     color: var(--color-sage) !important;
   }
   nav.menu-open .nav-dropdown-menu li a:hover {
@@ -3403,6 +3404,8 @@ nav.scrolled .mobile-menu-btn {
     letter-spacing: 0.02em;
     text-transform: none;
     text-align: center;
+    width: 100%;
+    display: block;
   }
   nav.menu-open .nav-dropdown-subitem {
     padding-left: 0 !important;
