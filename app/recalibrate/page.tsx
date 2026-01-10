@@ -46,7 +46,7 @@ const forHvem = [
 const formater = [
   {
     title: "Enkelt session",
-    description: "1,5-3 timer med hestesamvær, naturvandring og refleksion. Et godt sted at starte.",
+    description: "1,5-3 timer med co-regulering af nervesystemet gennem hestesamvær og guidet refleksion. Et godt sted at starte.",
     price: "Fra 1.500 kr."
   },
   {
