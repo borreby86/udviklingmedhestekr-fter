@@ -3639,6 +3639,14 @@ nav.scrolled .mobile-menu-btn {
     padding: 0.5rem 1rem;
   }
   .workshop-instructor { padding: 3.5rem 1.25rem; }
+  .workshop-instructor-bg {
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+  .workshop-instructor-bg img {
+    object-position: center center;
+  }
   .workshop-instructor-overlay {
     background: rgba(244, 245, 247, 0.94);
   }
@@ -5173,15 +5181,32 @@ nav.scrolled .mobile-menu-btn {
     letter-spacing: 0.08em;
     flex-shrink: 0;
   }
+  .date-card-date {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    flex: 1;
+  }
   .date-card-day-month {
     gap: 0.35rem;
   }
   .date-card-day {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+  }
+  .date-card-month {
+    font-size: 1rem;
+  }
+  .date-card-year {
+    font-size: 0.9rem;
   }
   .date-card-time {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     flex-shrink: 0;
+    margin-left: auto;
+    margin-right: 0.75rem;
+  }
+  .date-card-action {
+    font-size: 0.65rem;
   }
   .modal-content { padding: 1.5rem 1rem; }
   .modal-close { top: 0.5rem; right: 0.5rem; }
