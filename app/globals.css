@@ -2779,6 +2779,16 @@ nav.scrolled .mobile-menu-btn {
   );
   z-index: 1;
 }
+.recalibrate-cta .workshop-instructor-overlay {
+  background: linear-gradient(
+    90deg,
+    rgba(244, 245, 247, 0.85) 0%,
+    rgba(244, 245, 247, 0.75) 25%,
+    rgba(244, 245, 247, 0.6) 40%,
+    rgba(244, 245, 247, 0.3) 60%,
+    rgba(244, 245, 247, 0.1) 100%
+  );
+}
 .workshop-instructor .workshop-container-wide {
   position: relative;
   z-index: 2;
