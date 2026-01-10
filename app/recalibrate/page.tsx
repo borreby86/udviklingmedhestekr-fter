@@ -51,7 +51,7 @@ const formater = [
   },
   {
     title: "Forløb",
-    description: "Flere sessioner over tid, hvor vi går i dybden med dine mønstre og opbygger nye.",
+    description: "Et intensivt forløb over tid til dig, der mærker stresssymptomer eller ønsker et kontinuerligt rum til at rekalibrere.",
     price: "Fra 5.000 kr."
   }
 ]
