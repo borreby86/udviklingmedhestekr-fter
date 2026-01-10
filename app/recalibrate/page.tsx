@@ -320,15 +320,7 @@ export default function RecalibratePage(): React.JSX.Element {
                 </svg>
                 <span>Fra 1,5 time</span>
               </div>
-              <div className="practical-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
-                  <circle cx="9" cy="7" r="4"/>
-                  <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
-                </svg>
-                <span>1–6 personer</span>
               </div>
-            </div>
 
             <div className="workshop-investment-grid">
               {formater.map((format, index) => (
@@ -346,6 +338,10 @@ export default function RecalibratePage(): React.JSX.Element {
                 </motion.div>
               ))}
             </div>
+
+            <p style={{ marginTop: '2rem', fontSize: '0.95rem', color: 'var(--color-sage)', fontStyle: 'italic' }}>
+              Kan også arrangeres for grupper efter ønske.
+            </p>
           </motion.div>
         </div>
       </section>
