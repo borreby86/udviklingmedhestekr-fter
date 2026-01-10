@@ -5150,21 +5150,28 @@ nav.scrolled .mobile-menu-btn {
   .workshop-dates-container { margin: 0 -1rem; padding: 0 1rem; }
   .workshop-date-card {
     max-width: 100%;
-    padding: 1.25rem 1rem;
-    gap: 0.5rem 1rem;
-    flex-wrap: wrap;
+    padding: 1.25rem 1.5rem;
+    flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
   }
-  .date-card-day { font-size: 1.65rem; }
-  .date-card-month { font-size: 0.9rem; }
-  .date-card-time { font-size: 0.65rem; }
+  .date-card-date {
+    flex: 1;
+  }
+  .date-card-pending { font-size: 0.6rem; }
+  .date-card-month-year {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+  .date-card-month { font-size: 1.25rem; }
+  .date-card-year { font-size: 1rem; }
   .date-card-divider { display: none; }
   .date-card-action {
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     letter-spacing: 0.08em;
-    width: 100%;
-    justify-content: flex-start;
-    margin-top: 0.25rem;
+    flex-shrink: 0;
   }
   .modal-content { padding: 1.5rem 1rem; }
   .modal-close { top: 0.5rem; right: 0.5rem; }
