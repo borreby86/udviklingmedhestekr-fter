@@ -5173,6 +5173,16 @@ nav.scrolled .mobile-menu-btn {
     letter-spacing: 0.08em;
     flex-shrink: 0;
   }
+  .date-card-day-month {
+    gap: 0.35rem;
+  }
+  .date-card-day {
+    font-size: 1.5rem;
+  }
+  .date-card-time {
+    font-size: 0.75rem;
+    flex-shrink: 0;
+  }
   .modal-content { padding: 1.5rem 1rem; }
   .modal-close { top: 0.5rem; right: 0.5rem; }
   .nav-cta { padding: 10px 20px; font-size: 0.7rem; }
