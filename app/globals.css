@@ -13,10 +13,10 @@
   --color-soft-brown: #5c6a77;
   --color-stone: #d0d5db;
 
-  /* Fonts */
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'Jost', sans-serif;
-  --font-label: 'Inter', sans-serif;
+  /* Fonts - set by next/font in layout.tsx */
+  --font-display: Georgia, serif;
+  --font-body: sans-serif;
+  --font-label: sans-serif;
 }
 
 /* Custom cursor - hide default (only on non-touch devices) */

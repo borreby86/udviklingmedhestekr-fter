@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Cormorant_Garamond, Jost, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import { LenisProvider } from '@/providers/LenisProvider'
 import { CookieConsentProvider } from '@/providers/CookieConsentProvider'
@@ -6,6 +7,28 @@ import { CustomCursor } from '@/components/CustomCursor'
 import { CookieBanner } from '@/components/CookieBanner'
 import { GoogleAnalytics } from '@/components/GoogleAnalytics'
 import './globals.css'
+
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  style: ['normal', 'italic'],
+  variable: '--font-display',
+  display: 'swap',
+})
+
+const jost = Jost({
+  subsets: ['latin'],
+  weight: ['300', '400', '500'],
+  variable: '--font-body',
+  display: 'swap',
+})
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  variable: '--font-label',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://christinaborreby.dk'),
@@ -42,10 +65,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="da">
-      <head>
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-      </head>
-      <body>
+      <body className={`${cormorant.variable} ${jost.variable} ${inter.variable}`} suppressHydrationWarning>
         <CookieConsentProvider>
           <CustomCursor />
           <LenisProvider>

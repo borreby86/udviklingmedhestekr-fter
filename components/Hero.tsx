@@ -1,10 +1,18 @@
+import Image from 'next/image'
 import { ArrowIcon } from './Icons'
 
 export default function Hero() {
   return (
     <section className="hero">
       <div className="hero-bg">
-        <img src="/hero-horse-eye.jpg?v=2" alt="Hestens øje" />
+        <Image
+          src="/hero-horse-eye.jpg"
+          alt="Hestens øje"
+          fill
+          priority
+          sizes="100vw"
+          quality={80}
+        />
       </div>
       <div className="hero-content">
         <p className="hero-tagline">Leder- og teamudvikling i Nordsjælland</p>
