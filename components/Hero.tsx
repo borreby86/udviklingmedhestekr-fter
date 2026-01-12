@@ -1,3 +1,4 @@
+// Hero section with horse eye background
 import Image from 'next/image'
 import { ArrowIcon } from './Icons'
 
