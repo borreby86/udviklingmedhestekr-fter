@@ -7,7 +7,7 @@ export default function Hero() {
     <section className="hero">
       <div className="hero-bg">
         <Image
-          src="/hero-eye.jpg"
+          src="/hero-horse-eye.jpg"
           alt="Hestens øje"
           fill
           priority
