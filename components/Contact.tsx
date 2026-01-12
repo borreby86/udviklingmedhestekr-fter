@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { ArrowIcon, EmailIcon, LinkedInIcon, LocationIcon } from './Icons'
 
 export default function Contact() {
@@ -45,7 +46,13 @@ export default function Contact() {
   return (
     <section className="contact-section contact-with-bg" id="kontakt">
       <div className="contact-bg">
-        <img src="/audience-bg.jpg" alt="Hesteassisteret coaching" />
+        <Image
+          src="/audience-bg.jpg"
+          alt="Hesteassisteret coaching"
+          fill
+          sizes="100vw"
+          style={{ objectFit: 'cover' }}
+        />
       </div>
       <div className="contact-overlay" />
       <div className="contact-container">

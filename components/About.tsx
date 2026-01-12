@@ -1,12 +1,19 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'motion/react'
 
 export default function About() {
   return (
     <section className="about-banner" id="om">
       <div className="about-banner-bg">
-        <img src="/christina_borreby.jpeg" alt="Christina Borreby - specialist i hesteassisteret lederudvikling" />
+        <Image
+          src="/christina_borreby.jpeg"
+          alt="Christina Borreby - specialist i hesteassisteret lederudvikling"
+          fill
+          sizes="(max-width: 768px) 100vw, 75vw"
+          style={{ objectFit: 'cover' }}
+        />
       </div>
       <div className="about-banner-overlay" />
       <div className="about-banner-container">

@@ -1,20 +1,60 @@
 'use client'
 
+import { useEffect, useRef, useState } from 'react'
+import Image from 'next/image'
 import { motion } from 'motion/react'
 
 export default function WhyHorsesVideo() {
+  const sectionRef = useRef<HTMLElement>(null)
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+          observer.disconnect()
+        }
+      },
+      { rootMargin: '200px' }
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    if (isVisible && videoRef.current) {
+      videoRef.current.play()
+    }
+  }, [isVisible])
+
   return (
-    <section className="why-video-section">
+    <section className="why-video-section" ref={sectionRef}>
       <div className="why-video-bg">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster="/hestekursus-nordsjaelland.jpeg"
-        >
-          <source src="/hestevideo.mp4" type="video/mp4" />
-        </video>
+        {isVisible ? (
+          <video
+            ref={videoRef}
+            muted
+            loop
+            playsInline
+            poster="/hestekursus-nordsjaelland.jpeg"
+          >
+            <source src="/hestevideo.mp4" type="video/mp4" />
+          </video>
+        ) : (
+          <Image
+            src="/hestekursus-nordsjaelland.jpeg"
+            alt="Hesteassisteret session"
+            fill
+            sizes="100vw"
+            style={{ objectFit: 'cover' }}
+          />
+        )}
       </div>
       <div className="why-video-overlay" />
       <div className="why-video-container">

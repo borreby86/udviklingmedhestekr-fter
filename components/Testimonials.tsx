@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { ArrowIcon } from './Icons'
 
 const testimonials = [
@@ -34,7 +35,13 @@ export default function Testimonials() {
             <p className="testimonial-quote">{testimonial.quote}</p>
             <div className="testimonial-author">
               <div className="author-avatar">
-                <img src={testimonial.image} alt={testimonial.name} />
+                <Image
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  fill
+                  sizes="80px"
+                  style={{ objectFit: 'cover' }}
+                />
               </div>
               <div className="author-info">
                 <h4>{testimonial.name}</h4>
