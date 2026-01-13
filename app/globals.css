@@ -409,10 +409,11 @@ nav.scrolled .nav-dropdown-text {
 }
 .forbes-text {
   font-family: var(--font-display);
-  font-size: 1.35rem;
+  font-size: 1.45rem;
   font-style: italic;
-  color: var(--color-cream);
+  color: #ffffff;
   line-height: 1.55;
+  opacity: 0.92;
 }
 .proof-stats {
   display: flex;
@@ -429,8 +430,8 @@ nav.scrolled .nav-dropdown-text {
   line-height: 1;
   flex-shrink: 0;
 }
-.proof-text { font-size: 0.95rem; color: var(--color-warm-sand); line-height: 1.7; }
-.proof-text strong { color: var(--color-cream); font-weight: 400; }
+.proof-text { font-size: 0.9rem; color: rgba(255, 255, 255, 0.8); line-height: 1.7; }
+.proof-text strong { color: #ffffff; font-weight: 400; }
 .proof-link {
   display: inline-block;
   margin-top: 1rem;
