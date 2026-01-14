@@ -1,6 +1,10 @@
 export default function Footer() {
   return (
     <footer className="footer-cta">
+      <div className="footer-cta-bg">
+        <img src="/christina-hest.jpg" alt="" />
+      </div>
+      <div className="footer-cta-overlay"></div>
       <div className="footer-cta-content">
         <p className="footer-label">Næste skridt</p>
         <h2 className="footer-title">Klar til at opleve det selv?</h2>
