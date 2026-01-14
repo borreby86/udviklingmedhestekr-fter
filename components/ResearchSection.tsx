@@ -6,50 +6,17 @@ import { motion } from 'motion/react'
 const featuredStudies = [
   {
     id: 1,
-    authors: "Pendry, P., Carr, A.M., Smith, A.N., & Roeter, S.M.",
-    year: 2014,
-    title: "Improving adolescent social competence and behavior: A randomized trial of an 11-week equine facilitated learning prevention program",
-    journal: "Journal of Primary Prevention",
-    volume: "35(4), 281-293",
-    highlight: "Randomiseret kontrolleret studie med 131 deltagere. Signifikante forbedringer i social kompetence.",
-    category: "emotionel-intelligens",
-    link: "https://pubmed.ncbi.nlm.nih.gov/24898318/"
+    authors: "Sivagurunathan, M. et al.",
+    year: 2025,
+    title: "Equine-Assisted Learning and Leadership Transformation: An Exploratory Qualitative Study",
+    journal: "Frontiers in Veterinary Science",
+    volume: "",
+    highlight: "12 måneders opfølgning viser vedvarende transformation i lederes selvbevidsthed og relationelle lederskab.",
+    category: "lederskab",
+    link: "https://www.frontiersin.org/journals/veterinary-science/articles/10.3389/fvets.2025.1700029/abstract"
   },
   {
     id: 2,
-    authors: "Dyk, P., Cheung, R., Pohl, L., Lindgreen, J., & Noriega, C.",
-    year: 2012,
-    title: "The Effectiveness of Equine Guided Leadership Education to Develop Emotional Intelligence in Expert Nurses",
-    journal: "University of Kentucky Center for Leadership Development",
-    volume: "Pilot Research Study",
-    highlight: "Forbedringer i alle fire EQ-områder: selvbevidsthed, selvledelse, social bevidsthed og relationsledelse.",
-    category: "lederskab",
-    link: "https://www.researchgate.net/publication/282670770"
-  },
-  {
-    id: 3,
-    authors: "Stock, K.L. & Kolb, D.A.",
-    year: 2016,
-    title: "Equine-Assisted Experiential Learning",
-    journal: "OD Practitioner",
-    volume: "48(2), 43-47",
-    highlight: "Dokumenterer forbedret selvbevidsthed og varige adfærdsændringer hos ledere efter hesteassisteret læring.",
-    category: "lederskab",
-    link: "https://www.researchgate.net/publication/327762710"
-  },
-  {
-    id: 4,
-    authors: "Smith, A.V., Proops, L., Grounds, K., Wathan, J., & McComb, K.",
-    year: 2016,
-    title: "Functionally relevant responses to human facial expressions of emotion in the domestic horse",
-    journal: "Biology Letters",
-    volume: "12(2)",
-    highlight: "Banebrydende forskning der viser, at heste kan aflæse og reagere på menneskelige følelsesudtryk.",
-    category: "emotionel-intelligens",
-    link: "https://pubmed.ncbi.nlm.nih.gov/26864784/"
-  },
-  {
-    id: 5,
     authors: "Sivagurunathan, M. et al.",
     year: 2025,
     title: "Equine-Assisted Experiential Learning: A Literature Review of Embodied Leadership Development",
@@ -60,18 +27,7 @@ const featuredStudies = [
     link: "https://www.mdpi.com/2076-3387/15/8/298"
   },
   {
-    id: 6,
-    authors: "Provan, M., Ahmed, Z. & Stevens, A.",
-    year: 2024,
-    title: "Are equine-assisted services beneficial for military veterans with PTSD? A systematic review and meta-analysis",
-    journal: "BMC Psychiatry",
-    volume: "24, 544",
-    highlight: "Meta-analyse: Signifikant reduktion i PTSD-scores (p<0.00001) med gennemsnitlig forbedring på 22,6%.",
-    category: "emotionel-intelligens",
-    link: "https://bmcpsychiatry.biomedcentral.com/articles/10.1186/s12888-024-05984-w"
-  },
-  {
-    id: 7,
+    id: 3,
     authors: "Bilginoglu, E.",
     year: 2021,
     title: "Equine-Assisted Experiential Learning on Leadership Development",
@@ -80,6 +36,50 @@ const featuredStudies = [
     highlight: "Detaljeret gennemgang af hvordan hesteassisteret læring udvikler kritiske lederskabskompetencer.",
     category: "lederskab",
     link: "https://ijol.cikd.ca/article_60581"
+  },
+  {
+    id: 4,
+    authors: "Pentecost, L.A.",
+    year: 2017,
+    title: "The Effects of Equine Assisted Leadership Programs on Perceived Professional Development Outcomes",
+    journal: "Liberty University Doctoral Dissertation",
+    volume: "",
+    highlight: "Signifikante forbedringer i professionel udvikling, motivation og kommunikation blandt ledere.",
+    category: "lederskab",
+    link: "https://digitalcommons.liberty.edu/doctoral/1619/"
+  },
+  {
+    id: 5,
+    authors: "Stock, K.L. & Kolb, D.A.",
+    year: 2016,
+    title: "Equine-Assisted Experiential Learning",
+    journal: "OD Practitioner",
+    volume: "48(2), 43-47",
+    highlight: "Dokumenterer forbedret selvbevidsthed og varige adfærdsændringer hos ledere efter hesteassisteret læring.",
+    category: "lederskab",
+    link: "https://www.researchgate.net/publication/327762710"
+  },
+  {
+    id: 6,
+    authors: "Dyk, P., Cheung, R., Pohl, L., Lindgreen, J., & Noriega, C.",
+    year: 2012,
+    title: "The Effectiveness of Equine Guided Leadership Education to Develop Emotional Intelligence in Expert Nurses",
+    journal: "University of Kentucky Center for Leadership Development",
+    volume: "Pilot Research Study",
+    highlight: "Forbedringer i alle fire EQ-områder: selvbevidsthed, selvledelse, social bevidsthed og relationsledelse.",
+    category: "lederskab",
+    link: "https://www.researchgate.net/publication/282670770"
+  },
+  {
+    id: 7,
+    authors: "Smith, A.V., Proops, L., Grounds, K., Wathan, J., & McComb, K.",
+    year: 2016,
+    title: "Functionally relevant responses to human facial expressions of emotion in the domestic horse",
+    journal: "Biology Letters",
+    volume: "12(2)",
+    highlight: "Banebrydende forskning der viser, at heste kan aflæse og reagere på menneskelige følelsesudtryk.",
+    category: "emotionel-intelligens",
+    link: "https://pubmed.ncbi.nlm.nih.gov/26864784/"
   },
   {
     id: 8,
@@ -91,28 +91,6 @@ const featuredStudies = [
     highlight: "Scoping review der viser effektiv opbygning af selvtillid, sociale færdigheder og øget selvbevidsthed.",
     category: "emotionel-intelligens",
     link: "https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2022.730644/full"
-  },
-  {
-    id: 9,
-    authors: "Pentecost, L.A.",
-    year: 2017,
-    title: "The Effects of Equine Assisted Leadership Programs on Perceived Professional Development Outcomes",
-    journal: "Liberty University Doctoral Dissertation",
-    volume: "",
-    highlight: "Signifikante forbedringer i professionel udvikling, motivation og kommunikation blandt ledere.",
-    category: "lederskab",
-    link: "https://digitalcommons.liberty.edu/doctoral/1619/"
-  },
-  {
-    id: 10,
-    authors: "Sivagurunathan, M. et al.",
-    year: 2025,
-    title: "Equine-Assisted Learning and Leadership Transformation: An Exploratory Qualitative Study",
-    journal: "Frontiers in Veterinary Science",
-    volume: "",
-    highlight: "12 måneders opfølgning viser vedvarende transformation i lederes selvbevidsthed og relationelle lederskab.",
-    category: "lederskab",
-    link: "https://www.frontiersin.org/journals/veterinary-science/articles/10.3389/fvets.2025.1700029/abstract"
   }
 ]
 
