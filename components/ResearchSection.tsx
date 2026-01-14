@@ -80,17 +80,6 @@ const featuredStudies = [
     highlight: "Banebrydende forskning der viser, at heste kan aflæse og reagere på menneskelige følelsesudtryk.",
     category: "emotionel-intelligens",
     link: "https://pubmed.ncbi.nlm.nih.gov/26864784/"
-  },
-  {
-    id: 8,
-    authors: "Frontiers in Public Health",
-    year: 2022,
-    title: "Use of Equine-Assisted Services to Improve Outcomes Among At-Risk Youth: A Scoping Review",
-    journal: "Frontiers in Public Health",
-    volume: "10, 730644",
-    highlight: "Scoping review der viser effektiv opbygning af selvtillid, sociale færdigheder og øget selvbevidsthed.",
-    category: "emotionel-intelligens",
-    link: "https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2022.730644/full"
   }
 ]
 
