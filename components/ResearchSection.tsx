@@ -33,9 +33,9 @@ const featuredStudies = [
     title: "Equine-Assisted Experiential Learning on Leadership Development",
     journal: "International Journal of Organizational Leadership",
     volume: "10(3-16)",
-    highlight: "Detaljeret gennemgang af hvordan hesteassisteret læring udvikler kritiske lederskabskompetencer.",
+    highlight: "Detaljeret gennemgang af hvordan hesteassisteret læring udvikler essentielle lederskabskompetencer.",
     category: "lederskab",
-    link: "https://ijol.cikd.ca/article_60581"
+    link: "https://ijol.cikd.ca/article_60581_4517f6cffc01053c94fd00af822c9d4a.pdf"
   },
   {
     id: 4,
