@@ -231,8 +231,8 @@ export default function ResearchSection() {
       <section className="cta-section">
         <div className="cta-container">
           <p className="section-label">Næste skridt</p>
-          <h2 className="section-title">Oplev det selv</h2>
-          <p>Book en uforpligtende samtale og hør mere om, hvordan hesteassisteret udvikling kan gavne dig.</p>
+          <h2 className="section-title">Klar til at opleve det selv?</h2>
+          <p>Book en uforpligtende samtale og hør, hvordan hesteassisteret udvikling kan gavne dig eller dit team.</p>
           <a href="/kontakt" className="cta-button">
             <span>Kontakt mig</span>
           </a>
