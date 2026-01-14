@@ -101,7 +101,7 @@ export default function ResearchSection() {
       {/* Hero */}
       <section className="research-hero">
         <div className="research-hero-bg">
-          <img src="/hero-eye.jpg" alt="Forskning" />
+          <img src="/hero-horse-eye.jpg" alt="Forskning" />
         </div>
         <div className="research-hero-overlay"></div>
         <motion.div
