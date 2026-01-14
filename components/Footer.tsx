@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer className="footer-cta">
       <div className="footer-cta-bg">
-        <img src="/christina-hest.jpg" alt="" />
+        <img src="/lederworkshop.jpg" alt="" />
       </div>
       <div className="footer-cta-overlay"></div>
       <div className="footer-cta-content">
