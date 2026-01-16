@@ -1568,19 +1568,22 @@ nav.scrolled .nav-dropdown-text {
   .contact-methods { padding: 2.5rem 1.25rem; }
   .contact-methods-container { grid-template-columns: 1fr; gap: 0.75rem; }
   .contact-method {
-    padding: 1.25rem;
+    padding: 1rem 1.25rem;
     display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content: flex-start;
     gap: 1rem;
     text-align: left;
   }
-  .contact-method h3 { font-size: 1rem; margin-bottom: 0.125rem; }
-  .contact-method p { font-size: 0.8rem; margin-bottom: 0.25rem; }
-  .contact-method a, .contact-method span { font-size: 0.9rem; }
+  .contact-method h3 { display: none; }
+  .contact-method p { display: none; }
+  .contact-method a, .contact-method span { font-size: 0.95rem; font-weight: 500; }
   .contact-method-icon {
     width: 44px;
     height: 44px;
     min-width: 44px;
+    margin: 0;
   }
   .contact-form-new { padding: 2.5rem 1.25rem; }
   .contact-form-new .form-row { grid-template-columns: 1fr; }
@@ -2155,6 +2158,33 @@ nav.scrolled .mobile-menu-btn {
   font-style: italic;
   color: var(--color-earth);
   margin-bottom: 2rem;
+}
+
+/* Workshop Hero Buttons */
+.workshop-hero-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.workshop-hero-buttons .cta-button {
+  padding: 1rem 1.5rem;
+}
+.cta-button.cta-button-swap .cta-text-hover {
+  display: none !important;
+}
+.cta-button.cta-button-swap:hover .cta-text-default {
+  display: none !important;
+}
+.cta-button.cta-button-swap:hover .cta-text-hover {
+  display: inline !important;
+}
+.cta-button-blue {
+  background: var(--color-earth);
+  border-color: var(--color-earth);
+}
+.cta-button-blue:hover {
+  background: #1a2a3a;
+  border-color: #1a2a3a;
 }
 
 /* Sticky Text Scroll Section */
@@ -3694,6 +3724,7 @@ nav.scrolled .mobile-menu-btn {
   .footer-cta { padding: 4rem 1.25rem; }
   .footer-title { font-size: 1.6rem; }
   .contact-card { padding: 1.25rem; }
+  .contact-card-label, .contact-card-sub { display: none; }
   .form-row { grid-template-columns: 1fr; }
 
   /* Recalibrate page mobile */
@@ -5158,11 +5189,14 @@ nav.scrolled .mobile-menu-btn {
   .testimonial-quote { font-size: 1rem; }
   .contact-form { padding: 1.75rem 1rem; }
   .contact-card { flex-direction: column; text-align: center; gap: 0.75rem; }
+  .contact-card-label, .contact-card-sub { display: none; }
   .workshop-hero-content-full { padding: 5.5rem 1rem 2rem; }
   .workshop-hero-text-full h1 { font-size: 1.65rem; line-height: 1.2; margin: 0.5rem 0 1rem; }
   .workshop-hero-tagline { font-size: 1.05rem; margin: 0.25rem 0 1rem; }
   .workshop-hero-desc { font-size: 1rem; line-height: 1.7; margin-bottom: 1rem; }
   .workshop-hero-cta-text { font-size: 1.05rem; margin-bottom: 1rem; }
+  .workshop-hero-buttons { flex-direction: column; gap: 0.75rem; }
+  .workshop-hero-buttons .cta-button { width: 100%; justify-content: center; }
   .workshop-hero-title { font-size: 1.65rem; }
   .workshop-dates-container { margin: 0 -1rem; padding: 0 1rem; }
   .workshop-date-card {
