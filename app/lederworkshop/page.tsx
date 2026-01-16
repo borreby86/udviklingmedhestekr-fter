@@ -48,6 +48,45 @@ const orgBenefits = [
   }
 ]
 
+const faqItems = [
+  {
+    question: "Hvad er leder- og teamudvikling med heste?",
+    answer: "Det er et praksisnært lærings- og udviklingsforløb, hvor heste anvendes som metodisk redskab til at arbejde med ledelse, samarbejde og kommunikation. Fokus er på adfærd i praksis - ikke teori alene."
+  },
+  {
+    question: "Hvem er forløbene relevante for?",
+    answer: "Forløbene er relevante for teams og ledere, der ønsker at arbejde konkret og praksisnært med samarbejde, kommunikation og adfærd. Typisk: Teams der ønsker bedre samarbejde, ledere på alle niveauer, lederteams og organisationer i forandring. Der kræves ingen erfaring med heste."
+  },
+  {
+    question: "Hvilket udbytte kan I forvente?",
+    answer: "Bedre samarbejde og beslutningstagning - også under pres. Indsigt i egen og teamets adfærd og blinde vinkler. Klarere kommunikation og et fælles sprog for ledelse og samarbejde. Udbyttet er konkrete observationer og tydelige handlepunkter, som kan omsættes direkte i hverdagen."
+  },
+  {
+    question: "Hvordan foregår øvelserne?",
+    answer: "Alle øvelser foregår fra jorden. Deltagerne observerer, leder og samarbejder omkring hestene gennem simple, strukturerede opgaver. Der er altid klare instruktioner og fokus på sikkerhed."
+  },
+  {
+    question: "Er det sikkert?",
+    answer: "Ja. Sikkerhed prioriteres højt: Alle øvelser foregår fra jorden, der gives grundig instruktion inden opstart, hestene er udvalgt og vant til arbejdet, og forløbene faciliteres professionelt."
+  },
+  {
+    question: "Hvorfor virker det?",
+    answer: "Heste reagerer på adfærd - ikke titler eller intentioner. De aflæser kropssprog, timing og klarhed i kommunikation. Feedbacken er øjeblikkelig og uden agenda. Når ledelsesadfærd afprøves i praksis, skabes stærkere indsigt og bedre overførbarhed til hverdagen."
+  },
+  {
+    question: "Hvor lang tid varer et forløb?",
+    answer: "Lederforløb: op til 4 timer. Teamforløb: 3-5 timer. Forløbene kan tilpasses efter behov."
+  },
+  {
+    question: "Hvor mange kan deltage?",
+    answer: "Lederforløb: 4-6 deltagere. Teamforløb: 6-12 deltagere."
+  },
+  {
+    question: "Hvordan booker vi?",
+    answer: "Kontakt os på info@christinaborreby.dk for en kort afklarende dialog om mål, deltagerkreds og ønsket udbytte. Herefter sammensættes et forløb, der matcher jeres behov."
+  }
+]
+
 const timelineSteps = [
   {
     time: "9:00",
@@ -136,6 +175,7 @@ export default function LederworkshopPage() {
   const [modalOpen, setModalOpen] = useState(false)
   const [selectedDate, setSelectedDate] = useState<string | null>(null)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [openFaq, setOpenFaq] = useState<number | null>(null)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
   const { scrollYProgress } = useScroll({
@@ -604,6 +644,64 @@ export default function LederworkshopPage() {
           >
             Ønsker du at booke en workshop til jeres team eller organisation? <a href="/kontakt">Kontakt mig</a> for et skræddersyet forløb.
           </motion.p>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="workshop-faq">
+        <div className="workshop-container-wide">
+          <motion.div
+            className="workshop-faq-header"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <p className="section-label">Ofte stillede spørgsmål</p>
+            <h2>FAQ</h2>
+          </motion.div>
+
+          <div className="workshop-faq-list">
+            {faqItems.map((item, index) => (
+              <motion.div
+                key={index}
+                className={`workshop-faq-item ${openFaq === index ? 'open' : ''}`}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+              >
+                <button
+                  className="workshop-faq-question"
+                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                >
+                  <span>{item.question}</span>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    className={openFaq === index ? 'rotated' : ''}
+                  >
+                    <path d="M6 9l6 6 6-6"/>
+                  </svg>
+                </button>
+                <AnimatePresence>
+                  {openFaq === index && (
+                    <motion.div
+                      className="workshop-faq-answer"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <p>{item.answer}</p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 

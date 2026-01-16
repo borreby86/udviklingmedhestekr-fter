@@ -3023,6 +3023,79 @@ nav.scrolled .mobile-menu-btn {
   border-color: var(--color-copper);
 }
 
+/* Workshop FAQ Section */
+.workshop-faq {
+  padding: 6rem 5rem;
+  background: var(--color-cream-warm);
+}
+.workshop-faq-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.workshop-faq-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-weight: 400;
+  color: var(--color-earth);
+  margin-top: 0.75rem;
+}
+.workshop-faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.workshop-faq-item {
+  background: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+.workshop-faq-question {
+  width: 100%;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s ease;
+}
+.workshop-faq-question:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+.workshop-faq-question span {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--color-earth);
+  line-height: 1.4;
+}
+.workshop-faq-question svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: var(--color-copper);
+  transition: transform 0.3s ease;
+}
+.workshop-faq-question svg.rotated {
+  transform: rotate(180deg);
+}
+.workshop-faq-answer {
+  overflow: hidden;
+}
+.workshop-faq-answer p {
+  padding: 0 1.5rem 1.25rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-soft-brown);
+  margin: 0;
+}
+
 /* Modal */
 .modal-overlay {
   position: fixed;
@@ -3607,6 +3680,13 @@ nav.scrolled .mobile-menu-btn {
     justify-content: center;
     padding: 1.5rem;
   }
+
+  /* Workshop FAQ mobile */
+  .workshop-faq { padding: 3.5rem 1.25rem; }
+  .workshop-faq-header { margin-bottom: 2rem; }
+  .workshop-faq-question { padding: 1rem 1.25rem; }
+  .workshop-faq-question span { font-size: 1rem; }
+  .workshop-faq-answer p { padding: 0 1.25rem 1rem; font-size: 0.95rem; }
 
   /* Modal mobile */
   .modal-overlay {
