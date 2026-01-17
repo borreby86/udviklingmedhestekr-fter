@@ -5320,7 +5320,7 @@ nav.scrolled .mobile-menu-btn {
 }
 .about-credentials {
   font-size: 0.9rem;
-  color: var(--color-gold);
+  color: var(--color-copper);
   margin-bottom: 1.5rem;
   letter-spacing: 0.02em;
 }
@@ -5453,11 +5453,16 @@ nav.scrolled .mobile-menu-btn {
   background: linear-gradient(
     90deg,
     var(--color-cream) 0%,
-    var(--color-cream) 25%,
-    rgba(250, 248, 245, 0.95) 35%,
-    rgba(250, 248, 245, 0.7) 50%,
-    rgba(250, 248, 245, 0.4) 65%,
-    rgba(250, 248, 245, 0.15) 80%,
+    var(--color-cream) 18%,
+    rgba(250, 248, 245, 0.98) 25%,
+    rgba(250, 248, 245, 0.94) 32%,
+    rgba(250, 248, 245, 0.85) 40%,
+    rgba(250, 248, 245, 0.7) 48%,
+    rgba(250, 248, 245, 0.5) 56%,
+    rgba(250, 248, 245, 0.35) 64%,
+    rgba(250, 248, 245, 0.2) 72%,
+    rgba(250, 248, 245, 0.1) 82%,
+    rgba(250, 248, 245, 0.03) 92%,
     transparent 100%
   );
   z-index: 1;
