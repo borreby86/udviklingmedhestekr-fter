@@ -899,12 +899,11 @@ nav.scrolled .nav-dropdown-text {
 }
 .cta-button-outline {
   background: transparent;
-  border: 1px solid var(--color-cream);
-  color: #7BA3C9;
+  border: 1px solid var(--color-copper);
+  color: var(--color-cream);
 }
 .cta-button-outline:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: #9BBDDD;
+  background: var(--color-copper);
 }
 .testimonial-card {
   background: rgba(244, 245, 247, 0.04);

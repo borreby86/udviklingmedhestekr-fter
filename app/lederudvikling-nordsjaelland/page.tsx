@@ -251,14 +251,16 @@ export default function LederworkshopPage() {
               Få klarhed over dine adfærdsmønstre, ressourcer og blind spots, så du kan lede fra dit autentiske selv, og træn dit autentiske lederskab i praksis. Gennem mødet med hesten får du øjeblikkelig, ærlig feedback på dit lederskab, uden filter.
             </p>
             <div className="workshop-hero-buttons">
-              <a href="/kontakt" className="cta-button">
-                Book en samtale
+              <a href="/kontakt" className="cta-button cta-button-swap">
+                <span className="cta-text-default">Book en samtale</span>
+                <span className="cta-text-hover">Kontakt mig</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
               </a>
-              <a href="#priser" className="cta-button cta-button-outline">
-                Se priser
+              <a href="#priser" className="cta-button cta-button-blue cta-button-swap">
+                <span className="cta-text-default">Se priser og datoer</span>
+                <span className="cta-text-hover">Scroll ned</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
@@ -390,7 +392,7 @@ export default function LederworkshopPage() {
             transition={{ duration: 0.7, delay: 0.2 }}
           >
             <p className="insight-highlight">
-              De reagerer ikke på titler, ord eller charme, kun på det, du reelt udstråler.
+              De respekterer dig ikke for din titel, dine ord eller ancienitet, men på det, du signalerer i nuet.
             </p>
             <p className="insight-text">
               Det gør dem til brutalt ærlige spejle. Når hesten følger dig, ved du, at dit lederskab virker. Når den vender sig væk, får du værdifuld information om, hvad der mangler.
