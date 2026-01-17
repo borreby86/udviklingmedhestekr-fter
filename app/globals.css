@@ -5535,6 +5535,44 @@ nav.scrolled .mobile-menu-btn {
   line-height: 1.7;
   margin-bottom: 1.25rem;
 }
+.evidence-bar-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 1.85rem);
+  font-weight: 400;
+  color: white;
+  margin-bottom: 1rem;
+}
+.evidence-bar-intro {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.7;
+}
+.evidence-bar-list-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 1rem;
+}
+.evidence-bar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+.evidence-bar-list li {
+  position: relative;
+  padding-left: 1.25rem;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.8;
+  margin-bottom: 0.25rem;
+}
+.evidence-bar-list li::before {
+  content: '·';
+  position: absolute;
+  left: 0.25rem;
+  color: var(--color-copper);
+  font-weight: bold;
+}
 .evidence-bar-link {
   display: inline-flex;
   align-items: center;
