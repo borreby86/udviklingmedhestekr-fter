@@ -388,48 +388,18 @@ export default function LederworkshopPage() {
           </motion.div>
 
           <motion.div
-            className="workshop-why-points"
+            className="workshop-why-insight"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <div className="workshop-point">
-              <span className="workshop-point-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <circle cx="12" cy="12" r="10"/>
-                  <path d="M12 6v6l4 2"/>
-                </svg>
-              </span>
-              <div>
-                <h4>Uden filter</h4>
-                <p>De reagerer ikke på titler, ord eller charme – kun på det, du reelt udstråler</p>
-              </div>
-            </div>
-            <div className="workshop-point">
-              <span className="workshop-point-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                  <circle cx="12" cy="12" r="3"/>
-                </svg>
-              </span>
-              <div>
-                <h4>Brutalt ærlige spejle</h4>
-                <p>Når hesten følger dig, ved du, at dit lederskab virker</p>
-              </div>
-            </div>
-            <div className="workshop-point">
-              <span className="workshop-point-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                  <polyline points="22 4 12 14.01 9 11.01"/>
-                </svg>
-              </span>
-              <div>
-                <h4>Værdifuld feedback</h4>
-                <p>Når hesten vender sig væk, får du information om, hvad der mangler</p>
-              </div>
-            </div>
+            <p className="insight-highlight">
+              De reagerer ikke på titler, ord eller charme, kun på det, du reelt udstråler.
+            </p>
+            <p className="insight-text">
+              Det gør dem til brutalt ærlige spejle. Når hesten følger dig, ved du, at dit lederskab virker. Når den vender sig væk, får du værdifuld information om, hvad der mangler.
+            </p>
           </motion.div>
         </div>
       </section>
@@ -493,33 +463,34 @@ export default function LederworkshopPage() {
       </section>
 
       {/* Evidence Section */}
-      <section className="workshop-evidence-banner">
+      <section className="workshop-evidence">
         <div className="workshop-container">
           <motion.div
-            className="evidence-banner-content"
-            initial={{ opacity: 0, y: 20 }}
+            className="evidence-content"
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.7 }}
           >
-            <div className="evidence-banner-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-              </svg>
+            <p className="section-label">Dokumenteret effekt</p>
+            <h2>Hvad forskningen viser</h2>
+            <p className="evidence-intro">
+              Hesteassisteret læring er ikke bare en oplevelse – det er en evidensbaseret metode.
+            </p>
+            <div className="evidence-card">
+              <p className="evidence-card-title">Peer-reviewed forskning dokumenterer forbedringer i:</p>
+              <ul>
+                <li>Emotionel intelligens og selvindsigt</li>
+                <li>Evne til at skabe tillid og følgeskab</li>
+                <li>Stresshåndtering og nervesystemregulering</li>
+              </ul>
+              <a href="/forskning" className="evidence-link">
+                Læs mere om forskningen
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
             </div>
-            <div className="evidence-banner-text">
-              <p className="evidence-banner-label">Dokumenteret effekt</p>
-              <h3>Hesteassisteret læring er en evidensbaseret metode</h3>
-              <p className="evidence-banner-desc">
-                Peer-reviewed forskning dokumenterer forbedringer i emotionel intelligens, evne til at skabe tillid og følgeskab, samt stresshåndtering.
-              </p>
-            </div>
-            <a href="/forskning" className="evidence-banner-link">
-              <span>Læs om forskningen</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </a>
           </motion.div>
         </div>
       </section>
