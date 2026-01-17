@@ -5,36 +5,27 @@ import { motion, useScroll, useTransform, AnimatePresence } from 'motion/react'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 
-const testimonials = [
-  {
-    quote: "Hestens adfærd hjalp mig til at fokusere på og forstå min adfærd. På godt og ondt. Og det var det hele værd.",
-    author: "Kim Høgh",
-    role: "Bestyrelsesformand & Tidl. CEO, Hjerteforeningen"
-  },
-  {
-    quote: "Jeg kunne tydeligt mærke, hvordan mit eget indre nærvær og ro påvirkede hestens tillid til mig. Det var en vigtig påmindelse om, hvordan vores energi og autenticitet skaber følgeskab.",
-    author: "Søren Truelsen",
-    role: "CEO, Nordic Bloom"
-  },
-  {
-    quote: "Fantastisk at blive spejlet i og få respons fra hesten - stor øjenåbner for mig. På trods af mange års coaching fik jeg nyt syn og perspektiv.",
-    author: "Camilla Guldmann",
-    role: "Teamleder"
-  }
+const workshopDates = [
+  { month: 'April', year: '2026' },
+  { month: 'Maj', year: '2026' }
 ]
 
 const personalBenefits = [
   {
     title: "Autentisk lederskab i kroppen",
-    description: "En kropslig oplevelse af, hvornår du står stærkt i dit lederskab, og hvornår du mister fodfæstet"
+    description: "En kropslig oplevelse af, hvornår du står stærkt – og hvornår du mister fodfæstet"
   },
   {
-    title: "Nærvær og tillid",
-    description: "Større bevidsthed om din energi og din evne til at skabe ægte kontakt og følgeskab"
+    title: "Ærlig feedback uden filter",
+    description: "Hesten reagerer på din tilstedeværelse her og nu, ikke på din titel eller dine ord"
   },
   {
-    title: "Indsigt i mønstre",
-    description: "Forstå dine styrker og blinde vinkler som leder, både de synlige og de skjulte"
+    title: "Indsigt i dine blinde vinkler",
+    description: "Forstå de mønstre der påvirker dit lederskab – både de synlige og de skjulte"
+  },
+  {
+    title: "Nærvær der skaber følgeskab",
+    description: "Større bevidsthed om din energi og evne til at skabe ægte kontakt"
   }
 ]
 
@@ -50,6 +41,10 @@ const orgBenefits = [
   {
     title: "Reguleret nervesystem",
     description: "En leder der kan regulere sit eget nervesystem styrker hele arbejdsmiljøet"
+  },
+  {
+    title: "Komplekse relationer",
+    description: "Øget evne til at navigere i svære samtaler og skabe samarbejde på tværs"
   }
 ]
 
@@ -92,24 +87,31 @@ const faqItems = [
   }
 ]
 
-const journeySteps = [
+const timelineSteps = [
   {
-    number: '01',
-    title: 'Udtryk & adfærd',
-    subtitle: 'Dit lederskab i praksis',
-    description: 'I mødet med hesten får du øjeblikkelig feedback på din tilstedeværelse, energi og kommunikation. Hesten spejler det, du udstråler – ikke det, du siger.'
+    time: "Start",
+    title: "Ankomst & let forplejning",
+    description: "Kaffe, te og let morgenmad. Vi lander i rummet og sætter intentionen for dagen."
   },
   {
-    number: '02',
-    title: 'Indsigt',
-    subtitle: 'Mønstre bliver synlige',
-    description: 'Gennem faciliteret refleksion får du øje på de mønstre og blinde vinkler, der påvirker dit lederskab. Hvad virker? Hvad står i vejen?'
+    time: "+30 min",
+    title: "Introduktion til hestene",
+    description: "Du møder hestene og lærer om deres sprog. Vi gennemgår dagens øvelser og rammer."
   },
   {
-    number: '03',
-    title: 'Forankring',
-    subtitle: 'Fra oplevelse til hverdag',
-    description: 'Du får konkrete redskaber til at tage læringen med hjem. Indsigter der forankres i kroppen huskes længe efter workshoppen.'
+    time: "+1 time",
+    title: "Første øvelse med hest",
+    description: "Individuel interaktion med hesten. Her møder du dit lederskab og dig selv, uden filter."
+  },
+  {
+    time: "+1½ time",
+    title: "Refleksion & ny øvelse",
+    description: "Faciliteret samtale om dine oplevelser, efterfulgt af en dybere øvelse med fokus på det, der viste sig."
+  },
+  {
+    time: "+2½ time",
+    title: "Integration & afrunding",
+    description: "Vi samler op på dagens indsigter og arbejder med, hvordan du tager læringen med hjem i din hverdag."
   }
 ]
 
@@ -120,13 +122,15 @@ function StickyTextSection() {
     offset: ["start start", "end end"]
   })
 
-  const opacity1 = useTransform(scrollYProgress, [0, 0.25, 0.35], [1, 1, 0])
-  const opacity2 = useTransform(scrollYProgress, [0.3, 0.4, 0.6, 0.7], [0, 1, 1, 0])
-  const opacity3 = useTransform(scrollYProgress, [0.65, 0.75, 1], [0, 1, 1])
+  const opacity1 = useTransform(scrollYProgress, [0, 0.18, 0.25], [1, 1, 0])
+  const opacity2 = useTransform(scrollYProgress, [0.22, 0.3, 0.42, 0.5], [0, 1, 1, 0])
+  const opacity3 = useTransform(scrollYProgress, [0.47, 0.55, 0.67, 0.75], [0, 1, 1, 0])
+  const opacity4 = useTransform(scrollYProgress, [0.72, 0.8, 1], [0, 1, 1])
 
-  const y1 = useTransform(scrollYProgress, [0, 0.25, 0.35], [0, 0, -30])
-  const y2 = useTransform(scrollYProgress, [0.3, 0.4, 0.6, 0.7], [30, 0, 0, -30])
-  const y3 = useTransform(scrollYProgress, [0.65, 0.75, 1], [30, 0, 0])
+  const y1 = useTransform(scrollYProgress, [0, 0.18, 0.25], [0, 0, -30])
+  const y2 = useTransform(scrollYProgress, [0.22, 0.3, 0.42, 0.5], [30, 0, 0, -30])
+  const y3 = useTransform(scrollYProgress, [0.47, 0.55, 0.67, 0.75], [30, 0, 0, -30])
+  const y4 = useTransform(scrollYProgress, [0.72, 0.8, 1], [30, 0, 0])
 
   return (
     <section className="sticky-text-section" ref={sectionRef}>
@@ -150,7 +154,7 @@ function StickyTextSection() {
             style={{ opacity: opacity2, y: y2 }}
           >
             <p>
-              Ægte lederskab begynder med dig og ikke strategi. Din evne til at forstå, hvordan du påvirker andre og om du skaber troværdighed, er altafgørende for at opnå følgeskab.
+              Ægte lederskab begynder med dig og ikke strategi. Din evne til at forstå, hvordan du påvirker andre og om du skaber troværdighed, er altafgørende for at opnå følgeskab. Men hvor ofte får du mulighed for at se dig selv som leder, helt uden filter – og med øjeblikkelig feedback?
             </p>
           </motion.div>
 
@@ -158,8 +162,17 @@ function StickyTextSection() {
             className="sticky-text-slide"
             style={{ opacity: opacity3, y: y3 }}
           >
+            <p>
+              Hestene spejler din autenticitet, dit nærvær og din energi i nuet. De viser præcist, hvor du står stærkt – og hvor du ubevidst mister kontakt eller gennemslagskraft.
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="sticky-text-slide"
+            style={{ opacity: opacity4, y: y4 }}
+          >
             <p className="sticky-text-gold">
-              Men hvor ofte får du mulighed for at se dig selv som leder, helt uden filter, og med øjeblikkelig feedback?
+              Det giver dig indsigter, som er svære at opnå på andre måder.
             </p>
           </motion.div>
         </div>
@@ -175,15 +188,6 @@ export default function LederworkshopPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [openFaq, setOpenFaq] = useState<number | null>(null)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
-  const [currentTestimonial, setCurrentTestimonial] = useState(0)
-
-  const nextTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)
-  }
-
-  const prevTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)
-  }
 
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -260,10 +264,13 @@ export default function LederworkshopPage() {
             <h1>Autentisk lederskab <em>uden filter</em></h1>
             <p className="workshop-hero-tagline">Følgeskab starter med relation, ikke retning.</p>
             <p className="workshop-hero-desc">
-              Få klarhed over dine adfærdsmønstre, ressourcer og blind spots, så du kan lede fra dit autentiske selv, og træn dit autentiske lederskab i praksis. Gennem mødet med hesten får du øjeblikkelig, ærlig feedback på dit lederskab, uden filter.
+              Denne workshop giver dig klarhed over dine adfærdsmønstre, ressourcer og blind spots, så du kan lede fra dit autentiske selv. Gennem mødet med hesten får du øjeblikkelig, ærlig feedback på dit lederskab – uden filter.
+            </p>
+            <p className="workshop-hero-question">
+              Er du klar til at træne dit autentiske lederskab i praksis?
             </p>
             <div className="workshop-hero-buttons">
-              <a href="/kontakt" className="cta-button cta-button-swap">
+              <a href="#datoer" className="cta-button cta-button-swap">
                 <span className="cta-text-default">Åbne workshops</span>
                 <span className="cta-text-hover">Se datoer</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -285,53 +292,163 @@ export default function LederworkshopPage() {
       {/* Sticky Scroll Text Section */}
       <StickyTextSection />
 
-      {/* Journey Section */}
-      <section className="workshop-forloeb">
+      {/* Why Section */}
+      <section className="workshop-why-new">
+        <div className="workshop-why-bg">
+          <img src="/playboy.jpeg" alt="Hest i naturen - hesteassisteret lederudvikling" />
+        </div>
+        <div className="workshop-why-overlay" />
+        <div className="workshop-container">
+          <motion.div
+            className="workshop-why-text"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <p className="section-label">Metoden</p>
+            <h2>Hvorfor træne lederskab med heste?</h2>
+            <p>
+              Heste er byttedyr. De har overlevet i millioner af år ved at aflæse intention og energi hos dem omkring sig. De reagerer ikke på titler, ord eller charme – kun på det, du reelt udstråler.
+            </p>
+            <p>
+              Det gør dem til brutalt ærlige spejle. Når hesten følger dig, ved du, at dit lederskab virker. Når den vender sig væk, får du værdifuld information om, hvad der mangler.
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="workshop-why-points"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
+            <div className="workshop-point">
+              <span className="workshop-point-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 6v6l4 2"/>
+                </svg>
+              </span>
+              <div>
+                <h4>Øjeblikkelig respons</h4>
+                <p>Hesten reagerer i nuet på din energi, intention og indre tilstand</p>
+              </div>
+            </div>
+            <div className="workshop-point">
+              <span className="workshop-point-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+              </span>
+              <div>
+                <h4>Ingen facade</h4>
+                <p>Heste læser dit kropssprog og nervesystem, ikke dine ord eller din titel</p>
+              </div>
+            </div>
+            <div className="workshop-point">
+              <span className="workshop-point-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+              </span>
+              <div>
+                <h4>Kropslig læring</h4>
+                <p>Oplevelser der forankres i kroppen og huskes længe efter workshoppen</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Testimonial Section */}
+      <section className="workshop-testimonial">
+        <div className="workshop-container">
+          <motion.div
+            className="testimonial-card-large"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <p className="section-label">Det siger deltagerne</p>
+            <blockquote className="testimonial-quote-large">
+              "Hestens adfærd hjalp mig til at fokusere på og forstå min adfærd. På godt og ondt. Og det var det hele værd."
+            </blockquote>
+            <div className="testimonial-author-large">
+              <span className="testimonial-name">Kim Høgh</span>
+              <span className="testimonial-role">Bestyrelsesformand & Tidl. CEO, Hjerteforeningen</span>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Evidence Section */}
+      <section className="workshop-evidence">
+        <div className="workshop-container">
+          <motion.div
+            className="evidence-content"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <p className="section-label">Dokumenteret effekt</p>
+            <h2>Hvad forskningen viser</h2>
+            <p className="evidence-intro">
+              Hesteassisteret læring er ikke bare en oplevelse – det er en evidensbaseret metode.
+            </p>
+            <div className="evidence-points">
+              <p>Peer-reviewed forskning dokumenterer forbedringer i:</p>
+              <ul>
+                <li>Emotionel intelligens og selvindsigt</li>
+                <li>Evne til at skabe tillid og følgeskab</li>
+                <li>Stresshåndtering og nervesystemregulering</li>
+              </ul>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Timeline Section */}
+      <section className="workshop-timeline">
         <div className="workshop-container-wide">
           <motion.div
-            className="workshop-forloeb-header"
+            className="workshop-timeline-header"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <p className="section-label">Workshoppens indhold</p>
-            <h2>Fra indsigt til forankring</h2>
-            <p className="workshop-forloeb-intro">
-              De fleste lederkurser giver dig værktøjer. Modeller. Teorier du skal huske at anvende, når du kommer tilbage til hverdagen.
-            </p>
-            <p className="workshop-forloeb-intro workshop-forloeb-question">
-              Men hvornår fik du sidst mulighed for at træne din evne til at opnå følgeskab - med instant feedback?
+            <p className="section-label">Dagens forløb</p>
+            <h2>3 timer der ændrer dit perspektiv</h2>
+            <p className="workshop-timeline-intro">
+              Workshoppen veksler mellem øvelser med hestene, faciliteret refleksion og samtale. Du behøver ingen hesteerfaring, kun nysgerrighed og viljen til at lære noget nyt om dig selv.
             </p>
           </motion.div>
 
-          <div className="workshop-forloeb-cards">
-            {journeySteps.map((step, index) => (
+          <div className="workshop-timeline-track">
+            {timelineSteps.map((step, index) => (
               <motion.div
                 key={index}
-                className="workshop-forloeb-card"
+                className="workshop-timeline-step"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.15 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <span className="forloeb-card-number">{step.number}</span>
-                <h3>{step.title}</h3>
-                <span className="forloeb-card-subtitle">{step.subtitle}</span>
-                <p>{step.description}</p>
+                <div className="timeline-step-marker">
+                  <span className="timeline-step-dot" />
+                  {index < timelineSteps.length - 1 && <span className="timeline-step-line" />}
+                </div>
+                <div className="timeline-step-content">
+                  <span className="timeline-step-time">{step.time}</span>
+                  <h4>{step.title}</h4>
+                  <p>{step.description}</p>
+                </div>
               </motion.div>
             ))}
           </div>
-
-          <motion.p
-            className="workshop-forloeb-note"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.25 }}
-          >
-            Du behøver ingen hesteerfaring, kun nysgerrighed og viljen til at lære noget nyt om dig selv.
-          </motion.p>
 
           <motion.div
             className="workshop-practical-badges"
@@ -357,209 +474,55 @@ export default function LederworkshopPage() {
             </div>
             <div className="practical-badge">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="M12 6v6l4 2"/>
+                <path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/>
               </svg>
-              <span>3 timers intensiv workshop</span>
+              <span>Kaffe, te og let forplejning inkluderet</span>
             </div>
             <div className="practical-badge">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/>
+                <path d="M4 19.5A2.5 2.5 0 016.5 17H20"/>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>
               </svg>
-              <span>Let forplejning inkluderet</span>
+              <span>Du får et refleksionshæfte med hjem</span>
             </div>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Method Comparison Section */}
-      <section className="workshop-middelvej">
-        <div className="workshop-why-bg">
-          <img src="/playboy.jpeg" alt="Hest i naturen - hesteassisteret lederudvikling" />
-        </div>
-        <div className="workshop-middelvej-overlay" />
-        <div className="workshop-container">
-          <motion.div
-            className="workshop-middelvej-content"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <p className="section-label">Forskellen</p>
-            <h2>Hvorfor virker det anderledes?</h2>
-            <p className="workshop-middelvej-intro">
-              De fleste lederkurser giver dig værktøjer, modeller og teorier. Men hvornår fik du sidst mulighed for at <em>se</em> dit lederskab – helt uden filter?
-            </p>
-          </motion.div>
-
-          <div className="workshop-methods-grid">
-            <motion.div
-              className="workshop-method-card"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="method-card-header">
-                <span className="method-card-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <path d="M4 19.5A2.5 2.5 0 016.5 17H20"/>
-                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>
-                  </svg>
-                </span>
-                <h3>Traditionelle kurser</h3>
-              </div>
-              <p className="method-card-desc">Intellektuel forståelse af ledelse</p>
-              <ul className="method-card-list">
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
-                  <span>Teorier du skal huske at anvende</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
-                  <span>Feedback filtreret gennem høflighed</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
-                  <span>Læring der ofte glemmes i hverdagen</span>
-                </li>
-              </ul>
-            </motion.div>
-
-            <motion.div
-              className="workshop-method-card method-card-highlight"
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.15 }}
-            >
-              <div className="method-card-header">
-                <span className="method-card-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                  </svg>
-                </span>
-                <h3>Med hesten som spejl</h3>
-              </div>
-              <p className="method-card-desc">Kropslig oplevelse af dit lederskab</p>
-              <ul className="method-card-list">
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 6L9 17l-5-5"/></svg>
-                  <span>Øjeblikkelig, ærlig feedback</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 6L9 17l-5-5"/></svg>
-                  <span>Blinde vinkler bliver synlige</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 6L9 17l-5-5"/></svg>
-                  <span>Læring forankret i kroppen</span>
-                </li>
-              </ul>
-            </motion.div>
-          </div>
-
-          <motion.blockquote
-            className="workshop-quote"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <p>"Heste reagerer ikke på titler, ord eller charme – kun på det, du reelt udstråler. Det gør dem til brutalt ærlige spejle."</p>
-          </motion.blockquote>
-        </div>
-      </section>
-
-      {/* Testimonial Slider Section */}
-      <section className="workshop-testimonial-slider">
-        <div className="workshop-container">
-          <p className="section-label">Det siger deltagerne</p>
-          <div className="testimonial-slider">
-            <button
-              className="testimonial-nav testimonial-nav-prev"
-              onClick={prevTestimonial}
-              aria-label="Forrige citat"
-            >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M15 18l-6-6 6-6"/>
-              </svg>
-            </button>
-
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentTestimonial}
-                className="testimonial-slide"
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.3 }}
-              >
-                <blockquote className="testimonial-quote-large">
-                  "{testimonials[currentTestimonial].quote}"
-                </blockquote>
-                <div className="testimonial-author-large">
-                  <span className="testimonial-name">{testimonials[currentTestimonial].author}</span>
-                  <span className="testimonial-role">{testimonials[currentTestimonial].role}</span>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-
-            <button
-              className="testimonial-nav testimonial-nav-next"
-              onClick={nextTestimonial}
-              aria-label="Næste citat"
-            >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M9 18l6-6-6-6"/>
-              </svg>
-            </button>
-          </div>
-
-          <div className="testimonial-dots">
-            {testimonials.map((_, index) => (
-              <button
-                key={index}
-                className={`testimonial-dot ${index === currentTestimonial ? 'active' : ''}`}
-                onClick={() => setCurrentTestimonial(index)}
-                aria-label={`Gå til citat ${index + 1}`}
-              />
-            ))}
-          </div>
         </div>
       </section>
 
       {/* Instructor Section */}
-      <section className="workshop-facilitator">
-        <div className="workshop-facilitator-bg">
-          <img src="/christina-gallop.jpg" alt="Christina rider på hest i galop" />
-        </div>
-        <div className="workshop-facilitator-overlay" />
-        <div className="workshop-facilitator-content">
+      <section className="workshop-about-section">
+        <div className="workshop-about-grid">
+          <div className="workshop-about-visual">
+            <div className="workshop-about-image-frame"></div>
+            <motion.div
+              className="workshop-about-image"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+            >
+              <img src="/christina.jpg" alt="Christina Borreby" />
+            </motion.div>
+          </div>
           <motion.div
+            className="workshop-about-content"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
             <p className="section-label">Din facilitator</p>
-            <h2>Christina Borreby</h2>
-            <p className="workshop-facilitator-credentials">
-              Cand.negot. i Kommunikation · Certificeret psykoterapeut · 30+ års erfaring med heste
-            </p>
-            <div className="workshop-facilitator-text">
+            <h3>Christina Borreby</h3>
+            <p className="workshop-about-role">Cand.negot. i Kommunikation & HR · Certificeret psykoterapeut · 15+ års erfaring</p>
+            <div className="workshop-about-text">
               <p>
-                Fra barnsben har heste været mine læremestre i lederskab - uden jeg vidste det.
+                Jeg har trænet galopheste i mange år – og opdaget at heste lærer os mindst lige så meget om os selv, som vi lærer dem.
               </p>
               <p>
-                Når jeg mistede fokus eller var uklar i min intention, tog hesten over. Når du sidder på 500 kilo muskler i 60 km/t, finder du hurtigt ud af, om dit lederskab virker. Det har jeg mærket på egen krop.
+                Med en baggrund i kommunikation og psykoterapi har jeg skabt et unikt udviklingskoncept, hvor heste fungerer som ærlige spejle for ledere, der vil mere end værktøjer og teknikker.
               </p>
               <p>
-                Hestene lærer mig dagligt, at følgeskab ikke handler om kontrol - men om nærvær, tydelighed og sunde grænser. Og ikke mindst om kongruens mellem det, man tænker, føler og signalerer udadtil.
-              </p>
-              <p>
-                Den erfaring bruger jeg i dag - kombineret med min baggrund i kommunikation, adfærdspsykologi og menneskelig udvikling - til at hjælpe ledere med at se deres eget lederskab uden filter.
+                Jeg arbejder med ledere og teams, der ønsker at styrke deres nærvær, emotionelle intelligens og evne til at skabe ægte tillid.
               </p>
             </div>
           </motion.div>
@@ -567,56 +530,30 @@ export default function LederworkshopPage() {
       </section>
 
       {/* Benefits Section */}
-      <section className="workshop-benefits-new">
+      <section className="workshop-benefits-new workshop-benefits-single">
         <div className="workshop-container-wide">
           <div className="workshop-benefits-header">
             <p className="section-label">Udbytte</p>
-            <h2>Hvad får du med hjem?</h2>
+            <h2>Dit udbytte</h2>
           </div>
 
-          <div className="workshop-benefits-columns">
-            <motion.div
-              className="workshop-benefit-column"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h3>For dig personligt</h3>
-              <div className="workshop-benefit-list">
-                {personalBenefits.map((benefit, index) => (
-                  <div key={index} className="workshop-benefit-item">
-                    <span className="benefit-number">0{index + 1}</span>
-                    <div>
-                      <h4>{benefit.title}</h4>
-                      <p>{benefit.description}</p>
-                    </div>
-                  </div>
-                ))}
+          <motion.div
+            className="workshop-benefit-list-centered"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            {personalBenefits.map((benefit, index) => (
+              <div key={index} className="workshop-benefit-item">
+                <span className="benefit-number">0{index + 1}</span>
+                <div>
+                  <h4>{benefit.title}</h4>
+                  <p>{benefit.description}</p>
+                </div>
               </div>
-            </motion.div>
-
-            <motion.div
-              className="workshop-benefit-column"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.15 }}
-            >
-              <h3>For din organisation</h3>
-              <div className="workshop-benefit-list">
-                {orgBenefits.map((benefit, index) => (
-                  <div key={index} className="workshop-benefit-item">
-                    <span className="benefit-number">0{index + 1}</span>
-                    <div>
-                      <h4>{benefit.title}</h4>
-                      <p>{benefit.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
@@ -683,7 +620,7 @@ export default function LederworkshopPage() {
       </section>
 
       {/* Dates Section */}
-      <section className="workshop-dates-section" id="tilmelding">
+      <section className="workshop-dates-section" id="datoer">
         <div className="workshop-dates-bg">
           <img src="/session.JPG" alt="Workshop session med heste og deltagere" />
         </div>
@@ -696,46 +633,51 @@ export default function LederworkshopPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <p className="section-label">Book workshop</p>
-            <h2>Kom i gang</h2>
+            <p className="section-label">Kommende workshops</p>
+            <h2>Vælg en dato</h2>
+            <p className="workshop-dates-intro">
+              Kl. 9:00-12:00 · Hørsholm, Nordsjælland · Maks 6 deltagere
+            </p>
           </motion.div>
 
-          <div className="workshop-booking-options">
-            <motion.div
-              className="booking-option booking-option-primary"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <span className="booking-option-label">Anbefalet</span>
-              <h3>Lukket workshop</h3>
-              <p>Book en workshop kun for jeres ledergruppe. Kan ofte arrangeres med 2-3 ugers varsel.</p>
-              <a href="/kontakt" className="booking-option-cta">
-                <span>Book en samtale</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-              </a>
-            </motion.div>
-
-            <motion.div
-              className="booking-option"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <h3>Åben workshop</h3>
-              <p>Deltag sammen med andre ledere. Få besked når nye datoer åbner.</p>
-              <button onClick={() => openModal('Venteliste')} className="booking-option-cta booking-option-cta-secondary">
-                <span>Skriv mig på ventelisten</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-              </button>
-            </motion.div>
+          <div className="workshop-date-cards">
+            {workshopDates.map((date, index) => (
+              <motion.button
+                key={index}
+                onClick={() => openModal(date.month)}
+                className="workshop-date-card workshop-date-card-light"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <div className="date-card-date">
+                  <span className="date-card-pending">Datoer på vej</span>
+                  <div className="date-card-month-year">
+                    <span className="date-card-month">{date.month}</span>
+                    <span className="date-card-year">{date.year}</span>
+                  </div>
+                </div>
+                <div className="date-card-divider" />
+                <div className="date-card-action">
+                  <span>Få besked</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </div>
+              </motion.button>
+            ))}
           </div>
+
+          <motion.p
+            className="workshop-dates-note"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            Ønsker du at booke en workshop til jeres team eller organisation? <a href="/kontakt">Kontakt mig</a> for et skræddersyet forløb.
+          </motion.p>
         </div>
       </section>
 
@@ -824,9 +766,9 @@ export default function LederworkshopPage() {
               </button>
 
               <div className="modal-header">
-                <p className="section-label">Venteliste</p>
-                <h3>Få besked om nye datoer</h3>
-                <p className="modal-info">Skriv dig op og få første adgang til nye workshopdatoer</p>
+                <p className="section-label">Få besked</p>
+                <h3>Workshop i {selectedDate} 2026</h3>
+                <p className="modal-info">Skriv dig op og få besked, når datoen er klar</p>
               </div>
 
               <form className="modal-form" onSubmit={handleModalSubmit}>
@@ -845,7 +787,7 @@ export default function LederworkshopPage() {
                   </svg>
                 </button>
                 {submitStatus === 'success' && (
-                  <p className="form-success">Tak! Du hører fra os, når nye datoer åbner.</p>
+                  <p className="form-success">Tak! Du hører fra os, når datoen er klar.</p>
                 )}
                 {submitStatus === 'error' && (
                   <p className="form-error">Der opstod en fejl. Prøv igen eller skriv til info@christinaborreby.dk</p>
@@ -853,7 +795,7 @@ export default function LederworkshopPage() {
               </form>
 
               <p className="modal-disclaimer">
-                Bare rolig, du modtager kun besked om nye workshopdatoer.
+                Bare rolig, du modtager kun information om denne workshop.
               </p>
             </motion.div>
           </motion.div>
