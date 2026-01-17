@@ -2180,11 +2180,14 @@ nav.scrolled .mobile-menu-btn {
 .cta-button.cta-button-swap .cta-text-hover {
   display: none !important;
 }
-.cta-button.cta-button-swap:hover .cta-text-default {
-  display: none !important;
-}
-.cta-button.cta-button-swap:hover .cta-text-hover {
-  display: inline !important;
+/* Only apply hover text swap on devices that support hover (not mobile/touch) */
+@media (hover: hover) and (pointer: fine) {
+  .cta-button.cta-button-swap:hover .cta-text-default {
+    display: none !important;
+  }
+  .cta-button.cta-button-swap:hover .cta-text-hover {
+    display: inline !important;
+  }
 }
 .cta-button-blue {
   background: var(--color-earth);
