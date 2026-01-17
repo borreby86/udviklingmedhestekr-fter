@@ -7,7 +7,7 @@ export default function CTA() {
         <p className="section-label">Næste skridt</p>
         <h2 className="section-title">Er du nysgerrig på hesteassisteret udvikling?</h2>
         <p className="section-text">
-          Ræk ud og hør hvordan hesteassisteret coaching kan hjælpe dit team eller optimere dit lederskab.
+          Book en uforpligtende samtale og hør, hvordan hesteassisteret udvikling kan hjælpe dit team eller optimere dit lederskab.
         </p>
         <a href="/kontakt" className="cta-button">
           <span>Kontakt og hør mere</span>

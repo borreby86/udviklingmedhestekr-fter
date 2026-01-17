@@ -8,7 +8,6 @@ import Audience from '@/components/Audience'
 import Testimonials from '@/components/Testimonials'
 import Benefits from '@/components/Benefits'
 import About from '@/components/About'
-import CTA from '@/components/CTA'
 import Footer from '@/components/Footer'
 
 export default function Home() {
@@ -24,7 +23,6 @@ export default function Home() {
       <Benefits />
       <About />
       <Audience />
-      <CTA />
       <Footer />
     </>
   )
