@@ -55,40 +55,28 @@ const orgBenefits = [
 
 const faqItems = [
   {
-    question: "Hvad er leder- og teamudvikling med heste?",
-    answer: "Det er et praksisnært lærings- og udviklingsforløb, hvor heste anvendes som metodisk redskab til at arbejde med ledelse, samarbejde og kommunikation. Fokus er på adfærd i praksis - ikke teori alene."
+    question: "Hvem er workshoppen relevant for?",
+    answer: "Workshoppen er relevant for ledere på alle niveauer, der ønsker at arbejde med deres personlige lederskab og autenticitet. Det kan være erfarne ledere, der vil have nye perspektiver, eller nyere ledere, der vil styrke deres fundament. Fælles for deltagerne er et ønske om at lede med mere nærvær, tydelighed og ægthed."
   },
   {
-    question: "Hvem er forløbene relevante for?",
-    answer: "Forløbene er relevante for teams og ledere, der ønsker at arbejde konkret og praksisnært med samarbejde, kommunikation og adfærd. Typisk: Teams der ønsker bedre samarbejde, ledere på alle niveauer, lederteams og organisationer i forandring. Der kræves ingen erfaring med heste."
+    question: "Kræver det hesteerfaring?",
+    answer: "Nej, overhovedet ikke. Du skal ikke ride, og du behøver ingen erfaring med heste. Alle øvelser foregår fra jorden, og jeg guider dig hele vejen. Faktisk kan det være en fordel at komme uden hesteerfaring – så møder du øvelserne helt åbent og uden vanemønstre."
   },
   {
-    question: "Hvilket udbytte kan I forvente?",
-    answer: "Bedre samarbejde og beslutningstagning - også under pres. Indsigt i egen og teamets adfærd og blinde vinkler. Klarere kommunikation og et fælles sprog for ledelse og samarbejde. Udbyttet er konkrete observationer og tydelige handlepunkter, som kan omsættes direkte i hverdagen."
-  },
-  {
-    question: "Hvordan foregår øvelserne?",
-    answer: "Alle øvelser foregår fra jorden. Deltagerne observerer, leder og samarbejder omkring hestene gennem simple, strukturerede opgaver. Der er altid klare instruktioner og fokus på sikkerhed."
+    question: "Hvad hvis jeg er nervøs for heste?",
+    answer: "Det er helt okay – og mere almindeligt end du tror. Hestene er rolige og vant til at arbejde med mennesker, og vi tilpasser altid øvelserne til dig. Du bestemmer selv, hvor tæt du vil være på hesten. Nervøsiteten kan faktisk blive en del af læringen: Hvordan håndterer du usikkerhed? Hvordan påvirker det din tilstedeværelse? Mange oplever, at netop dét bliver en værdifuld indsigt."
   },
   {
     question: "Er det sikkert?",
     answer: "Ja. Sikkerhed prioriteres højt: Alle øvelser foregår fra jorden, der gives grundig instruktion inden opstart, hestene er udvalgt og vant til arbejdet, og forløbene faciliteres professionelt."
   },
   {
-    question: "Hvorfor virker det?",
-    answer: "Heste reagerer på adfærd - ikke titler eller intentioner. De aflæser kropssprog, timing og klarhed i kommunikation. Feedbacken er øjeblikkelig og uden agenda. Når ledelsesadfærd afprøves i praksis, skabes stærkere indsigt og bedre overførbarhed til hverdagen."
+    question: "Hvordan dokumenterer vi værdien over for HR?",
+    answer: "Hesteassisteret læring er en evidensbaseret metode med dokumenterede resultater. Peer-reviewed forskning viser forbedringer i emotionel intelligens, selvindsigt og evne til at skabe tillid – kompetencer der direkte påvirker ledelseskvalitet og teamdynamik. Alle deltagere får desuden et refleksionsmateriale med hjem, som kan bruges til at formulere konkrete fokusområder og handlinger efterfølgende. Vil I have mere dokumentation inden beslutningen, sender jeg gerne relevante forskningsreferencer."
   },
   {
-    question: "Hvor lang tid varer et forløb?",
-    answer: "Lederforløb: op til 4 timer. Teamforløb: 3-5 timer. Forløbene kan tilpasses efter behov."
-  },
-  {
-    question: "Hvor mange kan deltage?",
-    answer: "Lederforløb: 4-6 deltagere. Teamforløb: 6-12 deltagere."
-  },
-  {
-    question: "Hvordan booker vi?",
-    answer: "Kontakt os på info@christinaborreby.dk for en kort afklarende dialog om mål, deltagerkreds og ønsket udbytte. Herefter sammensættes et forløb, der matcher jeres behov."
+    question: "Hvordan booker jeg?",
+    answer: "Kontakt mig på info@christinaborreby.dk for en kort afklarende dialog om dine mål og ønsket udbytte. Du kan også tilmelde dig ventelisten for kommende åbne workshops, så får du besked, når nye datoer åbner."
   }
 ]
 
@@ -620,69 +608,7 @@ export default function LederworkshopPage() {
         </div>
       </section>
 
-      {/* Investment Section */}
-      <section className="workshop-investment">
-        <div className="workshop-container-wide">
-          <motion.div
-            className="workshop-investment-header"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <p className="section-label">Investering</p>
-            <h2>Priser</h2>
-          </motion.div>
-
-          <div className="workshop-investment-grid">
-            <motion.div
-              className="investment-card"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <h3>Åben workshop</h3>
-              <div className="investment-price">4.000 kr.</div>
-              <p className="investment-unit">pr. deltager</p>
-              <ul className="investment-details">
-                <li>3-4 timer</li>
-                <li>Max 6 deltagere</li>
-                <li>Inkl. forplejning og reflektionsmateriale</li>
-              </ul>
-            </motion.div>
-
-            <motion.div
-              className="investment-card investment-card-featured"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <h3>Lukket workshop</h3>
-              <div className="investment-price">Fra 14.000 kr.</div>
-              <p className="investment-unit">for jeres ledere</p>
-              <ul className="investment-details">
-                <li>3-4 timer</li>
-                <li>Max 6 deltagere</li>
-                <li>Inkl. forplejning og reflektionsmateriale</li>
-              </ul>
-            </motion.div>
-          </div>
-
-          <motion.p
-            className="investment-note"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            Priser ekskl. moms
-          </motion.p>
-        </div>
-      </section>
-
-      {/* Dates Section */}
+      {/* Booking Section */}
       <section className="workshop-dates-section" id="tilmelding">
         <div className="workshop-dates-bg">
           <img src="/session.JPG" alt="Workshop session med heste og deltagere" />
@@ -696,8 +622,8 @@ export default function LederworkshopPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <p className="section-label">Book workshop</p>
-            <h2>Kom i gang</h2>
+            <p className="section-label">Kom i gang</p>
+            <h2>Book din workshop</h2>
           </motion.div>
 
           <div className="workshop-booking-options">
@@ -710,7 +636,13 @@ export default function LederworkshopPage() {
             >
               <span className="booking-option-label">Anbefalet</span>
               <h3>Lukket workshop</h3>
-              <p>Book en workshop kun for jeres ledergruppe. Kan ofte arrangeres med 2-3 ugers varsel.</p>
+              <div className="booking-option-price">Fra 14.000 kr.</div>
+              <p className="booking-option-unit">for jeres ledergruppe</p>
+              <ul className="booking-option-details">
+                <li>3-4 timer</li>
+                <li>Max 6 deltagere</li>
+                <li>Inkl. forplejning og reflektionsmateriale</li>
+              </ul>
               <a href="/kontakt" className="booking-option-cta">
                 <span>Book en samtale</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -727,7 +659,13 @@ export default function LederworkshopPage() {
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               <h3>Åben workshop</h3>
-              <p>Deltag sammen med andre ledere. Få besked når nye datoer åbner.</p>
+              <div className="booking-option-price">4.000 kr.</div>
+              <p className="booking-option-unit">pr. deltager</p>
+              <ul className="booking-option-details">
+                <li>3-4 timer</li>
+                <li>Max 6 deltagere</li>
+                <li>Inkl. forplejning og reflektionsmateriale</li>
+              </ul>
               <button onClick={() => openModal('Venteliste')} className="booking-option-cta booking-option-cta-secondary">
                 <span>Skriv mig på ventelisten</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -736,6 +674,16 @@ export default function LederworkshopPage() {
               </button>
             </motion.div>
           </div>
+
+          <motion.p
+            className="booking-note"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            Priser ekskl. moms
+          </motion.p>
         </div>
       </section>
 
