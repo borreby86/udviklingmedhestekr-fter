@@ -285,11 +285,8 @@ export default function LederworkshopPage() {
           >
             <p className="section-label">Workshoppens indhold</p>
             <h2>Fra indsigt til forankring</h2>
-            <p className="workshop-forloeb-intro">
-              De fleste lederkurser giver dig værktøjer. Modeller. Teorier du skal huske at anvende, når du kommer tilbage til hverdagen.
-            </p>
             <p className="workshop-forloeb-intro workshop-forloeb-question">
-              Men hvornår fik du sidst mulighed for at træne din evne til at opnå følgeskab - med instant feedback?
+              Hvornår fik du sidst mulighed for at træne din evne til at opnå følgeskab - med instant feedback?
             </p>
           </motion.div>
 
