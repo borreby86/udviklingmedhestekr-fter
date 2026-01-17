@@ -68,7 +68,7 @@ export default function Navigation() {
           </div>
           <ul className="nav-dropdown-menu">
             <li className="nav-dropdown-label">Aktuelle workshops</li>
-            <li><a href="/lederworkshop" className="nav-dropdown-subitem">Autentisk ledelse - uden filter</a></li>
+            <li><a href="/lederudvikling-nordsjaelland" className="nav-dropdown-subitem">Autentisk ledelse - uden filter</a></li>
             <li><a href="/lederworkshop-i-blinde-vinkler" className="nav-dropdown-subitem">Opdag dine blinde vinkler i ledelse</a></li>
           </ul>
         </li>

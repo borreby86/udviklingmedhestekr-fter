@@ -2,22 +2,23 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://christinaborreby.dk'),
-  title: 'Lederworkshop med Heste | Christina Borreby',
+  title: 'Lederudvikling Nordsjælland | Hesteassisteret Workshop | Christina Borreby',
   description: 'Oplev autentisk lederudvikling gennem hesteassisteret coaching i Nordsjælland. 3-timers workshop der giver dig øjeblikkelig feedback på dit lederskab - helt uden filter. Maks 6 deltagere.',
   keywords: [
+    'lederudvikling nordsjælland',
     'lederworkshop',
     'hesteassisteret lederudvikling',
     'autentisk lederskab',
-    'lederudvikling nordsjælland',
-    'executive coaching',
+    'executive coaching nordsjælland',
     'ledertræning med heste',
     'personlig udvikling ledere',
+    'lederudvikling hørsholm',
     'Christina Borreby'
   ],
   openGraph: {
-    title: 'Lederworkshop med Heste | Autentisk Lederskab uden Filter',
-    description: 'Oplev autentisk lederudvikling gennem hesteassisteret coaching. 3-timers workshop der giver dig øjeblikkelig, ærlig feedback på dit lederskab.',
-    url: 'https://christinaborreby.dk/lederworkshop',
+    title: 'Lederudvikling Nordsjælland | Autentisk Lederskab uden Filter',
+    description: 'Oplev autentisk lederudvikling gennem hesteassisteret coaching i Nordsjælland. 3-timers workshop der giver dig øjeblikkelig, ærlig feedback på dit lederskab.',
+    url: 'https://christinaborreby.dk/lederudvikling-nordsjaelland',
     siteName: 'Christina Borreby',
     locale: 'da_DK',
     type: 'website',
@@ -26,18 +27,18 @@ export const metadata: Metadata = {
         url: '/lederworkshop.jpg',
         width: 1200,
         height: 630,
-        alt: 'Lederworkshop med heste - Christina Borreby'
+        alt: 'Lederudvikling med heste i Nordsjælland - Christina Borreby'
       }
     ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Lederworkshop med Heste | Christina Borreby',
-    description: 'Oplev autentisk lederudvikling gennem hesteassisteret coaching. Øjeblikkelig feedback på dit lederskab.',
+    title: 'Lederudvikling Nordsjælland | Christina Borreby',
+    description: 'Oplev autentisk lederudvikling gennem hesteassisteret coaching i Nordsjælland. Øjeblikkelig feedback på dit lederskab.',
     images: ['/lederworkshop.jpg']
   },
   alternates: {
-    canonical: 'https://christinaborreby.dk/lederworkshop'
+    canonical: 'https://christinaborreby.dk/lederudvikling-nordsjaelland'
   },
   robots: {
     index: true,
