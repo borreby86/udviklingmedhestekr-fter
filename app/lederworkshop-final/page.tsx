@@ -462,35 +462,44 @@ export default function LederworkshopPage() {
         </div>
       </section>
 
-      {/* Evidence Section */}
-      <section className="workshop-evidence">
-        <div className="workshop-container">
+      {/* Evidence Bar */}
+      <section className="evidence-bar">
+        <div className="evidence-bar-container">
           <motion.div
-            className="evidence-content"
-            initial={{ opacity: 0, y: 30 }}
+            className="evidence-bar-item"
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.6 }}
           >
-            <p className="section-label">Dokumenteret effekt</p>
-            <h2>Hvad forskningen viser</h2>
-            <p className="evidence-intro">
-              Hesteassisteret læring er ikke bare en oplevelse – det er en evidensbaseret metode.
+            <span className="evidence-bar-label">Forbes</span>
+            <p className="evidence-bar-quote">
+              "Equine-assisted learning has become one of the most powerful tools used for executives and teams."
             </p>
-            <div className="evidence-card">
-              <p className="evidence-card-title">Peer-reviewed forskning dokumenterer forbedringer i:</p>
-              <ul>
-                <li>Emotionel intelligens og selvindsigt</li>
-                <li>Evne til at skabe tillid og følgeskab</li>
-                <li>Stresshåndtering og nervesystemregulering</li>
-              </ul>
-              <a href="/forskning" className="evidence-link">
-                Læs mere om forskningen
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-              </a>
-            </div>
+            <a href="https://www.forbes.com/councils/forbescoachescouncil/2023/01/30/equine-assisted-learning-a-unique-approach-to-leadership-development/" target="_blank" rel="noopener noreferrer" className="evidence-bar-link">
+              Læs artiklen
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </motion.div>
+          <motion.div
+            className="evidence-bar-item"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            <span className="evidence-bar-stat">106</span>
+            <p className="evidence-bar-text">
+              Peer-reviewed studier i 2023 alene dokumenterede effekten af interaktion med heste, herunder signifikante forbedringer i emotionel intelligens og selvbevidsthed.
+            </p>
+            <a href="/forskning" className="evidence-bar-link">
+              Se forskningsartikler
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
           </motion.div>
         </div>
       </section>
