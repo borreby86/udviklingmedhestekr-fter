@@ -2423,6 +2423,27 @@ nav.scrolled .mobile-menu-btn {
   line-height: 1;
   margin-bottom: 1rem;
 }
+.workshop-why-insight {
+  max-width: 700px;
+  margin: 3rem 0;
+  padding: 2rem 0;
+  border-top: 1px solid rgba(139, 115, 85, 0.2);
+  border-bottom: 1px solid rgba(139, 115, 85, 0.2);
+}
+.insight-highlight {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--color-copper);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+.insight-text {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--color-soft-brown);
+}
 .workshop-why-points {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -5461,6 +5482,98 @@ nav.scrolled .mobile-menu-btn {
 }
 .workshop-about-text p + p {
   margin-top: 1.25rem;
+}
+
+/* Evidence Banner Section */
+.workshop-evidence-banner {
+  background: var(--color-cream);
+  padding: 4rem 5rem;
+}
+.evidence-banner-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  background: white;
+  padding: 2.5rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
+}
+.evidence-banner-icon {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-cream);
+  border-radius: 50%;
+}
+.evidence-banner-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke: var(--color-copper);
+}
+.evidence-banner-text {
+  flex: 1;
+}
+.evidence-banner-label {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-copper);
+  margin-bottom: 0.5rem;
+}
+.evidence-banner-text h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--color-earth);
+  margin-bottom: 0.5rem;
+}
+.evidence-banner-desc {
+  font-size: 0.95rem;
+  color: var(--color-soft-brown);
+  line-height: 1.6;
+}
+.evidence-banner-link {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-copper);
+  text-decoration: none;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid var(--color-copper);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+.evidence-banner-link:hover {
+  background: var(--color-copper);
+  color: white;
+}
+.evidence-banner-link svg {
+  width: 16px;
+  height: 16px;
+}
+@media (max-width: 900px) {
+  .workshop-evidence-banner {
+    padding: 3rem 1.5rem;
+  }
+  .evidence-banner-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    gap: 1.5rem;
+  }
+  .evidence-banner-text h3 {
+    font-size: 1.2rem;
+  }
 }
 
 /* Workshop Facilitator Section */

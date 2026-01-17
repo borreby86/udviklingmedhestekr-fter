@@ -360,15 +360,15 @@ export default function LederworkshopPage() {
         </div>
       </section>
 
-      {/* Method Comparison Section */}
-      <section className="workshop-middelvej">
+      {/* Method Section */}
+      <section className="workshop-why-new">
         <div className="workshop-why-bg">
           <img src="/playboy.jpeg" alt="Hest i naturen - hesteassisteret lederudvikling" />
         </div>
-        <div className="workshop-middelvej-overlay" />
+        <div className="workshop-why-overlay" />
         <div className="workshop-container">
           <motion.div
-            className="workshop-middelvej-content"
+            className="workshop-why-text"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -376,87 +376,61 @@ export default function LederworkshopPage() {
           >
             <p className="section-label">Forskellen</p>
             <h2>Hvorfor virker det anderledes?</h2>
-            <p className="workshop-middelvej-intro">
+            <p className="workshop-why-intro">
               De fleste lederkurser giver dig værktøjer, modeller og teorier. Men hvornår fik du sidst mulighed for at <em>se</em> dit lederskab – helt uden filter?
+            </p>
+            <p>
+              Hestene spejler din autenticitet, dit nærvær og din energi i nuet. De viser præcist, hvor du står stærkt, og hvor du ubevidst mister kontakt eller gennemslagskraft.
+            </p>
+            <p>
+              Heste er byttedyr. De har overlevet i millioner af år ved at aflæse intention og energi hos dem omkring sig.
             </p>
           </motion.div>
 
-          <div className="workshop-methods-grid">
-            <motion.div
-              className="workshop-method-card"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="method-card-header">
-                <span className="method-card-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <path d="M4 19.5A2.5 2.5 0 016.5 17H20"/>
-                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>
-                  </svg>
-                </span>
-                <h3>Traditionelle kurser</h3>
-              </div>
-              <p className="method-card-desc">Intellektuel forståelse af ledelse</p>
-              <ul className="method-card-list">
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
-                  <span>Teorier du skal huske at anvende</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
-                  <span>Feedback filtreret gennem høflighed</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
-                  <span>Læring der ofte glemmes i hverdagen</span>
-                </li>
-              </ul>
-            </motion.div>
-
-            <motion.div
-              className="workshop-method-card method-card-highlight"
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.15 }}
-            >
-              <div className="method-card-header">
-                <span className="method-card-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                  </svg>
-                </span>
-                <h3>Med hesten som spejl</h3>
-              </div>
-              <p className="method-card-desc">Kropslig oplevelse af dit lederskab</p>
-              <ul className="method-card-list">
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 6L9 17l-5-5"/></svg>
-                  <span>Øjeblikkelig, ærlig feedback</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 6L9 17l-5-5"/></svg>
-                  <span>Blinde vinkler bliver synlige</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 6L9 17l-5-5"/></svg>
-                  <span>Læring forankret i kroppen</span>
-                </li>
-              </ul>
-            </motion.div>
-          </div>
-
-          <motion.blockquote
-            className="workshop-quote"
-            initial={{ opacity: 0, y: 20 }}
+          <motion.div
+            className="workshop-why-points"
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <p>"Heste reagerer ikke på titler, ord eller charme – kun på det, du reelt udstråler. Det gør dem til brutalt ærlige spejle."</p>
-          </motion.blockquote>
+            <div className="workshop-point">
+              <span className="workshop-point-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 6v6l4 2"/>
+                </svg>
+              </span>
+              <div>
+                <h4>Uden filter</h4>
+                <p>De reagerer ikke på titler, ord eller charme – kun på det, du reelt udstråler</p>
+              </div>
+            </div>
+            <div className="workshop-point">
+              <span className="workshop-point-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+              </span>
+              <div>
+                <h4>Brutalt ærlige spejle</h4>
+                <p>Når hesten følger dig, ved du, at dit lederskab virker</p>
+              </div>
+            </div>
+            <div className="workshop-point">
+              <span className="workshop-point-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                  <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+              </span>
+              <div>
+                <h4>Værdifuld feedback</h4>
+                <p>Når hesten vender sig væk, får du information om, hvad der mangler</p>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -515,6 +489,38 @@ export default function LederworkshopPage() {
               />
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Evidence Section */}
+      <section className="workshop-evidence-banner">
+        <div className="workshop-container">
+          <motion.div
+            className="evidence-banner-content"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="evidence-banner-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+            </div>
+            <div className="evidence-banner-text">
+              <p className="evidence-banner-label">Dokumenteret effekt</p>
+              <h3>Hesteassisteret læring er en evidensbaseret metode</h3>
+              <p className="evidence-banner-desc">
+                Peer-reviewed forskning dokumenterer forbedringer i emotionel intelligens, evne til at skabe tillid og følgeskab, samt stresshåndtering.
+              </p>
+            </div>
+            <a href="/forskning" className="evidence-banner-link">
+              <span>Læs om forskningen</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </motion.div>
         </div>
       </section>
 
