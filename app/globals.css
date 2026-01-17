@@ -5316,7 +5316,13 @@ nav.scrolled .mobile-menu-btn {
   font-size: clamp(2rem, 3vw, 2.5rem);
   font-weight: 400;
   color: var(--color-earth);
-  margin: 0.75rem 0 1.5rem;
+  margin: 0.75rem 0 0.5rem;
+}
+.about-credentials {
+  font-size: 0.9rem;
+  color: var(--color-gold);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.02em;
 }
 .about-banner-content p {
   font-size: 1.05rem;
@@ -5447,10 +5453,12 @@ nav.scrolled .mobile-menu-btn {
   background: linear-gradient(
     90deg,
     var(--color-cream) 0%,
-    var(--color-cream) 30%,
-    rgba(250, 248, 245, 0.85) 45%,
-    rgba(250, 248, 245, 0.3) 65%,
-    transparent 80%
+    var(--color-cream) 25%,
+    rgba(250, 248, 245, 0.95) 35%,
+    rgba(250, 248, 245, 0.7) 50%,
+    rgba(250, 248, 245, 0.4) 65%,
+    rgba(250, 248, 245, 0.15) 80%,
+    transparent 100%
   );
   z-index: 1;
 }
@@ -5475,20 +5483,13 @@ nav.scrolled .mobile-menu-btn {
 .workshop-facilitator-text p + p {
   margin-top: 1.25rem;
 }
-.workshop-facilitator-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 2.5rem;
-}
-.facilitator-badge {
-  display: inline-block;
-  padding: 0.6rem 1.25rem;
-  border: 1px solid var(--color-copper);
-  color: var(--color-copper);
+.workshop-facilitator-credentials {
+  margin-bottom: 2rem;
   font-family: var(--font-body);
-  font-size: 0.85rem;
-  font-weight: 400;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-copper);
+  letter-spacing: 0.02em;
 }
 
 @media (max-width: 1100px) {
@@ -5513,29 +5514,32 @@ nav.scrolled .mobile-menu-btn {
   .workshop-facilitator-bg {
     position: relative;
     width: 100%;
-    height: 50vh;
+    height: 45vh;
+    order: 2;
+  }
+  .workshop-facilitator-bg img {
+    object-position: center 30%;
   }
   .workshop-facilitator-overlay {
     background: linear-gradient(
       180deg,
-      transparent 0%,
-      rgba(250, 248, 245, 0.5) 70%,
-      var(--color-cream) 100%
+      var(--color-cream) 0%,
+      rgba(250, 248, 245, 0.7) 15%,
+      rgba(250, 248, 245, 0.3) 40%,
+      transparent 70%,
+      transparent 100%
     );
   }
   .workshop-facilitator-content {
-    padding: 3rem 1.5rem;
+    padding: 4rem 1.5rem 2rem;
     max-width: 100%;
+    order: 1;
   }
   .workshop-facilitator h2 {
     font-size: 2.2rem;
   }
-  .workshop-facilitator-badges {
-    gap: 0.5rem;
-  }
-  .facilitator-badge {
-    font-size: 0.8rem;
-    padding: 0.5rem 1rem;
+  .workshop-facilitator-credentials {
+    font-size: 0.85rem;
   }
 }
 

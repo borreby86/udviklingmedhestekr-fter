@@ -26,6 +26,7 @@ export default function About() {
         >
           <p className="section-label">Din facilitator</p>
           <h2>Christina Borreby</h2>
+          <p className="about-credentials">Cand.negot i Kommunikation & HR · Certificeret psykoterapeut · 30 års erfaring med heste</p>
           <p>
             Min passion er at hjælpe ledere med at opbygge et stærkt indre fundament, så de kan stå roligt, tydeligt og autentisk i deres lederskab.
           </p>
@@ -35,12 +36,6 @@ export default function About() {
           <p>
             Hestene er mine vigtigste samarbejdspartnere. De spejler med det samme de mønstre og blind spots, som ellers kan være svære at opdage. De viser præcist, hvor vi mister kontakt, retning eller energi, og åbner en vej til forandring, der ikke blot handler om at løse problemer, men om at forløse potentiale.
           </p>
-          <div className="about-banner-badges">
-            <span className="instructor-badge">Cand.negot i Kommunikation & HR</span>
-            <span className="instructor-badge">Certificeret psykoterapeut</span>
-            <span className="instructor-badge">30 års erfaring med heste</span>
-            <span className="instructor-badge">Specialist i hesteassisteret lederudvikling</span>
-          </div>
         </motion.div>
       </div>
     </section>
