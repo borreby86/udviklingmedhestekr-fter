@@ -251,16 +251,14 @@ export default function LederworkshopPage() {
               Få klarhed over dine adfærdsmønstre, ressourcer og blind spots, så du kan lede fra dit autentiske selv, og træn dit autentiske lederskab i praksis. Gennem mødet med hesten får du øjeblikkelig, ærlig feedback på dit lederskab, uden filter.
             </p>
             <div className="workshop-hero-buttons">
-              <a href="/kontakt" className="cta-button cta-button-swap">
-                <span className="cta-text-default">Åbne workshops</span>
-                <span className="cta-text-hover">Se datoer</span>
+              <a href="/kontakt" className="cta-button">
+                Book en samtale
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
               </a>
-              <a href="/kontakt" className="cta-button cta-button-blue cta-button-swap">
-                <span className="cta-text-default">Kun for jeres ledergruppe</span>
-                <span className="cta-text-hover">Forespørg på dato</span>
+              <a href="#priser" className="cta-button cta-button-outline">
+                Se priser
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
@@ -589,7 +587,7 @@ export default function LederworkshopPage() {
       </section>
 
       {/* Booking Section */}
-      <section className="workshop-dates-section" id="tilmelding">
+      <section className="workshop-dates-section" id="priser">
         <div className="workshop-dates-bg">
           <img src="/session.JPG" alt="Workshop session med heste og deltagere" />
         </div>
