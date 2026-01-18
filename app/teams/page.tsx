@@ -354,11 +354,11 @@ export default function TeamsPage() {
               transition={{ duration: 0.5 }}
             >
               <h3>Teamworkshop</h3>
-              <div className="investment-price">Fra 14.000 kr.</div>
+              <div className="investment-price">Fra 12.000 kr.</div>
               <p className="investment-unit">skræddersyet til jeres team</p>
               <ul className="investment-details">
-                <li>3-4 timer</li>
-                <li>6-15 deltagere</li>
+                <li>2-6 timer</li>
+                <li>4-15 deltagere</li>
               </ul>
             </motion.div>
           </div>
