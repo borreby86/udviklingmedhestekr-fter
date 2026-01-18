@@ -3972,49 +3972,29 @@ nav.scrolled .mobile-menu-btn {
   color: var(--color-earth);
   margin: 0.5rem 0 1rem;
 }
+.about-page-collaborators-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.about-page-collaborators-content h2 {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: var(--color-earth);
+  margin-bottom: 1rem;
+}
 .about-page-collaborators-intro {
   font-size: 1.05rem;
   color: var(--color-soft-brown);
-  max-width: 600px;
-  margin: 0 auto;
+  margin-bottom: 1.5rem;
 }
-.about-page-logo-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  max-width: 900px;
-  margin: 0 auto;
-}
-.about-page-logo-item {
-  background: white;
-  border-radius: 8px;
-  padding: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-  transition: box-shadow 0.3s ease;
-}
-.about-page-logo-item:hover {
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-}
-.about-page-logo-item span {
-  font-size: 0.9rem;
-  color: var(--color-sage);
-  text-align: center;
-}
-.about-page-logo-item img {
-  max-width: 120px;
-  max-height: 50px;
-  object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.7;
-  transition: all 0.3s ease;
-}
-.about-page-logo-item:hover img {
-  filter: grayscale(0%);
-  opacity: 1;
+.about-page-collaborators-list {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--color-copper);
+  line-height: 1.8;
+  letter-spacing: 0.01em;
 }
 
 /* CTA Section */
@@ -4436,9 +4416,8 @@ nav.scrolled .mobile-menu-btn {
   .about-page-cv-item { gap: 1rem; }
   .cv-year { min-width: 60px; font-size: 0.8rem; }
   .about-page-collaborators { padding: 3.5rem 1.25rem; }
-  .about-page-collaborators-header h2 { font-size: 1.65rem; }
-  .about-page-logo-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-  .about-page-logo-item { padding: 1.25rem; min-height: 80px; }
+  .about-page-collaborators-content h2 { font-size: 1.65rem; }
+  .about-page-collaborators-list { font-size: 1rem; }
   .about-page-cta { padding: 3.5rem 1.25rem; }
   .about-page-cta-content h2 { font-size: 1.65rem; }
 

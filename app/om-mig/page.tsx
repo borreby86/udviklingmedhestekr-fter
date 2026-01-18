@@ -6,27 +6,32 @@ import Footer from '@/components/Footer'
 
 const education = [
   {
-    year: '2020',
-    title: 'Certificeret psykoterapeut',
-    institution: 'Dansk Psykoterapeutforening'
+    year: '2013-2017',
+    title: 'Psykoterapeut, Meditation og Psykologi',
+    institution: 'ID Academy · Speciale i stresshåndtering samt relationer'
   },
   {
-    year: '2005',
-    title: 'Cand.negot. i Kommunikation & HR',
-    institution: 'Copenhagen Business School'
+    year: '2005-2011',
+    title: 'Cand.negot. Spansk, International Communication & Marketing + HR',
+    institution: 'Syddansk Universitet'
+  },
+  {
+    year: '',
+    title: 'Meditation og Mindfulness Instruktør',
+    institution: ''
   }
 ]
 
 const experience = [
   {
-    year: '2018 -',
-    title: 'Hesteassisteret leder- og teamudvikling',
-    description: 'Facilitering af workshops og forløb for ledere og teams'
+    year: '2017-2023',
+    title: 'Founder, Power Academy',
+    description: 'Hesteassisterede workshops, forløb, kurser & 1:1 sessioner med fokus på personlig udvikling'
   },
   {
-    year: '2010 -',
-    title: 'Psykoterapeut',
-    description: 'Individuel terapi med fokus på stress, ledelse og personlig udvikling'
+    year: '2017 -',
+    title: 'Facilitator af leder- og teamudvikling',
+    description: 'Hesteassisterede workshops og forløb for ledere og teams'
   },
   {
     year: '30+ år',
@@ -61,7 +66,7 @@ export default function OmMigPage() {
             <p className="section-label">Om mig</p>
             <h1>Christina Borreby</h1>
             <p className="about-page-hero-tagline">
-              Cand.negot. i Kommunikation & HR · Certificeret psykoterapeut · 30+ års erfaring med heste
+              Cand.negot. · Psykoterapeut · Galoptræner
             </p>
           </motion.div>
         </div>
@@ -198,45 +203,19 @@ export default function OmMigPage() {
       <section className="about-page-collaborators">
         <div className="about-page-container">
           <motion.div
-            className="about-page-collaborators-header"
+            className="about-page-collaborators-content"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <p className="section-label">Tidligere samarbejder</p>
-            <h2>Jeg har arbejdet med</h2>
+            <h2>Tidligere samarbejder</h2>
             <p className="about-page-collaborators-intro">
-              Ledere og teams fra blandt andet disse organisationer har deltaget i mine workshops og forløb.
+              Virksomheder jeg gennem tiden har haft fornøjelsen af at samarbejde med:
             </p>
-          </motion.div>
-
-          <motion.div
-            className="about-page-logo-grid"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            {/* Placeholder boxes for logos - replace with actual logos */}
-            <div className="about-page-logo-item">
-              <span>Hjerteforeningen</span>
-            </div>
-            <div className="about-page-logo-item">
-              <span>Nordic Bloom</span>
-            </div>
-            <div className="about-page-logo-item">
-              <span>Logo 3</span>
-            </div>
-            <div className="about-page-logo-item">
-              <span>Logo 4</span>
-            </div>
-            <div className="about-page-logo-item">
-              <span>Logo 5</span>
-            </div>
-            <div className="about-page-logo-item">
-              <span>Logo 6</span>
-            </div>
+            <p className="about-page-collaborators-list">
+              Fredensborg Kommune · GlobalConnect · Digitaliseringsstyrelsen · Nordic Bloom · 3 Danmark · Gentofte Hospital · Wärtsilä
+            </p>
           </motion.div>
         </div>
       </section>
