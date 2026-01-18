@@ -66,7 +66,7 @@ export default function OmMigPage() {
             <p className="section-label">Om mig</p>
             <h1>Christina Borreby</h1>
             <p className="about-page-hero-tagline">
-              Cand.negot. · Psykoterapeut · Mindfulness Instruktør · 30+ års erfaring med heste
+              Cand.negot. · Psykoterapeut · Galoptræner
             </p>
           </motion.div>
         </div>
