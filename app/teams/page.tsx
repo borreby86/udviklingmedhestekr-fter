@@ -94,8 +94,8 @@ export default function TeamsPage() {
               Når teamet møder hesten, bliver dynamikkerne synlige. Hvem tager ledelsen? Hvordan kommunikerer I under pres? Hesteassisteret teamudvikling styrker fællesskabet og giver jer nye indsigter, der er svære at opnå gennem traditionel teambuilding.
             </p>
             <div className="workshop-hero-buttons">
-              <a href="/kontakt" className="cta-button">
-                <span>Kontakt og hør mere</span>
+              <a href="#pris" className="cta-button">
+                <span>Se priser og praktik</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
