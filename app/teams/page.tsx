@@ -91,7 +91,7 @@ export default function TeamsPage() {
             <h1>Teamudvikling med <em>hestekræfter</em></h1>
             <p className="workshop-hero-tagline">Dybere end teambuilding – stærkere end teori</p>
             <p className="workshop-hero-desc">
-              Hesteassisteret teamudvikling styrker fællesskabet og giver jer nye indsigter, der er svære at opnå gennem traditionel teambuilding.
+              Når teamet møder hesten, bliver dynamikkerne synlige. Hvem tager ledelsen? Hvordan kommunikerer I under pres? Hesteassisteret teamudvikling styrker fællesskabet og giver jer nye indsigter, der er svære at opnå gennem traditionel teambuilding.
             </p>
             <div className="workshop-hero-buttons">
               <a href="/kontakt" className="cta-button">
