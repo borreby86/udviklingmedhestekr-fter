@@ -3261,6 +3261,9 @@ nav.scrolled .mobile-menu-btn {
   grid-template-columns: 1fr;
   max-width: 400px;
 }
+.teams-booking .workshop-dates-bg img {
+  object-position: center 60%;
+}
 .booking-option {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15);
