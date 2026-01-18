@@ -4104,11 +4104,10 @@ nav.scrolled .mobile-menu-btn {
     opacity: 1 !important;
     transform: none !important;
     padding: 1.5rem 0;
-    display: flex !important;
-  }
-  .sticky-text-slide:nth-of-type(2),
-  .sticky-text-slide:nth-of-type(3) {
     display: none !important;
+  }
+  .sticky-text-slide:has(h2) {
+    display: flex !important;
   }
   .sticky-text-content h2 {
     font-size: 1.75rem;
