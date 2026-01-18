@@ -246,7 +246,7 @@ export default function LederworkshopPage() {
           >
             <p className="section-label">Lederworkshop med hestekræfter</p>
             <h1>Autentisk lederskab<br /><em>uden filter</em></h1>
-            <p className="workshop-hero-tagline">Følgeskab starter med relation, ikke retning.</p>
+            <p className="workshop-hero-tagline">Følgeskab starter med relation, ikke retning</p>
             <p className="workshop-hero-desc">
               Få klarhed over dine adfærdsmønstre, ressourcer og blind spots, så du kan lede fra dit autentiske selv, og træn dit autentiske lederskab i praksis. <span className="hero-desc-mobile-hide">Gennem mødet med hesten får du øjeblikkelig, ærlig feedback på dit lederskab, uden filter.</span>
             </p>
