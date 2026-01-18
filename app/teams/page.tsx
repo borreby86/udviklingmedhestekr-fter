@@ -338,7 +338,7 @@ export default function TeamsPage() {
       {/* Booking Section */}
       <section className="workshop-dates-section teams-booking" id="pris">
         <div className="workshop-dates-bg">
-          <img src="/team sammen.jpg" alt="Teamudvikling med heste" />
+          <img src="/team-sammen.jpg" alt="Teamudvikling med heste" />
         </div>
         <div className="workshop-dates-overlay" />
         <div className="workshop-dates-container">
