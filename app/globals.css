@@ -3986,38 +3986,57 @@ nav.scrolled .mobile-menu-btn {
 
   /* Workshop hero mobile - premium 2026 */
   .workshop-hero-content-full {
-    padding: 6.5rem 1.25rem 2.5rem;
+    padding: 5rem 1.25rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 100vh;
   }
   .workshop-hero-overlay {
     background: linear-gradient(
       180deg,
-      rgba(244, 245, 247, 0.96) 0%,
-      rgba(244, 245, 247, 0.9) 35%,
-      rgba(244, 245, 247, 0.6) 65%,
-      rgba(244, 245, 247, 0.25) 100%
+      rgba(244, 245, 247, 0.98) 0%,
+      rgba(244, 245, 247, 0.92) 25%,
+      rgba(244, 245, 247, 0.5) 50%,
+      rgba(244, 245, 247, 0.15) 75%,
+      transparent 100%
     );
   }
   .workshop-hero-text-full { max-width: 100%; }
+  .workshop-hero-text-full .section-label {
+    font-size: 0.65rem;
+    margin-bottom: 0.75rem;
+  }
   .workshop-hero-text-full h1 {
-    font-size: 1.85rem;
-    line-height: 1.2;
-    margin-bottom: 1rem;
+    font-size: 2.2rem;
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
   }
   .workshop-hero-tagline {
-    font-size: 1.15rem;
-    line-height: 1.6;
-    margin-bottom: 1.25rem;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
   }
   .workshop-hero-desc {
-    font-size: 1.05rem;
-    line-height: 1.75;
+    display: none;
   }
   .workshop-hero-question {
-    font-size: 1.1rem;
+    display: none;
   }
   .workshop-hero-cta-text {
-    font-size: 1.15rem;
-    margin-top: 1.5rem;
+    display: none;
+  }
+  .workshop-hero-buttons {
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: auto;
+    padding-bottom: 2rem;
+  }
+  .workshop-hero-buttons .cta-button {
+    padding: 0.8rem 1.25rem;
+    font-size: 0.8rem;
+    width: auto;
+    justify-content: center;
   }
 
   /* Workshop sections mobile */
@@ -4090,7 +4109,7 @@ nav.scrolled .mobile-menu-btn {
 
   /* Workshop dates mobile */
   .workshop-dates-section { padding: 3.5rem 1.25rem; }
-  .workshop-dates-bg img { object-position: 5% top; }
+  .workshop-dates-bg img { object-position: 75% top; }
   .workshop-date-cards { flex-direction: column; align-items: stretch; }
   .workshop-date-card {
     width: 100%;
@@ -6136,14 +6155,29 @@ nav.scrolled .mobile-menu-btn {
   .contact-form { padding: 1.75rem 1rem; }
   .contact-card { flex-direction: column; text-align: center; gap: 0.75rem; }
   .contact-card-label, .contact-card-sub { display: none; }
-  .workshop-hero-content-full { padding: 5.5rem 1rem 2rem; }
-  .workshop-hero-text-full h1 { font-size: 1.65rem; line-height: 1.2; margin: 0.5rem 0 1rem; }
-  .workshop-hero-tagline { font-size: 1.05rem; margin: 0.25rem 0 1rem; }
-  .workshop-hero-desc { font-size: 1rem; line-height: 1.7; margin-bottom: 0.5rem; }
-  .workshop-hero-question { font-size: 1rem; margin-bottom: 1rem; }
-  .workshop-hero-cta-text { font-size: 1.05rem; margin-bottom: 1rem; }
-  .workshop-hero-buttons { flex-direction: column; gap: 0.75rem; }
-  .workshop-hero-buttons .cta-button { width: 100%; justify-content: center; }
+  .workshop-hero-content-full {
+    padding: 4.5rem 1rem 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .workshop-hero-text-full h1 { font-size: 2rem; line-height: 1.15; margin: 0.5rem 0 0.75rem; }
+  .workshop-hero-tagline { font-size: 1rem; margin: 0.25rem 0 0.75rem; }
+  .workshop-hero-desc { display: none; }
+  .workshop-hero-question { display: none; }
+  .workshop-hero-cta-text { display: none; }
+  .workshop-hero-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: auto;
+    padding-bottom: 1.5rem;
+  }
+  .workshop-hero-buttons .cta-button {
+    padding: 0.7rem 1rem;
+    font-size: 0.75rem;
+    width: auto;
+    justify-content: center;
+  }
   .workshop-hero-title { font-size: 1.65rem; }
   .workshop-dates-container { margin: 0 -1rem; padding: 0 1rem; }
   .workshop-date-card {
