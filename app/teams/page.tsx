@@ -248,7 +248,7 @@ export default function TeamsPage() {
       {/* Practical Info - MED BILLEDE */}
       <section className="workshop-instructor teams-praktisk">
         <div className="workshop-instructor-bg">
-          <img src="/team sammen.jpg" alt="Hesteassisteret teamudvikling i Nordsjælland" />
+          <img src="/team%20sammen.jpg" alt="Hesteassisteret teamudvikling i Nordsjælland" />
         </div>
         <div className="workshop-instructor-overlay" />
         <div className="workshop-container-wide">
