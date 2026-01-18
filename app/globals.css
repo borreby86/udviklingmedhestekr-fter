@@ -2348,18 +2348,20 @@ nav.scrolled .mobile-menu-btn {
 /* Info Bar - blue highlight bar */
 .info-bar {
   background: var(--color-earth);
-  padding: 1.5rem 2rem;
+  padding: 3rem 2rem;
   text-align: center;
 }
 .info-bar-content {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
 }
 .info-bar-content p {
+  font-family: var(--font-display);
   color: var(--color-cream);
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: 1.75rem;
+  line-height: 1.4;
   margin: 0;
+  font-weight: 400;
 }
 .info-bar-content strong {
   color: var(--color-copper);
