@@ -4000,10 +4000,10 @@ nav.scrolled .mobile-menu-btn {
       rgba(244, 245, 247, 1) 0%,
       rgba(244, 245, 247, 0.95) 18%,
       rgba(244, 245, 247, 0.5) 35%,
-      rgba(244, 245, 247, 0.5) 55%,
-      rgba(244, 245, 247, 0.6) 65%,
-      rgba(244, 245, 247, 0.85) 78%,
-      rgba(244, 245, 247, 1) 90%
+      rgba(244, 245, 247, 0.5) 50%,
+      rgba(244, 245, 247, 0.7) 62%,
+      rgba(244, 245, 247, 0.9) 75%,
+      rgba(244, 245, 247, 1) 85%
     );
   }
   .workshop-hero-text-full {
@@ -4035,6 +4035,7 @@ nav.scrolled .mobile-menu-btn {
     margin-bottom: 1.25rem;
     margin-top: auto;
     color: var(--color-earth-dark);
+    font-weight: 400;
   }
   .hero-desc-mobile-hide {
     display: none;
