@@ -4109,6 +4109,7 @@ nav.scrolled .mobile-menu-btn {
   .sticky-text-content h2 {
     font-size: 1.75rem;
     line-height: 1.25;
+    margin-bottom: 2rem;
   }
   .sticky-text-content p {
     font-size: 1.05rem;
