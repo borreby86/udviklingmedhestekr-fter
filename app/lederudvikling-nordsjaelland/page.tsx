@@ -245,10 +245,10 @@ export default function LederworkshopPage() {
             transition={{ duration: 0.8 }}
           >
             <p className="section-label">Lederworkshop med hestekræfter</p>
-            <h1>Autentisk lederskab <em>uden filter</em></h1>
+            <h1>Autentisk lederskab<br /><em>uden filter</em></h1>
             <p className="workshop-hero-tagline">Følgeskab starter med relation, ikke retning.</p>
             <p className="workshop-hero-desc">
-              Få klarhed over dine adfærdsmønstre, ressourcer og blind spots, så du kan lede fra dit autentiske selv, og træn dit autentiske lederskab i praksis. Gennem mødet med hesten får du øjeblikkelig, ærlig feedback på dit lederskab, uden filter.
+              Få klarhed over dine adfærdsmønstre, ressourcer og blind spots, så du kan lede fra dit autentiske selv, og træn dit autentiske lederskab i praksis. <span className="hero-desc-mobile-hide">Gennem mødet med hesten får du øjeblikkelig, ærlig feedback på dit lederskab, uden filter.</span>
             </p>
             <div className="workshop-hero-buttons">
               <a href="/kontakt" className="cta-button cta-button-swap">
@@ -392,7 +392,7 @@ export default function LederworkshopPage() {
             transition={{ duration: 0.7, delay: 0.2 }}
           >
             <p className="insight-highlight">
-              De respekterer dig ikke for din titel, dine ord eller ancienitet, men på det, du signalerer i nuet.
+              De respekterer dig ikke for din anciennitet, titel eller dine ord, men på det, du signalerer i nuet.
             </p>
             <p className="insight-text">
               Det gør dem til brutalt ærlige spejle. Når hesten følger dig, ved du, at dit lederskab virker. Når den vender sig væk, får du værdifuld information om, hvad der mangler.
