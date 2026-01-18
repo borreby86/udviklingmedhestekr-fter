@@ -335,40 +335,51 @@ export default function TeamsPage() {
         </div>
       </section>
 
-      {/* Investment Section */}
-      <section className="workshop-investment">
-        <div className="workshop-container-wide">
+      {/* Booking Section */}
+      <section className="workshop-dates-section" id="pris">
+        <div className="workshop-dates-bg">
+          <img src="/team sammen.jpg" alt="Teamudvikling med heste" />
+        </div>
+        <div className="workshop-dates-overlay" />
+        <div className="workshop-dates-container">
           <motion.div
-            className="workshop-investment-header"
+            className="workshop-dates-header"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <p className="section-label">Investering</p>
-            <h2>Pris</h2>
+            <p className="section-label">Kom i gang</p>
+            <h2>Book jeres teamworkshop</h2>
           </motion.div>
 
-          <div className="workshop-investment-grid workshop-investment-single">
+          <div className="workshop-booking-options workshop-booking-single">
             <motion.div
-              className="investment-card investment-card-featured"
-              initial={{ opacity: 0, y: 30 }}
+              className="booking-option booking-option-primary"
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
               <h3>Teamworkshop</h3>
-              <div className="investment-price">Fra 12.000 kr.</div>
-              <p className="investment-unit">skræddersyet til jeres team</p>
-              <ul className="investment-details">
+              <div className="booking-option-price">Fra 12.000 kr.</div>
+              <p className="booking-option-unit">skræddersyet til jeres team</p>
+              <ul className="booking-option-details">
                 <li>2-6 timer</li>
                 <li>4-15 deltagere</li>
+                <li>Inkl. forplejning</li>
               </ul>
+              <a href="/kontakt" className="booking-option-cta">
+                <span>Book en samtale</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
             </motion.div>
           </div>
 
           <motion.p
-            className="investment-note"
+            className="booking-note"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -376,23 +387,6 @@ export default function TeamsPage() {
           >
             Priser ekskl. moms
           </motion.p>
-        </div>
-      </section>
-
-      {/* CTA Section - INGEN BILLEDE */}
-      <section className="cta-section">
-        <div className="cta-content">
-          <p className="section-label">Næste skridt</p>
-          <h2 className="section-title">Klar til at styrke jeres team?</h2>
-          <p className="section-text">
-            Lad os tage en uforpligtende samtale om, hvordan hesteassisteret teamudvikling kan styrke netop jeres team.
-          </p>
-          <a href="/kontakt" className="cta-button">
-            <span>Kontakt og hør mere</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
         </div>
       </section>
 

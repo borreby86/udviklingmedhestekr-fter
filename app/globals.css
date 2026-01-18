@@ -3257,6 +3257,10 @@ nav.scrolled .mobile-menu-btn {
   max-width: 800px;
   margin: 0 auto;
 }
+.workshop-booking-single {
+  grid-template-columns: 1fr;
+  max-width: 400px;
+}
 .booking-option {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15);
