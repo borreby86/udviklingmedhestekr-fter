@@ -4106,6 +4106,9 @@ nav.scrolled .mobile-menu-btn {
   .sticky-text-slide:has(p) {
     display: none !important;
   }
+  .scroll-indicator {
+    display: none !important;
+  }
   .sticky-text-content h2 {
     font-size: 1.75rem;
     line-height: 1.25;
