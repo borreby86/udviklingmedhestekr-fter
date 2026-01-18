@@ -3262,7 +3262,7 @@ nav.scrolled .mobile-menu-btn {
   max-width: 400px;
 }
 .teams-booking .workshop-dates-bg img {
-  object-position: center 60%;
+  object-position: center bottom;
 }
 .booking-option {
   background: rgba(255, 255, 255, 0.08);
