@@ -203,45 +203,19 @@ export default function OmMigPage() {
       <section className="about-page-collaborators">
         <div className="about-page-container">
           <motion.div
-            className="about-page-collaborators-header"
+            className="about-page-collaborators-content"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <p className="section-label">Tidligere samarbejder</p>
-            <h2>Jeg har arbejdet med</h2>
+            <h2>Tidligere samarbejder</h2>
             <p className="about-page-collaborators-intro">
-              Ledere og teams fra blandt andet disse organisationer har deltaget i mine workshops og forløb.
+              Virksomheder jeg gennem tiden har haft fornøjelsen af at samarbejde med:
             </p>
-          </motion.div>
-
-          <motion.div
-            className="about-page-logo-grid"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            {/* Placeholder boxes for logos - replace with actual logos */}
-            <div className="about-page-logo-item">
-              <span>Fredensborg Kommune</span>
-            </div>
-            <div className="about-page-logo-item">
-              <span>GlobalConnect</span>
-            </div>
-            <div className="about-page-logo-item">
-              <span>Digitaliseringsstyrelsen</span>
-            </div>
-            <div className="about-page-logo-item">
-              <span>3 Danmark</span>
-            </div>
-            <div className="about-page-logo-item">
-              <span>Gentofte Hospital</span>
-            </div>
-            <div className="about-page-logo-item">
-              <span>Wärtsilä</span>
-            </div>
+            <p className="about-page-collaborators-list">
+              Fredensborg Kommune · GlobalConnect · Digitaliseringsstyrelsen · Nordic Bloom · 3 Danmark · Gentofte Hospital · Wärtsilä
+            </p>
           </motion.div>
         </div>
       </section>
