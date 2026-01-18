@@ -89,12 +89,14 @@ export default function RecalibratePage(): React.JSX.Element {
             <p className="workshop-hero-desc">
               For dig der vil holde tempoet, men mærker at noget skal ændres. Lær at regulere dit nervesystem med hestenes hjælp og naturens ro.
             </p>
-            <a href="#format" className="cta-button">
-              <span>Se formater</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </a>
+            <div className="workshop-hero-buttons">
+              <a href="#format" className="cta-button">
+                <span>Se formater</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>

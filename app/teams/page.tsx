@@ -93,12 +93,14 @@ export default function TeamsPage() {
             <p className="workshop-hero-desc">
               Når et team står sammen med en hest, bliver dynamikkerne synlige på få minutter. Hvem tager ledelsen? Hvem trækker sig? Hvordan kommunikerer I under pres? Hesteassisteret teamudvikling giver jer indsigter, som ingen PowerPoint kan levere.
             </p>
-            <a href="/kontakt" className="cta-button">
-              <span>Kontakt og hør mere</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </a>
+            <div className="workshop-hero-buttons">
+              <a href="/kontakt" className="cta-button">
+                <span>Kontakt og hør mere</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>
