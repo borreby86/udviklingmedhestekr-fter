@@ -4079,7 +4079,7 @@ nav.scrolled .mobile-menu-btn {
   .workshop-hero-bg img { object-position: 70% center; }
   .teams-hero .workshop-hero-bg img { object-position: center center; }
 
-  /* Sticky text - mobile: compact, no sticky */
+  /* Sticky text - mobile: compact, first text only */
   .sticky-text-section {
     height: auto;
   }
@@ -4096,18 +4096,16 @@ nav.scrolled .mobile-menu-btn {
     position: relative;
     height: auto;
     padding: 0 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
   }
   .sticky-text-slide {
     position: relative !important;
     inset: auto !important;
     opacity: 1 !important;
     transform: none !important;
+    display: none !important;
   }
-  .scroll-indicator {
-    display: none;
+  .sticky-text-slide:has(h2) {
+    display: flex !important;
   }
   .sticky-text-content h2 {
     font-size: 1.75rem;
