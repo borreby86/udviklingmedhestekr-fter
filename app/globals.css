@@ -4081,6 +4081,7 @@ nav.scrolled .mobile-menu-btn {
   .workshop-dates-container-left { max-width: 100%; margin-left: 0; }
   .workshop-hero-bg img { object-position: 70% center; }
   .teams-hero .workshop-hero-bg img { object-position: center center; }
+  .teams-hero .workshop-hero-tagline { display: none; }
 
   /* Sticky text - mobile: compact, first text only */
   .sticky-text-section {
