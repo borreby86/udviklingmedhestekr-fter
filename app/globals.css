@@ -4109,7 +4109,7 @@ nav.scrolled .mobile-menu-btn {
 
   /* Workshop dates mobile */
   .workshop-dates-section { padding: 3.5rem 1.25rem; }
-  .workshop-dates-bg img { object-position: 90% top; }
+  .workshop-dates-bg img { object-position: 85% top; }
   .workshop-date-cards { flex-direction: column; align-items: stretch; }
   .workshop-date-card {
     width: 100%;
