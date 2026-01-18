@@ -270,10 +270,14 @@ export default function TeamsPage() {
             <p>
               <strong>Lokation:</strong> Sessioner afholdes ved hestene i Hørsholm, Nordsjælland.
             </p>
-            <p>
-              <strong>Ingen hesteerfaring:</strong> Der er ingen ridning involveret. Alle øvelser foregår fra jorden.
-            </p>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Info Bar - Ingen hesteerfaring */}
+      <section className="info-bar">
+        <div className="info-bar-content">
+          <p><strong>Ingen hesteerfaring nødvendig</strong> – der er ingen ridning involveret. Alle øvelser foregår fra jorden.</p>
         </div>
       </section>
 

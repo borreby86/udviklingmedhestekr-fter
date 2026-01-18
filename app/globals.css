@@ -2345,6 +2345,26 @@ nav.scrolled .mobile-menu-btn {
   object-position: center center;
 }
 
+/* Info Bar - blue highlight bar */
+.info-bar {
+  background: var(--color-earth);
+  padding: 1.5rem 2rem;
+  text-align: center;
+}
+.info-bar-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.info-bar-content p {
+  color: var(--color-cream);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+.info-bar-content strong {
+  color: var(--color-copper);
+}
+
 /* Workshop Why Neutral (no background image) */
 .workshop-why-neutral {
   padding: 6rem 5rem 6rem 7rem;
