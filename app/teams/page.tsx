@@ -277,7 +277,7 @@ export default function TeamsPage() {
       {/* Info Bar - Ingen hesteerfaring */}
       <section className="info-bar">
         <div className="info-bar-content">
-          <p><strong>Ingen hesteerfaring nødvendig</strong> – der er ingen ridning involveret. Alle øvelser foregår fra jorden.</p>
+          <p><strong>Ingen hesteerfaring nødvendig</strong> – der er ingen ridning involveret.<br />Alle øvelser foregår fra jorden.</p>
         </div>
       </section>
 

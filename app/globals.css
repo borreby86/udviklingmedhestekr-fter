@@ -2361,7 +2361,7 @@ nav.scrolled .mobile-menu-btn {
   font-size: 1.75rem;
   line-height: 1.4;
   margin: 0;
-  font-weight: 400;
+  font-weight: 300;
 }
 .info-bar-content strong {
   color: var(--color-copper);
