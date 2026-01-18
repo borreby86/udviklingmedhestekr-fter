@@ -4,17 +4,20 @@ const services = [
   {
     tag: 'For ledere',
     title: 'Lederudvikling',
-    text: 'Læring der mærkes, ikke forklares. Hestens umiddelbare reaktioner spejler din adfærd og giver ærlig, kropslig feedback. Resultatet er dyb indsigt i, hvordan tillid og følgeskab skabes i praksis.'
+    text: 'Læring der mærkes, ikke forklares. Hestens umiddelbare reaktioner spejler din adfærd og giver ærlig, kropslig feedback. Resultatet er dyb indsigt i, hvordan tillid og følgeskab skabes i praksis.',
+    href: '/lederudvikling-nordsjaelland'
   },
   {
     tag: 'For teams',
     title: 'Teamudvikling',
-    text: 'Hestene giver et levende spejl af jeres samarbejde og teamdynamik. Ubevidste mønstre og kommunikationsvaner bliver synlige, og det tydeliggør hvad der styrker, og hvad der spænder ben.'
+    text: 'Hestene giver et levende spejl af jeres samarbejde og teamdynamik. Ubevidste mønstre og kommunikationsvaner bliver synlige, og det tydeliggør hvad der styrker, og hvad der spænder ben.',
+    href: '/teams'
   },
   {
     tag: '1:1',
     title: 'Samtaler & coaching',
-    text: 'Individuelle forløb i Hørsholm eller online. Fokus på at forstå dine tanke- og adfærdsmønstre, regulere stress og finde ro, nærvær og retning.'
+    text: 'Individuelle forløb i Hørsholm eller online. Fokus på at forstå dine tanke- og adfærdsmønstre, regulere stress og finde ro, nærvær og retning.',
+    href: '/kontakt'
   }
 ]
 
@@ -27,7 +30,7 @@ export default function Services() {
       </div>
       <div className="bento-grid">
         {services.map((service, index) => (
-          <a key={index} href="#kontakt" className="bento-card">
+          <a key={index} href={service.href} className="bento-card">
             <span className="bento-tag">{service.tag}</span>
             <h3 className="bento-title">{service.title}</h3>
             <p className="bento-text">{service.text}</p>
