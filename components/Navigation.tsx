@@ -85,7 +85,18 @@ export default function Navigation() {
             <li><a href="/recalibrate">Recalibrate</a></li>
           </ul>
         </li>
-        <li><a href="/referencer">Det siger andre</a></li>
+        <li className={`nav-dropdown ${openDropdown === 'siger' ? 'is-open' : ''}`}>
+          <div className="nav-dropdown-header" onClick={(e) => toggleDropdown('siger', e)}>
+            <span className="nav-dropdown-text">Det siger andre</span>
+            <svg className="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </div>
+          <ul className="nav-dropdown-menu">
+            <li><a href="/referencer">Det siger deltagerne</a></li>
+            <li><a href="/forskning">Det siger forskningen</a></li>
+          </ul>
+        </li>
         <li><a href="/#om">Om mig</a></li>
         <li><a href="/kontakt" className="nav-cta">Kontakt</a></li>
       </ul>
