@@ -88,7 +88,7 @@ export default function TeamsPage() {
             transition={{ duration: 0.8 }}
           >
             <p className="section-label">Skræddersyet til jeres team</p>
-            <h1>Teamudvikling med hestekræfter</h1>
+            <h1>Teamudvikling med <em>hestekræfter</em></h1>
             <p className="workshop-hero-tagline">Dybere end teambuilding – stærkere end teori</p>
             <p className="workshop-hero-desc">
               Når et team står sammen med en hest, bliver dynamikkerne synlige på få minutter. Hvem tager ledelsen? Hvem trækker sig? Hvordan kommunikerer I under pres? Hesteassisteret teamudvikling giver jer indsigter, som ingen PowerPoint kan levere.
