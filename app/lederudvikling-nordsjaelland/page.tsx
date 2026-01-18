@@ -60,11 +60,11 @@ const faqItems = [
   },
   {
     question: "Kræver det hesteerfaring?",
-    answer: "Nej, overhovedet ikke. Du skal ikke ride, og du behøver ingen erfaring med heste. Alle øvelser foregår fra jorden, og jeg guider dig hele vejen. Faktisk kan det være en fordel at komme uden hesteerfaring – så møder du øvelserne helt åbent og uden vanemønstre."
+    answer: "Nej, overhovedet ikke. Du skal ikke ride, og du behøver ingen erfaring med heste. Alle øvelser foregår fra jorden, og jeg guider dig hele vejen. Faktisk kan det være en fordel at komme uden hesteerfaring - så møder du øvelserne helt åbent og uden vanemønstre."
   },
   {
     question: "Hvad hvis jeg er nervøs for heste?",
-    answer: "Det er helt okay – og mere almindeligt end du tror. Hestene er rolige og vant til at arbejde med mennesker, og vi tilpasser altid øvelserne til dig. Du bestemmer selv, hvor tæt du vil være på hesten. Nervøsiteten kan faktisk blive en del af læringen: Hvordan håndterer du usikkerhed? Hvordan påvirker det din tilstedeværelse? Mange oplever, at netop dét bliver en værdifuld indsigt."
+    answer: "Det er helt okay - og mere almindeligt end du tror. Hestene er rolige og vant til at arbejde med mennesker, og vi tilpasser altid øvelserne til dig. Du bestemmer selv, hvor tæt du vil være på hesten. Nervøsiteten kan faktisk blive en del af læringen: Hvordan håndterer du usikkerhed? Hvordan påvirker det din tilstedeværelse? Mange oplever, at netop dét bliver en værdifuld indsigt."
   },
   {
     question: "Er det sikkert?",
@@ -72,7 +72,7 @@ const faqItems = [
   },
   {
     question: "Hvordan dokumenterer vi værdien over for HR?",
-    answer: "Hesteassisteret læring er en evidensbaseret metode med dokumenterede resultater. Peer-reviewed forskning viser forbedringer i emotionel intelligens, selvindsigt og evne til at skabe tillid – kompetencer der direkte påvirker ledelseskvalitet og teamdynamik. Alle deltagere får desuden et refleksionsmateriale med hjem, som kan bruges til at formulere konkrete fokusområder og handlinger efterfølgende. Vil I have mere dokumentation inden beslutningen, sender jeg gerne relevante forskningsreferencer."
+    answer: "Hesteassisteret læring er en evidensbaseret metode med dokumenterede resultater. Peer-reviewed forskning viser forbedringer i emotionel intelligens, selvindsigt og evne til at skabe tillid - kompetencer der direkte påvirker ledelseskvalitet og teamdynamik. Alle deltagere får desuden et refleksionsmateriale med hjem, som kan bruges til at formulere konkrete fokusområder og handlinger efterfølgende. Vil I have mere dokumentation inden beslutningen, sender jeg gerne relevante forskningsreferencer."
   },
   {
     question: "Hvordan booker jeg?",
@@ -85,7 +85,7 @@ const journeySteps = [
     number: '01',
     title: 'Udtryk & adfærd',
     subtitle: 'Dit lederskab i praksis',
-    description: 'I mødet med hesten får du øjeblikkelig feedback på din tilstedeværelse, energi og kommunikation. Hesten spejler det, du udstråler – ikke det, du siger.'
+    description: 'I mødet med hesten får du øjeblikkelig feedback på din tilstedeværelse, energi og kommunikation. Hesten spejler det, du udstråler - ikke det, du siger.'
   },
   {
     number: '02',
@@ -374,7 +374,7 @@ export default function LederworkshopPage() {
             <p className="section-label">Forskellen</p>
             <h2>Hvorfor virker det anderledes?</h2>
             <p className="workshop-why-intro">
-              De fleste lederkurser giver dig værktøjer, modeller og teorier. Men hvornår fik du sidst mulighed for at <em>se</em> dit lederskab – helt uden filter?
+              De fleste lederkurser giver dig værktøjer, modeller og teorier. Men hvornår fik du sidst mulighed for at <em>se</em> dit lederskab - helt uden filter?
             </p>
             <p>
               Hestene spejler din autenticitet, dit nærvær og din energi i nuet. De viser præcist, hvor du står stærkt, og hvor du ubevidst mister kontakt eller gennemslagskraft.
@@ -472,7 +472,7 @@ export default function LederworkshopPage() {
             <span className="evidence-bar-label">Dokumenteret effekt</span>
             <h3 className="evidence-bar-heading">Hvad forskningen viser</h3>
             <p className="evidence-bar-intro">
-              Hesteassisteret læring er ikke bare en oplevelse – det er en evidensbaseret metode.
+              Hesteassisteret læring er ikke bare en oplevelse - det er en evidensbaseret metode.
             </p>
           </motion.div>
           <motion.div

@@ -10,7 +10,7 @@ import Footer from '@/components/Footer'
 const metoder = [
   {
     title: "Nervesystemsregulering",
-    description: "Du lærer at genkende, når dit nervesystem er i alarmberedskab – og hvad du konkret kan gøre for at bringe det tilbage i balance, så du kan holde til tempoet uden at betale med dit helbred."
+    description: "Du lærer at genkende, når dit nervesystem er i alarmberedskab - og hvad du konkret kan gøre for at bringe det tilbage i balance, så du kan holde til tempoet uden at betale med dit helbred."
   },
   {
     title: "Co-regulering med heste",
@@ -18,7 +18,7 @@ const metoder = [
   },
   {
     title: "Naturens helende rum",
-    description: "Naturen tilbyder et andet tempo end hverdagen. Her er ingen notifikationer, ingen deadlines – bare rum til at trække vejret og lade nervesystemet finde ro."
+    description: "Naturen tilbyder et andet tempo end hverdagen. Her er ingen notifikationer, ingen deadlines - bare rum til at trække vejret og lade nervesystemet finde ro."
   },
   {
     title: "Kropslig forankring",
@@ -30,7 +30,7 @@ const oplevelser = [
   "En dybere forståelse af dine egne mønstre og reaktioner",
   "Konkrete redskaber til at regulere dit nervesystem i hverdagen",
   "Kropslig erfaring med, hvordan ro og balance faktisk føles",
-  "Klarhed over, hvad du har brug for – og mod til at handle på det",
+  "Klarhed over, hvad du har brug for - og mod til at handle på det",
   "En fornyet kontakt til dig selv og dine egne ressourcer"
 ]
 
@@ -85,7 +85,7 @@ export default function RecalibratePage(): React.JSX.Element {
           >
             <p className="section-label">Back to basics</p>
             <h1>Recalibrate</h1>
-            <p className="workshop-hero-tagline">Bliv ved med at præstere – uden at kroppen betaler prisen</p>
+            <p className="workshop-hero-tagline">Bliv ved med at præstere - uden at kroppen betaler prisen</p>
             <p className="workshop-hero-desc">
               For dig der vil holde tempoet, men mærker at noget skal ændres. Lær at regulere dit nervesystem med hestenes hjælp og naturens ro.
             </p>
@@ -112,9 +112,9 @@ export default function RecalibratePage(): React.JSX.Element {
             transition={{ duration: 0.7 }}
           >
             <p className="section-label">Hvad er Recalibrate?</p>
-            <h2>Hold tempoet – uden at betale med dit helbred</h2>
+            <h2>Hold tempoet - uden at betale med dit helbred</h2>
             <p>
-              Livet kræver meget af dig. Og måske handler det ikke om at sætte tempoet ned – men om at finde en måde at holde til det på.
+              Livet kræver meget af dig. Og måske handler det ikke om at sætte tempoet ned - men om at finde en måde at holde til det på.
             </p>
             <p>
               Recalibrate handler om at regulere dit nervesystem, så du kan fortsætte med at præstere uden at kroppen betaler prisen. Med hestenes hjælp og naturens ro lærer du at genkende dine signaler og handle på dem i tide.
@@ -189,10 +189,10 @@ export default function RecalibratePage(): React.JSX.Element {
             <p className="section-label">Metoden</p>
             <h2>Hestene som spejl og co-regulering</h2>
             <p>
-              Heste lever i nuet. De reagerer ikke på det, du siger eller tænker – men på det, du udstråler. Din energi, dit nervesystem, din indre tilstand. Det gør dem til ærlige spejle, der viser dig noget, ord sjældent kan.
+              Heste lever i nuet. De reagerer ikke på det, du siger eller tænker - men på det, du udstråler. Din energi, dit nervesystem, din indre tilstand. Det gør dem til ærlige spejle, der viser dig noget, ord sjældent kan.
             </p>
             <p>
-              Men hestene gør mere end at spejle. Som flokdyr har de en naturlig evne til at <strong>co-regulere</strong> – at hjælpe med at berolige et overstimuleret nervesystem gennem deres egen rolige tilstedeværelse.
+              Men hestene gør mere end at spejle. Som flokdyr har de en naturlig evne til at <strong>co-regulere</strong> - at hjælpe med at berolige et overstimuleret nervesystem gennem deres egen rolige tilstedeværelse.
             </p>
             <p>
               Når du står ved siden af en hest og mærker dens langsomme vejrtrækning, sker der noget i din egen krop. Pulsen falder. Skuldrene sænker sig. Du begynder at mærke dig selv igen.
@@ -361,7 +361,7 @@ export default function RecalibratePage(): React.JSX.Element {
             <p className="section-label">Er det noget for dig?</p>
             <h2>Recalibrate er for dig, der...</h2>
             <p className="workshop-for-hvem-intro">
-              ...mærker, at tempoet har taget overhånd – uanset om du vil stoppe op eller finde en sundere måde at fortsætte på.
+              ...mærker, at tempoet har taget overhånd - uanset om du vil stoppe op eller finde en sundere måde at fortsætte på.
             </p>
           </motion.div>
 
