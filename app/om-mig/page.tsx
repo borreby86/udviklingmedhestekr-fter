@@ -225,22 +225,22 @@ export default function OmMigPage() {
           >
             {/* Placeholder boxes for logos - replace with actual logos */}
             <div className="about-page-logo-item">
-              <span>Hjerteforeningen</span>
+              <span>Fredensborg Kommune</span>
             </div>
             <div className="about-page-logo-item">
-              <span>Nordic Bloom</span>
+              <span>GlobalConnect</span>
             </div>
             <div className="about-page-logo-item">
-              <span>Logo 3</span>
+              <span>Digitaliseringsstyrelsen</span>
             </div>
             <div className="about-page-logo-item">
-              <span>Logo 4</span>
+              <span>3 Danmark</span>
             </div>
             <div className="about-page-logo-item">
-              <span>Logo 5</span>
+              <span>Gentofte Hospital</span>
             </div>
             <div className="about-page-logo-item">
-              <span>Logo 6</span>
+              <span>Wärtsilä</span>
             </div>
           </motion.div>
         </div>
