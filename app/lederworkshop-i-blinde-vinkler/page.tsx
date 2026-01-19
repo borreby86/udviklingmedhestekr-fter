@@ -199,6 +199,7 @@ export default function BlindeVinklerPage() {
   const [showScrollNav, setShowScrollNav] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [formLoadTime, setFormLoadTime] = useState<number | null>(null)
 
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -219,6 +220,7 @@ export default function BlindeVinklerPage() {
   const openModal = (date: typeof workshopDates[0]) => {
     setSelectedDate(date)
     setModalOpen(true)
+    setFormLoadTime(Date.now())
     document.body.style.overflow = 'hidden'
   }
 
@@ -243,6 +245,8 @@ export default function BlindeVinklerPage() {
       company: formData.get('virksomhed'),
       formType: 'tilmelding-blinde-vinkler',
       workshopDate: selectedDate ? `${selectedDate.day}. ${selectedDate.month} ${selectedDate.year}` : '',
+      _honeypot: formData.get('website'),
+      _loadTime: formLoadTime,
     }
 
     try {
@@ -861,6 +865,11 @@ export default function BlindeVinklerPage() {
               </div>
 
               <form className="modal-form" onSubmit={handleModalSubmit}>
+                {/* Honeypot field - hidden from humans, filled by bots */}
+                <div style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, overflow: 'hidden' }} aria-hidden="true">
+                  <label htmlFor="website-blinde">Website</label>
+                  <input type="text" id="website-blinde" name="website" tabIndex={-1} autoComplete="off" />
+                </div>
                 <div className="modal-form-group">
                   <label htmlFor="modal-navn">Navn *</label>
                   <input type="text" id="modal-navn" name="navn" required placeholder="Dit fulde navn" />

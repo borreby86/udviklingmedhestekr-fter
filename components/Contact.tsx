@@ -7,6 +7,7 @@ import { ArrowIcon, EmailIcon, LinkedInIcon, LocationIcon } from './Icons'
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [formLoadTime] = useState(() => Date.now())
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -21,6 +22,8 @@ export default function Contact() {
       phone: formData.get('phone'),
       message: formData.get('message'),
       formType: 'forside',
+      _honeypot: formData.get('website'),
+      _loadTime: formLoadTime,
     }
 
     try {
@@ -108,6 +111,11 @@ export default function Contact() {
           </div>
           <div className="contact-form">
             <form onSubmit={handleSubmit}>
+              {/* Honeypot field - hidden from humans, filled by bots */}
+              <div style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, overflow: 'hidden' }} aria-hidden="true">
+                <label htmlFor="website-contact">Website</label>
+                <input type="text" id="website-contact" name="website" tabIndex={-1} autoComplete="off" />
+              </div>
               <div className="form-group">
                 <label htmlFor="name">Navn *</label>
                 <input type="text" id="name" name="name" required />

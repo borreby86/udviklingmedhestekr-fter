@@ -4,7 +4,22 @@ import nodemailer from 'nodemailer'
 export async function POST(request: Request) {
   try {
     const body = await request.json()
-    const { name, email, phone, company, message, formType, workshopDate } = body
+    const { name, email, phone, company, message, formType, workshopDate, _honeypot, _loadTime } = body
+
+    // Spam protection: Check honeypot field (should be empty for humans)
+    if (_honeypot) {
+      // Silently reject - don't reveal we detected spam
+      return NextResponse.json({ success: true })
+    }
+
+    // Spam protection: Check submission timing (minimum 3 seconds to fill form)
+    if (_loadTime) {
+      const timeTaken = Date.now() - _loadTime
+      if (timeTaken < 3000) {
+        // Too fast - likely a bot
+        return NextResponse.json({ success: true })
+      }
+    }
 
     if (!name || !email) {
       return NextResponse.json({ error: 'Navn og email er påkrævet' }, { status: 400 })

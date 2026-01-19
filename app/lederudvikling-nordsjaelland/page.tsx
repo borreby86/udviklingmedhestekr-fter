@@ -164,6 +164,7 @@ export default function LederworkshopPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
+  const [formLoadTime, setFormLoadTime] = useState<number | null>(null)
 
   const nextTestimonial = () => {
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)
@@ -183,6 +184,7 @@ export default function LederworkshopPage() {
   const openModal = (month: string) => {
     setSelectedDate(month)
     setModalOpen(true)
+    setFormLoadTime(Date.now())
     document.body.style.overflow = 'hidden'
   }
 
@@ -205,6 +207,8 @@ export default function LederworkshopPage() {
       email: formData.get('email'),
       formType: 'venteliste-lederworkshop',
       workshopDate: selectedDate ? `${selectedDate} 2026` : '',
+      _honeypot: formData.get('website'),
+      _loadTime: formLoadTime,
     }
 
     try {
@@ -758,6 +762,11 @@ export default function LederworkshopPage() {
               </div>
 
               <form className="modal-form" onSubmit={handleModalSubmit}>
+                {/* Honeypot field - hidden from humans, filled by bots */}
+                <div style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, overflow: 'hidden' }} aria-hidden="true">
+                  <label htmlFor="website-leder">Website</label>
+                  <input type="text" id="website-leder" name="website" tabIndex={-1} autoComplete="off" />
+                </div>
                 <div className="modal-form-group">
                   <label htmlFor="modal-navn">Navn *</label>
                   <input type="text" id="modal-navn" name="navn" required placeholder="Dit fulde navn" />

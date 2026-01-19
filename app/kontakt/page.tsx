@@ -9,6 +9,7 @@ export default function KontaktPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
+  const [formLoadTime] = useState(() => Date.now())
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -24,6 +25,8 @@ export default function KontaktPage() {
       company: formData.get('company'),
       message: formData.get('message'),
       formType: 'kontakt',
+      _honeypot: formData.get('website'),
+      _loadTime: formLoadTime,
     }
 
     try {
@@ -81,6 +84,11 @@ export default function KontaktPage() {
           </div>
           <div className="contact-hero-form">
             <form onSubmit={handleSubmit}>
+              {/* Honeypot field - hidden from humans, filled by bots */}
+              <div style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, overflow: 'hidden' }} aria-hidden="true">
+                <label htmlFor="website">Website</label>
+                <input type="text" id="website" name="website" tabIndex={-1} autoComplete="off" />
+              </div>
               <div className="form-row">
                 <div className="form-group">
                   <label htmlFor="name">Navn *</label>
