@@ -3983,28 +3983,135 @@ nav.scrolled .mobile-menu-btn {
   opacity: 1;
 }
 
-/* CTA Section */
-.about-page-cta {
-  padding: 6rem 2rem;
+/* Testimonial Section */
+.about-testimonial {
   background: var(--color-cream);
+  padding: 5rem 2rem;
+}
+.about-testimonial-container {
+  max-width: 800px;
+  margin: 0 auto;
   text-align: center;
 }
-.about-page-cta-content {
-  max-width: 600px;
+.about-testimonial blockquote {
+  margin: 0;
+  position: relative;
+}
+.about-testimonial-quote-icon {
+  width: 48px;
+  height: 48px;
+  color: var(--color-gold);
+  opacity: 0.4;
+  margin-bottom: 1.5rem;
+}
+.about-testimonial blockquote p {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--color-earth);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+.about-testimonial blockquote cite {
+  font-style: normal;
+  font-size: 1rem;
+  color: var(--color-soft-brown);
+}
+
+/* Approach Section */
+.about-approach {
+  background: #fff;
+  padding: 6rem 2rem;
+}
+.about-approach-container {
+  max-width: 1100px;
   margin: 0 auto;
 }
-.about-page-cta-content h2 {
+.about-approach-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.about-approach-header h2 {
   font-family: var(--font-display);
   font-size: 2.2rem;
   font-weight: 400;
   color: var(--color-earth);
+}
+.about-approach-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+.about-approach-card {
+  background: var(--color-cream);
+  padding: 2rem;
+  border-radius: 8px;
+}
+.about-approach-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--color-earth);
+  margin-bottom: 0.75rem;
+}
+.about-approach-card p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-soft-brown);
+}
+
+/* About Page Footer */
+.about-footer {
+  background: var(--color-earth);
+  padding: 5rem 2rem 2rem;
+  text-align: center;
+}
+.about-footer-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.about-footer-cta h2 {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: #fff;
   margin-bottom: 1rem;
 }
-.about-page-cta-content p {
+.about-footer-cta p {
   font-size: 1.1rem;
   line-height: 1.75;
-  color: var(--color-soft-brown);
+  color: rgba(255, 255, 255, 0.8);
   margin-bottom: 2rem;
+}
+.about-footer-cta .cta-button {
+  background: var(--color-gold);
+  color: var(--color-earth);
+}
+.about-footer-cta .cta-button:hover {
+  background: #c9a94a;
+}
+.about-footer-bottom {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.about-footer-bottom p {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+.about-footer-bottom a {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.about-footer-bottom a:hover {
+  color: var(--color-gold);
 }
 
 /* Responsive */
@@ -4404,8 +4511,17 @@ nav.scrolled .mobile-menu-btn {
   .about-trust-logos { gap: 1.5rem; }
   .about-trust-logo { height: 40px; }
   .about-trust-logo img { max-height: 30px; max-width: 80px; }
-  .about-page-cta { padding: 3.5rem 1.25rem; }
-  .about-page-cta-content h2 { font-size: 1.65rem; }
+  .about-testimonial { padding: 3rem 1.25rem; }
+  .about-testimonial blockquote p { font-size: 1.25rem; }
+  .about-testimonial-quote-icon { width: 36px; height: 36px; }
+  .about-approach { padding: 3.5rem 1.25rem; }
+  .about-approach-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .about-approach-header h2 { font-size: 1.65rem; }
+  .about-approach-card { padding: 1.5rem; }
+  .about-approach-card h3 { font-size: 1.2rem; }
+  .about-footer { padding: 3.5rem 1.25rem 1.5rem; }
+  .about-footer-cta h2 { font-size: 1.65rem; }
+  .about-footer-bottom { flex-direction: column; gap: 0.75rem; margin-top: 2.5rem; }
 
   /* Info bar mobile */
   .info-bar { padding: 1.5rem 1.25rem; }
@@ -5520,6 +5636,45 @@ nav.scrolled .mobile-menu-btn {
 }
 .workshop-date-card-light .date-card-pending {
   color: var(--color-copper);
+}
+
+/* Date card inquiry variant for team/group bookings */
+.workshop-date-card-inquiry {
+  text-decoration: none;
+}
+.date-card-inquiry-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  flex: 1;
+}
+.date-card-inquiry-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-copper);
+  border-radius: 50%;
+  margin-bottom: 0.25rem;
+}
+.date-card-inquiry-icon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  stroke: var(--color-warm-white);
+}
+.date-card-inquiry-content h4 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--color-earth);
+  margin: 0;
+}
+.date-card-inquiry-content p {
+  font-size: 0.9rem;
+  color: var(--color-sage);
+  margin: 0;
 }
 
 /* Compact Pricing */

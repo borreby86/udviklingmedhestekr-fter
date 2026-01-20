@@ -3,7 +3,6 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'motion/react'
 import Navigation from '@/components/Navigation'
-import Footer from '@/components/Footer'
 
 const collaborators = [
   { name: 'Digitaliseringsstyrelsen', logo: '/digitaliseringsstyrelsen_rgb.jpg' },
@@ -21,13 +20,33 @@ const credentials = [
   },
   {
     title: 'Certificeret psykoterapeut',
-    detail: 'ID Academy · Speciale i stress og relationer'
+    detail: 'ID Academy - Speciale i stress og relationer'
   },
   {
     title: '30+ års erfaring med heste',
     detail: 'Træning af galopheste'
   }
 ]
+
+const approach = [
+  {
+    title: 'Krop før tanke',
+    description: 'Ægte forandring starter i kroppen. Hestene giver øjeblikkelig feedback på dit nærvær og din energi - længe før hovedet når at analysere.'
+  },
+  {
+    title: 'Praksis frem for teori',
+    description: 'Lederskab læres ikke i klasselokalet. Det trænes i øjeblikke, hvor du mærker presset og skal finde roen alligevel.'
+  },
+  {
+    title: 'Relationer som fundament',
+    description: 'Dit lederskab er kun så stærkt som dine relationer. Vi arbejder med tillid, grænser og autentisk kommunikation.'
+  }
+]
+
+const testimonial = {
+  quote: 'Christina formår at skabe et rum, hvor man tør være sårbar og ærlig. Det har forandret min måde at lede på.',
+  author: 'Leder, større dansk virksomhed'
+}
 
 export default function OmMigPage() {
   const heroRef = useRef(null)
@@ -46,7 +65,7 @@ export default function OmMigPage() {
       {/* Hero Section */}
       <section className="about-page-hero-full" ref={heroRef}>
         <motion.div className="about-page-hero-bg" style={{ y: heroY }}>
-          <img src="/galop_maestro1.jpg" alt="Christina Borreby rider på hest i galop" />
+          <img src="/christina-gallop.jpg" alt="Christina Borreby rider på hest i galop" />
         </motion.div>
         <div className="about-page-hero-overlay-full" />
         <div className="about-page-hero-content-full">
@@ -58,8 +77,36 @@ export default function OmMigPage() {
             <p className="section-label">Om mig</p>
             <h1>Christina Borreby</h1>
             <p className="about-page-hero-intro">
-              Cand.negot i Kommunikation & HR · Certificeret psykoterapeut · 30 års erfaring med heste
+              Jeg hjælper ledere med at finde ro i presset og styrke i sårbarhed
             </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Trust Bar - Logos */}
+      <section className="about-trust-bar">
+        <div className="about-trust-container">
+          <motion.p
+            className="about-trust-label"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            Har arbejdet med
+          </motion.p>
+          <motion.div
+            className="about-trust-logos"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            {collaborators.map((collab, index) => (
+              <div key={index} className="about-trust-logo">
+                <img src={collab.logo} alt={collab.name} />
+              </div>
+            ))}
           </motion.div>
         </div>
       </section>
@@ -104,6 +151,24 @@ export default function OmMigPage() {
         </div>
       </section>
 
+      {/* Testimonial Section */}
+      <section className="about-testimonial">
+        <div className="about-testimonial-container">
+          <motion.blockquote
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <svg className="about-testimonial-quote-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+            </svg>
+            <p>{testimonial.quote}</p>
+            <cite>- {testimonial.author}</cite>
+          </motion.blockquote>
+        </div>
+      </section>
+
       {/* Story Section - Full width with background */}
       <section className="about-page-story-full">
         <div className="about-page-story-bg">
@@ -128,46 +193,46 @@ export default function OmMigPage() {
             <p className="story-highlight">
               Hestene lærer mig dagligt, at følgeskab ikke handler om kontrol - men om nærvær, tydelighed og sunde grænser.
             </p>
-            <p>
-              Hestene er mine vigtigste samarbejdspartnere. De spejler med det samme de mønstre og blind spots, som ellers kan være svære at opdage. De viser præcist, hvor vi mister kontakt, retning eller energi, og åbner en vej til forandring, der ikke blot handler om at løse problemer, men om at forløse potentiale.
-            </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Trust Bar - Logos */}
-      <section className="about-trust-bar">
-        <div className="about-trust-container">
-          <motion.p
-            className="about-trust-label"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            Har arbejdet med
-          </motion.p>
+      {/* Approach Section */}
+      <section className="about-approach">
+        <div className="about-approach-container">
           <motion.div
-            className="about-trust-logos"
+            className="about-approach-header"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.6 }}
           >
-            {collaborators.map((collab, index) => (
-              <div key={index} className="about-trust-logo">
-                <img src={collab.logo} alt={collab.name} />
-              </div>
-            ))}
+            <p className="section-label">Filosofi</p>
+            <h2>Min tilgang</h2>
           </motion.div>
+          <div className="about-approach-grid">
+            {approach.map((item, index) => (
+              <motion.div
+                key={index}
+                className="about-approach-card"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="about-page-cta">
-        <div className="about-page-container">
+      {/* Footer with CTA */}
+      <footer className="about-footer">
+        <div className="about-footer-container">
           <motion.div
-            className="about-page-cta-content"
+            className="about-footer-cta"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -184,10 +249,12 @@ export default function OmMigPage() {
               </svg>
             </a>
           </motion.div>
+          <div className="about-footer-bottom">
+            <p>&copy; {new Date().getFullYear()} Christina Borreby</p>
+            <a href="/privatlivspolitik">Privatlivspolitik</a>
+          </div>
         </div>
-      </section>
-
-      <Footer />
+      </footer>
     </>
   )
 }
