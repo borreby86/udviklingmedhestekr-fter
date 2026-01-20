@@ -7152,3 +7152,373 @@ nav.scrolled .mobile-menu-btn {
     font-size: 1.5rem;
   }
 }
+
+/* Consciousness Model */
+.consciousness-model {
+  padding: 5rem 2rem;
+  background: var(--color-warm-white);
+}
+.consciousness-model-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.consciousness-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.consciousness-svg {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+.consciousness-ring {
+  transition: all 0.4s ease;
+}
+.consciousness-labels {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.consciousness-label {
+  position: absolute;
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+  cursor: pointer;
+  pointer-events: auto;
+  transition: all 0.3s ease;
+  padding: 0.25rem 0.5rem;
+}
+.consciousness-label:hover,
+.consciousness-label.active {
+  color: var(--color-earth);
+}
+.consciousness-label-outer {
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.consciousness-label-middle {
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+}
+.consciousness-label-inner {
+  bottom: 38%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+}
+.consciousness-label-inner:hover,
+.consciousness-label-inner.active {
+  color: var(--color-gold);
+}
+.consciousness-content {
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.consciousness-intro-label {
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+  margin-bottom: 1rem;
+}
+.consciousness-intro h3,
+.consciousness-detail h3 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--color-earth);
+  margin-bottom: 1.25rem;
+}
+.consciousness-intro p,
+.consciousness-detail p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-soft-brown);
+  margin-bottom: 1rem;
+}
+.consciousness-horse-note {
+  font-style: italic;
+  color: var(--color-sage);
+  border-left: 2px solid var(--color-gold);
+  padding-left: 1rem;
+  margin-top: 1.5rem;
+}
+.consciousness-detail-subtitle {
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.consciousness-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+.consciousness-keyword {
+  font-family: var(--font-label);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid;
+  border-radius: 2px;
+}
+.consciousness-insight {
+  font-style: italic;
+  color: var(--color-earth);
+  background: rgba(212, 184, 106, 0.1);
+  padding: 1rem 1.25rem;
+  border-radius: 4px;
+  margin-top: 1.5rem;
+}
+.consciousness-journey {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 3rem;
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+}
+.consciousness-journey-line {
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(to right, var(--color-sage), var(--color-gold));
+  position: relative;
+}
+.consciousness-journey-arrow {
+  position: absolute;
+  right: -4px;
+  top: -3px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid var(--color-gold);
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+}
+
+@media (max-width: 900px) {
+  .consciousness-model-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .consciousness-svg {
+    max-width: 300px;
+  }
+  .consciousness-content {
+    min-height: auto;
+    text-align: center;
+  }
+  .consciousness-intro h3,
+  .consciousness-detail h3 {
+    font-size: 1.5rem;
+  }
+  .consciousness-keywords {
+    justify-content: center;
+  }
+  .consciousness-horse-note {
+    border-left: none;
+    border-top: 2px solid var(--color-gold);
+    padding-left: 0;
+    padding-top: 1rem;
+  }
+}
+
+/* Horizon Model */
+.horizon-model {
+  padding: 6rem 2rem;
+  background: var(--color-warm-white);
+}
+.horizon-model-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.horizon-model-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.horizon-model-header h2 {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: var(--color-earth);
+  margin-bottom: 1rem;
+}
+.horizon-model-intro {
+  font-size: 1.05rem;
+  color: var(--color-soft-brown);
+  max-width: 500px;
+  margin: 0 auto;
+}
+.horizon-model-content {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+.horizon-visual-wrapper {
+  position: relative;
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+}
+.horizon-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.horizon-arrow {
+  position: absolute;
+  right: -50px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-sage);
+}
+.horizon-arrow span {
+  font-family: var(--font-label);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.horizon-info-panel {
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.horizon-info-intro h3,
+.horizon-info-detail h3 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--color-earth);
+  margin-bottom: 1.25rem;
+}
+.horizon-info-intro p,
+.horizon-info-detail p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-soft-brown);
+  margin-bottom: 1rem;
+}
+.horizon-info-hint {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  padding: 1rem 1.25rem;
+  background: rgba(212, 184, 106, 0.1);
+  border-radius: 6px;
+}
+.horizon-info-hint svg {
+  width: 20px;
+  height: 20px;
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+.horizon-info-hint span {
+  font-size: 0.9rem;
+  color: var(--color-sage);
+}
+.horizon-info-subtitle {
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.horizon-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+.horizon-keyword {
+  font-family: var(--font-label);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid;
+  border-radius: 2px;
+}
+.horizon-insight {
+  border-left: 3px solid;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+}
+.horizon-insight p {
+  font-style: italic;
+  color: var(--color-earth);
+  margin: 0;
+}
+.horizon-close-btn {
+  font-family: var(--font-label);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  margin-top: 1rem;
+}
+.horizon-close-btn:hover {
+  color: var(--color-earth);
+}
+
+@media (max-width: 1000px) {
+  .horizon-model-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .horizon-arrow {
+    display: none;
+  }
+  .horizon-info-panel {
+    min-height: auto;
+  }
+}
+@media (max-width: 600px) {
+  .horizon-model {
+    padding: 4rem 1.25rem;
+  }
+  .horizon-model-header h2 {
+    font-size: 1.7rem;
+  }
+  .horizon-visual-wrapper {
+    padding: 1rem;
+  }
+  .horizon-info-intro h3,
+  .horizon-info-detail h3 {
+    font-size: 1.35rem;
+  }
+}
