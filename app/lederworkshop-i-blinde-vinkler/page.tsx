@@ -810,13 +810,6 @@ export default function BlindeVinklerPage() {
               transition={{ duration: 0.5, delay: workshopDates.length * 0.1 }}
             >
               <div className="date-card-inquiry-content">
-                <span className="date-card-inquiry-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
-                    <circle cx="9" cy="7" r="4"/>
-                    <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
-                  </svg>
-                </span>
                 <h4>Til jeres ledergruppe eller team?</h4>
                 <p>Forespørg på en dato der passer jer</p>
               </div>
