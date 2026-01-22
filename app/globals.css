@@ -3083,7 +3083,7 @@ nav.scrolled .mobile-menu-btn {
 .recalibrate-pricing-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(30, 35, 35, 0.55);
+  background: rgba(255, 255, 255, 0.3);
   z-index: 1;
 }
 .recalibrate-pricing .workshop-container-wide {
@@ -3101,7 +3101,7 @@ nav.scrolled .mobile-menu-btn {
   font-family: var(--font-display);
   font-size: clamp(2rem, 3vw, 2.5rem);
   font-weight: 400;
-  color: #fff;
+  color: var(--color-earth);
   margin-top: 0.75rem;
 }
 .recalibrate-pricing-grid {
@@ -3112,7 +3112,7 @@ nav.scrolled .mobile-menu-btn {
   margin: 0 auto;
 }
 .recalibrate-pricing-card {
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.65);
   border: 1px solid var(--color-gold);
   border-radius: 0;
   padding: 2rem;
@@ -3121,7 +3121,7 @@ nav.scrolled .mobile-menu-btn {
   position: relative;
 }
 .recalibrate-pricing-card-featured {
-  background: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.75);
   border-color: var(--color-gold);
 }
 .recalibrate-card-badge {
@@ -3130,7 +3130,7 @@ nav.scrolled .mobile-menu-btn {
   left: 50%;
   transform: translateX(-50%);
   background: transparent;
-  color: #fff;
+  color: var(--color-gold);
   font-size: 0.6rem;
   font-weight: 600;
   letter-spacing: 0.15em;
@@ -3141,7 +3141,7 @@ nav.scrolled .mobile-menu-btn {
   font-family: var(--font-display);
   font-size: 1.5rem;
   font-weight: 400;
-  color: #fff;
+  color: var(--color-earth);
   margin-bottom: 1rem;
 }
 .recalibrate-card-price {
@@ -3153,7 +3153,7 @@ nav.scrolled .mobile-menu-btn {
 }
 .recalibrate-card-price-note {
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--color-soft-brown);
   margin-bottom: 1.75rem;
 }
 .recalibrate-card-features {
@@ -3164,9 +3164,9 @@ nav.scrolled .mobile-menu-btn {
 }
 .recalibrate-card-features li {
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--color-soft-brown);
   padding: 0.65rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 .recalibrate-card-features li::before {
   display: none;
@@ -3196,7 +3196,7 @@ nav.scrolled .mobile-menu-btn {
 }
 .recalibrate-pricing-card-featured .recalibrate-card-cta {
   background: var(--color-gold);
-  color: #fff;
+  color: var(--color-earth);
   padding: 0.9rem 1.5rem;
   width: 100%;
 }
@@ -3211,7 +3211,7 @@ nav.scrolled .mobile-menu-btn {
 .recalibrate-pricing-note {
   text-align: center;
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--color-soft-brown);
   margin-top: 2rem;
 }
 
