@@ -4,7 +4,6 @@ import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'motion/react'
 import Link from 'next/link'
 import Navigation from '@/components/Navigation'
-import Footer from '@/components/Footer'
 
 // Data
 const metoder = [
@@ -46,13 +45,42 @@ const forHvem = [
 const formater = [
   {
     title: "Enkelt session",
-    description: "1,5-3 timer med co-regulering af nervesystemet gennem hestesamvær og guidet refleksion. Et godt sted at starte.",
-    price: "Fra 1.500 kr."
+    subtitle: "Et godt sted at starte",
+    price: "1.500 kr.",
+    priceNote: "pr. session",
+    features: [
+      "1,5-3 timer",
+      "Co-regulering med heste",
+      "Guidet refleksion"
+    ],
+    cta: "Book en session",
+    featured: false
   },
   {
     title: "Forløb",
-    description: "Et intensivt forløb over tid til dig, der mærker stresssymptomer eller ønsker et kontinuerligt rum til at rekalibrere.",
-    price: "Fra 5.000 kr."
+    subtitle: "For varig forandring",
+    price: "5.000 kr.",
+    priceNote: "fra pris",
+    features: [
+      "4-6 sessioner",
+      "Personlig opfølgning",
+      "Redskaber til hverdagen"
+    ],
+    cta: "Hør mere",
+    featured: true
+  },
+  {
+    title: "Team eller ledergruppe",
+    subtitle: "Skræddersyet til jer",
+    price: "Kontakt mig",
+    priceNote: "for tilbud",
+    features: [
+      "Tilpasset jeres behov",
+      "På jeres lokation eller hos mig",
+      "Opfølgning inkluderet"
+    ],
+    cta: "Book en samtale",
+    featured: false
   }
 ]
 
@@ -290,61 +318,56 @@ export default function RecalibratePage(): React.JSX.Element {
         </div>
       </section>
 
-      {/* Format Section - med naturbillede */}
-      <section className="workshop-instructor" id="format">
-        <div className="workshop-instructor-bg">
+      {/* Format Section - Pricing Cards */}
+      <section className="recalibrate-pricing" id="format">
+        <div className="recalibrate-pricing-bg">
           <img src="/walkandtalk-recalibrate.jpeg" alt="Efterår i skoven" />
         </div>
-        <div className="workshop-instructor-overlay" />
+        <div className="recalibrate-pricing-overlay" />
         <div className="workshop-container-wide">
           <motion.div
-            className="workshop-instructor-content"
-            initial={{ opacity: 0, y: 30 }}
+            className="recalibrate-pricing-header"
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.6 }}
           >
             <p className="section-label">Format og pris</p>
             <h2>Vælg det der passer dig</h2>
-
-            <div className="workshop-practical-badges" style={{ marginTop: '1.5rem', marginBottom: '2rem', justifyContent: 'flex-start', gap: '1.5rem' }}>
-              <div className="practical-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
-                  <circle cx="12" cy="10" r="3"/>
-                </svg>
-                <span>Hørsholm, Nordsjælland</span>
-              </div>
-              <div className="practical-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <circle cx="12" cy="12" r="10"/>
-                  <path d="M12 6v6l4 2"/>
-                </svg>
-                <span>Fra 1,5 time</span>
-              </div>
-              </div>
-
-            <div className="workshop-investment-grid">
-              {formater.map((format, index) => (
-                <motion.div
-                  key={index}
-                  className={`investment-card ${index === 1 ? 'investment-card-featured' : ''}`}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                  <h3>{format.title}</h3>
-                  <div className="investment-price">{format.price}</div>
-                  <p className="investment-unit" style={{ marginTop: '0.5rem' }}>{format.description}</p>
-                </motion.div>
-              ))}
-            </div>
-
-            <p style={{ marginTop: '2rem', fontSize: '0.95rem', color: 'var(--color-sage)', fontStyle: 'italic' }}>
-              Kan også arrangeres for grupper efter ønske.
-            </p>
           </motion.div>
+
+          <div className="recalibrate-pricing-grid">
+            {formater.map((format, index) => (
+              <motion.div
+                key={index}
+                className={`recalibrate-pricing-card ${format.featured ? 'recalibrate-pricing-card-featured' : ''}`}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                {format.featured && <span className="recalibrate-card-badge">Anbefalet</span>}
+                <h3>{format.title}</h3>
+                <div className="recalibrate-card-price">{format.price}</div>
+                <p className="recalibrate-card-price-note">{format.priceNote}</p>
+                <ul className="recalibrate-card-features">
+                  {format.features.map((feature, i) => (
+                    <li key={i}>{feature}</li>
+                  ))}
+                </ul>
+                <Link href="/kontakt" className="recalibrate-card-cta">
+                  {format.cta}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+
+          <p className="recalibrate-pricing-note">
+            Alle priser er inkl. moms. Lokation: Hørsholm, Nordsjælland.
+          </p>
         </div>
       </section>
 
@@ -414,7 +437,6 @@ export default function RecalibratePage(): React.JSX.Element {
         </div>
       </section>
 
-      <Footer />
     </>
   )
 }
