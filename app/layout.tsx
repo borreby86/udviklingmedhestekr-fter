@@ -34,6 +34,9 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://christinaborreby.dk'),
   title: 'Christina Borreby | Leder- og teamudvikling med hestekræfter',
   description: 'Unik læring gennem samspil med heste.',
+  icons: {
+    icon: '/favicon.png',
+  },
   openGraph: {
     title: 'Christina Borreby | Leder- og teamudvikling med hestekræfter',
     description: 'Unik læring gennem samspil med heste.',
