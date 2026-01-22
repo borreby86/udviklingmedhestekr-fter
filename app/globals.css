@@ -3146,7 +3146,7 @@ nav.scrolled .mobile-menu-btn {
 }
 .recalibrate-card-price {
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 400;
   color: var(--color-gold);
   line-height: 1.2;

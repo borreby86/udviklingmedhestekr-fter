@@ -366,7 +366,7 @@ export default function RecalibratePage(): React.JSX.Element {
           </div>
 
           <p className="recalibrate-pricing-note">
-            Alle priser er inkl. moms. Lokation: Hørsholm, Nordsjælland.
+            Alle priser er ex. moms. Lokation: Hørsholm, Nordsjælland.
           </p>
         </div>
       </section>
