@@ -3083,7 +3083,7 @@ nav.scrolled .mobile-menu-btn {
 .recalibrate-pricing-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(30, 35, 35, 0.8);
+  background: rgba(30, 35, 35, 0.55);
   z-index: 1;
 }
 .recalibrate-pricing .workshop-container-wide {
