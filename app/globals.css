@@ -3112,7 +3112,7 @@ nav.scrolled .mobile-menu-btn {
   margin: 0 auto;
 }
 .recalibrate-pricing-card {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.18);
   border: 1px solid var(--color-gold);
   border-radius: 0;
   padding: 2rem;
@@ -3121,7 +3121,7 @@ nav.scrolled .mobile-menu-btn {
   position: relative;
 }
 .recalibrate-pricing-card-featured {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.22);
   border-color: var(--color-gold);
 }
 .recalibrate-card-badge {
