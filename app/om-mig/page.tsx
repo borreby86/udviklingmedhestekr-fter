@@ -1,16 +1,15 @@
 'use client'
 
-import { useRef } from 'react'
-import { motion, useScroll, useTransform } from 'motion/react'
+import { motion } from 'motion/react'
 import Navigation from '@/components/Navigation'
 
 const collaborators = [
   { name: 'Digitaliseringsstyrelsen', logo: '/digitaliseringsstyrelsen_rgb.jpg' },
   { name: '3 Danmark', logo: '/3 logo.jpg' },
   { name: 'Peter Justesen', logo: '/peter justesen.png' },
-  { name: 'GlobalConnect', logo: '/download.png' },
-  { name: 'Gentofte Hospital', logo: '/images.jpeg' },
-  { name: 'Fredensborg Kommune', logo: '/fredensborg-kommune.png' }
+  { name: 'GlobalConnect', logo: '/global connect.png' },
+  { name: 'Gentofte Hospital', logo: '/gentofte hospital.jpeg' },
+  { name: 'Fredensborg Kommune', logo: '/fredensborg_logo.png' }
 ]
 
 const credentials = [
@@ -24,22 +23,22 @@ const credentials = [
   },
   {
     title: '30+ års erfaring med heste',
-    detail: 'Træning af galopheste'
+    detail: 'Daglig træning af galopheste'
   }
 ]
 
 const approach = [
   {
-    title: 'Krop før tanke',
-    description: 'Ægte forandring starter i kroppen. Hestene giver øjeblikkelig feedback på dit nærvær og din energi - længe før hovedet når at analysere.'
+    title: 'Kongruens under pres',
+    description: 'Hesten reagerer på forskellen mellem det, du viser udadtil, og det du mærker indeni. Den træning overfører jeg direkte til situationer, hvor presset er højt og autenticiteten afgørende.'
   },
   {
-    title: 'Praksis frem for teori',
-    description: 'Lederskab læres ikke i klasselokalet. Det trænes i øjeblikke, hvor du mærker presset og skal finde roen alligevel.'
+    title: 'Krop før analyse',
+    description: 'Vi registrerer ubalance i kroppen længe før tankerne indhenter os. Gennem arbejdet med hestene træner vi evnen til at mærke og handle på de signaler - i stedet for at overse dem.'
   },
   {
     title: 'Relationer som fundament',
-    description: 'Dit lederskab er kun så stærkt som dine relationer. Vi arbejder med tillid, grænser og autentisk kommunikation.'
+    description: 'Samarbejde, tillid og sunde grænser er ikke blot bløde værdier. Det er de konkrete kompetencer, der afgør, om et team fungerer under pres eller falder fra hinanden.'
   }
 ]
 
@@ -49,36 +48,37 @@ const testimonial = {
 }
 
 export default function OmMigPage() {
-  const heroRef = useRef(null)
-
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ["start start", "end start"]
-  })
-
-  const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"])
-
   return (
     <>
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="about-page-hero-full" ref={heroRef}>
-        <motion.div className="about-page-hero-bg" style={{ y: heroY }}>
-          <img src="/christina-gallop.jpg" alt="Christina Borreby rider på hest i galop" />
-        </motion.div>
-        <div className="about-page-hero-overlay-full" />
-        <div className="about-page-hero-content-full">
+      {/* Hero Section - banner style */}
+      <section className="about-page-banner">
+        <div className="about-page-banner-bg">
+          <img src="/christina_borreby.jpeg" alt="Christina Borreby - specialist i hesteassisteret lederudvikling" />
+        </div>
+        <div className="about-page-banner-overlay" />
+        <div className="about-page-banner-container">
           <motion.div
+            className="about-page-banner-content"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
             <p className="section-label">Om mig</p>
             <h1>Christina Borreby</h1>
-            <p className="about-page-hero-intro">
-              Jeg hjælper ledere med at finde ro i presset og styrke i sårbarhed
+            <p className="about-page-banner-credentials">Cand.negot i Kommunikation & HR · 30+ års erfaring med heste</p>
+            <p className="about-page-banner-desc">
+              Jeg hjælper ledere, teams og medarbejdere med at finde det, der ikke kan læres i et klasselokale: evnen til at stå roligt i sig selv, også når presset stiger.
             </p>
+            <div className="workshop-hero-buttons">
+              <a href="/kontakt" className="cta-button">
+                <span>Book en samtale</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -121,15 +121,15 @@ export default function OmMigPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <h2>Teori og praksis smeltet sammen</h2>
+            <h2>Det der ikke kan fakes</h2>
             <p>
-              Min passion er at hjælpe ledere med at opbygge et stærkt indre fundament, så de kan stå roligt, tydeligt og autentisk i deres lederskab.
+              Min baggrund i kommunikation og HR gav mig forretningsforståelsen. Certificeringen som psykoterapeut gav mig indsigten i, hvad der driver mennesker under overfladen. Men det er 30 års daglig træning med heste, der har givet mig det, ingen uddannelse kan lære dig.
             </p>
             <p>
-              Med en baggrund i kommunikation og HR, mange års erfaring som psykoterapeut og daglig træning af galopheste, har jeg skabt et koncept hvor teori og praksis smelter sammen.
+              En hest følger dig kun, hvis din indre og ydre tilstand stemmer overens. Den registrerer øjeblikkeligt, om du er til stede - eller bare lader som om. Den skelner ikke mellem titler og hierarkier, men reagerer udelukkende på din evne til at være kongruent, tydelig og rolig. Også der, hvor frygten melder sig.
             </p>
             <p>
-              Denne kombination giver mig en unik evne til at forbinde forretningsforståelse, psykologisk indsigt og konkret erfaring med samarbejde under pres.
+              Den kompetence - at kunne holde fast i sig selv under pres - er præcis det, der adskiller mennesker, der trives i forandring, fra dem der går i stå. Uanset om du er leder, medarbejder eller del af et team.
             </p>
           </motion.div>
 
@@ -172,7 +172,7 @@ export default function OmMigPage() {
       {/* Story Section - Full width with background */}
       <section className="about-page-story-full">
         <div className="about-page-story-bg">
-          <img src="/recalibrate_stress_fri.jpeg" alt="Hest i naturen" />
+          <img src="/christina-gallop.jpg" alt="Christina Borreby rider på hest i galop" />
         </div>
         <div className="about-page-story-overlay-full" />
         <div className="about-page-story-content-full">
@@ -183,15 +183,15 @@ export default function OmMigPage() {
             transition={{ duration: 0.7 }}
           >
             <p className="section-label">Min historie</p>
-            <h2>Hestene som læremestre</h2>
+            <h2>500 kilo ærlig feedback</h2>
             <p>
-              Fra barnsben har heste været mine læremestre i lederskab - uden jeg vidste det.
+              Heste lever i flok med ét konstant spørgsmål: hvem leder vi? De søger ikke den stærkeste, men den mest kongruente. Den der er rolig indeni og tydelig udadtil.
             </p>
             <p>
-              Når jeg mistede fokus eller var uklar i min intention, tog hesten over. Når du sidder på 500 kilo muskler i 60 km/t, finder du hurtigt ud af, om dit lederskab virker. Det har jeg mærket på egen krop.
+              Når jeg sidder på en galophest i 60 km/t og mister fokus, tager hesten over. Ikke af ondskab - men fordi den ikke kan følge en leder, der ikke er til stede. Det har tvunget mig til dagligt at træne det, de fleste kun taler om: at holde fast i sig selv, også når frygten sætter ind.
             </p>
             <p className="story-highlight">
-              Hestene lærer mig dagligt, at følgeskab ikke handler om kontrol - men om nærvær, tydelighed og sunde grænser.
+              Den træning overfører jeg direkte til mennesker i organisationer. For dynamikken er den samme: følgeskab opstår ikke gennem kontrol, men gennem nærvær, tydelighed og tillid.
             </p>
           </motion.div>
         </div>
@@ -207,7 +207,7 @@ export default function OmMigPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <p className="section-label">Filosofi</p>
+            <p className="section-label">Hvad jeg bringer med</p>
             <h2>Min tilgang</h2>
           </motion.div>
           <div className="about-approach-grid">
@@ -240,7 +240,7 @@ export default function OmMigPage() {
           >
             <h2>Skal vi tage en snak?</h2>
             <p>
-              Jeg tilbyder en uforpligtende samtale, hvor vi kan afdække, om hesteassisteret udvikling er det rette for dig eller dit team.
+              Uanset om du er leder, medarbejder eller søger udvikling for dit team - jeg tilbyder en uforpligtende samtale, hvor vi finder ud af, om det er det rette for jer.
             </p>
             <a href="/kontakt" className="cta-button">
               <span>Kontakt mig</span>
