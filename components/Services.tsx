@@ -1,4 +1,7 @@
+'use client'
+
 import { ArrowIcon } from './Icons'
+import { motion } from 'motion/react'
 
 const services = [
   {
@@ -21,25 +24,64 @@ const services = [
   }
 ]
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12
+    }
+  }
+}
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.22, 1, 0.36, 1]
+    }
+  }
+}
+
 export default function Services() {
   return (
     <section className="services-section" id="ydelser">
-      <div className="services-header">
+      <motion.div
+        className="services-header"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      >
         <p className="section-label">Ydelser</p>
         <h2 className="section-title">Hesteassisteret udvikling for ledere og teams</h2>
-      </div>
-      <div className="bento-grid">
+      </motion.div>
+      <motion.div
+        className="bento-grid"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+      >
         {services.map((service, index) => (
-          <a key={index} href={service.href} className="bento-card">
+          <motion.a
+            key={index}
+            href={service.href}
+            className="bento-card"
+            variants={cardVariants}
+          >
             <span className="bento-tag">{service.tag}</span>
             <h3 className="bento-title">{service.title}</h3>
             <p className="bento-text">{service.text}</p>
             <div className="bento-arrow">
               <ArrowIcon />
             </div>
-          </a>
+          </motion.a>
         ))}
-      </div>
+      </motion.div>
     </section>
   )
 }

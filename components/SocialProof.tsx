@@ -1,8 +1,18 @@
+'use client'
+
+import { motion } from 'motion/react'
+
 export default function SocialProof() {
   return (
     <section className="social-proof">
       <div className="social-proof-content">
-        <div className="forbes-quote">
+        <motion.div
+          className="forbes-quote"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        >
           <span className="forbes-logo">FORBES</span>
           <div className="forbes-content">
             <p className="forbes-text">
@@ -10,8 +20,14 @@ export default function SocialProof() {
             </p>
             <a href="https://www.forbes.com/sites/nelldebevoise/2025/09/23/what-horses-teach-us-about-leadership-that-no-offsite-ever-could/" target="_blank" rel="noopener noreferrer" className="proof-link">Læs artiklen →</a>
           </div>
-        </div>
-        <div className="proof-stats">
+        </motion.div>
+        <motion.div
+          className="proof-stats"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+        >
           <div className="proof-number">106</div>
           <div className="proof-content">
             <p className="proof-text">
@@ -20,7 +36,7 @@ export default function SocialProof() {
             </p>
             <a href="/forskning" className="proof-link">Se forskningsartikler →</a>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )

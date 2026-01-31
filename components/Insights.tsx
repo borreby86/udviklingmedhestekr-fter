@@ -1,4 +1,7 @@
+'use client'
+
 import { EyeIcon, HeartIcon, SunIcon, ClockIcon } from './Icons'
+import { motion } from 'motion/react'
 
 const insights = [
   {
@@ -23,15 +26,49 @@ const insights = [
   }
 ]
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08
+    }
+  }
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 15 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.4,
+      ease: [0.22, 1, 0.36, 1]
+    }
+  }
+}
+
 export default function Insights() {
   return (
     <section className="insights-section" id="indsigter">
       <div className="insights-container">
-        <h2 className="insights-title">
+        <motion.h2
+          className="insights-title"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        >
           Hvad afslører <em>hesten</em> om dit lederskab?
-        </h2>
+        </motion.h2>
         <div className="insights-content-grid">
-          <div className="insights-text">
+          <motion.div
+            className="insights-text"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          >
             <p className="insights-intro">
               Hestene mærker den del af os, vi ikke altid selv er bevidste om.<br />
               De reagerer ikke på det, vi siger, men på det, vi udstråler. Derfor bliver mødet med en hest
@@ -45,10 +82,16 @@ export default function Insights() {
               Det handler altså <strong>ikke</strong> om at være hesteinteresseret.
               Det handler om hvad samspillet med hesten sætter i gang hos dig.
             </p>
-          </div>
-          <div className="insights-grid">
+          </motion.div>
+          <motion.div
+            className="insights-grid"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+          >
             {insights.map((insight, index) => (
-              <div key={index} className="insight-item">
+              <motion.div key={index} className="insight-item" variants={itemVariants}>
                 <div className="insight-icon">
                   <insight.icon />
                 </div>
@@ -56,9 +99,9 @@ export default function Insights() {
                   <h3>{insight.title}</h3>
                   <p>{insight.text}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

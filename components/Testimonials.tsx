@@ -1,5 +1,8 @@
+'use client'
+
 import Image from 'next/image'
 import { ArrowIcon } from './Icons'
+import { motion } from 'motion/react'
 
 const testimonials = [
   {
@@ -22,16 +25,50 @@ const testimonials = [
   }
 ]
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+}
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 25 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.22, 1, 0.36, 1]
+    }
+  }
+}
+
 export default function Testimonials() {
   return (
     <section className="testimonials-section" id="resultater">
-      <div className="testimonials-header">
+      <motion.div
+        className="testimonials-header"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      >
         <p className="section-label">Det siger andre</p>
         <h2 className="section-title">Hvad har tidligere deltagere oplevet</h2>
-      </div>
-      <div className="testimonials-grid">
+      </motion.div>
+      <motion.div
+        className="testimonials-grid"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+      >
         {testimonials.map((testimonial, index) => (
-          <div key={index} className="testimonial-card">
+          <motion.div key={index} className="testimonial-card" variants={cardVariants}>
             <p className="testimonial-quote">{testimonial.quote}</p>
             <div className="testimonial-author">
               <div className="author-avatar">
@@ -48,15 +85,21 @@ export default function Testimonials() {
                 <p>{testimonial.role}</p>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
-      <div className="testimonials-cta">
+      </motion.div>
+      <motion.div
+        className="testimonials-cta"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+      >
         <a href="/referencer" className="cta-button cta-button-outline">
           <span>Læs flere udtalelser</span>
           <ArrowIcon />
         </a>
-      </div>
+      </motion.div>
     </section>
   )
 }
