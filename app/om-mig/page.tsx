@@ -24,6 +24,10 @@ const credentials = [
   {
     title: '30+ års erfaring med heste',
     detail: 'Daglig træning af galopheste'
+  },
+  {
+    title: 'Træner galopheste på konkurrenceplan',
+    detail: 'Daglig træning i beslutningstagning under pres og fart'
   }
 ]
 
@@ -43,8 +47,8 @@ const approach = [
 ]
 
 const testimonial = {
-  quote: 'Christina formår at skabe et rum, hvor man tør være sårbar og ærlig. Det har forandret min måde at lede på.',
-  author: 'Leder, større dansk virksomhed'
+  quote: 'Jeg opdagede mit mod, og med Christinas guidance, uddybende spørgsmål og tilstedeværelse blev det meget tydeligt for mig, hvor subtilt min krop og følelser reagerer. Ofte uden jeg er klar over det.',
+  author: 'Anne-Marie'
 }
 
 export default function OmMigPage() {
@@ -83,34 +87,6 @@ export default function OmMigPage() {
         </div>
       </section>
 
-      {/* Trust Bar - Logos */}
-      <section className="about-trust-bar">
-        <div className="about-trust-container">
-          <motion.p
-            className="about-trust-label"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            Har arbejdet med
-          </motion.p>
-          <motion.div
-            className="about-trust-logos"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            {collaborators.map((collab, index) => (
-              <div key={index} className="about-trust-logo">
-                <img src={collab.logo} alt={collab.name} />
-              </div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
       {/* Bio + Credentials Section */}
       <section className="about-bio-credentials">
         <div className="about-bio-credentials-container">
@@ -127,6 +103,9 @@ export default function OmMigPage() {
             </p>
             <p>
               En hest følger dig kun, hvis din indre og ydre tilstand stemmer overens. Den registrerer øjeblikkeligt, om du er til stede - eller bare lader som om. Den skelner ikke mellem titler og hierarkier, men reagerer udelukkende på din evne til at være kongruent, tydelig og rolig. Også der, hvor frygten melder sig.
+            </p>
+            <p>
+              Gennem årene har jeg undervist i mindfulness, trivsel og motivation gennem fysisk aktivitet i en lang række virksomheder. Det arbejde gav mig dyb indsigt i, hvad der rykker mennesker - og hvad der ikke gør. I dag fokuserer jeg udelukkende på min passion: det dybere udviklingsarbejde, hvor hestene er med som spejl og katalysator.
             </p>
             <p>
               Den kompetence - at kunne holde fast i sig selv under pres - er præcis det, der adskiller mennesker, der trives i forandring, fra dem der går i stå. Uanset om du er leder, medarbejder eller del af et team.
@@ -151,21 +130,31 @@ export default function OmMigPage() {
         </div>
       </section>
 
-      {/* Testimonial Section */}
-      <section className="about-testimonial">
-        <div className="about-testimonial-container">
-          <motion.blockquote
-            initial={{ opacity: 0, y: 30 }}
+      {/* Trust Bar - Logos */}
+      <section className="about-trust-bar">
+        <div className="about-trust-container">
+          <motion.p
+            className="about-trust-label"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            Tidligere samarbejder
+          </motion.p>
+          <motion.div
+            className="about-trust-logos"
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <svg className="about-testimonial-quote-icon" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-            </svg>
-            <p>{testimonial.quote}</p>
-            <cite>- {testimonial.author}</cite>
-          </motion.blockquote>
+            {collaborators.map((collab, index) => (
+              <div key={index} className="about-trust-logo">
+                <img src={collab.logo} alt={collab.name} />
+              </div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
@@ -225,6 +214,24 @@ export default function OmMigPage() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Testimonial Section */}
+      <section className="about-testimonial">
+        <div className="about-testimonial-container">
+          <motion.blockquote
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <svg className="about-testimonial-quote-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+            </svg>
+            <p>{testimonial.quote}</p>
+            <cite>- {testimonial.author}</cite>
+          </motion.blockquote>
         </div>
       </section>
 

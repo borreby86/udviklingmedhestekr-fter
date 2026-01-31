@@ -4006,7 +4006,7 @@ nav.scrolled .mobile-menu-btn {
 .about-page-banner-credentials {
   font-size: 0.9rem;
   font-weight: 500;
-  color: var(--color-copper);
+  color: var(--color-gold);
   margin-bottom: 1.5rem;
   letter-spacing: 0.02em;
   line-height: 1.6;
@@ -4163,7 +4163,7 @@ nav.scrolled .mobile-menu-btn {
 
 /* Trust Bar - Logos */
 .about-trust-bar {
-  padding: 3rem 2rem;
+  padding: 3.5rem 2rem;
   background: var(--color-cream);
   border-bottom: 1px solid var(--color-border);
 }
@@ -4273,6 +4273,7 @@ nav.scrolled .mobile-menu-btn {
   background: var(--color-cream);
   padding: 2rem;
   border-radius: 8px;
+  border-top: 3px solid var(--color-copper);
 }
 .about-approach-card h3 {
   font-family: var(--font-display);
