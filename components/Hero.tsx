@@ -1,8 +1,5 @@
-'use client'
-
 import Image from 'next/image'
 import { ArrowIcon } from './Icons'
-import { motion } from 'motion/react'
 
 export default function Hero() {
   return (
@@ -18,40 +15,16 @@ export default function Hero() {
         />
       </div>
       <div className="hero-content">
-        <motion.p
-          className="hero-tagline"
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-        >
-          Leder- og teamudvikling i Nordsjælland
-        </motion.p>
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-        >
-          Udvikling med <em>hestekræfter</em>
-        </motion.h1>
-        <motion.p
-          className="hero-intro"
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        >
+        <p className="hero-tagline">Leder- og teamudvikling i Nordsjælland</p>
+        <h1>Udvikling med <em>hestekræfter</em></h1>
+        <p className="hero-intro">
           Hestene spejler din måde at lede, samarbejde og være til stede på.
           Et unikt rum til instant feedback og øget selvindsigt. Uden ridning, uden hesteerfaring.
-        </motion.p>
-        <motion.a
-          href="/kontakt"
-          className="cta-button"
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
-        >
+        </p>
+        <a href="/kontakt" className="cta-button">
           <span>Kontakt og hør mere</span>
           <ArrowIcon />
-        </motion.a>
+        </a>
       </div>
     </section>
   )

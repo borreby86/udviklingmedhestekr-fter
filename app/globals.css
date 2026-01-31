@@ -34,18 +34,6 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
-/* Smooth animations - GPU acceleration */
-.bento-card,
-.testimonial-card,
-.benefit-item,
-.insight-item,
-.audience-tag,
-.cta-button,
-.forbes-quote,
-.proof-stats {
-  transform: translateZ(0);
-  backface-visibility: hidden;
-}
 
 body {
   font-family: var(--font-body);

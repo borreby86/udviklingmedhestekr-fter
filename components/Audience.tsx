@@ -1,7 +1,3 @@
-'use client'
-
-import { motion } from 'motion/react'
-
 const tags = [
   { label: 'Ledere', highlighted: false },
   { label: 'Ledergrupper', highlighted: false },
@@ -11,68 +7,25 @@ const tags = [
   { label: 'Teambuilding', highlighted: false }
 ]
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.06
-    }
-  }
-}
-
-const tagVariants = {
-  hidden: { opacity: 0, y: 10 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.35,
-      ease: [0.22, 1, 0.36, 1]
-    }
-  }
-}
-
 export default function Audience() {
   return (
     <section className="audience-section audience-solid">
       <div className="audience-content">
-        <motion.p
-          className="audience-label"
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-        >
-          Hvem er det for?
-        </motion.p>
-        <motion.h2
-          className="audience-title"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        >
+        <p className="audience-label">Hvem er det for?</p>
+        <h2 className="audience-title">
           Dig og dit team, der ønsker ledelse<br />
           med nærvær og ægte følgeskab
-        </motion.h2>
-        <motion.div
-          className="audience-tags"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
+        </h2>
+        <div className="audience-tags">
           {tags.map((tag, index) => (
-            <motion.span
+            <span
               key={index}
               className={`audience-tag ${tag.highlighted ? 'highlighted' : ''}`}
-              variants={tagVariants}
             >
               {tag.label}
-            </motion.span>
+            </span>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   )
