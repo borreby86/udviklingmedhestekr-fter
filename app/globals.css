@@ -787,12 +787,14 @@ nav.scrolled .nav-dropdown-text {
 }
 .why-video-content p.why-video-highlight {
   font-family: var(--font-display);
-  font-size: 1.35rem;
+  font-size: 1.15rem;
   font-style: italic;
   font-weight: 400;
   color: var(--color-gold);
-  margin: 1.5rem 0 1rem;
-  line-height: 1.5;
+  margin: 2rem 0 1rem;
+  line-height: 1.7;
+  border-left: 3px solid var(--color-gold);
+  padding-left: 1.5rem;
 }
 
 /* Audience Section */
