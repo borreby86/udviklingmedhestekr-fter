@@ -48,7 +48,7 @@ const approach = [
 
 const testimonial = {
   quote: 'Jeg opdagede mit mod, og med Christinas guidance, uddybende spørgsmål og tilstedeværelse blev det meget tydeligt for mig, hvor subtilt min krop og følelser reagerer. Ofte uden jeg er klar over det.',
-  author: 'Anne-Marie'
+  author: 'Anne Marie Valentin, Indehaver, Icebreaker Academy'
 }
 
 export default function OmMigPage() {
