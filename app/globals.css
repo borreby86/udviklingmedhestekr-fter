@@ -2161,6 +2161,9 @@ nav.scrolled .mobile-menu-btn {
   color: var(--color-copper);
   margin: 0.5rem 0 1.5rem;
 }
+.hero-desc-desktop-hide {
+  display: none;
+}
 .workshop-hero-desc {
   font-size: 1.1rem;
   line-height: 1.85;
@@ -4730,6 +4733,9 @@ nav.scrolled .mobile-menu-btn {
   }
   .hero-desc-mobile-hide {
     display: none;
+  }
+  .hero-desc-desktop-hide {
+    display: inline;
   }
   .workshop-hero-question {
     display: none;

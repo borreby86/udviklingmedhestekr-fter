@@ -252,7 +252,7 @@ export default function LederworkshopPage() {
             <h1>Autentisk lederskab<br /><em>uden filter</em></h1>
             <p className="workshop-hero-tagline">Følgeskab starter med relation, ikke retning</p>
             <p className="workshop-hero-desc">
-              Få klarhed over dine adfærdsmønstre, ressourcer og blind spots - og styrk dit autentiske lederskab. Med hesten som værktøj får du øjeblikkelig, ærlig feedback på din ledelsesstil, uden filter, så du kan omsætte indsigt direkte til hverdagspraksis.
+              <span className="hero-desc-mobile-hide">Få klarhed over dine adfærdsmønstre, ressourcer og blind spots - og styrk dit autentiske lederskab. Med hesten som værktøj får du øjeblikkelig, ærlig feedback på din ledelsesstil, uden filter, så du kan omsætte indsigt direkte til hverdagspraksis.</span><span className="hero-desc-desktop-hide">Få klarhed over dine adfærdsmønstre, ressourcer og blind spots - og styrk dit autentiske lederskab med hesten som værktøj.</span>
             </p>
             <div className="workshop-hero-buttons">
               <a href="/kontakt" className="cta-button cta-button-swap">
