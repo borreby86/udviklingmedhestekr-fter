@@ -5,6 +5,7 @@ import { LenisProvider } from '@/providers/LenisProvider'
 import { CookieConsentProvider } from '@/providers/CookieConsentProvider'
 import { CustomCursor } from '@/components/CustomCursor'
 import { CookieBanner } from '@/components/CookieBanner'
+import WorkshopBanner from '@/components/WorkshopBanner'
 import { GoogleAnalytics } from '@/components/GoogleAnalytics'
 import './globals.css'
 
@@ -74,6 +75,7 @@ export default function RootLayout({
           <LenisProvider>
             {children}
           </LenisProvider>
+          <WorkshopBanner />
           <CookieBanner />
           <GoogleAnalytics />
           <Analytics />
