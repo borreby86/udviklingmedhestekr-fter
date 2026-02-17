@@ -95,6 +95,18 @@ export default function Navigation() {
         {/* Mobile divider middle */}
         <li className="mobile-menu-divider"></li>
 
+        <li className={`nav-dropdown ${openDropdown === 'workshops' ? 'is-open' : ''}`}>
+          <div className="nav-dropdown-header" onClick={(e) => toggleDropdown('workshops', e)}>
+            <span className="nav-dropdown-text">Aktuelle workshops</span>
+            <svg className="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </div>
+          <ul className="nav-dropdown-menu">
+            <li><a href="https://autentiskindflydelse.dk" target="_blank" rel="noopener noreferrer">Autentisk Indflydelse</a></li>
+          </ul>
+        </li>
+
         <li className={`nav-dropdown ${openDropdown === 'siger' ? 'is-open' : ''}`}>
           <div className="nav-dropdown-header" onClick={(e) => toggleDropdown('siger', e)}>
             <span className="nav-dropdown-text">Det siger andre</span>
