@@ -16,7 +16,7 @@ const scrollNavLinks = [
 ]
 
 const workshopDates = [
-  { day: '11', month: 'Marts', year: '2026', time: 'kl. 9-12' }
+  { day: '1', month: 'April', year: '2026', time: 'kl. 9-12' }
 ]
 
 const forloebSteps = [

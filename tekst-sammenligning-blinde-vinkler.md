@@ -308,7 +308,7 @@
 >
 > **Datoer:** (opdateret efter brugerønske)
 > - 30. januar 2026 kl. 13-16
-> - 11. marts 2026 kl. 9-12
+> - 1. april 2026 kl. 9-12
 >
 > **Pris:**
 > - Intropris: kr. 4.750 ex. moms ✅
