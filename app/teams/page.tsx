@@ -172,7 +172,7 @@ export default function TeamsPage() {
       {/* Hero Section */}
       <section className="workshop-hero-full teams-hero" ref={heroRef}>
         <motion.div className="workshop-hero-bg" style={{ y: heroY }}>
-          <img src="/team.jpg" alt="Teamudvikling med heste" />
+          <img src="/team.jpg" alt="Teamudvikling med heste" loading="eager" fetchPriority="high" decoding="async" />
         </motion.div>
         <div className="workshop-hero-overlay" />
         <div className="workshop-hero-content-full">
