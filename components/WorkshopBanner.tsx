@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation'
 export default function WorkshopBanner() {
   const pathname = usePathname()
   const isFrontpage = pathname === '/'
+  const isBlindeVinkler = pathname === '/lederworkshop-i-blinde-vinkler'
   const [showBadge, setShowBadge] = useState(false)
   const [dismissed, setDismissed] = useState(false)
 
@@ -65,7 +66,8 @@ export default function WorkshopBanner() {
   }
 
   // Subpages: floating badge (light)
-  if (dismissed) return null
+  // Don't show on Blinde Vinkler page (it's a competing workshop)
+  if (isBlindeVinkler || dismissed) return null
 
   return (
     <div className={`workshop-badge ${showBadge ? 'workshop-badge--visible' : ''}`}>
