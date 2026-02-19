@@ -396,22 +396,21 @@ nav.scrolled .nav-dropdown-text {
   align-items: center;
   gap: 0.85rem;
   padding: 1.15rem 2.4rem;
-  background: rgba(244, 245, 247, 0.15);
-  color: var(--color-cream);
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
   text-decoration: none;
   font-size: 0.8rem;
   font-weight: 400;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  border: 1px solid rgba(244, 245, 247, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.7);
   cursor: pointer;
   transition: all 0.4s ease;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(6px);
 }
 .cta-button-secondary:hover {
-  background: rgba(244, 245, 247, 0.25);
-  border-color: var(--color-cream);
-  color: var(--color-cream);
+  background: rgba(255, 255, 255, 0.22);
+  border-color: #fff;
 }
 
 /* Social Proof */
@@ -3762,18 +3761,15 @@ nav.scrolled .mobile-menu-btn {
 /* Modal */
 .modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: rgba(52, 64, 79, 0.85);
   backdrop-filter: blur(8px);
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
   z-index: 1000;
-  padding: 2rem;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
 }
 .modal-content {
   background: var(--color-cream);
@@ -3782,6 +3778,7 @@ nav.scrolled .mobile-menu-btn {
   width: 100%;
   position: relative;
   margin: auto 0;
+  flex-shrink: 0;
 }
 .modal-close {
   position: absolute;
@@ -4940,14 +4937,11 @@ nav.scrolled .mobile-menu-btn {
   /* Modal mobile */
   .modal-overlay {
     padding: 0.75rem;
-    align-items: flex-start;
     padding-top: 2rem;
   }
   .modal-content {
     padding: 2rem 1.25rem;
     max-width: calc(100vw - 1.5rem);
-    max-height: calc(100dvh - 4rem);
-    overflow-y: auto;
   }
   .modal-content h2 { font-size: 1.5rem; }
   .modal-form-row { grid-template-columns: 1fr; }
