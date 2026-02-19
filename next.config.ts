@@ -9,6 +9,16 @@ const nextConfig: NextConfig = {
         destination: '/',
         permanent: true,
       },
+      {
+        source: '/psykoterapi-i-nordsjaelland',
+        destination: '/recalibrate',
+        permanent: true,
+      },
+      {
+        source: '/samtaleterapi',
+        destination: '/recalibrate',
+        permanent: true,
+      },
     ]
   },
 }
