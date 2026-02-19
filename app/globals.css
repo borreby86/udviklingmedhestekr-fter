@@ -391,6 +391,27 @@ nav.scrolled .nav-dropdown-text {
 }
 .cta-button:hover svg { transform: translateX(4px); }
 
+.cta-button-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1.15rem 2.4rem;
+  background: transparent;
+  color: var(--color-cream);
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: 1px solid rgba(244, 245, 247, 0.3);
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.cta-button-secondary:hover {
+  border-color: var(--color-copper);
+  color: var(--color-copper);
+}
+
 /* Social Proof */
 .social-proof { background: var(--color-earth); padding: 3.5rem 5rem; }
 .social-proof-content {

@@ -1,7 +1,7 @@
 'use client'
 
-import { useRef } from 'react'
-import { motion, useScroll, useTransform } from 'motion/react'
+import { useRef, useState } from 'react'
+import { motion, useScroll, useTransform, AnimatePresence } from 'motion/react'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 
@@ -60,8 +60,52 @@ const testimonials = [
   }
 ]
 
+const faqItems = [
+  {
+    question: "Hvem er teamworkshops relevante for?",
+    answer: "Teams og ledergrupper der vil arbejde konkret med samarbejde, kommunikation og roller. Vi har arbejdet med alt fra lederteams på 4-6 personer til afdelinger på op til 15. Der kræves ingen hesteerfaring."
+  },
+  {
+    question: "Kræver det hesteerfaring?",
+    answer: "Nej. Du skal ikke ride, og alt foregår fra jorden. De fleste deltagere har aldrig rørt en hest, og det er en fordel. Så møder du øvelserne åbent og uden vanemønstre."
+  },
+  {
+    question: "Hvad hvis nogen i teamet er nervøse for heste?",
+    answer: "Det er helt normalt og mere almindeligt end man tror. Hestene er rolige og vant til at arbejde med mennesker, og vi tilpasser øvelserne. Nervøsiteten kan faktisk blive en del af læringen: hvordan håndterer du usikkerhed, og hvordan påvirker det din tilstedeværelse?"
+  },
+  {
+    question: "Er det sikkert?",
+    answer: "Ja. Alle øvelser foregår fra jorden, der gives grundig instruktion inden opstart, og hestene er udvalgt og vant til arbejdet. Der er altid en iboende risiko ved levende dyr, og det informerer vi deltagerne om på forhånd."
+  },
+  {
+    question: "Hvor lang tid varer det, og hvor mange kan deltage?",
+    answer: "En teamworkshop varer typisk 3-4 timer. Vi tager op til 15 deltagere. Forløbet tilpasses jeres behov og mål."
+  },
+  {
+    question: "Hvordan dokumenterer vi værdien over for HR?",
+    answer: "Hesteassisteret læring er en evidensbaseret metode. Peer-reviewed forskning viser forbedringer i emotionel intelligens, selvindsigt og evnen til at skabe tillid. Alle deltagere får refleksionsmateriale med hjem til at formulere konkrete fokusområder. Jeg sender gerne forskningsreferencer inden beslutningen."
+  },
+  {
+    question: "Hvad koster det?",
+    answer: "Kontakt mig for pris. Hvert forløb er skræddersyet, så prisen afhænger af deltagerantal, varighed og tilpasning til jeres behov."
+  },
+  {
+    question: "Hvad skal vi have på?",
+    answer: "Lukkede og flade sko er et krav, da vi går rundt på en sandbane med hestene. Derudover tøj der passer til vejret - vi er udendørs det meste af tiden."
+  },
+  {
+    question: "Hvordan booker vi?",
+    answer: "Skriv til info@christinaborreby.dk eller ring. Vi tager en kort snak om jeres mål og deltagere, og så sammensætter jeg et forløb der matcher."
+  }
+]
+
 export default function TeamsPage() {
   const heroRef = useRef(null)
+  const [modalOpen, setModalOpen] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [formLoadTime, setFormLoadTime] = useState<number | null>(null)
+  const [openFaq, setOpenFaq] = useState<number | null>(null)
 
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -69,6 +113,57 @@ export default function TeamsPage() {
   })
 
   const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"])
+
+  const openModal = () => {
+    setModalOpen(true)
+    setFormLoadTime(Date.now())
+    document.body.style.overflow = 'hidden'
+  }
+
+  const closeModal = () => {
+    setModalOpen(false)
+    setSubmitStatus('idle')
+    document.body.style.overflow = ''
+  }
+
+  const handleModalSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const form = e.currentTarget
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+
+    const formData = new FormData(form)
+    const data = {
+      name: formData.get('navn'),
+      email: formData.get('email'),
+      phone: formData.get('telefon'),
+      company: formData.get('virksomhed'),
+      teamSize: formData.get('antal'),
+      message: formData.get('besked'),
+      formType: 'teamworkshop-forespørgsel',
+      _honeypot: formData.get('website'),
+      _loadTime: formLoadTime,
+    }
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
+
+      if (response.ok) {
+        setSubmitStatus('success')
+        form.reset()
+      } else {
+        setSubmitStatus('error')
+      }
+    } catch {
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   return (
     <>
@@ -94,11 +189,14 @@ export default function TeamsPage() {
               Når teamet møder hesten, bliver dynamikkerne synlige. Hvem tager ledelsen? Hvordan kommunikerer I under pres? Hesteassisteret teamudvikling styrker fællesskabet og giver jer nye indsigter, der er svære at opnå gennem traditionel teambuilding.
             </p>
             <div className="workshop-hero-buttons">
-              <a href="#pris" className="cta-button">
-                <span>Se priser og praktik</span>
+              <button onClick={openModal} className="cta-button">
+                <span>Forespørg teamworkshop</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
+              </button>
+              <a href="#pris" className="cta-button-secondary">
+                <span>Se priser og praktik</span>
               </a>
             </div>
           </motion.div>
@@ -335,6 +433,64 @@ export default function TeamsPage() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="workshop-faq">
+        <div className="workshop-container-wide">
+          <motion.div
+            className="workshop-faq-header"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <p className="section-label">Ofte stillede spørgsmål</p>
+            <h2>FAQ</h2>
+          </motion.div>
+
+          <div className="workshop-faq-list">
+            {faqItems.map((item, index) => (
+              <motion.div
+                key={index}
+                className={`workshop-faq-item ${openFaq === index ? 'open' : ''}`}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+              >
+                <button
+                  className="workshop-faq-question"
+                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                >
+                  <span>{item.question}</span>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    className={openFaq === index ? 'rotated' : ''}
+                  >
+                    <path d="M6 9l6 6 6-6"/>
+                  </svg>
+                </button>
+                <AnimatePresence>
+                  {openFaq === index && (
+                    <motion.div
+                      className="workshop-faq-answer"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <p>{item.answer}</p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Booking Section */}
       <section className="workshop-dates-section teams-booking" id="pris">
         <div className="workshop-dates-bg">
@@ -362,19 +518,19 @@ export default function TeamsPage() {
               transition={{ duration: 0.5 }}
             >
               <h3>Teamworkshop</h3>
-              <div className="booking-option-price">Fra 12.000 kr.</div>
-              <p className="booking-option-unit">skræddersyet til jeres team</p>
+              <div className="booking-option-price">Individuel pris</div>
+              <p className="booking-option-unit">skræddersyet til jeres team og behov</p>
               <ul className="booking-option-details">
                 <li>2-6 timer</li>
                 <li>4-15 deltagere</li>
                 <li>Inkl. forplejning</li>
               </ul>
-              <a href="/kontakt" className="booking-option-cta">
-                <span>Book en samtale</span>
+              <button onClick={openModal} className="booking-option-cta">
+                <span>Forespørg teamworkshop</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
-              </a>
+              </button>
             </motion.div>
           </div>
 
@@ -391,6 +547,88 @@ export default function TeamsPage() {
       </section>
 
       <Footer />
+
+      {/* Inquiry Modal */}
+      <AnimatePresence>
+        {modalOpen && (
+          <motion.div
+            className="modal-overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={closeModal}
+          >
+            <motion.div
+              className="modal-content"
+              initial={{ opacity: 0, y: 40, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 40, scale: 0.95 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button className="modal-close" onClick={closeModal}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M18 6L6 18M6 6l12 12"/>
+                </svg>
+              </button>
+
+              <div className="modal-header">
+                <p className="section-label">Forespørgsel</p>
+                <h3>Book en teamworkshop</h3>
+                <p className="modal-info">Udfyld formularen, så vender jeg tilbage inden for 24 timer</p>
+              </div>
+
+              <form className="modal-form" onSubmit={handleModalSubmit}>
+                {/* Honeypot field - hidden from humans, filled by bots */}
+                <div style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, overflow: 'hidden' }} aria-hidden="true">
+                  <label htmlFor="website-team">Website</label>
+                  <input type="text" id="website-team" name="website" tabIndex={-1} autoComplete="off" />
+                </div>
+                <div className="modal-form-group">
+                  <label htmlFor="modal-navn">Navn *</label>
+                  <input type="text" id="modal-navn" name="navn" required placeholder="Dit fulde navn" />
+                </div>
+                <div className="modal-form-group">
+                  <label htmlFor="modal-email">E-mail *</label>
+                  <input type="email" id="modal-email" name="email" required placeholder="din@email.dk" />
+                </div>
+                <div className="modal-form-group">
+                  <label htmlFor="modal-telefon">Telefon</label>
+                  <input type="tel" id="modal-telefon" name="telefon" placeholder="Dit telefonnummer" />
+                </div>
+                <div className="modal-form-group">
+                  <label htmlFor="modal-virksomhed">Virksomhed *</label>
+                  <input type="text" id="modal-virksomhed" name="virksomhed" required placeholder="Jeres virksomhed" />
+                </div>
+                <div className="modal-form-group">
+                  <label htmlFor="modal-antal">Antal deltagere (ca.)</label>
+                  <input type="text" id="modal-antal" name="antal" placeholder="F.eks. 8-10 personer" />
+                </div>
+                <div className="modal-form-group">
+                  <label htmlFor="modal-besked">Fortæl kort om jeres behov</label>
+                  <textarea id="modal-besked" name="besked" rows={3} placeholder="Hvad er anledningen? Har I specifikke ønsker?" />
+                </div>
+                <button type="submit" className="modal-submit" disabled={isSubmitting}>
+                  <span>{isSubmitting ? 'Sender...' : 'Send forespørgsel'}</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </button>
+                {submitStatus === 'success' && (
+                  <p className="form-success">Tak for din forespørgsel! Jeg vender tilbage hurtigst muligt.</p>
+                )}
+                {submitStatus === 'error' && (
+                  <p className="form-error">Der opstod en fejl. Prøv igen eller skriv til info@christinaborreby.dk</p>
+                )}
+              </form>
+
+              <p className="modal-disclaimer">
+                Forespørgslen er uforpligtende. Jeg kontakter dig for en indledende samtale.
+              </p>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   )
 }
