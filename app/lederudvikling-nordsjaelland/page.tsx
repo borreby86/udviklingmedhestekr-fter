@@ -755,43 +755,45 @@ export default function LederworkshopPage() {
                 </svg>
               </button>
 
-              <div className="modal-header">
-                <p className="section-label">Venteliste</p>
-                <h3>Få besked om nye datoer</h3>
-                <p className="modal-info">Skriv dig op og få første adgang til nye workshopdatoer</p>
+              <div className="modal-body">
+                <div className="modal-header">
+                  <p className="section-label">Venteliste</p>
+                  <h3>Få besked om nye datoer</h3>
+                  <p className="modal-info">Skriv dig op og få første adgang til nye workshopdatoer</p>
+                </div>
+
+                <form className="modal-form" onSubmit={handleModalSubmit}>
+                  {/* Honeypot field - hidden from humans, filled by bots */}
+                  <div style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, overflow: 'hidden' }} aria-hidden="true">
+                    <label htmlFor="website-leder">Website</label>
+                    <input type="text" id="website-leder" name="website" tabIndex={-1} autoComplete="off" />
+                  </div>
+                  <div className="modal-form-group">
+                    <label htmlFor="modal-navn">Navn *</label>
+                    <input type="text" id="modal-navn" name="navn" required placeholder="Dit fulde navn" />
+                  </div>
+                  <div className="modal-form-group">
+                    <label htmlFor="modal-email">E-mail *</label>
+                    <input type="email" id="modal-email" name="email" required placeholder="din@email.dk" />
+                  </div>
+                  <button type="submit" className="modal-submit" disabled={isSubmitting}>
+                    <span>{isSubmitting ? 'Sender...' : 'Skriv mig op'}</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </button>
+                  {submitStatus === 'success' && (
+                    <p className="form-success">Tak! Du hører fra os, når nye datoer åbner.</p>
+                  )}
+                  {submitStatus === 'error' && (
+                    <p className="form-error">Der opstod en fejl. Prøv igen eller skriv til info@christinaborreby.dk</p>
+                  )}
+                </form>
+
+                <p className="modal-disclaimer">
+                  Bare rolig, du modtager kun besked om nye workshopdatoer.
+                </p>
               </div>
-
-              <form className="modal-form" onSubmit={handleModalSubmit}>
-                {/* Honeypot field - hidden from humans, filled by bots */}
-                <div style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, overflow: 'hidden' }} aria-hidden="true">
-                  <label htmlFor="website-leder">Website</label>
-                  <input type="text" id="website-leder" name="website" tabIndex={-1} autoComplete="off" />
-                </div>
-                <div className="modal-form-group">
-                  <label htmlFor="modal-navn">Navn *</label>
-                  <input type="text" id="modal-navn" name="navn" required placeholder="Dit fulde navn" />
-                </div>
-                <div className="modal-form-group">
-                  <label htmlFor="modal-email">E-mail *</label>
-                  <input type="email" id="modal-email" name="email" required placeholder="din@email.dk" />
-                </div>
-                <button type="submit" className="modal-submit" disabled={isSubmitting}>
-                  <span>{isSubmitting ? 'Sender...' : 'Skriv mig op'}</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
-                </button>
-                {submitStatus === 'success' && (
-                  <p className="form-success">Tak! Du hører fra os, når nye datoer åbner.</p>
-                )}
-                {submitStatus === 'error' && (
-                  <p className="form-error">Der opstod en fejl. Prøv igen eller skriv til info@christinaborreby.dk</p>
-                )}
-              </form>
-
-              <p className="modal-disclaimer">
-                Bare rolig, du modtager kun besked om nye workshopdatoer.
-              </p>
             </motion.div>
           </motion.div>
         )}

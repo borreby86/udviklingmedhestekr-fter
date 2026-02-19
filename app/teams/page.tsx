@@ -572,59 +572,61 @@ export default function TeamsPage() {
                 </svg>
               </button>
 
-              <div className="modal-header">
-                <p className="section-label">Forespørgsel</p>
-                <h3>Book en teamworkshop</h3>
-                <p className="modal-info">Udfyld formularen, så vender jeg tilbage inden for 24 timer</p>
+              <div className="modal-body">
+                <div className="modal-header">
+                  <p className="section-label">Forespørgsel</p>
+                  <h3>Book en teamworkshop</h3>
+                  <p className="modal-info">Udfyld formularen, så vender jeg tilbage inden for 24 timer</p>
+                </div>
+
+                <form className="modal-form" onSubmit={handleModalSubmit}>
+                  {/* Honeypot field - hidden from humans, filled by bots */}
+                  <div style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, overflow: 'hidden' }} aria-hidden="true">
+                    <label htmlFor="website-team">Website</label>
+                    <input type="text" id="website-team" name="website" tabIndex={-1} autoComplete="off" />
+                  </div>
+                  <div className="modal-form-group">
+                    <label htmlFor="modal-navn">Navn *</label>
+                    <input type="text" id="modal-navn" name="navn" required placeholder="Dit fulde navn" />
+                  </div>
+                  <div className="modal-form-group">
+                    <label htmlFor="modal-email">E-mail *</label>
+                    <input type="email" id="modal-email" name="email" required placeholder="din@email.dk" />
+                  </div>
+                  <div className="modal-form-group">
+                    <label htmlFor="modal-telefon">Telefon</label>
+                    <input type="tel" id="modal-telefon" name="telefon" placeholder="Dit telefonnummer" />
+                  </div>
+                  <div className="modal-form-group">
+                    <label htmlFor="modal-virksomhed">Virksomhed *</label>
+                    <input type="text" id="modal-virksomhed" name="virksomhed" required placeholder="Jeres virksomhed" />
+                  </div>
+                  <div className="modal-form-group">
+                    <label htmlFor="modal-antal">Antal deltagere (ca.)</label>
+                    <input type="text" id="modal-antal" name="antal" placeholder="F.eks. 8-10 personer" />
+                  </div>
+                  <div className="modal-form-group">
+                    <label htmlFor="modal-besked">Fortæl kort om jeres behov</label>
+                    <textarea id="modal-besked" name="besked" rows={3} placeholder="Hvad er anledningen? Har I specifikke ønsker?" />
+                  </div>
+                  <button type="submit" className="modal-submit" disabled={isSubmitting}>
+                    <span>{isSubmitting ? 'Sender...' : 'Send forespørgsel'}</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </button>
+                  {submitStatus === 'success' && (
+                    <p className="form-success">Tak for din forespørgsel! Jeg vender tilbage hurtigst muligt.</p>
+                  )}
+                  {submitStatus === 'error' && (
+                    <p className="form-error">Der opstod en fejl. Prøv igen eller skriv til info@christinaborreby.dk</p>
+                  )}
+                </form>
+
+                <p className="modal-disclaimer">
+                  Forespørgslen er uforpligtende. Jeg kontakter dig for en indledende samtale.
+                </p>
               </div>
-
-              <form className="modal-form" onSubmit={handleModalSubmit}>
-                {/* Honeypot field - hidden from humans, filled by bots */}
-                <div style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, overflow: 'hidden' }} aria-hidden="true">
-                  <label htmlFor="website-team">Website</label>
-                  <input type="text" id="website-team" name="website" tabIndex={-1} autoComplete="off" />
-                </div>
-                <div className="modal-form-group">
-                  <label htmlFor="modal-navn">Navn *</label>
-                  <input type="text" id="modal-navn" name="navn" required placeholder="Dit fulde navn" />
-                </div>
-                <div className="modal-form-group">
-                  <label htmlFor="modal-email">E-mail *</label>
-                  <input type="email" id="modal-email" name="email" required placeholder="din@email.dk" />
-                </div>
-                <div className="modal-form-group">
-                  <label htmlFor="modal-telefon">Telefon</label>
-                  <input type="tel" id="modal-telefon" name="telefon" placeholder="Dit telefonnummer" />
-                </div>
-                <div className="modal-form-group">
-                  <label htmlFor="modal-virksomhed">Virksomhed *</label>
-                  <input type="text" id="modal-virksomhed" name="virksomhed" required placeholder="Jeres virksomhed" />
-                </div>
-                <div className="modal-form-group">
-                  <label htmlFor="modal-antal">Antal deltagere (ca.)</label>
-                  <input type="text" id="modal-antal" name="antal" placeholder="F.eks. 8-10 personer" />
-                </div>
-                <div className="modal-form-group">
-                  <label htmlFor="modal-besked">Fortæl kort om jeres behov</label>
-                  <textarea id="modal-besked" name="besked" rows={3} placeholder="Hvad er anledningen? Har I specifikke ønsker?" />
-                </div>
-                <button type="submit" className="modal-submit" disabled={isSubmitting}>
-                  <span>{isSubmitting ? 'Sender...' : 'Send forespørgsel'}</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
-                </button>
-                {submitStatus === 'success' && (
-                  <p className="form-success">Tak for din forespørgsel! Jeg vender tilbage hurtigst muligt.</p>
-                )}
-                {submitStatus === 'error' && (
-                  <p className="form-error">Der opstod en fejl. Prøv igen eller skriv til info@christinaborreby.dk</p>
-                )}
-              </form>
-
-              <p className="modal-disclaimer">
-                Forespørgslen er uforpligtende. Jeg kontakter dig for en indledende samtale.
-              </p>
             </motion.div>
           </motion.div>
         )}

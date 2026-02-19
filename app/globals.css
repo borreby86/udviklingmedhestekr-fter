@@ -3774,12 +3774,19 @@ nav.scrolled .mobile-menu-btn {
 }
 .modal-content {
   background: var(--color-cream);
-  padding: 3rem;
   max-width: 560px;
   width: 100%;
   position: relative;
   max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+.modal-body {
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  padding: 3rem;
+  padding-top: 4rem;
 }
 .modal-close {
   position: absolute;
@@ -4942,10 +4949,12 @@ nav.scrolled .mobile-menu-btn {
     padding-top: 2rem;
   }
   .modal-content {
-    padding: 2rem 1.25rem;
     max-width: calc(100vw - 1.5rem);
     max-height: calc(100dvh - 4rem);
-    overflow-y: auto;
+  }
+  .modal-body {
+    padding: 2rem 1.25rem;
+    padding-top: 3.5rem;
   }
   .modal-content h2 { font-size: 1.5rem; }
   .modal-form-row { grid-template-columns: 1fr; }
@@ -7051,7 +7060,7 @@ nav.scrolled .mobile-menu-btn {
     width: 12px;
     height: 12px;
   }
-  .modal-content { padding: 1.5rem 1rem; }
+  .modal-body { padding: 1.5rem 1rem; padding-top: 3rem; }
   .modal-close { top: 0.5rem; right: 0.5rem; }
   .nav-cta { padding: 10px 20px; font-size: 0.7rem; }
   .forbes-logo { font-size: 0.55rem; padding: 0.5rem 0.75rem; }
