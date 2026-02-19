@@ -396,21 +396,20 @@ nav.scrolled .nav-dropdown-text {
   align-items: center;
   gap: 0.85rem;
   padding: 1.15rem 2.4rem;
-  background: rgba(255, 255, 255, 0.12);
-  color: #fff;
+  background: transparent;
+  color: var(--color-copper);
   text-decoration: none;
   font-size: 0.8rem;
   font-weight: 400;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  border: 2px solid rgba(255, 255, 255, 0.7);
+  border: 2px solid var(--color-copper);
   cursor: pointer;
   transition: all 0.4s ease;
-  backdrop-filter: blur(6px);
 }
 .cta-button-secondary:hover {
-  background: rgba(255, 255, 255, 0.22);
-  border-color: #fff;
+  background: var(--color-copper);
+  color: var(--color-cream);
 }
 
 /* Social Proof */
@@ -3767,7 +3766,11 @@ nav.scrolled .mobile-menu-btn {
   z-index: 1000;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+}
+.modal-overlay-inner {
+  min-height: 100%;
   display: flex;
+  align-items: center;
   justify-content: center;
   padding: 2rem;
 }
@@ -3777,8 +3780,6 @@ nav.scrolled .mobile-menu-btn {
   max-width: 560px;
   width: 100%;
   position: relative;
-  margin: auto 0;
-  flex-shrink: 0;
 }
 .modal-close {
   position: absolute;
@@ -4936,12 +4937,15 @@ nav.scrolled .mobile-menu-btn {
 
   /* Modal mobile */
   .modal-overlay {
-    padding: 0.75rem;
+    padding: 0;
+  }
+  .modal-overlay-inner {
+    padding: 1rem;
     padding-top: 2rem;
   }
   .modal-content {
     padding: 2rem 1.25rem;
-    max-width: calc(100vw - 1.5rem);
+    max-width: calc(100vw - 2rem);
   }
   .modal-content h2 { font-size: 1.5rem; }
   .modal-form-row { grid-template-columns: 1fr; }

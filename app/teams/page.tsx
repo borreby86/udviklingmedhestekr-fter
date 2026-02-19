@@ -558,6 +558,7 @@ export default function TeamsPage() {
             exit={{ opacity: 0 }}
             onClick={closeModal}
           >
+            <div className="modal-overlay-inner">
             <motion.div
               className="modal-content"
               initial={{ opacity: 0, y: 40, scale: 0.95 }}
@@ -626,6 +627,7 @@ export default function TeamsPage() {
                 Forespørgslen er uforpligtende. Jeg kontakter dig for en indledende samtale.
               </p>
             </motion.div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
