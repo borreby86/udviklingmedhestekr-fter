@@ -3760,18 +3760,16 @@ nav.scrolled .mobile-menu-btn {
 /* Modal */
 .modal-overlay {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: rgba(52, 64, 79, 0.85);
   backdrop-filter: blur(8px);
-  z-index: 1000;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-}
-.modal-overlay-inner {
-  min-height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1000;
   padding: 2rem;
 }
 .modal-content {
@@ -3780,6 +3778,8 @@ nav.scrolled .mobile-menu-btn {
   max-width: 560px;
   width: 100%;
   position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 .modal-close {
   position: absolute;
@@ -4937,15 +4937,15 @@ nav.scrolled .mobile-menu-btn {
 
   /* Modal mobile */
   .modal-overlay {
-    padding: 0;
-  }
-  .modal-overlay-inner {
-    padding: 1rem;
+    padding: 0.75rem;
+    align-items: flex-start;
     padding-top: 2rem;
   }
   .modal-content {
     padding: 2rem 1.25rem;
-    max-width: calc(100vw - 2rem);
+    max-width: calc(100vw - 1.5rem);
+    max-height: calc(100dvh - 4rem);
+    overflow-y: auto;
   }
   .modal-content h2 { font-size: 1.5rem; }
   .modal-form-row { grid-template-columns: 1fr; }

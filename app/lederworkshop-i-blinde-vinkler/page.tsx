@@ -856,7 +856,6 @@ export default function BlindeVinklerPage() {
             exit={{ opacity: 0 }}
             onClick={closeModal}
           >
-            <div className="modal-overlay-inner">
             <motion.div
               className="modal-content"
               initial={{ opacity: 0, y: 40, scale: 0.95 }}
@@ -917,7 +916,6 @@ export default function BlindeVinklerPage() {
                 Du modtager en bekræftelse på mail inden for 24 timer.
               </p>
             </motion.div>
-            </div>
           </motion.div>
         )}
       </AnimatePresence>

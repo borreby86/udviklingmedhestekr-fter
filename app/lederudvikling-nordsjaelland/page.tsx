@@ -741,7 +741,6 @@ export default function LederworkshopPage() {
             exit={{ opacity: 0 }}
             onClick={closeModal}
           >
-            <div className="modal-overlay-inner">
             <motion.div
               className="modal-content"
               initial={{ opacity: 0, y: 40, scale: 0.95 }}
@@ -794,7 +793,6 @@ export default function LederworkshopPage() {
                 Bare rolig, du modtager kun besked om nye workshopdatoer.
               </p>
             </motion.div>
-            </div>
           </motion.div>
         )}
       </AnimatePresence>
