@@ -4779,7 +4779,8 @@ nav.scrolled .mobile-menu-btn {
     padding-bottom: 1rem;
     align-items: flex-start;
   }
-  .workshop-hero-buttons .cta-button {
+  .workshop-hero-buttons .cta-button,
+  .workshop-hero-buttons .cta-button-secondary {
     padding: 0.6rem 1.25rem;
     font-size: 0.7rem;
     width: auto;
@@ -7001,7 +7002,8 @@ nav.scrolled .mobile-menu-btn {
   .workshop-hero-text-full h1 { font-size: 2.4rem; }
   .workshop-hero-tagline { font-size: 1.2rem; }
   .workshop-hero-desc { font-size: 1rem; }
-  .workshop-hero-buttons .cta-button {
+  .workshop-hero-buttons .cta-button,
+  .workshop-hero-buttons .cta-button-secondary {
     padding: 0.55rem 1.1rem;
     font-size: 0.65rem;
     width: auto;
