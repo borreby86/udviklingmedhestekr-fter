@@ -599,13 +599,15 @@ export default function TeamsPage() {
                       <input type="tel" id="modal-telefon" name="telefon" placeholder="Telefonnummer" />
                     </div>
                   </div>
-                  <div className="modal-form-group">
-                    <label htmlFor="modal-virksomhed">Virksomhed *</label>
-                    <input type="text" id="modal-virksomhed" name="virksomhed" required placeholder="Jeres virksomhed" />
-                  </div>
-                  <div className="modal-form-group">
-                    <label htmlFor="modal-antal">Antal deltagere (ca.)</label>
-                    <input type="text" id="modal-antal" name="antal" placeholder="F.eks. 8-10 personer" />
+                  <div className="modal-form-row">
+                    <div className="modal-form-group">
+                      <label htmlFor="modal-virksomhed">Virksomhed *</label>
+                      <input type="text" id="modal-virksomhed" name="virksomhed" required placeholder="Jeres virksomhed" />
+                    </div>
+                    <div className="modal-form-group">
+                      <label htmlFor="modal-antal">Antal deltagere (ca.)</label>
+                      <input type="text" id="modal-antal" name="antal" placeholder="F.eks. 8-10" />
+                    </div>
                   </div>
                   <div className="modal-form-group">
                     <label htmlFor="modal-besked">Fortæl kort om jeres behov</label>
