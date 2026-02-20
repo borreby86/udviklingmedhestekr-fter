@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/team.jpg',
+        url: '/og-team.jpg',
         width: 1200,
         height: 630,
         alt: 'Teamudvikling med heste',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['/team.jpg'],
+    images: ['/og-team.jpg'],
   },
 }
 

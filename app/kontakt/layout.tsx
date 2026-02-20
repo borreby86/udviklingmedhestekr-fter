@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     url: 'https://christinaborreby.dk/kontakt',
     images: [
       {
-        url: '/lederudvikling heste.jpg',
+        url: '/og-lederudvikling heste.jpg',
         width: 1200,
         height: 630,
         alt: 'Christina Borreby med hest',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['/lederudvikling heste.jpg'],
+    images: ['/og-lederudvikling heste.jpg'],
   },
   alternates: {
     canonical: 'https://christinaborreby.dk/kontakt'

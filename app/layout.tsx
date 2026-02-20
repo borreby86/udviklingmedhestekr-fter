@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/hero-horse-eye.jpg',
+        url: '/og-hero-horse-eye.jpg',
         width: 1200,
         height: 630,
         alt: 'Christina Borreby - Leder- og teamudvikling med hestekræfter'
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Christina Borreby | Leder- og teamudvikling med hestekræfter',
     description: 'Unik læring gennem samspil med heste.',
-    images: ['/hero-horse-eye.jpg']
+    images: ['/og-hero-horse-eye.jpg']
   }
 }
 

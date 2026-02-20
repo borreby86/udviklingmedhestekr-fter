@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/lederworkshop.jpg',
+        url: '/og-lederworkshop.jpg',
         width: 1200,
         height: 630,
         alt: 'Lederudvikling med heste i Nordsjælland - Christina Borreby'
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Lederudvikling Nordsjælland | Christina Borreby',
     description: 'Oplev autentisk lederudvikling gennem hesteassisteret coaching i Nordsjælland. Øjeblikkelig feedback på dit lederskab.',
-    images: ['/lederworkshop.jpg']
+    images: ['/og-lederworkshop.jpg']
   },
   alternates: {
     canonical: 'https://christinaborreby.dk/lederudvikling-nordsjaelland'

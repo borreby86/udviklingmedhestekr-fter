@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: '/autentisk-lederudvikling.jpg',
+        url: '/og-autentisk-lederudvikling.jpg',
         width: 1200,
         height: 630,
         alt: 'Referencer - Christina Borreby',
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['/autentisk-lederudvikling.jpg'],
+    images: ['/og-autentisk-lederudvikling.jpg'],
   },
 }
 

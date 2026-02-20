@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: '/christina_borreby.jpeg',
+        url: '/og-christina_borreby.jpeg',
         width: 1200,
         height: 630,
         alt: 'Christina Borreby',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['/christina_borreby.jpeg'],
+    images: ['/og-christina_borreby.jpeg'],
   },
 }
 
