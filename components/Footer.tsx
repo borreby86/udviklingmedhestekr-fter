@@ -55,9 +55,6 @@ export default function Footer() {
             <ul className="footer-col-list">
               <li><a href="/lederworkshop-i-blinde-vinkler">Blinde vinkler i ledelse</a></li>
               <li><a href="https://autentiskindflydelse.dk" target="_blank" rel="noopener noreferrer">Autentisk Indflydelse</a></li>
-              <li><a href="/forskning">Forskning</a></li>
-              <li><a href="/om-mig">Om mig</a></li>
-              <li><a href="/kontakt">Kontakt</a></li>
             </ul>
           </div>
         </div>
