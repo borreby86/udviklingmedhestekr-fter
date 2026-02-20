@@ -7,6 +7,18 @@ export const metadata: Metadata = {
     title: 'Kontakt | Christina Borreby',
     description: 'Book en uforpligtende samtale om hesteassisteret udvikling.',
     url: 'https://christinaborreby.dk/kontakt',
+    images: [
+      {
+        url: '/lederudvikling heste.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Christina Borreby med hest',
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/lederudvikling heste.jpg'],
   },
   alternates: {
     canonical: 'https://christinaborreby.dk/kontakt'
