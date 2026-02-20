@@ -155,7 +155,7 @@ export default function KontaktPage() {
             </div>
             <h3>LinkedIn</h3>
             <p>Forbind med Christina</p>
-            <a href="https://www.linkedin.com/in/christinaborreby/" target="_blank" rel="noopener noreferrer">Christina Borreby</a>
+            <a href="https://www.linkedin.com/in/cborreby/" target="_blank" rel="noopener noreferrer">Christina Borreby</a>
           </div>
 
           <div className="contact-method">
