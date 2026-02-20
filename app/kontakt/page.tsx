@@ -55,6 +55,7 @@ export default function KontaktPage() {
   return (
     <>
       <Navigation />
+      <main>
 
       {/* Mobile Hero Image */}
       <section className="contact-mobile-hero">
@@ -134,8 +135,9 @@ export default function KontaktPage() {
       </section>
 
       {/* Contact Methods */}
-      <section className="contact-methods">
+      <section className="contact-methods" id="kontaktinfo">
         <div className="contact-methods-container">
+          <h2 className="sr-only">Kontaktoplysninger</h2>
           <div className="contact-method">
             <div className="contact-method-icon">
               <EmailIcon />
@@ -165,6 +167,7 @@ export default function KontaktPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
     </>
   )

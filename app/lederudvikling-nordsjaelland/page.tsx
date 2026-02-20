@@ -234,6 +234,7 @@ export default function LederworkshopPage() {
   return (
     <>
       <Navigation />
+      <main>
 
       {/* Hero Section */}
       <section className="workshop-hero-full" ref={heroRef}>
@@ -672,7 +673,7 @@ export default function LederworkshopPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="workshop-faq">
+      <section className="workshop-faq" id="faq">
         <div className="workshop-container-wide">
           <motion.div
             className="workshop-faq-header"
@@ -729,6 +730,7 @@ export default function LederworkshopPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
 
       {/* Waiting List Modal */}

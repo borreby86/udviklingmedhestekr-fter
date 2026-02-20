@@ -5,6 +5,14 @@ import ResearchSection from '@/components/ResearchSection';
 export const metadata = {
   title: 'Forskning viser | Christina Borreby',
   description: 'Peer-reviewed forskning om hesteassisteret udvikling, emotionel intelligens og lederskab.',
+  alternates: {
+    canonical: 'https://christinaborreby.dk/forskning'
+  },
+  openGraph: {
+    title: 'Forskning viser | Christina Borreby',
+    description: 'Peer-reviewed forskning om hesteassisteret udvikling, emotionel intelligens og lederskab.',
+    url: 'https://christinaborreby.dk/forskning',
+  },
 };
 
 export default function ForskningSide() {

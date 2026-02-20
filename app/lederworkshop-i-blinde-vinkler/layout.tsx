@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import SchemaMarkup from '@/components/SchemaMarkup'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://christinaborreby.dk'),
@@ -100,10 +101,7 @@ export default function BlindeVinklerLayout({
 }) {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <SchemaMarkup data={jsonLd} />
       {children}
     </>
   )

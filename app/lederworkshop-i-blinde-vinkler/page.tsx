@@ -271,6 +271,7 @@ export default function BlindeVinklerPage() {
   return (
     <>
       <Navigation />
+      <main>
 
       {/* Scroll Navigation */}
       <AnimatePresence>
@@ -782,13 +783,13 @@ export default function BlindeVinklerPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <div className="date-card-date">
+                <time dateTime="2026-04-01T09:00:00+02:00" className="date-card-date">
                   <div className="date-card-day-month">
                     <span className="date-card-day">{date.day}</span>
                     <span className="date-card-month">{date.month}</span>
                   </div>
                   <span className="date-card-year">{date.year}</span>
-                </div>
+                </time>
                 <div className="date-card-time">{date.time}</div>
                 <div className="date-card-divider" />
                 <div className="date-card-action">
@@ -844,6 +845,7 @@ export default function BlindeVinklerPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
 
       {/* Registration Modal */}

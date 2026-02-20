@@ -55,6 +55,7 @@ export default function OmMigPage() {
   return (
     <>
       <Navigation />
+      <main>
 
       {/* Hero Section - banner style */}
       <section className="about-page-banner">
@@ -234,6 +235,8 @@ export default function OmMigPage() {
           </motion.blockquote>
         </div>
       </section>
+
+      </main>
 
       {/* Footer with CTA */}
       <footer className="about-footer">

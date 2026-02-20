@@ -97,6 +97,7 @@ export default function RecalibratePage(): React.JSX.Element {
   return (
     <>
       <Navigation />
+      <main>
 
       {/* Hero Section */}
       <section className="workshop-hero-full" ref={heroRef}>
@@ -437,6 +438,7 @@ export default function RecalibratePage(): React.JSX.Element {
         </div>
       </section>
 
+      </main>
     </>
   )
 }

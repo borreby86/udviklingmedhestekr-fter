@@ -1,7 +1,15 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  title: 'Referencer | Christina Borreby',
+  description: 'Læs hvad ledere, CEOs og teamledere siger om hesteassisteret udvikling hos Christina Borreby. Autentiske anbefalinger fra deltagere.',
+  alternates: {
+    canonical: 'https://christinaborreby.dk/referencer'
+  },
   openGraph: {
+    title: 'Referencer | Christina Borreby',
+    description: 'Læs hvad ledere, CEOs og teamledere siger om hesteassisteret udvikling hos Christina Borreby.',
+    url: 'https://christinaborreby.dk/referencer',
     images: [
       {
         url: '/og-autentisk-lederudvikling.jpg',

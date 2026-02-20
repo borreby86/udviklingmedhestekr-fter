@@ -171,6 +171,7 @@ export default function ReferencerPage() {
   return (
     <>
       <Navigation />
+      <main>
 
       {/* Hero Section */}
       <section className="referencer-hero" ref={heroRef}>
@@ -207,6 +208,7 @@ export default function ReferencerPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
     </>
   )
