@@ -589,13 +589,15 @@ export default function TeamsPage() {
                     <label htmlFor="modal-navn">Navn *</label>
                     <input type="text" id="modal-navn" name="navn" required placeholder="Dit fulde navn" />
                   </div>
-                  <div className="modal-form-group">
-                    <label htmlFor="modal-email">E-mail *</label>
-                    <input type="email" id="modal-email" name="email" required placeholder="din@email.dk" />
-                  </div>
-                  <div className="modal-form-group">
-                    <label htmlFor="modal-telefon">Telefon</label>
-                    <input type="tel" id="modal-telefon" name="telefon" placeholder="Dit telefonnummer" />
+                  <div className="modal-form-row">
+                    <div className="modal-form-group">
+                      <label htmlFor="modal-email">E-mail *</label>
+                      <input type="email" id="modal-email" name="email" required placeholder="din@email.dk" />
+                    </div>
+                    <div className="modal-form-group">
+                      <label htmlFor="modal-telefon">Telefon</label>
+                      <input type="tel" id="modal-telefon" name="telefon" placeholder="Telefonnummer" />
+                    </div>
                   </div>
                   <div className="modal-form-group">
                     <label htmlFor="modal-virksomhed">Virksomhed *</label>
