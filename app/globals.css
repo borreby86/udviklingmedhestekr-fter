@@ -1852,8 +1852,18 @@ nav.scrolled .nav-dropdown-text {
   font-family: var(--font-display);
   font-size: 1.1rem;
   font-weight: 400;
-  color: var(--color-cream);
+  color: var(--color-gold);
   margin-bottom: 1.25rem;
+}
+.footer-col-title-sub {
+  margin-top: 1.5rem;
+}
+.footer-icon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  color: var(--color-gold);
+  opacity: 0.7;
 }
 .footer-col-list {
   list-style: none;
@@ -1864,17 +1874,19 @@ nav.scrolled .nav-dropdown-text {
   font-size: 0.85rem;
   color: var(--color-warm-sand);
   opacity: 0.8;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
   line-height: 1.6;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 .footer-col-list a {
   color: var(--color-warm-sand);
   text-decoration: none;
-  opacity: 0.8;
-  transition: opacity 0.2s ease;
+  transition: color 0.2s ease;
 }
 .footer-col-list a:hover {
-  opacity: 1;
+  color: var(--color-gold);
 }
 .footer-social {
   display: flex;
@@ -1882,24 +1894,33 @@ nav.scrolled .nav-dropdown-text {
   margin-top: 1.25rem;
 }
 .footer-social a {
-  color: var(--color-warm-sand);
+  color: var(--color-gold);
   opacity: 0.7;
   transition: opacity 0.2s ease;
 }
 .footer-social a:hover {
   opacity: 1;
 }
-.footer-credentials {
+.footer-credentials-bar {
+  max-width: 1100px;
+  margin: 2.5rem auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(224, 228, 232, 0.08);
+  text-align: center;
+}
+.footer-credentials-bar p {
+  font-family: var(--font-display);
   font-size: 0.85rem;
-  color: var(--color-warm-sand);
-  opacity: 0.8;
-  line-height: 1.7;
+  font-style: italic;
+  color: var(--color-gold);
+  opacity: 0.6;
+  letter-spacing: 0.02em;
 }
 .footer-bottom {
   max-width: 1100px;
-  margin: 3rem auto 0;
+  margin: 1.5rem auto 0;
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(224, 228, 232, 0.1);
+  border-top: 1px solid rgba(224, 228, 232, 0.08);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1909,17 +1930,17 @@ nav.scrolled .nav-dropdown-text {
 .footer-bottom p {
   font-size: 0.75rem;
   color: var(--color-warm-sand);
-  opacity: 0.5;
+  opacity: 0.4;
 }
 .footer-bottom a {
   font-size: 0.75rem;
   color: var(--color-warm-sand);
-  opacity: 0.5;
+  opacity: 0.4;
   text-decoration: none;
   transition: opacity 0.2s ease;
 }
 .footer-bottom a:hover {
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 /* Mobile Menu Button - Text Style */
