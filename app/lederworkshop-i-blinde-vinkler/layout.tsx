@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-blind vinkel ledelse.jpeg',
+        url: '/og-lederworkshop.jpg',
         width: 1200,
         height: 630,
         alt: 'Lederworkshop i Blinde Vinkler - Christina Borreby & Michael Casparij'
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Lederworkshop i Blinde Vinkler | Christina Borreby',
     description: 'Opdag dine blinde vinkler og bliv en bedre leder. Mini-forløb med MBS® Relationsanalyse og hesteassisteret lederskabstræning.',
-    images: ['/og-blind vinkel ledelse.jpeg']
+    images: ['/og-lederworkshop.jpg']
   },
   alternates: {
     canonical: 'https://christinaborreby.dk/lederworkshop-i-blinde-vinkler'
@@ -90,7 +90,7 @@ const jsonLd = {
     validFrom: '2025-01-01'
   },
   inLanguage: 'da',
-  image: 'https://christinaborreby.dk/og-blind vinkel ledelse.jpeg'
+  image: 'https://christinaborreby.dk/og-lederworkshop.jpg'
 }
 
 export default function BlindeVinklerLayout({
