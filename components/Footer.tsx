@@ -21,19 +21,9 @@ export default function Footer() {
             <h3 className="footer-col-title">Kontakt</h3>
             <ul className="footer-col-list">
               <li>
-                <svg className="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                  <polyline points="22,6 12,13 2,6"/>
-                </svg>
                 <a href="mailto:info@christinaborreby.dk">info@christinaborreby.dk</a>
               </li>
-              <li>
-                <svg className="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
-                  <circle cx="12" cy="10" r="3"/>
-                </svg>
-                <span>Hørsholm, Nordsjælland</span>
-              </li>
+              <li>Hørsholm, Nordsjælland</li>
             </ul>
             <div className="footer-social">
               <a href="https://www.linkedin.com/in/cborreby/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
@@ -53,27 +43,9 @@ export default function Footer() {
           <div className="footer-col">
             <h3 className="footer-col-title">Ydelser</h3>
             <ul className="footer-col-list">
-              <li>
-                <svg className="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
-                  <circle cx="12" cy="7" r="4"/>
-                </svg>
-                <a href="/lederudvikling-nordsjaelland">Lederudvikling</a>
-              </li>
-              <li>
-                <svg className="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
-                  <circle cx="9" cy="7" r="4"/>
-                  <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
-                </svg>
-                <a href="/teams">Teamudvikling</a>
-              </li>
-              <li>
-                <svg className="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
-                </svg>
-                <a href="/recalibrate">Recalibrate</a>
-              </li>
+              <li><a href="/lederudvikling-nordsjaelland">Lederudvikling</a></li>
+              <li><a href="/teams">Teamudvikling</a></li>
+              <li><a href="/recalibrate">Recalibrate</a></li>
             </ul>
           </div>
 
@@ -81,47 +53,11 @@ export default function Footer() {
           <div className="footer-col">
             <h3 className="footer-col-title">Workshops</h3>
             <ul className="footer-col-list">
-              <li>
-                <svg className="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-                  <line x1="16" y1="2" x2="16" y2="6"/>
-                  <line x1="8" y1="2" x2="8" y2="6"/>
-                  <line x1="3" y1="10" x2="21" y2="10"/>
-                </svg>
-                <a href="/lederworkshop-i-blinde-vinkler">Blinde vinkler i ledelse</a>
-              </li>
-              <li>
-                <svg className="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <circle cx="12" cy="12" r="10"/>
-                  <path d="M12 6v6l4 2"/>
-                </svg>
-                <a href="https://autentiskindflydelse.dk" target="_blank" rel="noopener noreferrer">Autentisk Indflydelse</a>
-              </li>
-            </ul>
-
-            <h3 className="footer-col-title footer-col-title-sub">Mere</h3>
-            <ul className="footer-col-list">
-              <li>
-                <svg className="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/>
-                  <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/>
-                </svg>
-                <a href="/forskning">Forskning</a>
-              </li>
-              <li>
-                <svg className="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <circle cx="12" cy="12" r="10"/>
-                  <line x1="12" y1="16" x2="12" y2="12"/>
-                  <line x1="12" y1="8" x2="12.01" y2="8"/>
-                </svg>
-                <a href="/om-mig">Om mig</a>
-              </li>
-              <li>
-                <svg className="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
-                </svg>
-                <a href="/kontakt">Kontakt</a>
-              </li>
+              <li><a href="/lederworkshop-i-blinde-vinkler">Blinde vinkler i ledelse</a></li>
+              <li><a href="https://autentiskindflydelse.dk" target="_blank" rel="noopener noreferrer">Autentisk Indflydelse</a></li>
+              <li><a href="/forskning">Forskning</a></li>
+              <li><a href="/om-mig">Om mig</a></li>
+              <li><a href="/kontakt">Kontakt</a></li>
             </ul>
           </div>
         </div>

@@ -1855,16 +1855,6 @@ nav.scrolled .nav-dropdown-text {
   color: var(--color-gold);
   margin-bottom: 1.25rem;
 }
-.footer-col-title-sub {
-  margin-top: 1.5rem;
-}
-.footer-icon {
-  width: 15px;
-  height: 15px;
-  flex-shrink: 0;
-  color: var(--color-gold);
-  opacity: 0.7;
-}
 .footer-col-list {
   list-style: none;
   padding: 0;
@@ -1874,11 +1864,8 @@ nav.scrolled .nav-dropdown-text {
   font-size: 0.85rem;
   color: var(--color-warm-sand);
   opacity: 0.8;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
   line-height: 1.6;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
 }
 .footer-col-list a {
   color: var(--color-warm-sand);
