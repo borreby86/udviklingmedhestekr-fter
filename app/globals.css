@@ -1836,6 +1836,92 @@ nav.scrolled .nav-dropdown-text {
   opacity: 0.85;
 }
 
+/* Footer Info Section */
+.footer-info {
+  background: var(--color-earth-dark);
+  padding: 4rem 2rem 2rem;
+}
+.footer-info-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3rem;
+}
+.footer-col-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--color-cream);
+  margin-bottom: 1.25rem;
+}
+.footer-col-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-col-list li {
+  font-size: 0.85rem;
+  color: var(--color-warm-sand);
+  opacity: 0.8;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+.footer-col-list a {
+  color: var(--color-warm-sand);
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+.footer-col-list a:hover {
+  opacity: 1;
+}
+.footer-social {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+.footer-social a {
+  color: var(--color-warm-sand);
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+.footer-social a:hover {
+  opacity: 1;
+}
+.footer-credentials {
+  font-size: 0.85rem;
+  color: var(--color-warm-sand);
+  opacity: 0.8;
+  line-height: 1.7;
+}
+.footer-bottom {
+  max-width: 1100px;
+  margin: 3rem auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(224, 228, 232, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.footer-bottom p {
+  font-size: 0.75rem;
+  color: var(--color-warm-sand);
+  opacity: 0.5;
+}
+.footer-bottom a {
+  font-size: 0.75rem;
+  color: var(--color-warm-sand);
+  opacity: 0.5;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+.footer-bottom a:hover {
+  opacity: 0.8;
+}
+
 /* Mobile Menu Button - Text Style */
 .mobile-menu-btn {
   display: none;
@@ -5062,6 +5148,9 @@ nav.scrolled .mobile-menu-btn {
   .why-image-frame { display: none; }
   .footer-cta { padding: 4rem 1.25rem; }
   .footer-title { font-size: 1.6rem; }
+  .footer-info { padding: 3rem 1.25rem 1.5rem; }
+  .footer-info-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
   .contact-card { padding: 1.25rem; }
   .contact-card-label, .contact-card-sub { display: none; }
   .form-row { grid-template-columns: 1fr; }

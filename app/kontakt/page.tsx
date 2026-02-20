@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import { ArrowIcon, EmailIcon, LinkedInIcon, LocationIcon } from '@/components/Icons'
+import { trackEvent } from '@/lib/analytics'
 
 export default function KontaktPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -38,6 +39,7 @@ export default function KontaktPage() {
 
       if (response.ok) {
         setSubmitStatus('success')
+        trackEvent('form_submit', { form_type: 'kontakt' })
         form.reset()
       } else {
         const res = await response.json()
@@ -153,7 +155,7 @@ export default function KontaktPage() {
             </div>
             <h3>LinkedIn</h3>
             <p>Forbind med Christina</p>
-            <a href="https://www.linkedin.com/in/cborreby/" target="_blank" rel="noopener noreferrer">Christina Borreby</a>
+            <a href="https://www.linkedin.com/in/christinaborreby/" target="_blank" rel="noopener noreferrer">Christina Borreby</a>
           </div>
 
           <div className="contact-method">

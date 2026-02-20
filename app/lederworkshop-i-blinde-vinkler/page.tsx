@@ -4,6 +4,7 @@ import { useRef, useState, useEffect } from 'react'
 import { motion, useScroll, useTransform, AnimatePresence } from 'motion/react'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
+import { trackEvent } from '@/lib/analytics'
 
 const scrollNavLinks = [
   { label: 'Forside', href: '/' },
@@ -257,6 +258,7 @@ export default function BlindeVinklerPage() {
 
       if (response.ok) {
         setSubmitStatus('success')
+        trackEvent('form_submit', { form_type: 'tilmelding-blinde-vinkler' })
         form.reset()
       } else {
         setSubmitStatus('error')

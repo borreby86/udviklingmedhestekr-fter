@@ -4,6 +4,7 @@ import { useRef, useState } from 'react'
 import { motion, useScroll, useTransform, AnimatePresence } from 'motion/react'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
+import { trackEvent } from '@/lib/analytics'
 
 const testimonials = [
   {
@@ -220,6 +221,7 @@ export default function LederworkshopPage() {
 
       if (response.ok) {
         setSubmitStatus('success')
+        trackEvent('form_submit', { form_type: 'venteliste-lederworkshop' })
         form.reset()
       } else {
         setSubmitStatus('error')

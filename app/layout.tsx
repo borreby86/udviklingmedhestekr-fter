@@ -59,7 +59,10 @@ export const metadata: Metadata = {
     title: 'Christina Borreby | Leder- og teamudvikling med hestekræfter',
     description: 'Unik læring gennem samspil med heste.',
     images: ['/og-hero-horse-eye.jpg']
-  }
+  },
+  alternates: {
+    canonical: 'https://christinaborreby.dk',
+  },
 }
 
 export default function RootLayout({
