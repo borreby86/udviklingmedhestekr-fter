@@ -848,7 +848,7 @@ export default function BlindeVinklerPage() {
       </section>
 
       </main>
-      <Footer />
+      <Footer hideCta />
 
       {/* Registration Modal */}
       <AnimatePresence>
