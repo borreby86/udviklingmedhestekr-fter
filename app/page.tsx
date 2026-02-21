@@ -9,6 +9,7 @@ import Testimonials from '@/components/Testimonials'
 import Benefits from '@/components/Benefits'
 import About from '@/components/About'
 import CTA from '@/components/CTA'
+import Footer from '@/components/Footer'
 import SchemaMarkup from '@/components/SchemaMarkup'
 
 const professionalServiceSchema = {
@@ -63,6 +64,7 @@ export default function Home() {
         <Audience />
         <CTA />
       </main>
+      <Footer />
     </>
   )
 }

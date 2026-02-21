@@ -2,6 +2,7 @@
 
 import { motion } from 'motion/react'
 import Navigation from '@/components/Navigation'
+import Footer from '@/components/Footer'
 
 const collaborators = [
   { name: 'Digitaliseringsstyrelsen', logo: '/digitaliseringsstyrelsen_rgb.jpg' },
@@ -238,33 +239,7 @@ export default function OmMigPage() {
 
       </main>
 
-      {/* Footer with CTA */}
-      <footer className="about-footer">
-        <div className="about-footer-container">
-          <motion.div
-            className="about-footer-cta"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2>Skal vi tage en snak?</h2>
-            <p>
-              Uanset om du er leder, medarbejder eller søger udvikling for dit team - jeg tilbyder en uforpligtende samtale, hvor vi finder ud af, om det er det rette for jer.
-            </p>
-            <a href="/kontakt" className="cta-button">
-              <span>Kontakt mig</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </a>
-          </motion.div>
-          <div className="about-footer-bottom">
-            <p>&copy; {new Date().getFullYear()} Christina Borreby</p>
-            <a href="/privatlivspolitik">Privatlivspolitik</a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </>
   )
 }
