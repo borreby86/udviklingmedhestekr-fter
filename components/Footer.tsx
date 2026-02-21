@@ -59,9 +59,14 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Credentials */}
+        <div className="footer-credentials-bar">
+          <p>Cand.negot. &middot; Certificeret psykoterapeut &middot; 30+ års erfaring med heste</p>
+        </div>
+
         {/* Bottom Bar */}
         <div className="footer-bottom">
-          <p>Cand.negot. &middot; Certificeret psykoterapeut &middot; 30+ års erfaring med heste &middot; &copy; {new Date().getFullYear()} Christina Borreby</p>
+          <p>&copy; {new Date().getFullYear()} Christina Borreby</p>
           <a href="/privatlivspolitik">Privatlivspolitik</a>
         </div>
       </div>
