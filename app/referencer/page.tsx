@@ -81,7 +81,7 @@ Tak for en fantastisk session som jeg vil anbefale ALLE at investere i, hvis de 
     image: "/annemarie.jpg"
   },
   {
-    quote: "Fantastisk at blive spejlet i og få respons fra Calle - stor øjenåbner for mig.",
+    quote: "På trods af mange års coaching fik jeg nyt syn og perspektiv på et længerevarende issue.",
     fullText: `Tak for en interessant og anderledes workshop. Lige den slags nicheworkshop, jeg har manglet.
 
 Fantastisk at blive spejlet i og få respons fra Calle - stor øjenåbner for mig. På trods af mange års coaching fik jeg nyt syn og perspektiv på et længerevarende issue.`,
