@@ -67,6 +67,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="footer-bottom">
           <p>&copy; {new Date().getFullYear()} Christina Borreby</p>
+          <p>Udviklet af <a href="https://transparo.dk" target="_blank" rel="noopener noreferrer">transparo.dk</a></p>
           <a href="/privatlivspolitik">Privatlivspolitik</a>
         </div>
       </div>
