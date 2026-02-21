@@ -170,7 +170,7 @@ export default function KontaktPage() {
       </section>
 
       </main>
-      <Footer />
+      <Footer hideCta />
     </>
   )
 }
