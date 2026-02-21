@@ -4,6 +4,7 @@ import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'motion/react'
 import Link from 'next/link'
 import Navigation from '@/components/Navigation'
+import Footer from '@/components/Footer'
 
 // Data
 const metoder = [
@@ -439,6 +440,7 @@ export default function RecalibratePage(): React.JSX.Element {
       </section>
 
       </main>
+      <Footer hideCta />
     </>
   )
 }
