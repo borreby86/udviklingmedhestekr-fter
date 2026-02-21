@@ -64,7 +64,7 @@ export default function Home() {
         <Audience />
         <CTA />
       </main>
-      <Footer />
+      <Footer hideCta />
     </>
   )
 }

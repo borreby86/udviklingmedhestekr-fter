@@ -1,8 +1,8 @@
-export default function Footer() {
+export default function Footer({ hideCta = false }: { hideCta?: boolean }) {
   return (
     <footer>
       {/* CTA Section */}
-      <div className="footer-cta">
+      {!hideCta && <div className="footer-cta">
         <div className="footer-cta-content">
           <p className="footer-label">Næste skridt</p>
           <h2 className="footer-title">Klar til at opleve det selv?</h2>
@@ -11,7 +11,7 @@ export default function Footer() {
             <span>Kontakt mig</span>
           </a>
         </div>
-      </div>
+      </div>}
 
       {/* Footer Info Section */}
       <div className="footer-info">
