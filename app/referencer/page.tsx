@@ -88,7 +88,7 @@ Fantastisk at blive spejlet i og få respons fra Calle - stor øjenåbner for mi
     author: "Camilla Guldmann",
     role: "Teamleder",
     initials: "CG",
-    image: "/hero-eye.jpg"
+    image: "/hero-horse-eye.jpg"
   }
 ]
 
