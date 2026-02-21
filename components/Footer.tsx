@@ -59,14 +59,9 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Credentials Bar */}
-        <div className="footer-credentials-bar">
-          <p>Cand.negot. &middot; Certificeret psykoterapeut &middot; 30+ års erfaring med heste</p>
-        </div>
-
         {/* Bottom Bar */}
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Christina Borreby. Alle rettigheder forbeholdes.</p>
+          <p>Cand.negot. &middot; Certificeret psykoterapeut &middot; 30+ års erfaring med heste &middot; &copy; {new Date().getFullYear()} Christina Borreby</p>
           <a href="/privatlivspolitik">Privatlivspolitik</a>
         </div>
       </div>
