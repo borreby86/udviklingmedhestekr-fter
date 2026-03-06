@@ -116,16 +116,20 @@ const beforeSteps = [
 
 const duringSteps = [
   {
-    title: 'Velkomst og introduktion',
+    title: 'Ankomst og velkomst',
     description: 'Vi lander i rummet og sætter intentionen for dagen'
   },
   {
-    title: 'Hesteassisteret session',
-    description: 'Ca. 20 minutter individuel tid med hesten. Du behøver ingen hesteerfaring - du skal ikke ride. Mød hesten fra jorden og få direkte feedback på din ledelsesenergi.'
+    title: 'Gruppeøvelse med hesten',
+    description: 'I små hold arbejder I med hesten som spejl - her kommer dine blinde vinkler i spil. Du behøver ingen hesteerfaring - du skal ikke ride. Inkl. debrief hvor oplevelser og mønstre foldes ud sammen.'
   },
   {
     title: 'Praktisk træning',
-    description: 'Håndtering af blinde vinkler gennem konkrete øvelser, faciliteret af Michael'
+    description: 'Holdene deles op og kører sideløbende:',
+    subSteps: [
+      'Håndtering af blinde vinkler gennem konkrete øvelser med afsæt i din MBS® analyse, faciliteret af Michael',
+      '15 minutters individuel session med fokus på din ledelsesstil i praksis - inkl. feedback og observatørrolle, så alle bidrager til hinandens læring'
+    ]
   },
   {
     title: 'Selvrefleksion',
@@ -579,6 +583,16 @@ export default function BlindeVinklerPage() {
                   <div className="during-step-content">
                     <h4>{step.title}</h4>
                     <p>{step.description}</p>
+                    {step.subSteps && (
+                      <div className="during-sub-steps">
+                        {step.subSteps.map((sub, i) => (
+                          <div key={i} className="during-sub-step">
+                            <span className="during-sub-step-label">{String.fromCharCode(65 + i)}</span>
+                            <p>{sub}</p>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}

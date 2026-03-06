@@ -5800,6 +5800,34 @@ nav.scrolled .mobile-menu-btn {
   line-height: 1.6;
   color: var(--color-warm-sand);
 }
+.during-sub-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+.during-sub-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: rgba(244, 245, 247, 0.04);
+  border-left: 2px solid var(--color-copper);
+  border-radius: 0 4px 4px 0;
+}
+.during-sub-step-label {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-copper);
+  flex-shrink: 0;
+  min-width: 1rem;
+}
+.during-sub-step p {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--color-warm-sand);
+}
 .workshop-note {
   display: flex;
   align-items: flex-start;
