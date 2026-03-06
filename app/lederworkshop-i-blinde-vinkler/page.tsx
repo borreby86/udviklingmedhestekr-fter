@@ -128,7 +128,7 @@ const duringSteps = [
     description: 'Holdene deles op og kører sideløbende:',
     subSteps: [
       'Håndtering af blinde vinkler gennem konkrete øvelser med afsæt i din MBS® analyse, faciliteret af Michael',
-      '15 minutters individuel session med fokus på din ledelsesstil i praksis - inkl. feedback og observatørrolle, så alle bidrager til hinandens læring'
+      '15 minutters individuel session med hesten med fokus på din ledelsesstil i praksis, inkl. feedback'
     ]
   },
   {
