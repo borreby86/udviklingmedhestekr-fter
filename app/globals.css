@@ -3864,7 +3864,8 @@ nav.scrolled .mobile-menu-btn {
   justify-content: center;
   z-index: 1000;
   padding: 2rem;
-  overflow-y: auto;
+  overflow: hidden;
+  overscroll-behavior: none;
 }
 .modal-content {
   background: var(--color-cream);
@@ -3874,6 +3875,7 @@ nav.scrolled .mobile-menu-btn {
   max-height: 90dvh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 .modal-body {
   overflow-y: auto;
