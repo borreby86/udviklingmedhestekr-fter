@@ -3864,13 +3864,14 @@ nav.scrolled .mobile-menu-btn {
   justify-content: center;
   z-index: 1000;
   padding: 2rem;
+  overflow-y: auto;
 }
 .modal-content {
   background: var(--color-cream);
   max-width: 560px;
   width: 100%;
   position: relative;
-  max-height: 90vh;
+  max-height: 90dvh;
   display: flex;
   flex-direction: column;
 }
@@ -5046,7 +5047,7 @@ nav.scrolled .mobile-menu-btn {
   }
   .modal-content {
     max-width: calc(100vw - 1.5rem);
-    max-height: calc(100dvh - 4rem);
+    max-height: calc(100dvh - 2rem);
   }
   .modal-body {
     padding: 2rem 1.25rem;
@@ -7097,6 +7098,45 @@ nav.scrolled .mobile-menu-btn {
   }
   .teams-practical-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   SHORT SCREENS (small viewport height)
+   ============================================ */
+@media (max-height: 700px) {
+  .modal-overlay {
+    padding: 0.5rem;
+    align-items: flex-start;
+  }
+  .modal-content {
+    max-height: calc(100dvh - 1rem);
+  }
+  .modal-body {
+    padding: 1.25rem 1rem;
+    padding-top: 2.75rem;
+  }
+  .modal-header {
+    margin-bottom: 0.75rem;
+  }
+  .modal-header h3 {
+    font-size: 1.35rem;
+  }
+  .modal-form-group {
+    margin-bottom: 0.6rem;
+  }
+  .modal-form-group label {
+    font-size: 0.8rem;
+    margin-bottom: 0.35rem;
+  }
+  .modal-form-group input,
+  .modal-form-group textarea {
+    padding: 0.55rem 0.9rem;
+    font-size: 0.9rem;
+  }
+  .modal-submit {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.85rem;
   }
 }
 
