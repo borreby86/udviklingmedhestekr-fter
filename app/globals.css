@@ -1861,7 +1861,7 @@ nav.scrolled .nav-dropdown-text {
   margin: 0;
 }
 .footer-col-list li {
-  font-size: 0.85rem;
+  font-size: 1.1rem;
   color: var(--color-warm-sand);
   opacity: 0.8;
   margin-bottom: 0.5rem;
@@ -1897,7 +1897,7 @@ nav.scrolled .nav-dropdown-text {
 }
 .footer-credentials-bar p {
   font-family: var(--font-display);
-  font-size: 0.85rem;
+  font-size: 1.1rem;
   font-style: italic;
   color: var(--color-gold);
   opacity: 0.6;
@@ -1914,12 +1914,12 @@ nav.scrolled .nav-dropdown-text {
   gap: 1rem;
 }
 .footer-bottom p {
-  font-size: 0.75rem;
+  font-size: 1.1rem;
   color: var(--color-warm-sand);
   opacity: 0.4;
 }
 .footer-bottom a {
-  font-size: 0.75rem;
+  font-size: 1.1rem;
   color: var(--color-warm-sand);
   opacity: 0.4;
   text-decoration: none;
@@ -3813,7 +3813,7 @@ nav.scrolled .mobile-menu-btn {
   margin-bottom: 0.75rem;
 }
 .workshop-timeline-card p {
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   line-height: 1.7;
   color: var(--color-soft-brown);
   margin: 0;
@@ -3926,7 +3926,7 @@ nav.scrolled .mobile-menu-btn {
   margin-bottom: 0.5rem;
 }
 .modal-info {
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   color: var(--color-sage);
 }
 .modal-form-row {
@@ -4123,7 +4123,7 @@ nav.scrolled .mobile-menu-btn {
   margin: 0.75rem 0 0.5rem;
 }
 .about-page-banner-credentials {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   font-weight: 500;
   color: var(--color-gold);
   margin-bottom: 1.5rem;
@@ -4131,13 +4131,13 @@ nav.scrolled .mobile-menu-btn {
   line-height: 1.6;
 }
 .about-page-banner-desc {
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   line-height: 1.85;
   color: var(--color-soft-brown);
   margin-bottom: 2rem;
 }
 .about-page-banner-content p {
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   line-height: 1.85;
   color: var(--color-soft-brown);
   margin-bottom: 1rem;
@@ -4209,7 +4209,7 @@ nav.scrolled .mobile-menu-btn {
   margin-bottom: 0.35rem;
 }
 .about-credential-item p {
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.7);
   line-height: 1.5;
 }
@@ -5209,7 +5209,7 @@ nav.scrolled .mobile-menu-btn {
 }
 .workshop-forloeb-note {
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-style: italic;
   color: var(--color-soft-brown);
   margin-top: 3rem;
@@ -5292,7 +5292,7 @@ nav.scrolled .mobile-menu-btn {
   margin-bottom: 0.25rem;
 }
 .highlight-box p {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   color: rgba(250, 248, 245, 0.8);
   line-height: 1.5;
   margin: 0;
@@ -5314,7 +5314,7 @@ nav.scrolled .mobile-menu-btn {
   margin-bottom: 1.25rem;
 }
 .method-explanation-card p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: var(--color-sage);
   line-height: 1.7;
   margin-bottom: 1rem;
@@ -5390,7 +5390,7 @@ nav.scrolled .mobile-menu-btn {
   margin-bottom: 1rem;
 }
 .workshop-forloeb-card p {
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   line-height: 1.7;
   color: var(--color-soft-brown);
 }
@@ -5502,7 +5502,7 @@ nav.scrolled .mobile-menu-btn {
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   color: var(--color-earth);
   line-height: 1.5;
 }
@@ -5652,7 +5652,7 @@ nav.scrolled .mobile-menu-btn {
   margin-bottom: 1rem;
 }
 .instructor-card-content p {
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   line-height: 1.7;
   color: var(--color-soft-brown);
   margin-bottom: 1.25rem;
@@ -6467,7 +6467,7 @@ nav.scrolled .mobile-menu-btn {
   margin-bottom: 1.75rem;
 }
 .workshop-about-text {
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   color: var(--color-soft-brown);
   line-height: 1.85;
 }
@@ -6521,7 +6521,7 @@ nav.scrolled .mobile-menu-btn {
   margin-bottom: 1rem;
 }
 .evidence-bar-text {
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.7);
   line-height: 1.7;
   margin-bottom: 1.25rem;
@@ -6534,12 +6534,12 @@ nav.scrolled .mobile-menu-btn {
   margin-bottom: 1rem;
 }
 .evidence-bar-intro {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.7);
   line-height: 1.7;
 }
 .evidence-bar-list-title {
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: white;
   margin-bottom: 1rem;
@@ -6552,7 +6552,7 @@ nav.scrolled .mobile-menu-btn {
 .evidence-bar-list li {
   position: relative;
   padding-left: 1.25rem;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.7);
   line-height: 1.8;
   margin-bottom: 0.25rem;
@@ -6931,7 +6931,7 @@ nav.scrolled .mobile-menu-btn {
   margin-bottom: 0.75rem;
 }
 .teams-different-card p {
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   line-height: 1.7;
   color: var(--color-warm-sand);
 }
@@ -6960,7 +6960,7 @@ nav.scrolled .mobile-menu-btn {
   margin: 0.75rem 0 1rem;
 }
 .teams-process-intro {
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   color: var(--color-soft-brown);
   max-width: 600px;
   margin: 0 auto;
@@ -6991,7 +6991,7 @@ nav.scrolled .mobile-menu-btn {
   margin-bottom: 0.75rem;
 }
 .teams-step-content p {
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   line-height: 1.7;
   color: var(--color-soft-brown);
 }
@@ -7461,7 +7461,7 @@ nav.scrolled .mobile-menu-btn {
 }
 .study-highlight p {
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   color: var(--color-soft-brown);
   margin: 0;
   line-height: 1.6;
@@ -7490,7 +7490,7 @@ nav.scrolled .mobile-menu-btn {
 }
 .research-note p {
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   color: var(--color-soft-brown);
   margin: 0;
   line-height: 1.7;
@@ -7592,7 +7592,7 @@ nav.scrolled .mobile-menu-btn {
 
 .privacy-section p {
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: var(--color-soft-brown);
   line-height: 1.8;
   margin-bottom: 0.75rem;
