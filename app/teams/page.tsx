@@ -58,6 +58,11 @@ const testimonials = [
     quote: '"Spændende, tankevækkende og forfriskende anderledes teambuilding, kan stærkt anbefales!"',
     name: 'Christian Stig Møller',
     role: 'M&A Advisory/Transactions'
+  },
+  {
+    quote: '"It was a great and fantastic experience and not the less time to reflect. Thank you for hosting this great training and session."',
+    name: 'Ivana Flais',
+    role: 'Medical Affairs Manager Neuroscience, Scandinavia'
   }
 ]
 
@@ -282,7 +287,7 @@ export default function TeamsPage() {
           <p className="section-label">Det siger de</p>
           <h2 className="section-title">Oplevelser fra tidligere teams</h2>
         </div>
-        <div className="testimonials-grid testimonials-grid-2">
+        <div className="testimonials-grid">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
