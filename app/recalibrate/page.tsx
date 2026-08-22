@@ -47,10 +47,10 @@ const formater = [
   {
     title: "Enkelt session",
     subtitle: "Et godt sted at starte",
-    price: "1.500 kr.",
+    price: "1.900 kr.",
     priceNote: "pr. session",
     features: [
-      "1,5-3 timer",
+      "1,5 time",
       "Co-regulering med heste",
       "Guidet refleksion"
     ],
@@ -63,8 +63,8 @@ const formater = [
     price: "5.000 kr.",
     priceNote: "fra pris",
     features: [
-      "4-6 sessioner",
-      "Personlig opfølgning",
+      "3 – 6 sessioner",
+      "Fysiske sessioner + online opfølgning",
       "Redskaber til hverdagen"
     ],
     cta: "Hør mere",
