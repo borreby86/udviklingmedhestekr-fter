@@ -321,14 +321,14 @@ export default function RecalibratePage(): React.JSX.Element {
       </section>
 
       {/* Format Section - Pricing Cards */}
-      <section className="recalibrate-pricing" id="format">
-        <div className="recalibrate-pricing-bg">
+      <section className="workshop-dates-section recalibrate-dates" id="format">
+        <div className="workshop-dates-bg">
           <img src="/walkandtalk-recalibrate.jpeg" alt="Efterår i skoven" />
         </div>
-        <div className="recalibrate-pricing-overlay" />
-        <div className="workshop-container-wide">
+        <div className="workshop-dates-overlay" />
+        <div className="workshop-dates-container">
           <motion.div
-            className="recalibrate-pricing-header"
+            className="workshop-dates-header"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -338,27 +338,30 @@ export default function RecalibratePage(): React.JSX.Element {
             <h2>Vælg det der passer dig</h2>
           </motion.div>
 
-          <div className="recalibrate-pricing-grid">
+          <div className="workshop-booking-options recalibrate-booking-options">
             {formater.map((format, index) => (
               <motion.div
                 key={index}
-                className={`recalibrate-pricing-card ${format.featured ? 'recalibrate-pricing-card-featured' : ''}`}
+                className={`booking-option ${format.featured ? 'booking-option-primary' : ''}`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                {format.featured && <span className="recalibrate-card-badge">Anbefalet</span>}
+                {format.featured && <span className="booking-option-label">Anbefalet</span>}
                 <h3>{format.title}</h3>
-                <div className="recalibrate-card-price">{format.price}</div>
-                <p className="recalibrate-card-price-note">{format.priceNote}</p>
-                <ul className="recalibrate-card-features">
+                <div className="booking-option-price">{format.price}</div>
+                <p className="booking-option-unit">{format.priceNote}</p>
+                <ul className="booking-option-details">
                   {format.features.map((feature, i) => (
                     <li key={i}>{feature}</li>
                   ))}
                 </ul>
-                <Link href="/kontakt" className="recalibrate-card-cta">
-                  {format.cta}
+                <Link
+                  href="/kontakt"
+                  className={`booking-option-cta ${!format.featured ? 'booking-option-cta-secondary' : ''}`}
+                >
+                  <span>{format.cta}</span>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M5 12h14M12 5l7 7-7 7"/>
                   </svg>
@@ -367,7 +370,7 @@ export default function RecalibratePage(): React.JSX.Element {
             ))}
           </div>
 
-          <p className="recalibrate-pricing-note">
+          <p className="booking-note">
             Alle priser er ex. moms. Lokation: Hørsholm, Nordsjælland.
           </p>
         </div>
