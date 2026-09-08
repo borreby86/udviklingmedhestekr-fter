@@ -766,33 +766,40 @@ export default function LederworkshopPage() {
                   <p className="modal-info">Skriv dig op og få første adgang til nye workshopdatoer</p>
                 </div>
 
-                <form className="modal-form" onSubmit={handleModalSubmit}>
-                  {/* Honeypot field - hidden from humans, filled by bots */}
-                  <div style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, overflow: 'hidden' }} aria-hidden="true">
-                    <label htmlFor="website-leder">Website</label>
-                    <input type="text" id="website-leder" name="website" tabIndex={-1} autoComplete="off" />
+                {submitStatus === 'success' ? (
+                  <div className="form-success-card">
+                    <div className="form-success-card-icon">
+                      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" /></svg>
+                    </div>
+                    <h3>Tak!</h3>
+                    <p>Du hører fra os, når nye datoer åbner.</p>
                   </div>
-                  <div className="modal-form-group">
-                    <label htmlFor="modal-navn">Navn *</label>
-                    <input type="text" id="modal-navn" name="navn" required placeholder="Dit fulde navn" />
-                  </div>
-                  <div className="modal-form-group">
-                    <label htmlFor="modal-email">E-mail *</label>
-                    <input type="email" id="modal-email" name="email" required placeholder="din@email.dk" />
-                  </div>
-                  <button type="submit" className="modal-submit" disabled={isSubmitting}>
-                    <span>{isSubmitting ? 'Sender...' : 'Skriv mig op'}</span>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                  </button>
-                  {submitStatus === 'success' && (
-                    <p className="form-success">Tak! Du hører fra os, når nye datoer åbner.</p>
-                  )}
-                  {submitStatus === 'error' && (
-                    <p className="form-error">Der opstod en fejl. Prøv igen eller skriv til info@christinaborreby.dk</p>
-                  )}
-                </form>
+                ) : (
+                  <form className="modal-form" onSubmit={handleModalSubmit}>
+                    {/* Honeypot field - hidden from humans, filled by bots */}
+                    <div style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, overflow: 'hidden' }} aria-hidden="true">
+                      <label htmlFor="website-leder">Website</label>
+                      <input type="text" id="website-leder" name="website" tabIndex={-1} autoComplete="off" />
+                    </div>
+                    <div className="modal-form-group">
+                      <label htmlFor="modal-navn">Navn *</label>
+                      <input type="text" id="modal-navn" name="navn" required placeholder="Dit fulde navn" />
+                    </div>
+                    <div className="modal-form-group">
+                      <label htmlFor="modal-email">E-mail *</label>
+                      <input type="email" id="modal-email" name="email" required placeholder="din@email.dk" />
+                    </div>
+                    <button type="submit" className="modal-submit" disabled={isSubmitting}>
+                      <span>{isSubmitting ? 'Sender...' : 'Skriv mig op'}</span>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                      </svg>
+                    </button>
+                    {submitStatus === 'error' && (
+                      <p className="form-error">Der opstod en fejl. Skriv til <a href="mailto:info@christinaborreby.dk">info@christinaborreby.dk</a> eller ring til Christina på <a href="tel:+4522471247">22 47 12 47</a></p>
+                    )}
+                  </form>
+                )}
 
                 <p className="modal-disclaimer">
                   Bare rolig, du modtager kun besked om nye workshopdatoer.

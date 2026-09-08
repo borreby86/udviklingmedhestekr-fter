@@ -110,46 +110,53 @@ export default function Contact() {
             </div>
           </div>
           <div className="contact-form">
-            <form onSubmit={handleSubmit}>
-              {/* Honeypot field - hidden from humans, filled by bots */}
-              <div style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, overflow: 'hidden' }} aria-hidden="true">
-                <label htmlFor="website-contact">Website</label>
-                <input type="text" id="website-contact" name="website" tabIndex={-1} autoComplete="off" />
+            {submitStatus === 'success' ? (
+              <div className="form-success-card">
+                <div className="form-success-card-icon">
+                  <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" /></svg>
+                </div>
+                <h3>Tak for din henvendelse</h3>
+                <p>Jeg vender tilbage inden for 24 timer.</p>
               </div>
-              <div className="form-group">
-                <label htmlFor="name">Navn *</label>
-                <input type="text" id="name" name="name" required />
-              </div>
-              <div className="form-row">
-                <div className="form-group">
-                  <label htmlFor="email">E-mail *</label>
-                  <input type="email" id="email" name="email" required />
+            ) : (
+              <form onSubmit={handleSubmit}>
+                {/* Honeypot field - hidden from humans, filled by bots */}
+                <div style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, overflow: 'hidden' }} aria-hidden="true">
+                  <label htmlFor="website-contact">Website</label>
+                  <input type="text" id="website-contact" name="website" tabIndex={-1} autoComplete="off" />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="phone">Telefon</label>
-                  <input type="tel" id="phone" name="phone" />
+                  <label htmlFor="name">Navn *</label>
+                  <input type="text" id="name" name="name" required />
                 </div>
-              </div>
-              <div className="form-group">
-                <label htmlFor="message">Besked</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={2}
-                  placeholder="Fortæl kort om din situation..."
-                />
-              </div>
-              <button type="submit" className="cta-button form-button" disabled={isSubmitting}>
-                <span>{isSubmitting ? 'Sender...' : 'Send forespørgsel'}</span>
-                <ArrowIcon />
-              </button>
-              {submitStatus === 'success' && (
-                <p className="form-success">Tak for din henvendelse! Jeg vender tilbage inden for 24 timer.</p>
-              )}
-              {submitStatus === 'error' && (
-                <p className="form-error">Der opstod en fejl. Prøv igen eller skriv direkte til info@christinaborreby.dk</p>
-              )}
-            </form>
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="email">E-mail *</label>
+                    <input type="email" id="email" name="email" required />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="phone">Telefon</label>
+                    <input type="tel" id="phone" name="phone" />
+                  </div>
+                </div>
+                <div className="form-group">
+                  <label htmlFor="message">Besked</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={2}
+                    placeholder="Fortæl kort om din situation..."
+                  />
+                </div>
+                <button type="submit" className="cta-button form-button" disabled={isSubmitting}>
+                  <span>{isSubmitting ? 'Sender...' : 'Send forespørgsel'}</span>
+                  <ArrowIcon />
+                </button>
+                {submitStatus === 'error' && (
+                  <p className="form-error">Der opstod en fejl. Skriv til <a href="mailto:info@christinaborreby.dk">info@christinaborreby.dk</a> eller ring til Christina på <a href="tel:+4522471247">22 47 12 47</a></p>
+                )}
+              </form>
+            )}
           </div>
         </div>
       </div>

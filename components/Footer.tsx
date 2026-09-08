@@ -23,6 +23,9 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean }) {
               <li>
                 <a href="mailto:info@christinaborreby.dk">info@christinaborreby.dk</a>
               </li>
+              <li>
+                <a href="tel:+4522471247">22 47 12 47</a>
+              </li>
               <li>Hørsholm, Nordsjælland</li>
             </ul>
             <div className="footer-social">

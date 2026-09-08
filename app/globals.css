@@ -1390,10 +1390,10 @@ nav.scrolled .nav-dropdown-text {
   background: var(--color-cream);
 }
 .contact-methods-container {
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
 }
 .contact-method {
@@ -1519,6 +1519,7 @@ nav.scrolled .nav-dropdown-text {
 @media (max-width: 1024px) {
   .contact-hero-stacked { padding: 8rem 3rem 4rem; min-height: auto; }
   .contact-methods { padding: 4rem 3rem; }
+  .contact-methods-container { grid-template-columns: repeat(2, 1fr); }
   .contact-form-new { padding: 4rem 3rem; }
   .contact-hero { padding: 8rem 3rem 4rem; }
   .contact-hero-container { margin-left: 2rem; }
@@ -1774,6 +1775,64 @@ nav.scrolled .nav-dropdown-text {
   color: #c62828;
   border-radius: 4px;
   font-size: 0.95rem;
+}
+.form-error a {
+  color: inherit;
+  text-decoration: underline;
+  font-weight: 600;
+}
+.form-success-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background: rgba(160, 140, 90, 0.08);
+  border: 1px solid rgba(160, 140, 90, 0.25);
+  border-radius: 8px;
+  min-height: 340px;
+  gap: 1.25rem;
+  animation: form-success-fade-in 0.4s ease-out;
+}
+@keyframes form-success-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.form-success-card-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--color-copper);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.form-success-card-icon svg {
+  width: 32px;
+  height: 32px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.form-success-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 400;
+  margin: 0;
+  color: var(--color-earth);
+  line-height: 1.2;
+}
+.form-success-card p {
+  font-size: 1.05rem;
+  color: var(--color-soft-brown);
+  margin: 0;
+  max-width: 340px;
+  line-height: 1.6;
 }
 
 /* Footer CTA */

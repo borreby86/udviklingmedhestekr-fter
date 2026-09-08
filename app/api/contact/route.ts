@@ -56,6 +56,12 @@ export async function POST(request: Request) {
       case 'tilmelding-blinde-vinkler':
         subject = `Tilmelding: Blinde Vinkler ${workshopDate || ''} - ${name}`
         break
+      case 'tilmelding-en-dag-med-heste':
+        subject = `Tilmelding: En dag med heste ${workshopDate || ''} - ${name}`
+        break
+      case 'forespoergsel-kommuner-unge':
+        subject = `Forespørgsel kommuner/unge - ${name}`
+        break
     }
 
     let htmlContent = `
