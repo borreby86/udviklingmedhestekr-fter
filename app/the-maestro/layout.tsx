@@ -39,9 +39,20 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://christinaborreby.dk/the-maestro'
   },
+  /* KLADDE: siden er skjult for søgemaskiner og AI-crawlere, indtil indholdet
+     er klar. Når den skal offentliggøres:
+       1. sæt index/follow til true herunder (og fjern googleBot-blokken)
+       2. fjern '/the-maestro' fra disallow i app/robots.ts
+       3. tilføj siden igen i app/sitemap.ts                                */
   robots: {
-    index: true,
-    follow: true
+    index: false,
+    follow: false,
+    nocache: true,
+    googleBot: {
+      index: false,
+      follow: false,
+      noimageindex: true
+    }
   }
 }
 

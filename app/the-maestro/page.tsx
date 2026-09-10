@@ -11,6 +11,13 @@
                  Tom "url" = kortet vises som "Video på vej".
    - merits[]  : indsæt starter/sejre/placeringer. Tomt array = feltet skjules.
    - Alle brødtekster er UDKAST og skal erstattes med dine egne tekster.
+
+   SIDEN ER EN KLADDE og er skjult for søgemaskiner og AI-crawlere.
+   Sådan offentliggøres den:
+     1. app/the-maestro/layout.tsx : sæt robots index/follow til true
+     2. app/robots.ts              : fjern '/the-maestro' fra draftPaths
+     3. app/sitemap.ts             : tilføj siden igen
+     4. denne fil                  : slet <p className="maestro-draft-badge">
    ------------------------------------------------------------------------ */
 
 import { useCallback, useEffect, useRef, useState } from 'react'
@@ -241,6 +248,9 @@ export default function TheMaestroPage(): React.JSX.Element {
     <>
       <Navigation />
       <main>
+
+      {/* Kladde-markering - slettes når siden offentliggøres */}
+      <p className="maestro-draft-badge">Kladde &middot; ikke offentliggjort</p>
 
       {/* Hero */}
       <section className="maestro-hero" ref={heroRef}>

@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 
+// Bemærk: /the-maestro er bevidst udeladt, indtil siden er klar (kladde).
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://christinaborreby.dk'
   const lastModified = new Date('2026-02-20')
@@ -55,12 +56,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/kontakt`,
-      lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/the-maestro`,
       lastModified,
       changeFrequency: 'monthly',
       priority: 0.6,
