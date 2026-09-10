@@ -8075,3 +8075,826 @@ nav.scrolled .mobile-menu-btn {
   white-space: nowrap;
   border-width: 0;
 }
+
+/* ===================================================================
+   THE MAESTRO — hall of fame (/the-maestro)
+   =================================================================== */
+
+.maestro-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+.maestro-container-wide {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+/* --- Hero --- */
+.maestro-hero {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  background: var(--color-earth-dark);
+}
+.maestro-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 118%;
+  z-index: 0;
+}
+.maestro-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 60% center;
+}
+.maestro-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(180deg, rgba(42, 52, 64, 0.55) 0%, rgba(42, 52, 64, 0.15) 35%, rgba(42, 52, 64, 0.85) 78%, rgba(42, 52, 64, 0.96) 100%),
+    linear-gradient(90deg, rgba(42, 52, 64, 0.8) 0%, rgba(42, 52, 64, 0.25) 55%, rgba(42, 52, 64, 0) 100%);
+}
+.maestro-hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 12rem 5rem 6rem 7rem;
+}
+.maestro-hero-text {
+  max-width: 640px;
+}
+.maestro-hero-text .section-label {
+  color: var(--color-gold);
+}
+.maestro-hero-text h1 {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 400;
+  color: var(--color-cream);
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  margin: 1rem 0 1.25rem;
+}
+.maestro-hero-tagline {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-style: italic;
+  color: var(--color-gold);
+  margin-bottom: 1.5rem;
+}
+.maestro-hero-desc {
+  font-size: 1.08rem;
+  line-height: 1.85;
+  color: rgba(244, 245, 247, 0.9);
+  max-width: 560px;
+  margin-bottom: 2.5rem;
+}
+.maestro-hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.cta-button.maestro-cta-ghost {
+  border-color: rgba(244, 245, 247, 0.55);
+  color: var(--color-cream);
+}
+.cta-button.maestro-cta-ghost:hover {
+  background: var(--color-cream);
+  color: var(--color-earth-dark);
+  border-color: var(--color-cream);
+}
+.maestro-hero-credit {
+  position: absolute;
+  right: 2rem;
+  bottom: 1.5rem;
+  z-index: 2;
+  font-family: var(--font-label);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(244, 245, 247, 0.5);
+}
+
+/* --- Fælles sektionsheader --- */
+.maestro-section-header {
+  max-width: 720px;
+  margin-bottom: 4rem;
+}
+.maestro-section-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0.75rem 0 1.25rem;
+}
+.maestro-section-intro {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--color-soft-brown);
+}
+
+/* --- Intro --- */
+.maestro-intro {
+  padding: 8rem 0 7rem;
+  background: var(--color-cream);
+}
+.maestro-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.85fr;
+  gap: 5rem;
+  align-items: center;
+}
+.maestro-intro-text .section-label {
+  color: var(--color-copper);
+}
+.maestro-intro-text h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-earth);
+  margin: 0.75rem 0 1.5rem;
+}
+.maestro-intro-text p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--color-soft-brown);
+  margin-bottom: 1.25rem;
+}
+.maestro-intro-text .maestro-lead {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--color-earth);
+}
+.maestro-intro-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 24px 60px rgba(52, 64, 79, 0.18);
+}
+.maestro-intro-frame img {
+  width: 100%;
+  height: 100%;
+  max-height: 620px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s ease;
+}
+.maestro-intro-frame:hover img {
+  transform: scale(1.03);
+}
+
+/* --- Meritter --- */
+.maestro-merits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3.5rem;
+  margin-top: 5rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--color-stone);
+}
+.maestro-merit {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.maestro-merit-value {
+  font-family: var(--font-display);
+  font-size: 2.75rem;
+  line-height: 1;
+  color: var(--color-copper);
+}
+.maestro-merit-label {
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+}
+.maestro-merits-empty p {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--color-sage);
+  margin: 0;
+}
+
+/* --- Videoer --- */
+.maestro-videos {
+  padding: 8rem 0;
+  background: var(--color-earth);
+}
+.maestro-videos .section-label {
+  color: var(--color-gold);
+}
+.maestro-videos h2 {
+  color: var(--color-cream);
+}
+.maestro-videos .maestro-section-intro {
+  color: rgba(244, 245, 247, 0.75);
+}
+.maestro-video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem 2rem;
+}
+.maestro-video-card {
+  display: flex;
+  flex-direction: column;
+}
+.maestro-video-thumb {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: none;
+  padding: 0;
+  border-radius: 4px;
+  background: var(--color-earth-dark);
+}
+.maestro-video-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s ease, filter 0.4s ease;
+}
+.maestro-video-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(42, 52, 64, 0.1) 0%, rgba(42, 52, 64, 0.55) 100%);
+  transition: background 0.4s ease;
+}
+.maestro-video-thumb:not(:disabled):hover img {
+  transform: scale(1.05);
+}
+.maestro-video-thumb:not(:disabled):hover .maestro-video-scrim {
+  background: linear-gradient(180deg, rgba(42, 52, 64, 0.05) 0%, rgba(42, 52, 64, 0.4) 100%);
+}
+.maestro-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(244, 245, 247, 0.92);
+  color: var(--color-earth-dark);
+  transition: transform 0.35s ease, background 0.35s ease;
+}
+.maestro-play svg {
+  width: 26px;
+  height: 26px;
+  margin-left: 3px;
+}
+.maestro-video-thumb:hover .maestro-play {
+  transform: translate(-50%, -50%) scale(1.08);
+  background: var(--color-gold);
+  color: var(--color-cream);
+}
+.maestro-video-card-pending .maestro-video-thumb img {
+  filter: grayscale(0.55) brightness(0.75);
+}
+.maestro-video-pending-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-label);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-cream);
+  border: 1px solid rgba(244, 245, 247, 0.5);
+  border-radius: 100px;
+  padding: 0.5rem 1.1rem;
+  white-space: nowrap;
+}
+.maestro-video-body {
+  padding-top: 1.5rem;
+}
+.maestro-video-meta {
+  font-family: var(--font-label);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 0.6rem;
+}
+.maestro-video-body h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--color-cream);
+  margin-bottom: 0.6rem;
+}
+.maestro-video-body p {
+  font-size: 0.97rem;
+  line-height: 1.8;
+  color: rgba(244, 245, 247, 0.72);
+}
+
+/* --- Vejen mod resultater --- */
+.maestro-path {
+  padding: 8rem 0;
+  background: var(--color-cream-warm);
+}
+.maestro-path .section-label {
+  color: var(--color-copper);
+}
+.maestro-path h2 {
+  color: var(--color-earth);
+}
+.maestro-pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.maestro-pillar {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 3.5rem;
+  background: var(--color-cream);
+  border: 1px solid var(--color-stone);
+  border-radius: 4px;
+  padding: 3.5rem;
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+.maestro-pillar:hover {
+  box-shadow: 0 18px 44px rgba(52, 64, 79, 0.09);
+  transform: translateY(-2px);
+}
+.maestro-pillar-aside {
+  border-right: 1px solid var(--color-stone);
+  padding-right: 2rem;
+}
+.maestro-pillar-number {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  line-height: 1;
+  color: var(--color-copper);
+  opacity: 0.55;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+.maestro-pillar-label {
+  font-family: var(--font-label);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+}
+.maestro-pillar-content h3 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--color-earth);
+  margin-bottom: 0.75rem;
+}
+.maestro-pillar-lead {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--color-copper);
+  margin-bottom: 1.5rem;
+}
+.maestro-pillar-content {
+  max-width: 68ch;
+}
+.maestro-pillar-content p {
+  font-size: 1.02rem;
+  line-height: 1.9;
+  color: var(--color-soft-brown);
+  margin-bottom: 1.15rem;
+}
+.maestro-pillar-points {
+  list-style: none;
+  margin-top: 1.75rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--color-stone);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.maestro-pillar-points li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  font-size: 0.97rem;
+  line-height: 1.7;
+  color: var(--color-earth);
+}
+.maestro-pillar-points svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 0.35rem;
+  color: var(--color-copper);
+}
+
+/* --- Det indre arbejde --- */
+.maestro-inner {
+  position: relative;
+  padding: 9rem 0;
+  overflow: hidden;
+}
+.maestro-inner-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.maestro-inner-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+.maestro-inner-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(42, 52, 64, 0.96) 0%,
+    rgba(42, 52, 64, 0.9) 40%,
+    rgba(42, 52, 64, 0.6) 70%,
+    rgba(42, 52, 64, 0.35) 100%
+  );
+}
+.maestro-inner .maestro-container-wide {
+  position: relative;
+  z-index: 2;
+}
+.maestro-inner-content {
+  max-width: 660px;
+}
+.maestro-inner-content .section-label {
+  color: var(--color-gold);
+}
+.maestro-inner-content h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-cream);
+  margin: 0.75rem 0 1.75rem;
+}
+.maestro-inner-content p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: rgba(244, 245, 247, 0.85);
+  margin-bottom: 1.25rem;
+}
+.maestro-quote {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--color-cream);
+  border-left: 2px solid var(--color-gold);
+  padding-left: 1.75rem;
+  margin: 2.25rem 0;
+}
+
+/* --- Galleri --- */
+.maestro-gallery {
+  padding: 8rem 0;
+  background: var(--color-cream);
+}
+.maestro-gallery .section-label {
+  color: var(--color-copper);
+}
+.maestro-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: 215px;
+  gap: 1.25rem;
+}
+.maestro-gallery-item {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  padding: 0;
+  border-radius: 4px;
+  background: var(--color-stone);
+  display: block;
+}
+.maestro-gallery-item-1 { grid-column: 1 / span 4; grid-row: 1 / span 2; }
+.maestro-gallery-item-2 { grid-column: 5 / span 2; grid-row: 1 / span 1; }
+.maestro-gallery-item-3 { grid-column: 5 / span 2; grid-row: 2 / span 1; }
+.maestro-gallery-item-4 { grid-column: 1 / span 2; grid-row: 3 / span 2; }
+.maestro-gallery-item-5 { grid-column: 3 / span 4; grid-row: 3 / span 2; }
+.maestro-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s ease;
+}
+.maestro-gallery-item:hover img {
+  transform: scale(1.05);
+}
+.maestro-gallery-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2.5rem 1.25rem 1.1rem;
+  text-align: left;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--color-cream);
+  background: linear-gradient(180deg, rgba(42, 52, 64, 0) 0%, rgba(42, 52, 64, 0.8) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.maestro-gallery-item:hover .maestro-gallery-caption {
+  opacity: 1;
+}
+.maestro-gallery-credit {
+  margin-top: 1.5rem;
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+}
+
+/* --- CTA --- */
+.maestro-cta {
+  position: relative;
+  padding: 9rem 0;
+  overflow: hidden;
+}
+.maestro-cta-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.maestro-cta-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+.maestro-cta-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(42, 52, 64, 0.95) 0%,
+    rgba(42, 52, 64, 0.85) 45%,
+    rgba(42, 52, 64, 0.5) 100%
+  );
+}
+.maestro-cta .maestro-container-wide {
+  position: relative;
+  z-index: 2;
+}
+.maestro-cta-content {
+  max-width: 620px;
+}
+.maestro-cta-content .section-label {
+  color: var(--color-gold);
+}
+.maestro-cta-content h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-cream);
+  margin: 0.75rem 0 1.5rem;
+}
+.maestro-cta-content p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: rgba(244, 245, 247, 0.85);
+}
+
+/* --- Lightbox --- */
+.maestro-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(26, 34, 43, 0.94);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  animation: maestroFade 0.3s ease;
+}
+@keyframes maestroFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.maestro-lightbox-inner {
+  width: 100%;
+  max-width: 1100px;
+}
+.maestro-lightbox-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.maestro-lightbox-frame iframe,
+.maestro-lightbox-frame video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.maestro-lightbox-inner > img {
+  width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+  display: block;
+  border-radius: 4px;
+}
+.maestro-lightbox-caption {
+  padding-top: 1.25rem;
+}
+.maestro-lightbox-caption h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--color-cream);
+}
+.maestro-lightbox-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.75rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(244, 245, 247, 0.35);
+  background: transparent;
+  color: var(--color-cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+.maestro-lightbox-close:hover {
+  background: rgba(244, 245, 247, 0.12);
+  border-color: var(--color-cream);
+}
+.maestro-lightbox-close svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* --- Responsivt --- */
+@media (max-width: 1100px) {
+  .maestro-video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .maestro-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .maestro-intro-frame img {
+    max-height: 460px;
+  }
+  .maestro-pillar {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2.5rem;
+  }
+  .maestro-pillar-aside {
+    border-right: none;
+    border-bottom: 1px solid var(--color-stone);
+    padding-right: 0;
+    padding-bottom: 1.25rem;
+    display: flex;
+    align-items: baseline;
+    gap: 1.25rem;
+  }
+  .maestro-pillar-number {
+    margin-bottom: 0;
+    font-size: 2.5rem;
+  }
+  .maestro-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 200px;
+  }
+  .maestro-gallery-item-1 { grid-column: 1 / span 2; grid-row: 1 / span 2; }
+  .maestro-gallery-item-2 { grid-column: 1 / span 1; grid-row: 3 / span 1; }
+  .maestro-gallery-item-3 { grid-column: 2 / span 1; grid-row: 3 / span 1; }
+  .maestro-gallery-item-4 { grid-column: 1 / span 1; grid-row: 4 / span 2; }
+  .maestro-gallery-item-5 { grid-column: 2 / span 1; grid-row: 4 / span 2; }
+}
+
+@media (max-width: 768px) {
+  .maestro-container,
+  .maestro-container-wide {
+    padding: 0 1.5rem;
+  }
+  .maestro-hero {
+    min-height: 88vh;
+  }
+  .maestro-hero-content {
+    padding: 9rem 1.5rem 4rem;
+  }
+  .maestro-hero-tagline {
+    font-size: 1.2rem;
+  }
+  .maestro-hero-desc {
+    font-size: 1.02rem;
+  }
+  .maestro-hero-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .maestro-hero-buttons .cta-button {
+    width: 100%;
+    justify-content: center;
+  }
+  .maestro-hero-credit {
+    right: 1.5rem;
+    bottom: 0.75rem;
+  }
+  .maestro-intro,
+  .maestro-videos,
+  .maestro-path,
+  .maestro-gallery {
+    padding: 5rem 0;
+  }
+  .maestro-inner,
+  .maestro-cta {
+    padding: 6rem 0;
+  }
+  .maestro-section-header {
+    margin-bottom: 2.5rem;
+  }
+  .maestro-video-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .maestro-merits {
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  .maestro-merit-value {
+    font-size: 2.25rem;
+  }
+  .maestro-pillar {
+    padding: 2rem 1.5rem;
+  }
+  .maestro-pillar-content h3 {
+    font-size: 1.6rem;
+  }
+  .maestro-pillar-lead {
+    font-size: 1.15rem;
+  }
+  .maestro-quote {
+    font-size: 1.25rem;
+    padding-left: 1.25rem;
+  }
+  .maestro-gallery-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+  .maestro-gallery-item {
+    aspect-ratio: 3 / 2;
+  }
+  .maestro-gallery-item-1,
+  .maestro-gallery-item-2,
+  .maestro-gallery-item-3,
+  .maestro-gallery-item-4,
+  .maestro-gallery-item-5 {
+    grid-column: 1 / span 1;
+    grid-row: auto;
+  }
+  .maestro-gallery-caption {
+    opacity: 1;
+  }
+  .maestro-lightbox {
+    padding: 4.5rem 1rem 2rem;
+  }
+  .maestro-lightbox-close {
+    top: 1rem;
+    right: 1rem;
+  }
+}
