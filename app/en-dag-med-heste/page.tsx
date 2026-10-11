@@ -14,15 +14,11 @@ const scrollNavLinks = [
   { label: 'Datoer', href: '#datoer' }
 ]
 
-const workshopDates = [
-  { day: '26', month: 'September', year: '2026', time: 'kl. 11-15', isoDate: '2026-09-26T11:00:00+02:00' }
-]
-
 const dagensRytme = [
   { title: 'I møder hestene', description: 'I starter med at strigle og lære hesten at kende. I er to om hver hest, så I følges ad hele dagen og hjælper hinanden.' },
   { title: 'Øvelser i folden', description: 'Små opgaver hvor I sammen får hesten til at gå med jer over forhindringer. Det er sjovere - og sværere - end det lyder.' },
   { title: 'Frokost sammen', description: 'Vi spiser sammen midt på dagen. Det er en del af dagen at sænke tempoet og snakke.' },
-  { title: 'Ridetur i skoven', description: 'I skiftes til at sidde på hesten, mens den anden går ved siden af. Hjelm er obligatorisk - vi har til låns.' },
+  { title: 'Op på hesten', description: 'I skiftes til at sidde op på hesten, mens den anden går ved siden af. Hjelm er obligatorisk - vi har til låns.' },
   { title: 'Vi runder af', description: 'Kort runde til sidst, hvor I får sat ord på hvad I tager med jer fra dagen.' }
 ]
 
@@ -48,8 +44,7 @@ const detSkalDuVide = [
 export default function EnDagMedHestePage() {
   const heroRef = useRef(null)
   const [modalOpen, setModalOpen] = useState(false)
-  const [selectedDate, setSelectedDate] = useState<typeof workshopDates[0] | null>(null)
-  const [showScrollNav, setShowScrollNav] = useState(false)
+    const [showScrollNav, setShowScrollNav] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [formLoadTime, setFormLoadTime] = useState<number | null>(null)
@@ -70,8 +65,7 @@ export default function EnDagMedHestePage() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const openModal = (date: typeof workshopDates[0]) => {
-    setSelectedDate(date)
+  const openModal = () => {
     setModalOpen(true)
     setFormLoadTime(Date.now())
     document.body.style.overflow = 'hidden'
@@ -88,7 +82,6 @@ export default function EnDagMedHestePage() {
     document.body.style.top = ''
     window.scrollTo(0, parseInt(scrollY || '0') * -1)
     setModalOpen(false)
-    setSelectedDate(null)
     setSubmitStatus('idle')
   }
 
@@ -104,8 +97,8 @@ export default function EnDagMedHestePage() {
       email: formData.get('email'),
       phone: formData.get('telefon'),
       message: formData.get('besked'),
-      formType: 'tilmelding-en-dag-med-heste',
-      workshopDate: selectedDate ? `${selectedDate.day}. ${selectedDate.month} ${selectedDate.year}` : '',
+      formType: 'venteliste-en-dag-med-heste',
+      workshopDate: 'Forår 2027',
       _honeypot: formData.get('website'),
       _loadTime: formLoadTime,
     }
@@ -119,7 +112,7 @@ export default function EnDagMedHestePage() {
 
       if (response.ok) {
         setSubmitStatus('success')
-        trackEvent('form_submit', { form_type: 'tilmelding-en-dag-med-heste' })
+        trackEvent('form_submit', { form_type: 'venteliste-en-dag-med-heste' })
         form.reset()
       } else {
         setSubmitStatus('error')
@@ -172,10 +165,10 @@ export default function EnDagMedHestePage() {
               <h1>En dag med <em>heste, ro</em> og natur</h1>
               <p className="workshop-hero-tagline">For dig der er nysgerrig på heste og elsker tid i naturen</p>
               <p className="workshop-hero-desc">
-                4 timer i Hørsholm hvor du møder hestene, lærer at passe og pleje dem, og slutter med en lille ridetur i skoven. Du behøver ikke have redet før, og du behøver ikke være god til noget. Du skal bare have lyst til at være tæt på et stort dyr en hel dag og opleve hvad der sker, når man sænker tempoet.
+                4 timer i Hørsholm hvor du møder hestene, lærer at passe og pleje dem, og slutter med at sidde op på hesten. Du behøver ikke have redet før, og du behøver ikke være god til noget. Du skal bare have lyst til at være tæt på et stort dyr en hel dag og opleve hvad der sker, når man sænker tempoet.
               </p>
               <a href="#datoer" className="cta-button">
-                <span>Se datoer og tilmeld dig</span>
+                <span>Få besked om nye datoer</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
@@ -197,7 +190,7 @@ export default function EnDagMedHestePage() {
               <p className="section-label">Hvad sker der den dag?</p>
               <h2>I er to om hver hest - I følges ad gennem hele dagen</h2>
               <p className="workshop-forloeb-intro">
-                Du lærer at passe og pleje hesten, og hvordan man skaber forbindelse til så stort et dyr - så du har tillid til den, og den til dig - inden I skal ud på en lille ridetur i skoven.
+                Du lærer at passe og pleje hesten, og hvordan man skaber forbindelse til så stort et dyr - så du har tillid til den, og den til dig - inden I skal sidde op på hesten.
               </p>
               <p className="workshop-forloeb-intro" style={{ marginTop: '1rem' }}>
                 Vi veksler mellem aktivitet og pauser med korte snakke, hvor I får plads til at sætte ord på det I oplever. Frokosten midt på dagen er en del af dagen.
@@ -229,7 +222,7 @@ export default function EnDagMedHestePage() {
             >
               <div className="workshop-phase-header">
                 <span className="phase-label">Kl. 11-15 · 4 timer · frokost inkluderet</span>
-                <h3>Fra første hilsen til ridetur i skoven</h3>
+                <h3>Fra første hilsen til at sidde op på hesten</h3>
               </div>
               <div className="workshop-during-steps">
                 {dagensRytme.map((step, index) => (
@@ -336,33 +329,27 @@ export default function EnDagMedHestePage() {
             </motion.div>
 
             <div className="workshop-date-cards-vertical">
-              {workshopDates.map((date, index) => (
-                <motion.button
-                  key={index}
-                  onClick={() => openModal(date)}
-                  className="workshop-date-card workshop-date-card-light"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                  <time dateTime={date.isoDate} className="date-card-date">
-                    <div className="date-card-day-month">
-                      <span className="date-card-day">{date.day}</span>
-                      <span className="date-card-month">{date.month}</span>
-                    </div>
-                    <span className="date-card-year">{date.year}</span>
-                  </time>
-                  <div className="date-card-time">{date.time}</div>
-                  <div className="date-card-divider" />
-                  <div className="date-card-action">
-                    <span>Tilmeld dig</span>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
+              <motion.button
+                onClick={openModal}
+                className="workshop-date-card workshop-date-card-light"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className="date-card-date">
+                  <div className="date-card-day-month">
+                    <span className="date-card-month">Nye datoer for forår 2027 på vej</span>
                   </div>
-                </motion.button>
-              ))}
+                </div>
+                <div className="date-card-divider" />
+                <div className="date-card-action">
+                  <span>Få besked</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </div>
+              </motion.button>
             </div>
           </div>
         </section>
@@ -371,7 +358,7 @@ export default function EnDagMedHestePage() {
 
       {/* Tilmelding modal */}
       <AnimatePresence>
-        {modalOpen && selectedDate && (
+        {modalOpen && (
           <motion.div
             className="modal-overlay"
             initial={{ opacity: 0 }}
@@ -395,9 +382,9 @@ export default function EnDagMedHestePage() {
 
               <div className="modal-body">
                 <div className="modal-header">
-                  <p className="section-label">Tilmelding</p>
-                  <h3>{selectedDate.day}. {selectedDate.month} {selectedDate.year}</h3>
-                  <p className="modal-info">{selectedDate.time} · Løjeltevej 16, 2970 Hørsholm</p>
+                  <p className="section-label">Venteliste</p>
+                  <h3>Få besked om forår 2027</h3>
+                  <p className="modal-info">Løjeltevej 16, 2970 Hørsholm</p>
                 </div>
 
                 {submitStatus === 'success' ? (
@@ -405,8 +392,8 @@ export default function EnDagMedHestePage() {
                     <div className="form-success-card-icon">
                       <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" /></svg>
                     </div>
-                    <h3>Tak for din tilmelding</h3>
-                    <p>Du modtager en bekræftelse på mail inden for 24 timer.</p>
+                    <h3>Tak, du er på ventelisten</h3>
+                    <p>Du hører fra os, når nye datoer åbner.</p>
                   </div>
                 ) : (
                   <form className="modal-form" onSubmit={handleModalSubmit}>
@@ -436,7 +423,7 @@ export default function EnDagMedHestePage() {
                       />
                     </div>
                     <button type="submit" className="modal-submit" disabled={isSubmitting}>
-                      <span>{isSubmitting ? 'Sender...' : 'Send tilmelding'}</span>
+                      <span>{isSubmitting ? 'Sender...' : 'Skriv mig på ventelisten'}</span>
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                         <path d="M5 12h14M12 5l7 7-7 7"/>
                       </svg>

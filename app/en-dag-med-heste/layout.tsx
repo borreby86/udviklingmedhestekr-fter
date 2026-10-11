@@ -4,19 +4,18 @@ import SchemaMarkup from '@/components/SchemaMarkup'
 export const metadata: Metadata = {
   metadataBase: new URL('https://christinaborreby.dk'),
   title: 'En dag med heste, ro og natur | Workshop for unge | Christina Borreby',
-  description: 'En dag med heste, ro og natur for dig der elsker tid udenfor. 4 timer i Hørsholm uden krav om hesteerfaring. Se datoer og tilmeld dig.',
+  description: 'En dag med heste, ro og natur for dig der elsker tid udenfor. 4 timer i Hørsholm uden krav om hesteerfaring. Nye datoer for forår 2027 på vej, få besked.',
   keywords: [
     'workshop unge heste',
     'hestedag',
     'ridning Hørsholm',
     'unge natur',
     'heste workshop',
-    'ridetur skoven',
     'Christina Borreby'
   ],
   openGraph: {
     title: 'En dag med heste, ro og natur | Workshop for unge',
-    description: 'For dig der er nysgerrig på heste og elsker tid i naturen. 4 timer uden krav om erfaring. Se datoer.',
+    description: 'For dig der er nysgerrig på heste og elsker tid i naturen. 4 timer uden krav om erfaring. Nye datoer for forår 2027 på vej.',
     url: 'https://christinaborreby.dk/en-dag-med-heste',
     siteName: 'Christina Borreby',
     locale: 'da_DK',
@@ -49,7 +48,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Event',
   name: 'En dag med heste, ro og natur - workshop for unge',
-  description: '4 timers workshop med heste, frokost og ridetur i naturen. For unge der vil prøve noget nyt - ingen erfaring nødvendig.',
+  description: '4 timers workshop med heste, frokost og at sidde op på hesten. For unge der vil prøve noget nyt - ingen erfaring nødvendig.',
   eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
   eventStatus: 'https://schema.org/EventScheduled',
   location: {
