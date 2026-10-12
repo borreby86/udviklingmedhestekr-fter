@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 import SchemaMarkup from '@/components/SchemaMarkup'
 
 export const metadata: Metadata = {
@@ -75,6 +76,11 @@ export default function KommunerUngeLayout({
 }: {
   children: React.ReactNode
 }) {
+  // Kladde: siden er skjult paa den rigtige side, men synlig lokalt og paa preview. Fjern disse tre linjer for at gaa live.
+  if (process.env.VERCEL_ENV === 'production') {
+    notFound()
+  }
+
   return (
     <>
       <SchemaMarkup data={jsonLd} />

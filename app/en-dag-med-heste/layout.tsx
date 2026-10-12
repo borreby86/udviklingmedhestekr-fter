@@ -53,10 +53,9 @@ const jsonLd = {
   eventStatus: 'https://schema.org/EventScheduled',
   location: {
     '@type': 'Place',
-    name: 'Løjeltevej 16, Hørsholm',
+    name: 'Hørsholm',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Løjeltevej 16',
       postalCode: '2970',
       addressLocality: 'Hørsholm',
       addressCountry: 'DK'

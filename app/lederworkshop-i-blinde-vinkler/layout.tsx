@@ -76,7 +76,6 @@ const jsonLd = {
     name: 'Hørsholm, Nordsjælland',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Løjeltevej 16',
       postalCode: '2970',
       addressLocality: 'Hørsholm',
       addressRegion: 'Nordsjælland',

@@ -29,7 +29,7 @@ const formater = [
   {
     title: 'Dagsworkshop',
     duration: '6-8 unge · 4 timer',
-    description: 'En hel dag med heste, frokost og ridetur i naturen. Fællesskab i mindre format, hvor de unge er to og to om hver hest og følges ad gennem hele dagen.'
+    description: 'En hel dag med heste, frokost og at sidde op på hesten. Fællesskab i mindre format, hvor de unge er to og to om hver hest og følges ad gennem hele dagen.'
   },
   {
     title: 'Forløb over tid',
@@ -44,7 +44,7 @@ const aktiviteter = [
   { title: 'Refleksionsrunder', description: 'Korte samtaler hvor oplevelsen får ord og integreres' },
   { title: 'Nervesystemsøvelser', description: 'Kropslige øvelser der lærer den unge at finde ro som anker' },
   { title: 'Ridning (valgfrit)', description: 'Det er valgfrit at ride - også at deltage helt uden er en øvelse' },
-  { title: 'Ridetur i naturen', description: 'Tur i skoven hvor de unge skiftes til at sidde på hesten' },
+  { title: 'Op på hesten', description: 'De unge skiftes til at sidde op på hesten, mens den anden går ved siden af' },
   { title: 'Frokost sammen', description: 'En del af rammen ved længere forløb - fællesskab uden krav' },
   { title: 'Skriftlig opsamling', description: 'Mulighed for kort dokumentation til kommunens videre arbejde' }
 ]
@@ -56,7 +56,7 @@ const dagsForloeb = [
   'Øvelser i folden med små forhindringer',
   'Kort "Hvad skulle der til?"-runde',
   'Frokost sammen',
-  'Ridetur i naturen, to og to om hver hest',
+  'At sidde op på hesten, to og to om hver hest',
   'Afsluttende "Hvad tager I med?"-runde'
 ]
 
@@ -517,7 +517,7 @@ export default function KommunerUngePage() {
               <p className="section-label">Praktisk og pris</p>
               <h2>Rammer der virker</h2>
               <p className="workshop-dates-intro">
-                Løjeltevej 16, 2970 Hørsholm. 4 heste til rådighed. Mulighed for forplejning ved længere besøg.
+                2970 Hørsholm (kræver bil). 4 heste til rådighed. Mulighed for forplejning ved længere besøg.
               </p>
             </motion.div>
 

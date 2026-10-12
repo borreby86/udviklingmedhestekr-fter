@@ -324,7 +324,7 @@ export default function EnDagMedHestePage() {
               <p className="section-label">Datoer</p>
               <h2>Vælg din dag</h2>
               <p className="workshop-dates-intro">
-                Løjeltevej 16, 2970 Hørsholm. Kl. 11-15. Plads til 6-8 unge pr. dag.
+                2970 Hørsholm (kræver bil). Kl. 11-15. Plads til 6-8 unge pr. dag.
               </p>
             </motion.div>
 
@@ -384,7 +384,7 @@ export default function EnDagMedHestePage() {
                 <div className="modal-header">
                   <p className="section-label">Venteliste</p>
                   <h3>Få besked om forår 2027</h3>
-                  <p className="modal-info">Løjeltevej 16, 2970 Hørsholm</p>
+                  <p className="modal-info">2970 Hørsholm (kræver bil)</p>
                 </div>
 
                 {submitStatus === 'success' ? (
