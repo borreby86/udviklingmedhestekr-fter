@@ -4,7 +4,7 @@ import SchemaMarkup from '@/components/SchemaMarkup'
 export const metadata: Metadata = {
   metadataBase: new URL('https://christinaborreby.dk'),
   title: 'Lederworkshop i Blinde Vinkler | Christina Borreby & Michael Casparij',
-  description: 'Mini-forløb der øger din selvindsigt som leder. Kombiner MBS® Relationsanalyse med hesteassisteret lederskabstræning og find din gyldne middelvej i ledelse. Intropris kr. 4.750.',
+  description: 'Mini-forløb der øger din selvindsigt som leder. Kombiner MBS® Relationsanalyse med hesteassisteret lederskabstræning og find din gyldne middelvej i ledelse.',
   keywords: [
     'lederworkshop',
     'blinde vinkler',
@@ -81,13 +81,6 @@ const jsonLd = {
       addressRegion: 'Nordsjælland',
       addressCountry: 'DK'
     }
-  },
-  offers: {
-    '@type': 'Offer',
-    price: '4750',
-    priceCurrency: 'DKK',
-    availability: 'https://schema.org/InStock',
-    validFrom: '2025-01-01'
   },
   inLanguage: 'da',
   image: 'https://christinaborreby.dk/og-lederworkshop.jpg'

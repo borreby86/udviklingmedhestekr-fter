@@ -329,7 +329,7 @@ export default function BlindeVinklerPage() {
             </p>
             <p className="workshop-hero-cta-text">Er du klar til at se dig selv fra en ny vinkel?</p>
             <a href="#tilmelding" className="cta-button">
-              <span>Se datoer og priser</span>
+              <span>Forespørg dato</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
@@ -789,42 +789,14 @@ export default function BlindeVinklerPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <p className="section-label">Pris og praktik</p>
-            <h2>Vælg din dato</h2>
+            <p className="section-label">Praktik</p>
+            <h2>Datoer</h2>
             <p className="workshop-dates-intro">
               Nordsjælland, 2970 Hørsholm
             </p>
           </motion.div>
 
           <div className="workshop-date-cards-vertical">
-            {workshopDates.map((date, index) => (
-              <motion.button
-                key={index}
-                onClick={() => openModal(date)}
-                className="workshop-date-card workshop-date-card-light"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <time dateTime="2026-04-01T09:00:00+02:00" className="date-card-date">
-                  <div className="date-card-day-month">
-                    <span className="date-card-day">{date.day}</span>
-                    <span className="date-card-month">{date.month}</span>
-                  </div>
-                  <span className="date-card-year">{date.year}</span>
-                </time>
-                <div className="date-card-time">{date.time}</div>
-                <div className="date-card-divider" />
-                <div className="date-card-action">
-                  <span>Tilmeld dig</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
-                </div>
-              </motion.button>
-            ))}
-
             {/* Forespørg dato til ledergruppe/team */}
             <motion.a
               href="/kontakt"
@@ -832,11 +804,11 @@ export default function BlindeVinklerPage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: workshopDates.length * 0.1 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
             >
               <div className="date-card-inquiry-content">
-                <h4>Til jeres ledergruppe eller team?</h4>
-                <p>Forespørg på en dato der passer jer</p>
+                <h4>Forespørg på datoer eller lukket workshop</h4>
+                <p>Til jeres ledergruppe eller team – vi finder en dato der passer jer</p>
               </div>
               <div className="date-card-divider" />
               <div className="date-card-action">
@@ -847,24 +819,6 @@ export default function BlindeVinklerPage() {
               </div>
             </motion.a>
           </div>
-
-          <motion.div
-            className="workshop-pricing-compact"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <div className="pricing-compact-main">
-              <span className="pricing-compact-label">Intropris</span>
-              <span className="pricing-compact-amount">kr. 4.750</span>
-              <span className="pricing-compact-suffix">ex. moms</span>
-              <span className="pricing-compact-original">Normalpris: kr. 9.500</span>
-            </div>
-            <div className="pricing-compact-includes">
-              <span>Inkl. MBS® test, 1:1 feedback, workshop, opfølgning og læringsplatform</span>
-            </div>
-          </motion.div>
 
         </div>
       </section>
