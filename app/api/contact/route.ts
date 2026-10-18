@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer'
 export async function POST(request: Request) {
   try {
     const body = await request.json()
-    const { name, email, phone, company, message, formType, workshopDate, _honeypot, _loadTime } = body
+    const { name, email, phone, company, message, formType, workshopDate, topic, callTime, _honeypot, _loadTime } = body
 
     // Spam protection: Check honeypot field (should be empty for humans)
     if (_honeypot) {
@@ -62,6 +62,12 @@ export async function POST(request: Request) {
       case 'tilmelding-en-dag-med-heste':
         subject = `Tilmelding: En dag med heste ${workshopDate || ''} - ${name}`
         break
+      case 'floating-kontakt':
+        subject = `Ny kontakt via flydende knap: ${name}`
+        break
+      case 'floating-opkald':
+        subject = `Opkald ønskes (flydende knap): ${name}`
+        break
       case 'forespoergsel-kommuner-unge':
         subject = `Forespørgsel kommuner/unge - ${name}`
         break
@@ -74,6 +80,8 @@ export async function POST(request: Request) {
     `
     if (phone) htmlContent += `<p><strong>Telefon:</strong> ${phone}</p>`
     if (company) htmlContent += `<p><strong>Virksomhed:</strong> ${company}</p>`
+    if (topic) htmlContent += `<p><strong>Emne:</strong> ${topic}</p>`
+    if (callTime) htmlContent += `<p><strong>Passende tidspunkt:</strong> ${callTime}</p>`
     if (workshopDate) htmlContent += `<p><strong>Dato:</strong> ${workshopDate}</p>`
     if (message) htmlContent += `<p><strong>Besked:</strong></p><p>${message}</p>`
     htmlContent += `<hr><p style="color:#666;font-size:12px;">Sendt fra christinaborreby.dk</p>`

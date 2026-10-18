@@ -38,7 +38,7 @@ export default function WorkshopBanner() {
   if (isFrontpage) {
     return (
       <div className="workshop-topbar">
-        <span className="workshop-topbar-label">Aktuel Workshop</span>
+        <span className="workshop-topbar-label">Aktuelle workshops</span>
         <a
           href="https://autentiskindflydelse.dk"
           target="_blank"
@@ -86,7 +86,7 @@ export default function WorkshopBanner() {
         rel="noopener noreferrer"
         className="workshop-badge-link"
       >
-        <span className="workshop-badge-label">Aktuel workshop</span>
+        <span className="workshop-badge-label">Aktuelle workshops</span>
         <span className="workshop-badge-title">Autentisk Indflydelse</span>
         <span className="workshop-badge-subtitle">– med hesten som læremester →</span>
       </a>

@@ -26,15 +26,22 @@ export default function About() {
         >
           <p className="section-label">Din facilitator</p>
           <h2>Christina Borreby</h2>
-          <p className="about-credentials">Cand.negot i Kommunikation & HR · Certificeret psykoterapeut · 30 års erfaring med heste</p>
+          <p className="about-credentials">Cand.negot · Certificeret psykoterapeut · 30 års erfaring med heste</p>
           <p>
-            Min passion er at hjælpe ledere med at opbygge et stærkt indre fundament, så de kan stå roligt, tydeligt og autentisk i deres lederskab.
+            Fra barnsben har heste været mine læremestre i nærvær og lederskab, uden jeg var bevidst om det.
+            Når jeg mistede fokus eller var uklar i min intention, tog hesten over.
           </p>
           <p>
-            Med en baggrund som cand.negot i kommunikation og HR, mange års erfaring som psykoterapeut og træning af galopheste, hvor mit eget autentiske lederskab dagligt kommer på prøve, har jeg skabt et koncept hvor teori og praksis smelter sammen. Denne kombination giver mig en unik evne til at forbinde forretningsforståelse, psykologisk indsigt og konkret erfaring med samarbejde under pres.
+            Når du sidder på 500 kilo muskler, der galoperer afsted med 60 km/t, finder du hurtigt ud af, om dit lederskab virker.
+            Det har jeg mærket på egen krop!
           </p>
           <p>
-            Hestene er mine vigtigste samarbejdspartnere. De spejler med det samme de mønstre og blind spots, som ellers kan være svære at opdage. De viser præcist, hvor vi mister kontakt, retning eller energi, og åbner en vej til forandring, der ikke blot handler om at løse problemer, men om at forløse potentiale.
+            Hestene lærer mig dagligt, at følgeskab ikke handler om kontrol – men om nærvær, tydelighed og sunde grænser.
+            Og ikke mindst om kongruens mellem det, man tænker, føler og signalerer udadtil.
+          </p>
+          <p>
+            Den erfaring bruger jeg i dag – kombineret med min baggrund i kommunikation, adfærdspsykologi og menneskelig udvikling –
+            til at hjælpe ledere, teams og unge med at se deres eget lederskab uden filter.
           </p>
         </motion.div>
       </div>
