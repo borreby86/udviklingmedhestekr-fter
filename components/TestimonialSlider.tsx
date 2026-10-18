@@ -6,7 +6,7 @@ import { ArrowIcon } from './Icons'
 // Ord mellem *stjerner* fremhæves med guld
 const testimonials = [
   {
-    quote: '"Hestens adfærd hjalp mig til at fokusere på og *forstå min adfærd*. På godt og ondt. Og det var *det hele værd*."',
+    quote: '"Hestens adfærd hjalp mig til at fokusere på og *forstå min adfærd.* På godt og ondt*.* Og det var *det hele værd.*"',
     name: 'Kim Høgh',
     role: 'Bestyrelsesformand & Tidl. CEO, Hjerteforeningen'
   },
