@@ -29,8 +29,9 @@ const services = [
   {
     tag: 'For unge',
     title: 'En dag med heste',
-    text: 'En dag med ro, natur og heste for unge. Du møder hestene, lærer at passe og pleje dem og slutter med at sidde op på hesten. Ingen erfaring nødvendig.',
-    href: '/en-dag-med-heste',
+    text: 'I samarbejde med Fredensborg Kommune tilbyder jeg workshoppen "En dag med heste" for unge ml. 13–18 år. Fokus er på at skabe tillid og opdage, hvad der sker i os, når vi sænker tempoet med hestene.',
+    href: 'https://www.ungfredensborg.dk/subjectclass/06de21810fbf4a5ebac8653c28e420ff',
+    external: true,
     image: '/unge-dag-med-heste.jpg',
     alt: 'Unge med heste og ponyer ude på engen'
   }
@@ -57,7 +58,12 @@ export default function Services() {
       </div>
       <div className="bento-grid">
         {services.map((service, index) => (
-          <a key={index} href={service.href} className="bento-card">
+          <a
+            key={index}
+            href={service.href}
+            className="bento-card"
+            {...('external' in service && service.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+          >
             <div className="bento-media">
               <Image
                 src={service.image}
