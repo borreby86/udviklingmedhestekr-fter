@@ -21,7 +21,7 @@ const services = [
   {
     tag: '1:1 personlig udvikling',
     title: 'Samtaler & forløb',
-    text: 'Individuelle forløb i Hørsholm eller online. Fokus på at forstå dine tanke- og adfærdsmønstre, regulere stress og finde ro, nærvær og retning.',
+    text: 'Jeg tilbyder terapi og coaching sessioner samt forløb, hvor hestene indgår og hjælper dig med at regulere stress, finde ro, nærvær og retning. Kontakt og hør mere.',
     href: '/kontakt',
     image: '/samtaler-gaatur.jpg',
     alt: 'To kvinder går og taler sammen ad en grusvej'
