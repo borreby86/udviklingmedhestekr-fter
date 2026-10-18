@@ -1,10 +1,9 @@
 import Navigation from '@/components/Navigation'
 import Hero from '@/components/Hero'
-import SocialProof from '@/components/SocialProof'
 import Services from '@/components/Services'
 import WhyHorsesVideo from '@/components/WhyHorsesVideo'
 import Audience from '@/components/Audience'
-import Testimonials from '@/components/Testimonials'
+import TestimonialSlider from '@/components/TestimonialSlider'
 import About from '@/components/About'
 import CTA from '@/components/CTA'
 import Footer from '@/components/Footer'
@@ -55,9 +54,9 @@ export default function Home() {
         <Services />
         {/* <LeadershipLevelsExplore /> skjult indtil videre */}
         {/* <PracticalBanner /> skjult indtil videre */}
-        <SocialProof />
+        {/* <SocialProof /> bevisbåndet – skjult indtil videre, komponenten ligger i components/SocialProof.tsx */}
         <WhyHorsesVideo />
-        <Testimonials />
+        <TestimonialSlider />
         <About />
         <Audience />
         {/* <FAQ /> skjult indtil videre */}

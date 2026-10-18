@@ -9984,3 +9984,25 @@ html:not([data-font='jost']) .hero .hero-intro { line-height: 1.6; }
   line-height: var(--lh-body) !important;
   font-size-adjust: 0.46;
 }
+
+/* Udtalelser – slider, mørk baggrund */
+.tslide-section { background: var(--color-earth); padding: 6rem 2rem; text-align: center; }
+.tslide-section .section-label { color: var(--color-copper-light); margin-bottom: 3rem; }
+.tslide-row { display: flex; align-items: center; justify-content: center; gap: 2rem; max-width: 1200px; margin: 0 auto; }
+.tslide-slide { flex: 1; max-width: 860px; min-height: 12rem; display: flex; flex-direction: column; justify-content: center; }
+.tslide-quote { font-family: var(--font-display); font-style: italic; font-size: clamp(1.6rem, 2.8vw, 2.3rem); line-height: 1.4; color: var(--color-cream); margin: 0 0 2rem; }
+.tslide-name { color: var(--color-cream); font-size: 1.1rem; margin: 0 0 .35rem; }
+.tslide-role { color: var(--color-stone); font-size: 1rem; margin: 0; }
+.tslide-nav { background: none; border: 1px solid rgba(244,245,247,.35); color: var(--color-cream); border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; transition: all .2s ease; }
+.tslide-nav:hover { border-color: var(--color-copper-light); background: rgba(244,245,247,.08); }
+.tslide-dots { display: flex; justify-content: center; gap: .5rem; margin-top: 2rem; }
+.tslide-dot { width: 10px; height: 10px; border-radius: 50%; border: none; padding: 0; background: rgba(244,245,247,.3); cursor: pointer; }
+.tslide-dot.active { background: var(--color-copper-light); }
+.tslide-cta { margin-top: 3rem; }
+@media (max-width: 700px) {
+  .tslide-section { padding: 4rem 1.25rem; }
+  .tslide-row { flex-wrap: wrap; gap: 1.25rem; }
+  .tslide-slide { order: 1; flex-basis: 100%; min-height: 0; }
+  .tslide-nav { order: 2; }
+  .tslide-quote { font-size: 1.5rem; }
+}
