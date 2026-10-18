@@ -29,7 +29,7 @@ export default function Hero() {
             <span>Se hvad jeg tilbyder</span>
             <ArrowIcon />
           </a>
-          <a href="/om-mig" className="cta-button-secondary">
+          <a href="#om" className="cta-button-secondary">
             <span>Om mig</span>
           </a>
         </div>
