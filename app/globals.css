@@ -9958,11 +9958,11 @@ html:not([data-font='jost']) .hero .hero-intro { line-height: 1.6; }
 :root {
   --size-h1: clamp(3rem, 5.5vw, 4.2rem);
   --size-h2: clamp(2rem, 3.5vw, 2.6rem);
-  --size-body: 1.15rem;
+  --size-body: 17px;
   --lh-body: 1.6;
 }
 @media (max-width: 700px) {
-  :root { --size-h1: 2.3rem; --size-h2: 1.75rem; --size-body: 1.05rem; }
+  :root { --size-h1: 2.3rem; --size-h2: 1.75rem; --size-body: 17px; }
 }
 .home-typo .hero h1,
 .home-typo .method-hero h1 { font-size: var(--size-h1) !important; }
