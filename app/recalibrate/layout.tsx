@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import SchemaMarkup from '@/components/SchemaMarkup'
 
 export const metadata: Metadata = {
+  // MIDLERTIDIG noindex mens indholdet skrives om. Fjern 'robots' her og læg siden tilbage i app/sitemap.ts, når den skal indekseres igen.
+  robots: { index: false, follow: true },
   title: 'Recalibrate | Nervesystemsregulering med heste | Christina Borreby',
   description: 'Hold tempoet uden at kroppen betaler prisen. Lær at regulere dit nervesystem med hestenes hjælp og naturens ro. Enkelt session fra 1.500 kr.',
   openGraph: {

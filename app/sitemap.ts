@@ -29,12 +29,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.9,
     },
-    {
-      url: `${baseUrl}/recalibrate`,
-      lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
+    // /recalibrate er midlertidigt fjernet fra sitemap (noindex, indhold omskrives).
+    // Læg den tilbage her, når noindex fjernes i app/recalibrate/layout.tsx:
+    // { url: `${baseUrl}/recalibrate`, lastModified, changeFrequency: 'monthly', priority: 0.8 },
     {
       url: `${baseUrl}/lederworkshop-i-blinde-vinkler`,
       lastModified,
