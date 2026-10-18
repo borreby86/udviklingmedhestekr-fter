@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  // Midlertidigt noindex og uden link i menuen. Fjern 'robots', læg siden tilbage i app/sitemap.ts og i menuen (components/Navigation.tsx), når den skal ud.
+  robots: { index: false, follow: true },
   title: 'Metoden: Sådan virker lederudvikling med heste | Christina Borreby',
   description:
     'Se, hvordan lederudvikling med heste virker: fra erfaring med hesten til refleksion, parallel til hverdagen og mere autentisk ledelse. Hesten reagerer på din tilstand, ikke på din titel.',

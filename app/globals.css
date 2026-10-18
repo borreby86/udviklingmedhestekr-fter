@@ -10032,3 +10032,15 @@ html:not([data-font='jost']) .hero .hero-intro { line-height: 1.6; }
 @media (max-width: 700px) {
   .hero .cta-button-secondary { display: none; }
 }
+
+/* Ydelseskort på mobil: mindre kort med mere luft i siderne */
+@media (max-width: 700px) {
+  .services-section { padding-left: 1.75rem; padding-right: 1.75rem; }
+  .bento-grid { gap: 1.25rem; }
+  .bento-media { aspect-ratio: 16 / 10; }
+  .bento-body { padding: 1.5rem 1.4rem 1.6rem; }
+  .bento-tag { margin-bottom: 0.85rem; }
+  .bento-title { font-size: 1.45rem; margin-bottom: 0.7rem; }
+  .bento-text { font-size: 0.95rem; line-height: 1.65; }
+  .bento-arrow { margin-top: 1.25rem; width: 32px; height: 32px; }
+}

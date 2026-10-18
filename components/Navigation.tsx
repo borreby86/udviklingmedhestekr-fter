@@ -108,7 +108,7 @@ export default function Navigation() {
             <li><a href="/forskning">Det siger forskningen</a></li>
           </ul>
         </li>
-        <li><a href="/metoden">Metoden</a></li>
+        {/* <li><a href="/metoden">Metoden</a></li> skjult indtil videre (siden er noindex) */}
         <li><a href="/#om">Om mig</a></li>
         <li><a href="/kontakt" className="nav-cta">Kontakt</a></li>
 

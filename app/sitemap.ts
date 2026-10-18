@@ -17,12 +17,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.9,
     },
-    {
-      url: `${baseUrl}/metoden`,
-      lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
+    // /metoden midlertidigt fjernet fra sitemap (noindex). Læg tilbage, når noindex fjernes i app/metoden/layout.tsx:
+    // { url: `${baseUrl}/metoden`, lastModified, changeFrequency: 'monthly', priority: 0.8 },
     {
       url: `${baseUrl}/teams`,
       lastModified,
