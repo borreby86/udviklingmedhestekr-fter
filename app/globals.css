@@ -10009,3 +10009,21 @@ html:not([data-font='jost']) .hero .hero-intro { line-height: 1.6; }
   .tslide-nav { order: 2; }
   .tslide-quote { font-size: 1.5rem; }
 }
+
+/* Ro i knapper: alle knapper skifter kun farve med samme bløde fade – ingen glidende fyld eller flytning */
+.cta-button,
+.cta-button-secondary,
+.cta-button-outline,
+.nav-cta,
+.booking-option-cta,
+.booking-option-cta-secondary {
+  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+}
+.cta-button::before {
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.cta-button:hover::before { opacity: 1; }
+.cta-button svg,
+.cta-button:hover svg { transform: none; transition: none; }
