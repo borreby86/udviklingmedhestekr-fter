@@ -55,7 +55,7 @@ export default function Navigation() {
 
   return (
     <nav id="navbar" className={navClasses}>
-      <ul className="nav-links">
+      <ul className="nav-links" onClick={(e) => { if ((e.target as HTMLElement).closest('a')) { setMenuOpen(false); setOpenDropdown(null) } }}>
         {/* Mobile divider top */}
         <li className="mobile-menu-divider"></li>
 
@@ -74,7 +74,7 @@ export default function Navigation() {
           </div>
           <ul className="nav-dropdown-menu">
             <li className="nav-dropdown-label">Aktuelle kurser</li>
-            <li><a href="/lederudvikling-nordsjaelland" className="nav-dropdown-subitem">Autentisk lederskab - uden filter</a></li>
+            <li><a href="/lederudvikling-nordsjaelland" className="nav-dropdown-subitem">Autentisk lederskab – uden filter</a></li>
             <li><a href="/lederworkshop-i-blinde-vinkler" className="nav-dropdown-subitem">Mini-forløb: Opdag blinde vinkler i ledelse</a></li>
           </ul>
         </li>
