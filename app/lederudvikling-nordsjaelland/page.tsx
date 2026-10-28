@@ -4,7 +4,6 @@ import { useRef, useState } from 'react'
 import { motion, useScroll, useTransform, AnimatePresence } from 'motion/react'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
-import { trackEvent } from '@/lib/analytics'
 
 const testimonials = [
   {
@@ -77,7 +76,7 @@ const faqItems = [
   },
   {
     question: "Hvordan booker jeg?",
-    answer: "Kontakt mig på info@christinaborreby.dk for en kort afklarende dialog om dine mål og ønsket udbytte. Du kan også tilmelde dig ventelisten for kommende åbne workshops, så får du besked, når nye datoer åbner."
+    answer: "Kontakt mig på info@christinaborreby.dk eller via kontaktsiden, så tager vi en uforpligtende snak om jeres ønsker og behov. Jeg giver gerne sparring på, hvordan hesteassisteret udvikling kan bidrage til lederudviklingen, og sammen sammensætter vi en workshop eller et forløb, der passer til jer. Søger du en åben workshop som enkeltperson, finder du de aktuelle på autentiskindflydelse.dk."
   }
 ]
 
@@ -159,13 +158,8 @@ function StickyTextSection() {
 
 export default function LederworkshopPage() {
   const heroRef = useRef(null)
-  const [modalOpen, setModalOpen] = useState(false)
-  const [selectedDate, setSelectedDate] = useState<string | null>(null)
-  const [isSubmitting, setIsSubmitting] = useState(false)
   const [openFaq, setOpenFaq] = useState<number | null>(null)
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
-  const [formLoadTime, setFormLoadTime] = useState<number | null>(null)
 
   const nextTestimonial = () => {
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)
@@ -181,57 +175,6 @@ export default function LederworkshopPage() {
   })
 
   const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"])
-
-  const openModal = (month: string) => {
-    setSelectedDate(month)
-    setModalOpen(true)
-    setFormLoadTime(Date.now())
-    document.body.style.overflow = 'hidden'
-  }
-
-  const closeModal = () => {
-    setModalOpen(false)
-    setSelectedDate(null)
-    setSubmitStatus('idle')
-    document.body.style.overflow = ''
-  }
-
-  const handleModalSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    const form = e.currentTarget
-    setIsSubmitting(true)
-    setSubmitStatus('idle')
-
-    const formData = new FormData(form)
-    const data = {
-      name: formData.get('navn'),
-      email: formData.get('email'),
-      formType: 'venteliste-lederworkshop',
-      workshopDate: selectedDate ? `${selectedDate} 2026` : '',
-      _honeypot: formData.get('website'),
-      _loadTime: formLoadTime,
-    }
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      })
-
-      if (response.ok) {
-        setSubmitStatus('success')
-        trackEvent('form_submit', { form_type: 'venteliste-lederworkshop' })
-        form.reset()
-      } else {
-        setSubmitStatus('error')
-      }
-    } catch {
-      setSubmitStatus('error')
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
 
   return (
     <>
@@ -251,7 +194,7 @@ export default function LederworkshopPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <p className="section-label">Lederworkshop med hestekræfter</p>
+            <p className="section-label">Lederudvikling med hestekræfter</p>
             <h1>Autentisk lederskab<br /><em>uden filter</em></h1>
             <p className="workshop-hero-tagline">Følgeskab starter med relation, ikke retning</p>
             <p className="workshop-hero-desc">
@@ -266,7 +209,7 @@ export default function LederworkshopPage() {
                 </svg>
               </a>
               <a href="#priser" className="cta-button cta-button-blue cta-button-swap">
-                <span className="cta-text-default">Se priser og datoer</span>
+                <span className="cta-text-default">Sådan arbejder vi sammen</span>
                 <span className="cta-text-hover">Scroll ned</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -345,20 +288,20 @@ export default function LederworkshopPage() {
                 <circle cx="9" cy="7" r="4"/>
                 <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
               </svg>
-              <span>Maks 4-6 deltagere</span>
+              <span>Individuelt eller i ledergrupper</span>
             </div>
             <div className="practical-badge">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <circle cx="12" cy="12" r="10"/>
                 <path d="M12 6v6l4 2"/>
               </svg>
-              <span>3 timers intensiv workshop</span>
+              <span>Workshop eller forløb efter behov</span>
             </div>
             <div className="practical-badge">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/>
               </svg>
-              <span>Let forplejning inkluderet</span>
+              <span>Uforpligtende indledende snak</span>
             </div>
           </motion.div>
         </div>
@@ -610,10 +553,10 @@ export default function LederworkshopPage() {
             transition={{ duration: 0.6 }}
           >
             <p className="section-label">Kom i gang</p>
-            <h2>Book din workshop</h2>
+            <h2>Lad os forme det sammen</h2>
           </motion.div>
 
-          <div className="workshop-booking-options">
+          <div className="workshop-booking-options workshop-booking-single" style={{ maxWidth: '620px' }}>
             <motion.div
               className="booking-option booking-option-primary"
               initial={{ opacity: 0, y: 20 }}
@@ -621,44 +564,19 @@ export default function LederworkshopPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <span className="booking-option-label">Anbefalet</span>
-              <h3>Lukket workshop</h3>
-              <div className="booking-option-price">Fra 14.000 kr.</div>
-              <p className="booking-option-unit">for jeres ledergruppe</p>
-              <ul className="booking-option-details">
-                <li>3-4 timer</li>
-                <li>Max 6 deltagere</li>
-                <li>Inkl. forplejning og reflektionsmateriale</li>
-              </ul>
+              <h3>En workshop eller et forløb, der passer til jer</h3>
+              <p>
+                Kontakt mig, så sammensætter vi en enkeltstående workshop eller et lederudviklingsforløb, der matcher jeres ønsker og behov. Både til den enkelte leder og til hele ledergruppen.
+              </p>
+              <p>
+                Vi starter med en uforpligtende snak, hvor jeg giver sparring på, hvordan hesteassisteret udvikling og læring kan bidrage til jeres lederudvikling.
+              </p>
               <a href="/kontakt" className="booking-option-cta">
-                <span>Book en samtale</span>
+                <span>Book en uforpligtende samtale</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
               </a>
-            </motion.div>
-
-            <motion.div
-              className="booking-option"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <h3>Åben workshop</h3>
-              <div className="booking-option-price">4.000 kr.</div>
-              <p className="booking-option-unit">pr. deltager</p>
-              <ul className="booking-option-details">
-                <li>3-4 timer</li>
-                <li>Max 6 deltagere</li>
-                <li>Inkl. forplejning og reflektionsmateriale</li>
-              </ul>
-              <button onClick={() => openModal('Venteliste')} className="booking-option-cta booking-option-cta-secondary">
-                <span>Skriv mig på ventelisten</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-              </button>
             </motion.div>
           </div>
 
@@ -669,7 +587,8 @@ export default function LederworkshopPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            Priser ekskl. moms
+            Søger du en åben workshop som enkeltperson? Se de aktuelle hos{' '}
+            <a href="https://autentiskindflydelse.dk" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>Autentisk Indflydelse</a>.
           </motion.p>
         </div>
       </section>
@@ -734,81 +653,6 @@ export default function LederworkshopPage() {
 
       </main>
       <Footer />
-
-      {/* Waiting List Modal */}
-      <AnimatePresence>
-        {modalOpen && (
-          <motion.div
-            className="modal-overlay"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={closeModal}
-          >
-            <motion.div
-              className="modal-content"
-              initial={{ opacity: 0, y: 40, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 40, scale: 0.95 }}
-              transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button className="modal-close" onClick={closeModal}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M18 6L6 18M6 6l12 12"/>
-                </svg>
-              </button>
-
-              <div className="modal-body">
-                <div className="modal-header">
-                  <p className="section-label">Venteliste</p>
-                  <h3>Få besked om nye datoer</h3>
-                  <p className="modal-info">Skriv dig op og få første adgang til nye workshopdatoer</p>
-                </div>
-
-                {submitStatus === 'success' ? (
-                  <div className="form-success-card">
-                    <div className="form-success-card-icon">
-                      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" /></svg>
-                    </div>
-                    <h3>Tak!</h3>
-                    <p>Du hører fra os, når nye datoer åbner.</p>
-                  </div>
-                ) : (
-                  <form className="modal-form" onSubmit={handleModalSubmit}>
-                    {/* Honeypot field - hidden from humans, filled by bots */}
-                    <div style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, overflow: 'hidden' }} aria-hidden="true">
-                      <label htmlFor="website-leder">Website</label>
-                      <input type="text" id="website-leder" name="website" tabIndex={-1} autoComplete="off" />
-                    </div>
-                    <div className="modal-form-group">
-                      <label htmlFor="modal-navn">Navn *</label>
-                      <input type="text" id="modal-navn" name="navn" required placeholder="Dit fulde navn" />
-                    </div>
-                    <div className="modal-form-group">
-                      <label htmlFor="modal-email">E-mail *</label>
-                      <input type="email" id="modal-email" name="email" required placeholder="din@email.dk" />
-                    </div>
-                    <button type="submit" className="modal-submit" disabled={isSubmitting}>
-                      <span>{isSubmitting ? 'Sender...' : 'Skriv mig op'}</span>
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                      </svg>
-                    </button>
-                    {submitStatus === 'error' && (
-                      <p className="form-error">Der opstod en fejl. Skriv til <a href="mailto:info@christinaborreby.dk">info@christinaborreby.dk</a> eller ring til Christina på <a href="tel:+4522471247">22 47 12 47</a></p>
-                    )}
-                  </form>
-                )}
-
-                <p className="modal-disclaimer">
-                  Bare rolig, du modtager kun besked om nye workshopdatoer.
-                </p>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </>
   )
 }

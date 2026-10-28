@@ -55,7 +55,7 @@ export default function Navigation() {
 
   return (
     <nav id="navbar" className={navClasses}>
-      <ul className="nav-links">
+      <ul className="nav-links" onClick={(e) => { if ((e.target as HTMLElement).closest('a')) { setMenuOpen(false); setOpenDropdown(null) } }}>
         {/* Mobile divider top */}
         <li className="mobile-menu-divider"></li>
 
@@ -73,39 +73,15 @@ export default function Navigation() {
             </svg>
           </div>
           <ul className="nav-dropdown-menu">
-            <li className="nav-dropdown-label">Aktuelle kurser</li>
-            <li><a href="/lederudvikling-nordsjaelland" className="nav-dropdown-subitem">Autentisk lederskab - uden filter</a></li>
+            <li><a href="/lederudvikling-nordsjaelland" className="nav-dropdown-subitem">Lederudvikling med heste</a></li>
             <li><a href="/lederworkshop-i-blinde-vinkler" className="nav-dropdown-subitem">Mini-forløb: Opdag blinde vinkler i ledelse</a></li>
           </ul>
         </li>
         <li><a href="/teams">For teams</a></li>
-        <li className={`nav-dropdown ${openDropdown === 'alle' ? 'is-open' : ''}`}>
-          <div className="nav-dropdown-header" onClick={(e) => toggleDropdown('alle', e)}>
-            <span className="nav-dropdown-text">For alle</span>
-            <svg className="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <path d="M6 9l6 6 6-6"/>
-            </svg>
-          </div>
-          <ul className="nav-dropdown-menu">
-            <li className="nav-dropdown-label">Hold tempoet uden at betale med helbredet</li>
-            <li><a href="/recalibrate">Recalibrate</a></li>
-          </ul>
-        </li>
+        {/* "For alle" / Recalibrate skjult i menuen indtil videre (siden er noindex mens indholdet skrives om) */}
 
         {/* Mobile divider middle */}
         <li className="mobile-menu-divider"></li>
-
-        <li className={`nav-dropdown ${openDropdown === 'workshops' ? 'is-open' : ''}`}>
-          <div className="nav-dropdown-header" onClick={(e) => toggleDropdown('workshops', e)}>
-            <span className="nav-dropdown-text">Aktuelle workshops</span>
-            <svg className="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <path d="M6 9l6 6 6-6"/>
-            </svg>
-          </div>
-          <ul className="nav-dropdown-menu">
-            <li><a href="https://autentiskindflydelse.dk" target="_blank" rel="noopener noreferrer">Autentisk Indflydelse</a></li>
-          </ul>
-        </li>
 
         <li className={`nav-dropdown ${openDropdown === 'siger' ? 'is-open' : ''}`}>
           <div className="nav-dropdown-header" onClick={(e) => toggleDropdown('siger', e)}>
@@ -119,6 +95,7 @@ export default function Navigation() {
             <li><a href="/forskning">Det siger forskningen</a></li>
           </ul>
         </li>
+        {/* <li><a href="/metoden">Metoden</a></li> skjult indtil videre (siden er noindex) */}
         <li><a href="/#om">Om mig</a></li>
         <li><a href="/kontakt" className="nav-cta">Kontakt</a></li>
 

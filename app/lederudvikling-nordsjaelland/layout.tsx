@@ -4,7 +4,7 @@ import SchemaMarkup from '@/components/SchemaMarkup'
 export const metadata: Metadata = {
   metadataBase: new URL('https://christinaborreby.dk'),
   title: 'Lederudvikling Nordsjælland | Hesteassisteret Workshop | Christina Borreby',
-  description: 'Oplev autentisk lederudvikling gennem hesteassisteret coaching i Nordsjælland. 3-timers workshop der giver dig øjeblikkelig feedback på dit lederskab - helt uden filter. Maks 6 deltagere.',
+  description: 'Oplev autentisk lederudvikling gennem hesteassisteret coaching i Nordsjælland. Workshop eller forløb tilpasset jeres behov, hvor du får øjeblikkelig feedback på dit lederskab - helt uden filter.',
   keywords: [
     'lederudvikling nordsjælland',
     'lederworkshop',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Lederudvikling Nordsjælland | Autentisk Lederskab uden Filter',
-    description: 'Oplev autentisk lederudvikling gennem hesteassisteret coaching i Nordsjælland. 3-timers workshop der giver dig øjeblikkelig, ærlig feedback på dit lederskab.',
+    description: 'Oplev autentisk lederudvikling gennem hesteassisteret coaching i Nordsjælland. Workshop eller forløb tilpasset jeres behov, der giver dig øjeblikkelig, ærlig feedback på dit lederskab.',
     url: 'https://christinaborreby.dk/lederudvikling-nordsjaelland',
     siteName: 'Christina Borreby',
     locale: 'da_DK',
@@ -51,7 +51,7 @@ const courseSchema = {
   '@context': 'https://schema.org',
   '@type': 'Course',
   name: 'Lederworkshop med Heste - Autentisk Lederskab uden Filter',
-  description: 'Oplev autentisk lederudvikling gennem hesteassisteret coaching. 3-timers workshop der giver dig øjeblikkelig, ærlig feedback på dit lederskab.',
+  description: 'Oplev autentisk lederudvikling gennem hesteassisteret coaching. Workshop eller forløb tilpasset jeres behov, der giver dig øjeblikkelig, ærlig feedback på dit lederskab.',
   provider: {
     '@type': 'Person',
     name: 'Christina Borreby',
@@ -127,7 +127,7 @@ const faqSchema = {
       name: 'Hvordan booker jeg?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Kontakt mig på info@christinaborreby.dk for en kort afklarende dialog om dine mål og ønsket udbytte. Du kan også tilmelde dig ventelisten for kommende åbne workshops, så får du besked, når nye datoer åbner.'
+        text: 'Kontakt mig på info@christinaborreby.dk eller via kontaktsiden, så tager vi en uforpligtende snak om jeres ønsker og behov. Jeg giver gerne sparring på, hvordan hesteassisteret udvikling kan bidrage til lederudviklingen, og sammen sammensætter vi en workshop eller et forløb, der passer til jer. Søger du en åben workshop som enkeltperson, finder du de aktuelle på autentiskindflydelse.dk.'
       }
     }
   ]

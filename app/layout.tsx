@@ -1,10 +1,12 @@
 import type { Metadata } from 'next'
-import { Cormorant_Garamond, Jost, Inter } from 'next/font/google'
+import { Cormorant_Garamond, Jost, Inter, Raleway, Poppins, DM_Sans } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import { LenisProvider } from '@/providers/LenisProvider'
 import { CookieConsentProvider } from '@/providers/CookieConsentProvider'
 import { CustomCursor } from '@/components/CustomCursor'
 import { CookieBanner } from '@/components/CookieBanner'
+import { FontFlip } from '@/components/FontFlip'
+import { FloatingContact } from '@/components/FloatingContact'
 import WorkshopBanner from '@/components/WorkshopBanner'
 import { GoogleAnalytics } from '@/components/GoogleAnalytics'
 import './globals.css'
@@ -20,14 +22,34 @@ const cormorant = Cormorant_Garamond({
 const jost = Jost({
   subsets: ['latin'],
   weight: ['300', '400', '500'],
-  variable: '--font-body',
+  variable: '--font-jost',
   display: 'swap',
 })
 
 const inter = Inter({
   subsets: ['latin'],
-  weight: ['400', '500', '600'],
+  weight: ['300', '400', '500', '600'],
   variable: '--font-label',
+  display: 'swap',
+})
+
+const raleway = Raleway({
+  subsets: ['latin'],
+  weight: ['300', '400', '500'],
+  variable: '--font-raleway',
+  display: 'swap',
+})
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['300', '400'],
+  variable: '--font-poppins',
+  display: 'swap',
+})
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  variable: '--font-dmsans',
   display: 'swap',
 })
 
@@ -72,13 +94,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="da">
-      <body className={`${cormorant.variable} ${jost.variable} ${inter.variable}`} suppressHydrationWarning>
+      <body className={`${cormorant.variable} ${jost.variable} ${inter.variable} ${raleway.variable} ${poppins.variable} ${dmSans.variable}`} suppressHydrationWarning>
         <CookieConsentProvider>
           <CustomCursor />
           <LenisProvider>
             {children}
           </LenisProvider>
           <WorkshopBanner />
+          <FloatingContact />
+          <FontFlip />
           <CookieBanner />
           <GoogleAnalytics />
           <Analytics />

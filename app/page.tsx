@@ -1,12 +1,9 @@
 import Navigation from '@/components/Navigation'
 import Hero from '@/components/Hero'
-import SocialProof from '@/components/SocialProof'
-import Insights from '@/components/Insights'
 import Services from '@/components/Services'
 import WhyHorsesVideo from '@/components/WhyHorsesVideo'
 import Audience from '@/components/Audience'
-import Testimonials from '@/components/Testimonials'
-import Benefits from '@/components/Benefits'
+import TestimonialSlider from '@/components/TestimonialSlider'
 import About from '@/components/About'
 import CTA from '@/components/CTA'
 import Footer from '@/components/Footer'
@@ -52,16 +49,17 @@ export default function Home() {
     <>
       <SchemaMarkup data={professionalServiceSchema} />
       <Navigation />
-      <main>
+      <main className="home-typo">
         <Hero />
-        <SocialProof />
-        <Insights />
         <Services />
+        {/* <LeadershipLevelsExplore /> skjult indtil videre */}
+        {/* <PracticalBanner /> skjult indtil videre */}
+        {/* <SocialProof /> bevisbåndet – skjult indtil videre, komponenten ligger i components/SocialProof.tsx */}
         <WhyHorsesVideo />
-        <Testimonials />
-        <Benefits />
+        <TestimonialSlider />
         <About />
         <Audience />
+        {/* <FAQ /> skjult indtil videre */}
         <CTA />
       </main>
       <Footer hideCta />
