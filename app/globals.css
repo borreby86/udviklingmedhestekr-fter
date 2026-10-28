@@ -734,7 +734,7 @@ nav.scrolled .nav-dropdown-text {
 }
 .lm-center-numeral {
   font-family: var(--font-display);
-  font-size: 6cqw;
+  font-size: 5.2cqw;
   font-style: italic;
   line-height: 1;
   color: var(--color-copper-light);
@@ -743,13 +743,13 @@ nav.scrolled .nav-dropdown-text {
 }
 .lm-center-item h3 {
   font-family: var(--font-display);
-  font-size: 4.8cqw;
+  font-size: 4.1cqw;
   font-weight: 500;
   line-height: 1.15;
   color: var(--color-cream);
   margin: 0 0 1.6cqw;
 }
-.lm-center-item p { font-size: 2.9cqw; line-height: 1.55; color: var(--color-cream); opacity: 0.88; margin: 0; }
+.lm-center-item p { font-size: 2.45cqw; line-height: 1.5; color: var(--color-cream); opacity: 0.88; margin: 0; }
 @keyframes lm-phase {
   0% { opacity: 0; transform: scale(0.85); }
   5% { opacity: 1; transform: scale(1); }
