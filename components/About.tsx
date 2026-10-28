@@ -40,7 +40,7 @@ export default function About() {
             Og ikke mindst om kongruens mellem det, man tænker, føler og signalerer udadtil.
           </p>
           <p>
-            Den erfaring bruger jeg i dag - kombineret med min baggrund i kommunikation, adfærdspsykologi og menneskelig udvikling –
+            Den erfaring bruger jeg i dag - kombineret med min baggrund i kommunikation, adfærdspsykologi og menneskelig udvikling -
             til at hjælpe ledere, teams og unge med at se deres eget lederskab uden filter.
           </p>
         </motion.div>

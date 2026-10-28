@@ -1,11 +1,10 @@
 import type { Metadata } from 'next'
-import { Cormorant_Garamond, Jost, Inter, Raleway, Poppins, DM_Sans } from 'next/font/google'
+import { Cormorant_Garamond, Inter, Raleway } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import { LenisProvider } from '@/providers/LenisProvider'
 import { CookieConsentProvider } from '@/providers/CookieConsentProvider'
 import { CustomCursor } from '@/components/CustomCursor'
 import { CookieBanner } from '@/components/CookieBanner'
-import { FontFlip } from '@/components/FontFlip'
 import { FloatingContact } from '@/components/FloatingContact'
 import WorkshopBanner from '@/components/WorkshopBanner'
 import { GoogleAnalytics } from '@/components/GoogleAnalytics'
@@ -16,13 +15,6 @@ const cormorant = Cormorant_Garamond({
   weight: ['400', '500', '600'],
   style: ['normal', 'italic'],
   variable: '--font-display',
-  display: 'swap',
-})
-
-const jost = Jost({
-  subsets: ['latin'],
-  weight: ['300', '400', '500'],
-  variable: '--font-jost',
   display: 'swap',
 })
 
@@ -37,19 +29,6 @@ const raleway = Raleway({
   subsets: ['latin'],
   weight: ['300', '400', '500'],
   variable: '--font-raleway',
-  display: 'swap',
-})
-
-const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ['300', '400'],
-  variable: '--font-poppins',
-  display: 'swap',
-})
-
-const dmSans = DM_Sans({
-  subsets: ['latin'],
-  variable: '--font-dmsans',
   display: 'swap',
 })
 
@@ -94,7 +73,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="da">
-      <body className={`${cormorant.variable} ${jost.variable} ${inter.variable} ${raleway.variable} ${poppins.variable} ${dmSans.variable}`} suppressHydrationWarning>
+      <body className={`${cormorant.variable} ${inter.variable} ${raleway.variable}`} suppressHydrationWarning>
         <CookieConsentProvider>
           <CustomCursor />
           <LenisProvider>
@@ -102,7 +81,6 @@ export default function RootLayout({
           </LenisProvider>
           <WorkshopBanner />
           <FloatingContact />
-          <FontFlip />
           <CookieBanner />
           <GoogleAnalytics />
           <Analytics />
