@@ -78,7 +78,13 @@ export default function KontaktPage() {
             <p className="section-label">Kontakt</p>
             <h1>Lad os tale <em>sammen</em></h1>
             <p className="contact-hero-intro">
-              Ræk ud med dine spørgsmål, eller book en gratis afklarende samtale på 15 minutter, hvor vi sammen finder ud af, om hesteassisteret leder- og teamudvikling eller mine øvrige forløb er det rette for dig personligt eller din virksomhed. Jeg svarer inden for 24 timer.
+              Ræk ud med dine spørgsmål, eller lad os tage en gratis afklarende samtale på 15 minutter.
+            </p>
+            <p className="contact-hero-intro">
+              Her kan vi tale om, hvorvidt hesteassisteret leder- og teamudvikling eller mine øvrige forløb er det rette for din virksomhed eller dig personligt.
+            </p>
+            <p className="contact-hero-intro contact-hero-reply">
+              Jeg svarer inden for 24 timer.
             </p>
           </div>
           <div className="contact-hero-form">

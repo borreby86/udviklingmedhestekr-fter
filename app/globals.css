@@ -1646,6 +1646,15 @@ nav.scrolled .nav-dropdown-text {
   line-height: 1.8;
   color: var(--color-soft-brown);
 }
+.contact-hero-text .contact-hero-intro + .contact-hero-intro {
+  margin-top: 1.1rem;
+}
+.contact-hero-text .contact-hero-reply {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.35rem;
+  color: var(--color-copper);
+}
 .contact-hero-form {
   background: rgba(255, 255, 255, 0.5);
   padding: 2.5rem;
