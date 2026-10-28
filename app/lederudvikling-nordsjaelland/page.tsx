@@ -201,16 +201,14 @@ export default function LederworkshopPage() {
               <span className="hero-desc-mobile-hide">Få klarhed over dine adfærdsmønstre, ressourcer og blind spots - og styrk dit autentiske lederskab. Med hesten som værktøj får du øjeblikkelig, ærlig feedback på din ledelsesstil, uden filter, så du kan omsætte indsigt direkte til hverdagspraksis.</span><span className="hero-desc-desktop-hide">Få klarhed over dine adfærdsmønstre, ressourcer og blind spots - og styrk dit autentiske lederskab med hesten som værktøj.</span>
             </p>
             <div className="workshop-hero-buttons">
-              <a href="/kontakt" className="cta-button cta-button-swap">
-                <span className="cta-text-default">Book en samtale</span>
-                <span className="cta-text-hover">Kontakt mig</span>
+              <a href="/kontakt" className="cta-button">
+                <span>Book en samtale</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
               </a>
-              <a href="#priser" className="cta-button cta-button-blue cta-button-swap">
-                <span className="cta-text-default">Sådan arbejder vi sammen</span>
-                <span className="cta-text-hover">Scroll ned</span>
+              <a href="#priser" className="cta-button-secondary">
+                <span>Sådan arbejder vi sammen</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>

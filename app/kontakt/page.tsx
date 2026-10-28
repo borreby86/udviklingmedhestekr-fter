@@ -83,9 +83,6 @@ export default function KontaktPage() {
             <p className="contact-hero-intro">
               Her kan vi tale om, hvorvidt hesteassisteret leder- og teamudvikling eller mine øvrige forløb er det rette for din virksomhed eller dig personligt.
             </p>
-            <p className="contact-hero-intro contact-hero-reply">
-              Jeg svarer inden for 24 timer.
-            </p>
           </div>
           <div className="contact-hero-form">
             {submitStatus === 'success' ? (
@@ -94,7 +91,7 @@ export default function KontaktPage() {
                   <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" /></svg>
                 </div>
                 <h3>Tak for din henvendelse</h3>
-                <p>Jeg vender tilbage inden for 24 timer.</p>
+                <p>Jeg vender tilbage hurtigst muligt.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit}>
