@@ -56,12 +56,7 @@ export default function Navigation() {
   return (
     <nav id="navbar" className={navClasses}>
       <ul className="nav-links" onClick={(e) => { if ((e.target as HTMLElement).closest('a')) { setMenuOpen(false); setOpenDropdown(null) } }}>
-        {/* Mobile divider top */}
-        <li className="mobile-menu-divider"></li>
-
-        {/* Mobile section label */}
-        <li className="mobile-menu-label">YDELSER</li>
-
+        {/* Mobil: overskriften "YDELSER" og den øverste streg er fjernet, mens ydelserne er skjult */}
         {isSubpage ? (
           <li><a href="/">Forside</a></li>
         ) : null}
