@@ -1,7 +1,17 @@
 import Image from 'next/image'
 import { ArrowIcon } from './Icons'
 
-const services = [
+type Service = {
+  tag: string
+  title: string
+  text: string
+  href?: string
+  external?: boolean
+  image: string
+  alt: string
+}
+
+const services: Service[] = [
   {
     tag: 'For ledere',
     title: 'Lederudvikling',
@@ -35,8 +45,6 @@ const services = [
     alt: 'Unge med heste og ponyer ude på engen'
   }
 ]
-
-type Service = { href?: string; external?: boolean }
 
 function Card({ service, children }: { service: Service; children: React.ReactNode }) {
   if (!service.href) return <div className="bento-card">{children}</div>
