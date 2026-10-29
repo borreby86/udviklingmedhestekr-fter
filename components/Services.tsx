@@ -30,8 +30,7 @@ const services = [
     tag: 'For unge',
     title: 'En dag med heste',
     text: 'I samarbejde med Fredensborg Kommune tilbyder jeg workshoppen "En dag med heste" for unge ml. 13-18 år. Fokus er på at skabe tillid og opdage, hvad der sker i os, når vi sænker tempoet med hestene.',
-    href: 'https://www.ungfredensborg.dk/subjectclass/06de21810fbf4a5ebac8653c28e420ff',
-    external: true,
+    // href: 'https://www.ungfredensborg.dk/subjectclass/06de21810fbf4a5ebac8653c28e420ff', // link slået fra indtil videre (sæt også external: true tilbage)
     image: '/unge-dag-med-heste.jpg',
     alt: 'Unge med heste og ponyer ude på engen'
   }
