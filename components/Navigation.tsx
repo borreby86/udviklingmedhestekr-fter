@@ -65,6 +65,7 @@ export default function Navigation() {
         {isSubpage ? (
           <li><a href="/">Forside</a></li>
         ) : null}
+        {/* "For ledere" (Lederudvikling + mini-forløb) og "For teams" skjult indtil siderne er gennemarbejdet. Fjern kommentaren for at vise dem igen:
         <li className={`nav-dropdown ${openDropdown === 'ledere' ? 'is-open' : ''}`}>
           <div className="nav-dropdown-header" onClick={(e) => toggleDropdown('ledere', e)}>
             <span className="nav-dropdown-text">For ledere</span>
@@ -78,6 +79,7 @@ export default function Navigation() {
           </ul>
         </li>
         <li><a href="/teams">For teams</a></li>
+        */}
         {/* "For alle" / Recalibrate skjult i menuen indtil videre (siden er noindex mens indholdet skrives om) */}
 
         {/* Mobile divider middle */}
@@ -96,7 +98,7 @@ export default function Navigation() {
           </ul>
         </li>
         {/* <li><a href="/metoden">Metoden</a></li> skjult indtil videre (siden er noindex) */}
-        <li><a href="/#om">Om mig</a></li>
+        {/* <li><a href="/#om">Om mig</a></li> skjult indtil videre */}
         <li><a href="/kontakt" className="nav-cta">Kontakt</a></li>
 
         {/* Mobile menu footer */}

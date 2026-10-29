@@ -6,7 +6,7 @@ const services = [
     tag: 'For ledere',
     title: 'Lederudvikling',
     text: 'Læring der mærkes, ikke forklares. Hestens umiddelbare reaktioner spejler din adfærd og giver ærlig, kropslig feedback. Resultatet er dyb indsigt i, hvordan tillid og følgeskab skabes i praksis.',
-    href: '/lederudvikling-nordsjaelland',
+    // href: '/lederudvikling-nordsjaelland', // link slået fra indtil siden er gennemarbejdet
     image: '/autentisk-lederudvikling.jpg',
     alt: 'Leder og hest i tæt kontakt'
   },
@@ -14,7 +14,7 @@ const services = [
     tag: 'For teams',
     title: 'Teamudvikling',
     text: 'Hestene giver et levende spejl af jeres samarbejde og teamdynamik. Ubevidste mønstre og kommunikationsvaner bliver synlige, og det tydeliggør hvad der styrker, og hvad der spænder ben.',
-    href: '/teams',
+    // href: '/teams', // link slået fra indtil siden er gennemarbejdet
     image: '/team-pony.jpg',
     alt: 'Team samlet omkring en islænder i ridehallen'
   },
@@ -22,7 +22,7 @@ const services = [
     tag: '1:1 personlig udvikling',
     title: 'Samtaler & forløb',
     text: 'Jeg tilbyder terapi og coaching sessioner samt forløb, hvor hestene indgår og hjælper dig med at regulere stress, finde ro, nærvær og retning. Kontakt og hør mere.',
-    href: '/kontakt',
+    // href: '/kontakt', // link slået fra indtil siden er gennemarbejdet
     image: '/samtaler-gaatur.jpg',
     alt: 'To kvinder går og taler sammen ad en grusvej'
   },
@@ -36,6 +36,21 @@ const services = [
     alt: 'Unge med heste og ponyer ude på engen'
   }
 ]
+
+type Service = { href?: string; external?: boolean }
+
+function Card({ service, children }: { service: Service; children: React.ReactNode }) {
+  if (!service.href) return <div className="bento-card">{children}</div>
+  return (
+    <a
+      href={service.href}
+      className="bento-card"
+      {...(service.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+    >
+      {children}
+    </a>
+  )
+}
 
 export default function Services() {
   return (
@@ -58,12 +73,7 @@ export default function Services() {
       </div>
       <div className="bento-grid">
         {services.map((service, index) => (
-          <a
-            key={index}
-            href={service.href}
-            className="bento-card"
-            {...('external' in service && service.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-          >
+          <Card key={index} service={service}>
             <div className="bento-media">
               <Image
                 src={service.image}
@@ -77,11 +87,13 @@ export default function Services() {
               <span className="bento-tag">{service.tag}</span>
               <h3 className="bento-title">{service.title}</h3>
               <p className="bento-text">{service.text}</p>
-              <div className="bento-arrow">
-                <ArrowIcon />
-              </div>
+              {service.href && (
+                <div className="bento-arrow">
+                  <ArrowIcon />
+                </div>
+              )}
             </div>
-          </a>
+          </Card>
         ))}
       </div>
     </section>
