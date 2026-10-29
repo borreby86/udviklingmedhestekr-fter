@@ -99,7 +99,7 @@ export default function Navigation() {
         </li>
         {/* <li><a href="/metoden">Metoden</a></li> skjult indtil videre (siden er noindex) */}
         {/* <li><a href="/#om">Om mig</a></li> skjult indtil videre */}
-        <li><a href="https://autentiskindflydelse.dk" target="_blank" rel="noopener noreferrer">Aktuelle workshops</a></li>
+        <li><a href="https://www.autentiskindflydelse.dk/aabne-workshops" target="_blank" rel="noopener noreferrer">Aktuelle workshops</a></li>
         <li><a href="/kontakt" className="nav-cta">Kontakt</a></li>
 
         {/* Mobile menu footer */}
