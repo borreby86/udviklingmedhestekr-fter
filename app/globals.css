@@ -10060,3 +10060,37 @@ html:not([data-font='jost']) .hero .hero-intro { line-height: 1.6; }
   .bento-text { font-size: 0.95rem; line-height: 1.65; }
   .bento-arrow { margin-top: 1.25rem; width: 32px; height: 32px; }
 }
+
+/* Lederudvikling-hero: knapper i samme format som forsidens hero (samme størrelse, nowrap, ingen pil i sekundærknap).
+   Hero-baggrunden her er lys, så sekundærknappen er mørk i stedet for creme. */
+.workshop-hero-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 0;
+}
+.workshop-hero-buttons .cta-button,
+.workshop-hero-buttons .cta-button-secondary {
+  white-space: nowrap;
+  width: auto;
+  font-size: 0.8rem;
+  padding: 1.15rem 2.4rem;
+  justify-content: center;
+}
+.workshop-hero-buttons .cta-button-secondary {
+  padding: calc(1.15rem - 2px) calc(2.4rem - 2px);
+  border: 2px solid var(--color-earth);
+  color: var(--color-earth);
+}
+.workshop-hero-buttons .cta-button-secondary:hover {
+  background: var(--color-earth);
+  color: var(--color-cream);
+}
+@media (max-width: 700px) {
+  .workshop-hero-buttons { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 0.75rem; }
+  .workshop-hero-buttons .cta-button,
+  .workshop-hero-buttons .cta-button-secondary { font-size: 0.75rem; padding: 1rem 1.6rem; }
+  .workshop-hero-buttons .cta-button-secondary { padding: calc(1rem - 2px) calc(1.6rem - 2px); }
+}
