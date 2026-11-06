@@ -56,15 +56,11 @@ export default function Navigation() {
   return (
     <nav id="navbar" className={navClasses}>
       <ul className="nav-links" onClick={(e) => { if ((e.target as HTMLElement).closest('a')) { setMenuOpen(false); setOpenDropdown(null) } }}>
-        {/* Mobile divider top */}
-        <li className="mobile-menu-divider"></li>
-
-        {/* Mobile section label */}
-        <li className="mobile-menu-label">YDELSER</li>
-
+        {/* Mobil: overskriften "YDELSER" og den øverste streg er fjernet, mens ydelserne er skjult */}
         {isSubpage ? (
           <li><a href="/">Forside</a></li>
         ) : null}
+        {/* "For ledere" (Lederudvikling + mini-forløb) og "For teams" skjult indtil siderne er gennemarbejdet. Fjern kommentaren for at vise dem igen:
         <li className={`nav-dropdown ${openDropdown === 'ledere' ? 'is-open' : ''}`}>
           <div className="nav-dropdown-header" onClick={(e) => toggleDropdown('ledere', e)}>
             <span className="nav-dropdown-text">For ledere</span>
@@ -78,6 +74,7 @@ export default function Navigation() {
           </ul>
         </li>
         <li><a href="/teams">For teams</a></li>
+        */}
         <li><a href="/en-dag-med-heste">For unge</a></li>
         {/* "For alle" / Recalibrate skjult i menuen indtil videre (siden er noindex mens indholdet skrives om) */}
 
@@ -97,7 +94,8 @@ export default function Navigation() {
           </ul>
         </li>
         {/* <li><a href="/metoden">Metoden</a></li> skjult indtil videre (siden er noindex) */}
-        <li><a href="/#om">Om mig</a></li>
+        {/* <li><a href="/#om">Om mig</a></li> skjult indtil videre */}
+        <li><a href="https://www.autentiskindflydelse.dk/aabne-workshops" target="_blank" rel="noopener noreferrer">Aktuelle workshops</a></li>
         <li><a href="/kontakt" className="nav-cta">Kontakt</a></li>
 
         {/* Mobile menu footer */}
