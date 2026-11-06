@@ -78,10 +78,10 @@ export default function KontaktPage() {
             <p className="section-label">Kontakt</p>
             <h1>Lad os tale <em>sammen</em></h1>
             <p className="contact-hero-intro">
-              Ræk ud med dine spørgsmål, eller lad os tage en gratis afklarende samtale på 15 minutter.
+              Du er altid velkommen til at kontakte mig med spørgsmål, uanset om du blot er nysgerrig på, hvordan hesteassisteret læring og udvikling kan bruges i din virksomhed, eller hvad du kan få ud af et 1:1 forløb.
             </p>
             <p className="contact-hero-intro">
-              Her kan vi tale om, hvorvidt hesteassisteret leder- og teamudvikling eller mine øvrige forløb er det rette for din virksomhed eller dig personligt.
+              Udfyld formularen nedenfor, så kontakter jeg dig hurtigst muligt.
             </p>
           </div>
           <div className="contact-hero-form">

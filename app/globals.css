@@ -957,6 +957,35 @@ nav.scrolled .nav-dropdown-text {
   background: var(--color-copper-light);
   border-color: var(--color-copper-light);
 }
+.bento-link {
+  margin-top: 1.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: flex-start;
+  font-family: var(--font-label);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-copper-light);
+  text-decoration: none;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid rgba(160, 140, 90, 0.5);
+  transition: all 0.3s ease;
+}
+.bento-link svg {
+  width: 13px;
+  height: 13px;
+  transition: transform 0.3s ease;
+}
+.bento-link:hover {
+  color: var(--color-cream);
+  border-color: var(--color-cream);
+}
+.bento-link:hover svg {
+  transform: translateX(3px);
+}
 .bento-card:hover .bento-arrow svg {
   stroke: var(--color-earth-dark);
   transform: translateX(2px);
@@ -8298,14 +8327,22 @@ nav.scrolled .mobile-menu-btn {
   top: 0;
   left: 0;
   right: 0;
-  height: 2.2rem;
+  min-height: 2.2rem;
   background: var(--color-earth-dark);
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
   z-index: 101;
-  padding: 0 1.5rem;
+  padding: 0.5rem 1.5rem;
+}
+.workshop-topbar-text {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: var(--color-warm-sand);
+  text-align: center;
 }
 .workshop-topbar-label {
   font-family: var(--font-label);

@@ -5,8 +5,8 @@ type Service = {
   tag: string
   title: string
   text: string
-  href?: string
-  external?: boolean
+  ctaLabel: string
+  ctaHref: string
   image: string
   alt: string
 }
@@ -16,7 +16,8 @@ const services: Service[] = [
     tag: 'For ledere',
     title: 'Lederudvikling',
     text: 'Læring der mærkes, ikke forklares. Hestens umiddelbare reaktioner spejler din adfærd og giver ærlig, kropslig feedback. Resultatet er dyb indsigt i, hvordan tillid og følgeskab skabes i praksis.',
-    // href: '/lederudvikling-nordsjaelland', // link slået fra indtil siden er gennemarbejdet
+    ctaLabel: 'Få mere info',
+    ctaHref: '/kontakt',
     image: '/autentisk-lederudvikling.jpg',
     alt: 'Leder og hest i tæt kontakt'
   },
@@ -24,7 +25,8 @@ const services: Service[] = [
     tag: 'For teams',
     title: 'Teamudvikling',
     text: 'Hestene giver et levende spejl af jeres samarbejde og teamdynamik. Ubevidste mønstre og kommunikationsvaner bliver synlige, og det tydeliggør hvad der styrker, og hvad der spænder ben.',
-    // href: '/teams', // link slået fra indtil siden er gennemarbejdet
+    ctaLabel: 'Få mere info',
+    ctaHref: '/kontakt',
     image: '/team-pony.jpg',
     alt: 'Team samlet omkring en islænder i ridehallen'
   },
@@ -32,31 +34,24 @@ const services: Service[] = [
     tag: '1:1 personlig udvikling',
     title: 'Samtaler & forløb',
     text: 'Jeg tilbyder terapi og coaching sessioner samt forløb, hvor hestene indgår og hjælper dig med at regulere stress, finde ro, nærvær og retning. Kontakt og hør mere.',
-    // href: '/kontakt', // link slået fra indtil siden er gennemarbejdet
+    ctaLabel: 'Få mere info',
+    ctaHref: '/kontakt',
     image: '/samtaler-gaatur.jpg',
     alt: 'To kvinder går og taler sammen ad en grusvej'
   },
   {
     tag: 'For unge',
     title: 'En dag med heste',
-    text: 'I samarbejde med Fredensborg Kommune tilbyder jeg workshoppen "En dag med heste" for unge ml. 13-18 år. Fokus er på at skabe tillid og opdage, hvad der sker i os, når vi sænker tempoet med hestene.',
-    // href: 'https://www.ungfredensborg.dk/subjectclass/06de21810fbf4a5ebac8653c28e420ff', // link slået fra indtil videre (sæt også external: true tilbage)
+    text: 'I samarbejde med Fredensborg Kommune tilbyder jeg workshoppen "En dag med heste" for unge ml. 12-18 år. Fokus er på at skabe tillid og opdage, hvad der sker i os, når vi sænker tempoet med hestene.',
+    ctaLabel: 'Læs mere',
+    ctaHref: '/en-dag-med-heste',
     image: '/unge-dag-med-heste.jpg',
     alt: 'Unge med heste og ponyer ude på engen'
   }
 ]
 
-function Card({ service, children }: { service: Service; children: React.ReactNode }) {
-  if (!service.href) return <div className="bento-card">{children}</div>
-  return (
-    <a
-      href={service.href}
-      className="bento-card"
-      {...(service.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-    >
-      {children}
-    </a>
-  )
+function Card({ children }: { children: React.ReactNode }) {
+  return <div className="bento-card">{children}</div>
 }
 
 export default function Services() {
@@ -80,7 +75,7 @@ export default function Services() {
       </div>
       <div className="bento-grid">
         {services.map((service, index) => (
-          <Card key={index} service={service}>
+          <Card key={index}>
             <div className="bento-media">
               <Image
                 src={service.image}
@@ -94,11 +89,10 @@ export default function Services() {
               <span className="bento-tag">{service.tag}</span>
               <h3 className="bento-title">{service.title}</h3>
               <p className="bento-text">{service.text}</p>
-              {service.href && (
-                <div className="bento-arrow">
-                  <ArrowIcon />
-                </div>
-              )}
+              <a href={service.ctaHref} className="bento-link">
+                <span>{service.ctaLabel}</span>
+                <ArrowIcon />
+              </a>
             </div>
           </Card>
         ))}
