@@ -5570,6 +5570,56 @@ nav.scrolled .mobile-menu-btn {
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
+.unge-intro { padding: 6rem 5rem; background: var(--color-cream); }
+.unge-intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; max-width: 1400px; margin: 0 auto; }
+.unge-intro-text h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--color-earth);
+  margin: 0.75rem 0 1.5rem;
+}
+.unge-intro-text p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--color-soft-brown);
+  margin-bottom: 1rem;
+}
+.unge-collage { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 1rem; height: 460px; }
+.unge-collage img { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; }
+.unge-collage-tall { grid-row: 1 / span 2; }
+.praksis-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 3rem; align-items: start; max-width: 1100px; margin: 0 auto; }
+.workshop-phase.phase-highlight-light {
+  background: var(--color-cream);
+  border-color: rgba(139, 120, 74, 0.3);
+}
+.phase-highlight-light .workshop-phase-header h3 {
+  color: var(--color-earth);
+}
+.phase-highlight-light .method-card-list li {
+  color: var(--color-earth);
+}
+@media (max-width: 1024px) {
+  .unge-intro-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .unge-collage { height: 380px; }
+  .praksis-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .unge-intro { padding: 4rem 1.5rem; }
+  .unge-collage { height: 320px; }
+}
+
+.workshop-forloeb-cards.formater-grid {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+@media (max-width: 1100px) {
+  .workshop-forloeb-cards.formater-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .workshop-forloeb-cards.formater-grid { grid-template-columns: 1fr; }
+}
 .workshop-forloeb-card {
   background: rgba(255, 255, 255, 0.7);
   padding: 2.5rem;
@@ -10059,4 +10109,38 @@ html:not([data-font='jost']) .hero .hero-intro { line-height: 1.6; }
   .bento-title { font-size: 1.45rem; margin-bottom: 0.7rem; }
   .bento-text { font-size: 0.95rem; line-height: 1.65; }
   .bento-arrow { margin-top: 1.25rem; width: 32px; height: 32px; }
+}
+
+/* Lederudvikling-hero: knapper i samme format som forsidens hero (samme størrelse, nowrap, ingen pil i sekundærknap).
+   Hero-baggrunden her er lys, så sekundærknappen er mørk i stedet for creme. */
+.workshop-hero-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 0;
+}
+.workshop-hero-buttons .cta-button,
+.workshop-hero-buttons .cta-button-secondary {
+  white-space: nowrap;
+  width: auto;
+  font-size: 0.8rem;
+  padding: 1.15rem 2.4rem;
+  justify-content: center;
+}
+.workshop-hero-buttons .cta-button-secondary {
+  padding: calc(1.15rem - 2px) calc(2.4rem - 2px);
+  border: 2px solid var(--color-earth);
+  color: var(--color-earth);
+}
+.workshop-hero-buttons .cta-button-secondary:hover {
+  background: var(--color-earth);
+  color: var(--color-cream);
+}
+@media (max-width: 700px) {
+  .workshop-hero-buttons { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 0.75rem; }
+  .workshop-hero-buttons .cta-button,
+  .workshop-hero-buttons .cta-button-secondary { font-size: 0.75rem; padding: 1rem 1.6rem; }
+  .workshop-hero-buttons .cta-button-secondary { padding: calc(1rem - 2px) calc(1.6rem - 2px); }
 }

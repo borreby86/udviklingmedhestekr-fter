@@ -1,50 +1,54 @@
 'use client'
 
-import { useRef, useState, useEffect } from 'react'
+import { useRef, useState } from 'react'
 import { motion, useScroll, useTransform, AnimatePresence } from 'motion/react'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import { trackEvent } from '@/lib/analytics'
 
-const scrollNavLinks = [
-  { label: 'Forside', href: '/' },
-  { label: 'Dagen', href: '#dagen' },
-  { label: 'Det praktiske', href: '#praktisk' },
-  { label: 'Mød Christina', href: '#christina' },
-  { label: 'Datoer', href: '#datoer' }
+const gaarHjemMed = [
+  'En enkel vejrtrækningsteknik, de kan bruge i skolen og derhjemme',
+  'Oplevelsen af at mestre relationen til et 500 kilo stort dyr, som giver gå-på-mod til andre svære ting',
+  'Mere selvtillid og forståelse af, hvordan deres egen ro smitter'
 ]
 
-const dagensRytme = [
-  { title: 'I møder hestene', description: 'I starter med at strigle og lære hesten at kende. I er to om hver hest, så I følges ad hele dagen og hjælper hinanden.' },
-  { title: 'Øvelser i folden', description: 'Små opgaver hvor I sammen får hesten til at gå med jer over forhindringer. Det er sjovere - og sværere - end det lyder.' },
-  { title: 'Frokost sammen', description: 'Vi spiser sammen midt på dagen. Det er en del af dagen at sænke tempoet og snakke.' },
-  { title: 'Op på hesten', description: 'I skiftes til at sidde op på hesten, mens den anden går ved siden af. Hjelm er obligatorisk - vi har til låns.' },
-  { title: 'Vi runder af', description: 'Kort runde til sidst, hvor I får sat ord på hvad I tager med jer fra dagen.' }
+const maalgruppe = [
+  'Unge med eksamensangst',
+  'Unge i sårbare positioner',
+  'SSP-samarbejde',
+  'Anbragte unge',
+  'Unge i mistrivsel',
+  'Skolevægring',
+  'Unge med sociale udfordringer',
+  'Forebyggende indsats'
 ]
 
-const detSkalDuVide = [
+const formater = [
   {
-    title: 'Du behøver ikke have redet før',
-    description: 'Det er valgfrit om du vil ride. Du kan sagtens deltage med fuldt udbytte uden, og det er i sig selv en øvelse i at mærke efter.'
+    title: 'Individuel session',
+    duration: '1-2 timer',
+    description: 'Den enkelte unge i 1:1 med hest og terapeut. Velegnet til unge der har brug for tryghed, ro og et tempo der følger dem - eller som forberedelse til at deltage i gruppe senere.'
   },
   {
-    title: 'I er to om hver hest',
-    description: 'Det skaber tryghed og fjerner præstationspresset. I lærer hesten at kende sammen.'
+    title: 'Lille gruppe',
+    duration: '2-4 unge · 2-3 timer',
+    description: 'Mindre enheder fra fx en klasse, et opholdssted eller en bostøtte-gruppe. Skaber fortrolighed uden at præstationspresset i en stor gruppe tager over.'
   },
   {
-    title: 'Tag tøj på der må blive beskidt',
-    description: 'Lukkede sko og bukser med lidt stræk i (så de ikke revner, når du skal op på hesten). Tøj der passer til vejret.'
+    title: 'Dagsworkshop',
+    duration: '6-8 unge · 4 timer',
+    description: 'En hel dag med heste, frokost og at sidde op på hesten. Fællesskab i mindre format, hvor de unge er to og to om hver hest og følges ad gennem hele dagen.'
   },
   {
-    title: 'Frokost er inkluderet',
-    description: 'Du behøver ikke tage mad med - vi sørger for frokost og let forplejning gennem dagen.'
+    title: 'Forløb over tid',
+    duration: 'Flere besøg · uger eller måneder',
+    description: 'Den samme gruppe eller den samme unge over flere møder. Giver tid til at bygge tillid op, integrere oplevelserne og se forandringen sætte sig.'
   }
 ]
 
 export default function EnDagMedHestePage() {
   const heroRef = useRef(null)
   const [modalOpen, setModalOpen] = useState(false)
-    const [showScrollNav, setShowScrollNav] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [formLoadTime, setFormLoadTime] = useState<number | null>(null)
@@ -55,15 +59,6 @@ export default function EnDagMedHestePage() {
   })
 
   const heroY = useTransform(scrollYProgress, [0, 1], ['0%', '30%'])
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowScrollNav(window.scrollY > 400)
-    }
-    handleScroll()
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
 
   const openModal = () => {
     setModalOpen(true)
@@ -128,32 +123,16 @@ export default function EnDagMedHestePage() {
     <>
       <Navigation />
       <main>
-        <AnimatePresence>
-          {showScrollNav && (
-            <motion.div
-              className="scroll-nav"
-              initial={{ y: -100, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -100, opacity: 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="scroll-nav-container">
-                {scrollNavLinks.map((link, index) => (
-                  <a key={index} href={link.href} className="scroll-nav-link">
-                    {link.label}
-                  </a>
-                ))}
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
         {/* Hero */}
         <section className="workshop-hero-full" ref={heroRef}>
           <motion.div className="workshop-hero-bg" style={{ y: heroY }}>
-            <img src="/unge-med-heste-hero.jpg" alt="En dag med heste, ro og natur" style={{ transform: 'scale(1.32) translateX(13%)' }} />
+            <img src="/unge-heste-grimer.jpg" alt="En dag med heste, ro og natur" style={{ objectPosition: 'center 30%' }} />
           </motion.div>
           <div className="workshop-hero-overlay" />
+          <div
+            aria-hidden="true"
+            style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(12,15,15,0) 48%, rgba(12,15,15,0.22) 100%)', pointerEvents: 'none' }}
+          />
           <div className="workshop-hero-content-full">
             <motion.div
               className="workshop-hero-text-full"
@@ -163,43 +142,55 @@ export default function EnDagMedHestePage() {
             >
               <p className="section-label">Workshop for unge</p>
               <h1>En dag med <em>heste, ro</em> og natur</h1>
-              <p className="workshop-hero-tagline">For dig der er nysgerrig på heste og elsker tid i naturen</p>
+              <p className="workshop-hero-tagline">For unge mellem 12 og 18 år - Udbydes gennem UngFredensborg</p>
               <p className="workshop-hero-desc">
-                4 timer i Hørsholm hvor du møder hestene, lærer at passe og pleje dem, og slutter med at sidde op på hesten. Du behøver ikke have redet før, og du behøver ikke være god til noget. Du skal bare have lyst til at være tæt på et stort dyr en hel dag og opleve hvad der sker, når man sænker tempoet.
+                Når tempoet sænkes, opstår der plads til at lykkes. At få et stort dyr til at stole på sig giver selvtillid, en konkret oplevelse af mestring og et bedre selvværd, som den unge tager med sig hjem.
               </p>
-              <a href="#datoer" className="cta-button">
+              <button type="button" onClick={openModal} className="cta-button">
                 <span>Få besked om nye datoer</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
-              </a>
+              </button>
             </motion.div>
           </div>
         </section>
 
-        {/* Tilbuddet i ord - solid (buffer mellem hero og næste billede-sektion) */}
-        <section className="workshop-forloeb" id="dagen">
-          <div className="workshop-container-wide">
+        {/* Om workshoppen - tekst venstre, collage højre */}
+        <section className="unge-intro" id="dagen">
+          <div className="unge-intro-grid">
             <motion.div
-              className="workshop-forloeb-header"
+              className="unge-intro-text"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <p className="section-label">Hvad sker der den dag?</p>
-              <h2>I er to om hver hest - I følges ad gennem hele dagen</h2>
-              <p className="workshop-forloeb-intro">
-                Du lærer at passe og pleje hesten, og hvordan man skaber forbindelse til så stort et dyr - så du har tillid til den, og den til dig - inden I skal sidde op på hesten.
+              <p className="section-label">Om workshoppen</p>
+              <h2>Hestene er læremestrene - ikke målet</h2>
+              <p>
+                Denne workshop er for unge i alderen 12-18 år. De unge møder hestene, lærer at passe og pleje dem og slutter dagen med at sidde på hesten, med fokus på deres egen ro som styrepind. Det kræver ingen forhåndserfaring med heste.
               </p>
-              <p className="workshop-forloeb-intro" style={{ marginTop: '1rem' }}>
-                Vi veksler mellem aktivitet og pauser med korte snakke, hvor I får plads til at sætte ord på det I oplever. Frokosten midt på dagen er en del af dagen.
+              <p>
+                Det her er ikke en rideskole. Hestene er ikke målet, de er læremestrene. En hest reagerer på det, man udstråler, ikke på det, man siger. Når den unge lærer at skabe ro i sig selv gennem vejrtrækningen, kan de mærke, at hesten falder til ro sammen med dem. Den oplevelse gør det tydeligt, hvordan deres egen indre tilstand påvirker dem selv og menneskerne omkring dem.
               </p>
+            </motion.div>
+
+            <motion.div
+              className="unge-collage"
+              initial={{ opacity: 0, scale: 0.97 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+            >
+              <img className="unge-collage-tall" src="/unge-heste-naerkontakt.jpg" alt="Unge møder hesten og lærer at passe den" />
+              <img src="/unge-heste-folden.jpg" alt="Unge fører hesten gennem øvelser i folden" />
+              <img src="/unge-heste-ridning.jpg" alt="Unge sidder op på hesten" />
             </motion.div>
           </div>
         </section>
 
-        {/* Dagens rytme */}
+        {/* Eksempel på en workshop i praksis */}
         <section className="workshop-detailed">
           <div className="workshop-container-wide">
             <motion.div
@@ -209,111 +200,61 @@ export default function EnDagMedHestePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <p className="section-label">Dagens rytme</p>
-              <h2>Sådan ser dagen ud</h2>
+              <p className="section-label">Eksempel på en workshop i praksis</p>
+              <h2>Sådan foregår en typisk dag</h2>
             </motion.div>
 
-            <motion.div
-              className="workshop-phase workshop-phase-highlight"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="workshop-phase-header">
-                <span className="phase-label">Kl. 11-15 · 4 timer · frokost inkluderet</span>
-                <h3>Fra første hilsen til at sidde op på hesten</h3>
-              </div>
-              <div className="workshop-during-steps">
-                {dagensRytme.map((step, index) => (
-                  <div key={index} className="during-step">
-                    <span className="during-step-number">{index + 1}</span>
-                    <div className="during-step-content">
-                      <h4>{step.title}</h4>
-                      <p>{step.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Det skal du vide */}
-        <section className="workshop-benefits-new" id="praktisk">
-          <div className="workshop-container-wide">
-            <div className="workshop-benefits-header">
-              <p className="section-label">Det skal du vide</p>
-              <h2>Det praktiske</h2>
-            </div>
-
-            <div className="workshop-benefits-columns">
+            <div className="praksis-grid">
               <motion.div
-                className="workshop-benefit-column"
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                style={{ gridColumn: '1 / -1' }}
               >
-                <div className="workshop-benefit-list">
-                  {detSkalDuVide.map((item, index) => (
-                    <div key={index} className="workshop-benefit-item">
-                      <span className="benefit-number">0{index + 1}</span>
-                      <div>
-                        <h4>{item.title}</h4>
-                        <p>{item.description}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                <p className="workshop-forloeb-intro" style={{ color: 'var(--color-warm-sand)', textAlign: 'left' }}>
+                  Dagen starter typisk med ro: vejrtrækning og nærvær, før de unge går ind til hestene. Derefter lærer de at passe og pleje hesten og at skabe kontakt til et stort dyr, så de har tillid til den, og den til dem, inden de sidder op.
+                </p>
+                <p className="workshop-forloeb-intro" style={{ color: 'var(--color-warm-sand)', textAlign: 'left', marginTop: '1rem' }}>
+                  Vi veksler typisk mellem aktivitet og korte samtaler, hvor de unge får hjælp til at sætte ord på det, de oplever. Frokosten midt på dagen er en del af dagen.
+                </p>
               </motion.div>
-            </div>
-          </div>
-        </section>
 
-        {/* Mød Christina */}
-        <section className="workshop-instructors" id="christina">
-          <div className="workshop-container-wide">
-            <motion.div
-              className="workshop-instructors-header"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <p className="section-label">Mød Christina</p>
-              <h2>Hvem du kommer til at hænge ud med</h2>
-            </motion.div>
-
-            <div className="workshop-instructors-grid" style={{ gridTemplateColumns: '1fr', maxWidth: 720, margin: '0 auto' }}>
               <motion.div
-                className="workshop-instructor-card"
-                initial={{ opacity: 0, y: 30 }}
+                className="workshop-phase phase-highlight-light"
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.6 }}
               >
-                <div className="instructor-card-image">
-                  <img src="/christina-hest.jpg" alt="Christina Borreby med hest" />
+                <div className="workshop-phase-header">
+                  <h3>Det går de unge hjem med</h3>
                 </div>
-                <div className="instructor-card-content">
-                  <h3>Christina</h3>
-                  <span className="instructor-card-title">Din vært på dagen</span>
-                  <p>Jeg har haft heste i over 30 år, og er trænet til at arbejde med mennesker der har brug for ro. Jeg siger det her, så du ved det: Du behøver ikke kunne noget på forhånd. Du behøver ikke være god til noget. Vi finder det rigtige tempo for dig - sammen med hestene.</p>
-                </div>
+                <ul className="method-card-list">
+                  {gaarHjemMed.map((item, index) => (
+                    <li key={index}>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M20 6L9 17l-5-5"/>
+                      </svg>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
             </div>
           </div>
         </section>
 
-        {/* Datoer */}
-        <section className="workshop-dates-section workshop-dates-light" id="datoer">
+        {/* Formater - til kommuner og fagfolk */}
+        <section className="workshop-dates-section workshop-dates-light" id="formater">
           <div className="workshop-dates-bg">
-            <img src="/unge-med-heste-datoer.jpg" alt="Unge med heste i Nordsjælland" />
+            <img src="/unge-heste-pony.jpg" alt="Ung pige rider på pony" />
           </div>
           <div className="workshop-dates-overlay" />
-          <div className="workshop-dates-container-left">
+          <div
+            aria-hidden="true"
+            style={{ position: 'absolute', inset: 0, background: 'rgba(244,245,247,0.55)', pointerEvents: 'none' }}
+          />
+          <div className="workshop-dates-container" style={{ maxWidth: 1100 }}>
             <motion.div
               className="workshop-dates-header"
               initial={{ opacity: 0, y: 20 }}
@@ -321,36 +262,85 @@ export default function EnDagMedHestePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <p className="section-label">Datoer</p>
-              <h2>Vælg din dag</h2>
-              <p className="workshop-dates-intro">
-                2970 Hørsholm (kræver bil). Kl. 11-15. Plads til 6-8 unge pr. dag.
+              <p className="section-label">Tilbud til kommuner</p>
+              <h2>Et mentalt frirum uden præstation</h2>
+              <p className="workshop-dates-intro">Hesteassisterede sessioner og forløb for unge i mistrivsel</p>
+              <p className="workshop-forloeb-intro" style={{ color: 'var(--color-soft-brown)', marginTop: '1.5rem' }}>
+                Workshoppen kan også tilbydes som en målrettet indsats for unge med særlige behov, fx unge med højt skolefravær, angst, uro eller lavt selvværd. Det foregår som individuelle sessioner, små grupper, dagsworkshops eller længere forløb i Hørsholm.
               </p>
             </motion.div>
 
-            <div className="workshop-date-cards-vertical">
-              <motion.button
-                onClick={openModal}
-                className="workshop-date-card workshop-date-card-light"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-              >
-                <div className="date-card-date">
-                  <div className="date-card-day-month">
-                    <span className="date-card-month">Nye datoer for forår 2027 på vej</span>
-                  </div>
-                </div>
-                <div className="date-card-divider" />
-                <div className="date-card-action">
-                  <span>Få besked</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
-                </div>
-              </motion.button>
+            <div className="workshop-forloeb-cards formater-grid">
+              {formater.map((item, index) => (
+                <motion.div
+                  key={index}
+                  className="workshop-forloeb-card"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: (index % 4) * 0.1 }}
+                >
+                  <span className="forloeb-card-number">0{index + 1}</span>
+                  <h3>{item.title}</h3>
+                  <span className="forloeb-card-subtitle">{item.duration}</span>
+                  <p>{item.description}</p>
+                </motion.div>
+              ))}
             </div>
+
+            <p className="workshop-forloeb-intro" style={{ color: 'var(--color-soft-brown)', marginTop: '3rem', maxWidth: 700, marginLeft: 'auto', marginRight: 'auto' }}>
+              Format, gruppestørrelse og fokus tilrettelægges efter den enkelte unge eller gruppens behov, så de får det rum, der virker for dem.
+            </p>
+            <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
+              <a href="/kontakt" className="cta-button">
+                <span>Kontakt mig om et forløb</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* Hvem er det for - genbrugt direkte fra kommuner-unge */}
+        <section className="audience-section audience-solid" id="hvem-er-det-for">
+          <div className="audience-content">
+            <p className="audience-label">Hvem er det for?</p>
+            <h2 className="audience-title">
+              Unge der har gavn af et frirum<br />
+              fra præstation og pres
+            </h2>
+            <div className="audience-tags">
+              {maalgruppe.map((label, index) => (
+                <span key={index} className={`audience-tag ${index === 2 ? 'highlighted' : ''}`}>
+                  {label}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Om mig - samme design som forsiden */}
+        <section className="about-banner" id="om-mig">
+          <div className="about-banner-bg">
+            <img src="/lederudvikling heste.jpg" alt="Christina Borreby med hest" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%' }} />
+          </div>
+          <div className="about-banner-overlay" />
+          <div className="about-banner-container">
+            <motion.div
+              className="about-banner-content"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+            >
+              <p className="section-label">Om mig</p>
+              <h2>Christina Borreby</h2>
+              <p className="about-credentials">Certificeret psykoterapeut · Cand.negot · 30 års erfaring med heste</p>
+              <p>Heste har været mine læremestre, siden jeg var barn - uden jeg egentlig vidste det. De var mit frirum i en præstationsfokuseret hverdag med skole og forventninger. Derfor har jeg en stor passion for at give unge i dag et lignende sted, særligt med tanke på hvor svært det er at være ung nu.</p>
+              <p>Som psykoterapeut har jeg arbejdet særligt med unge i mistrivsel, blandt andet som mentor hos en anden aktør i kommunen. Her har jeg set, hvor meget det betyder, når unge får et rum uden krav om at præstere, hvor de kan mærke sig selv og opleve at lykkes.</p>
+              <p>Hestene giver de unge noget, som samtale alene sjældent kan: en konkret oplevelse af ro, mestring og tillid, som de kan tage med sig hjem og i skole.</p>
+            </motion.div>
           </div>
         </section>
       </main>

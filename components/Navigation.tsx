@@ -78,6 +78,7 @@ export default function Navigation() {
           </ul>
         </li>
         <li><a href="/teams">For teams</a></li>
+        <li><a href="/en-dag-med-heste">For unge</a></li>
         {/* "For alle" / Recalibrate skjult i menuen indtil videre (siden er noindex mens indholdet skrives om) */}
 
         {/* Mobile divider middle */}
